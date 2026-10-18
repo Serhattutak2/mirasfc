@@ -47,7 +47,7 @@ jobs:
           xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos \
             -destination 'generic/platform=iOS' -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
-            CURRENT_PROJECT_VERSION=${{ github.run_number }} build | tail -40
+            CURRENT_PROJECT_VERSION=$((GITHUB_RUN_NUMBER+100)) build | tail -40
           APP=$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' | head -1)
           mkdir -p out/Payload && cp -R "$APP" out/Payload/
           cd out && zip -qr ../MirasFC-unsigned.ipa Payload && cd ..
@@ -78,7 +78,7 @@ jobs:
           cp $RUNNER_TEMP/p.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$UUID.mobileprovision
           xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
             -archivePath build/App.xcarchive archive DEVELOPMENT_TEAM=$TEAM CODE_SIGN_STYLE=Manual \
-            CODE_SIGN_IDENTITY="Apple Distribution" PROVISIONING_PROFILE_SPECIFIER="$NAME" CURRENT_PROJECT_VERSION=${{ github.run_number }} | tail -30
+            CODE_SIGN_IDENTITY="Apple Distribution" PROVISIONING_PROFILE_SPECIFIER="$NAME" CURRENT_PROJECT_VERSION=$((GITHUB_RUN_NUMBER+100)) | tail -30
           cat > eo.plist <<PL
           <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0"><dict><key>method</key><string>release-testing</string><key>teamID</key><string>$TEAM</string>
@@ -104,7 +104,7 @@ jobs:
           AUTH="-allowProvisioningUpdates -authenticationKeyPath $KP -authenticationKeyID $KID -authenticationKeyIssuerID $ISS"
           xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
             -archivePath build/AS.xcarchive archive $AUTH DEVELOPMENT_TEAM=$TEAM CODE_SIGN_STYLE=Automatic \
-            CURRENT_PROJECT_VERSION=${{ github.run_number }} > $RUNNER_TEMP/arch.log 2>&1 || { grep -E 'error|Error|warning: .*sign' $RUNNER_TEMP/arch.log | tail -40; tail -60 $RUNNER_TEMP/arch.log; exit 1; }
+            CURRENT_PROJECT_VERSION=$((GITHUB_RUN_NUMBER+100)) > $RUNNER_TEMP/arch.log 2>&1 || { grep -E 'error|Error|warning: .*sign' $RUNNER_TEMP/arch.log | tail -40; tail -60 $RUNNER_TEMP/arch.log; exit 1; }
           tail -15 $RUNNER_TEMP/arch.log
           cat > as.plist <<PL
           <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
