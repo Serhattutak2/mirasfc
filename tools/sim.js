@@ -79,7 +79,7 @@ for (let life = 0; life < N; life++) {
     while (steps++ < 60000) {
       const s = E('scr');
       if (s === 'game') {
-        if (E('g.ended && !g.heirDone')) { if (E('g.fam.kids.length') && heirs < 1 && rnd() < .5) { E(`inherit(${Math.floor(rnd() * E('g.fam.kids.length'))})`); heirs++; st.heirs++; continue; } break; }
+        if (E('g.ended && !g.heirDone')) { E('draw0()'); const he = E('JSON.stringify(hallEntry(g))'); const ho = JSON.parse(he); checkNum(ho, 'hall'); if (!ho.defter || !ho.n) throw new Error('hall: eksik özet'); if (!E('acct().hall.some(x=>x.key===' + JSON.stringify(ho.key) + ')')) throw new Error('hall: endUI kaydetmedi'); E("scr='hall';HALLX=acct().hall[0].key;drawInner();scr='game'"); if (E('$("app").innerHTML').includes('Beklenmeyen hata')) throw new Error('hall ekranı hata'); st.hall = E('acct().hall.length'); if (E('g.fam.kids.length') && heirs < 1 && rnd() < .5) { E(`inherit(${Math.floor(rnd() * E('g.fam.kids.length'))})`); heirs++; st.heirs++; continue; } break; }
         if (E('g.nameKid!=null')) E('nameKid("Test")');
         if (E('!!g.q')) { E(`answerQ(${Math.floor(rnd() * E('visOpts(msDef(g.q).c).length'))})`); continue; }
         if (E('!!g.ev')) { E(`choose(${Math.floor(rnd() * Math.max(1, E('evOptions(g.ev).length')))})`); continue; }

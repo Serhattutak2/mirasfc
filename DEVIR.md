@@ -1,4 +1,4 @@
-# Miras FC: A Football Life — Devir Notu (v3.8)
+# Miras FC: A Football Life — Devir Notu (v3.9)
 
 Bu dosya, projeyi başka bir yapay zekâ ya da geliştiriciyle devam ettirmek için yazıldı. Oyun tek dosyalık bir HTML (`index.html`); kaynak `src/` altında modüler, derleme `python3 tools/build.py`. Oyun Türkçe yazılır, İngilizce bir çeviri katmanıyla gösterilir.
 
@@ -10,7 +10,7 @@ Bu dosya, projeyi başka bir yapay zekâ ya da geliştiriciyle devam ettirmek i�
 Kayıt anahtarları: oyun `mfc2_<slot>`, hesap (jeton, dil, başarımlar, bilet, tema) `mfc_acct`.
 
 ## Dosyalar ve derleme sırası
-`en → i18n → data → core → squad → events → events2 → life → career → nego → engine → engine5 → engine6 → engine7 → engine8 → engine9 → match → finance → owner → coach → coach2 → coach3 → owner2 → legacy → shop → ui → emoji → tutorial → engine10`
+`en → i18n → data → core → squad → events → events2 → life → career → nego → engine → engine5 → engine6 → engine7 → engine8 → engine9 → match → finance → owner → coach → coach2 → coach3 → owner2 → legacy → shop → ui → emoji → tutorial → engine10 → hall`
 
 Sonra gelen dosya öncekindeki aynı adlı fonksiyonu ezer; `coach3.js` ve `owner2.js` çoğunlukla `const _f = f; f = function(){…}` sarmalayıcılarıyla eski davranışın üstüne kurar.
 
@@ -28,6 +28,7 @@ Sonra gelen dosya öncekindeki aynı adlı fonksiyonu ezer; `coach3.js` ve `owne
 | `nego.js` | pazarlık masası (renk ipucu yok, sportif direktörün sözleri) |
 | `engine5.js` | **Maç motoru v5 "Çiz ve oyna" (asıl oynanış).** `engine.js`'ten sonra yüklenir; `mkScene`'i sarar, `step`, `drawScene`, `bindInput`, `ctlHTML`, `botMove`, `camWant` fonksiyonlarını ezer. Topu kim taşıyorsa ondan yol çizilir (`v5Down/Move/Up`): arkadaşta biterse pas, kalede şut, boşlukta sürme. `pDanger` rakiplerin keseceği yerleri kırmızı yakar; sonuç `doPath` anında belirlenir, `runTick` canlandırır. `shotResult` isabet + kaleci; `nextDraw` savunmayı ve koşuları yeniden dizer. `bestPath` hem ⚡ Otomatik hamle düğmesi hem test botu. Emojili olay yazıları, konfeti, ekran sarsıntısı. v3.1: şut ve kendi paslarında "topa bas" ekranı (`tapBall`, q 0..1 isabet, kolay), yumuşak fizik (yerden pas yavaşlar, havadan pas seker, gol ağı, kaleciden seken top `freeTick`), boşluğa dokunma = kısa sürüş. v3.2: **çubukla nişan** (`stickEval`: hedefe doğru çek, çubuk uzar; uzunluk = güç; arkadaşa uzanırsa pas, kaleye şut, kısa ise sürme, boşluğa ara pas), topa basmada kenara uzaklık = falso/yükseklik miktarı, kavisli yol (`launchPath`), güzel top çizimi (`drawFancyBall`), araya girmede önerilen nokta (`icBest`). Başlangıçta isim zorunlu. |
 | `tutorial.js` | İlk açılışta 16 adımlı öğretici (`TUT`, `tutOpen`, "Öğreticiyi geç"), menüde 📘 Öğretici ve ℹ️ Hakkında, ilk maç anında kontrol rehberi. Yapımcı: Serhat Tutak · Sardur Technologies (`CREDIT`). |
+| `hall.js` | **Miras Salonu ve Miras Kartı (v3.9, engine10'dan sonra en son yüklenir):** biten her hayat (son düdük ya da mirası devretme) `hallRecord` ile hesaba yazılır (`mfc_acct.hall`, en fazla 60; en yeni 10 hep kalır). Kayıt silinse bile Salon'da durur. Menüde Salon kartı, `scr='hall'` ekranı (rekorlar, sıralama, hikâye), `cardCanvas` ile 1080×1350 paylaşılabilir PNG kart (forma renkleri, Miras Puanı, üç miras çubuğu, istatistikler, öne çıkanlar); `navigator.share` yoksa indirme / uzun basıp kaydetme. `inherit`, `endUI`, `legUI`, `drawInner`, `menu` sarmalanır. Test botu her biten hayatta özetin sayı/fonksiyon temizliğini ve Salon ekranını denetler. |
 | `engine10.js` | **Stadyum (v3.8, en son yüklenir):** iOS ses kilidi (`audioUnlock`: touchend/click'te AudioContext açılır, `navigator.audioSession.type='playback'` ile sessiz modda da çalar), konuşan spiker (`speak`, `voxVoice`: cihazın konuşma motoru, `LANG`'a göre tr-TR / en-GB; `say` sarmalanır, `VPRI` öncelik), **Ayarlar** (`setOpen`, `acct().set`: sfx, crowd, voice, text, vol, cel, rp; menüde ve maç panelinde ⚙️), gol sevinci (`s.cel`: kamera zumu `s.zm`, golcü köşeye koşar `cheer`, rakipler `sad`, dev GOL yazısı, havai fişek; bitince engine9 tekrarı `s.rpReady` başlar), yeni `drawPl` (büyük ve ayrıntılı: saç modeli/rengi, krampon, forma deseni `HSTR(p.c)`: düz/çubuklu/çizgili/kuşaklı, kaleci eldiveni, kaptan pazubandı), stadyum (`drawStadium`: LED panolar, yan panolar, köşe bayrakları, coşkuya `s.hype` göre zıplayan taraftarlar, golde meşale ve flaş), ritmik alkış, maç başı/sonu düdük ve spiker. |
 | `engine9.js` | **Canlı maç (v3.7):** WebAudio ile dosyasız stadyum sesi (`sfx`: vuruş, düdük, ağ, direk, ooo, gol kükremesi; `crowdLvl` tribün uğultusu kaleye yaklaştıkça artar; `sndToggle` + `localStorage mfc_snd`), canlı spiker (`COM`, `say`; `flash` olay yazısından beslenir), gol tekrarı (`s.fr` kare kaydı, `s.rp` ağır çekim, dokununca geçer), kaleci plonjonu (`p.dive`) ve bire birde çıkış (`gkPlace` sarmalayıcı, açıyı daraltır), yeni `drawPl` (hıza göre adım, kol, eğilme, sırtta numara, kayarak müdahale `p.slide`), dönen top `drawBall`, yorgunluk (`fatigue`: 55. dakikadan sonra kondisyona göre hızlar, topa basma süresi; 🔋 göstergesi), hava (yağmur: top hızlı + ilk dokunuş zor, kar: yavaş, rüzgâr havadan pası sürükler). Hızlar her sahnede `V9.base`ten yeniden kurulur. |
 | `engine8.js` | **Gerçekçi ayrıntılar (v3.5):** ilk dokunuş (sert/havadan top açılabilir), sahipsiz top yarışı (`looseBall`), kaleciden dönen top, aşırtma (topun altına bas, kaleci öndeyse), sürüşte faul (penaltı / serbest vuruş / oyun devam). |
@@ -82,6 +83,8 @@ Sonra gelen dosya öncekindeki aynı adlı fonksiyonu ezer; `coach3.js` ve `owne
 - Tesis fiyatları kulüp gelirine göre ölçeklenir (v2.4'te ~2 katına çıktı); kişisel etkinlik ücretleri maaşla büyür (`actCost`).
 
 ## Bilinen sınırlar / sonraki adımlar
+- İngilizcede Miras Defteri'nin bazı cümleleri (virgüllü listeler: vitrin, çocukluk kararları) Türkçe kalabiliyor; `tr1` virgülle bölmüyor.
+- Test botu İngilizce taramasında (`MFC_EN`) yaklaşık 3000 Türkçe görünen olay metni kalıyor.
 - Bazı İngilizce cümlelerde ülke adı sıfat yerine isim olarak geçer ("your Germany citizenship").
 - Kadın futbolcu seçimi yok. Ses yok.
 - Mağaza sürümü için: Capacitor sarmalayıcı, AdMob, mağaza içi satın alma, sunucu doğrulaması, KVKK/GDPR onayı.

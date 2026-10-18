@@ -1,0 +1,66 @@
+🏛 Miras Salonu ⇒ 🏛 Hall of Legacy
+Miras Salonu ⇒ Hall of Legacy
+Biten hayatlar ⇒ Finished lives
+Her hayat bittiğinde ya da mirasını devrettiğinde buraya yazılır. Kayıtlarını silsen bile Salon'da kalır. ⇒ Every life is written here when it ends or when you hand down your legacy. It stays in the Hall even if you delete your saves.
+← Menüye dön ⇒ ← Back to menu
+Salon henüz boş. ⇒ The Hall is empty for now.
+İlk hayatın son düdüğü çaldığında burada yerini alacak. ⇒ Your first life will take its place here when the final whistle blows.
+Rekorlar ⇒ Records
+En yüksek Miras Puanı ⇒ Highest Legacy Points
+En golcü ⇒ Top scorer
+En çok kupa ⇒ Most trophies
+En çok milli maç ⇒ Most caps
+En büyük servet ⇒ Biggest fortune
+En uzun soy ⇒ Longest dynasty
+{0} kupa ⇒ {0} trophies
+{0} maç ⇒ {0} matches
+{0}. kuşak ⇒ generation {0}
+Kulüpler: {0} ⇒ Clubs: {0}
+Miras Kartı ⇒ Legacy Card
+🖼 Miras Kartı ⇒ 🖼 Legacy Card
+Salondan kaldır ⇒ Remove from Hall
+Bu hayat Miras Salonu’ndan kaldırılsın mı? ⇒ Remove this life from the Hall of Legacy?
+Kaldır ⇒ Remove
+Kapat ✕ ⇒ Close ✕
+Paylaş düğmesi çalışmazsa karta uzun basıp fotoğraflarına kaydedebilirsin. ⇒ If Share doesn't work, long-press the card to save it to your photos.
+📤 Paylaş ⇒ 📤 Share
+⬇ İndir ⇒ ⬇ Download
+Hayatının özetini paylaşılabilir bir görsel karta dönüştür. ⇒ Turn your life story into a shareable picture card.
+🖼 Kartı oluştur ⇒ 🖼 Create card
+Salonu aç ⇒ Open the Hall
+{0} hayat ⇒ {0} lives
+1 hayat ⇒ 1 life
+Henüz boş ⇒ Empty for now
+Zirvede: {0} · {1} ({2}) ⇒ At the top: {0} · {1} ({2})
+Biten hayatların burada sergilenecek. ⇒ Your finished lives will be displayed here.
+{0} kez Dünya Kupası şampiyonu ⇒ {0}× World Cup winner
+Dünya Kupası şampiyonu ⇒ World Cup winner
+{0} Altın Top ⇒ {0} Ballon d'Or awards
+Altın Top sahibi ⇒ Ballon d'Or winner
+{0} kez Avrupa şampiyonu ⇒ {0}× European champion
+Avrupa şampiyonu ⇒ European champion
+Kıta şampiyonu ⇒ Continental champion
+{0} lig şampiyonluğu ⇒ {0} league titles
+{0} gol krallığı ⇒ {0} Golden Boots
+Teknik direktör olarak {0} şampiyonluk ⇒ {0} titles as head coach
+{0} sahibi ⇒ Owner of {0}
+Çocukluk hayalini gerçekleştirdi ⇒ Fulfilled a childhood dream
+{0} maçlık bir kariyer ⇒ A {0}-match career
+Hayatı sahanın dışında şekillendi ⇒ A life shaped off the pitch
+Servet ⇒ Wealth
+Geriye ne bırakacaksın? ⇒ What will you leave behind?
+Futbol hayatımın mirası ⇒ The legacy of my football life
+Kart indirildi ⇒ Card downloaded
+İndirilemedi; karta uzun basıp kaydet ⇒ Couldn't download; long-press the card to save it
+Bu cihazda kart çizilemedi ⇒ The card couldn't be drawn on this device
+Toplam kupa ⇒ Trophies
+A milli maç ⇒ Caps
+1 kupa ⇒ 1 trophy
+Vitrinindekiler: {0}. ⇒ In the trophy cabinet: {0}.
+{0} ulusal kupa ⇒ {0} domestic cup(s)
+{0} Şampiyonlar Kupası ⇒ {0} Champions Cup(s)
+{0} Avrupa Ligi ⇒ {0} Europa League title(s)
+Çocukluğunda verdiği kararlar: {0}. ⇒ Childhood choices: {0}.
+{0} yaşında “{1}” ⇒ at {0}, “{1}”
+Futbolun ardından {0} sezon teknik direktörlük yaptı ve {1} şampiyonluk kazandı. ⇒ After playing, he managed for {0} seasons and won {1} titles.
+Kulübünden ayrıldığın için kaptanlık teklifi geçersiz kaldı. ⇒ You left the club, so the captaincy offer lapsed.

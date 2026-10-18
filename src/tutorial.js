@@ -5,7 +5,7 @@
    - İlk maç pozisyonunda kısa kontrol rehberi.
    - Yapımcı: Serhat Tutak · Sardur Technologies
    ============================================================ */
-const CREDIT = { maker: 'Serhat Tutak', studio: 'Sardur Technologies', year: 2026, ver: '3.8' };
+const CREDIT = { maker: 'Serhat Tutak', studio: 'Sardur Technologies', year: 2026, ver: '3.9' };
 const TUT = [
   { e: '⚽', t: 'Miras FC’ye hoş geldin', b: ['Bu oyun bir futbolcunun doğumundan son düdüğe kadar bütün hayatı.', 'Kararların kariyerini, aileni, servetini ve geride bırakacağın mirası belirler.', 'Bu öğretici her şeyi adım adım anlatır. İstersen aşağıdan geçebilirsin; menüden her zaman yeniden açılır.'] },
   { e: '🧒', t: '1 · Karakterini oluştur', b: ['Ad soyad yazmak zorunlu. Doğduğun ve büyüdüğün ülkeyi, şehrini, mevkini, oyun tarzını ve ayağını seç.', 'Ailenin durumu (yoksul, orta halli, varlıklı) hikâyeni değiştirir: yoksulluk hırs verir, varlık iyi akademilere kapı açar.', 'Çocukluk hayalini gerçekleştirirsen Miras Puanın büyük bonus kazanır.'] },

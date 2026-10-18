@@ -302,3 +302,20 @@ html, body { overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
 .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.4); transition: transform .2s; }
 .sw:checked { background: var(--ok); } .sw:checked::after { transform: translateX(18px); }
 .setv { flex: 0 0 120px; accent-color: var(--gold); }
+
+/* ---------- Miras Salonu ve Miras Kartı (v3.8) ---------- */
+.hallmenu { border-color: rgba(232,196,104,.35); background: linear-gradient(135deg, rgba(232,196,104,.10), var(--card)); }
+.hallhead h2 { margin: 0; }
+.hrec { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.hrecb { display: flex; gap: 10px; align-items: center; text-align: left; background: var(--card); border: 1px solid var(--line2); border-radius: 12px; padding: 10px; color: var(--tx); cursor: pointer; min-width: 0; }
+.hrecb small { display: block; color: var(--mut); font-size: 11px; } .hrecb b { display: block; font: 600 15px var(--body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .hrecb em { font-style: normal; color: var(--gold); font: 600 13px var(--body); }
+.hrecb > span:last-child { min-width: 0; } .hri { font-size: 22px; }
+.hallc { position: relative; overflow: hidden; }
+.hallc::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, var(--c1), var(--c2)); }
+.hallc.open { border-color: rgba(232,196,104,.45); }
+.hallrow { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; align-items: center; width: 100%; background: none; border: 0; color: var(--tx); text-align: left; cursor: pointer; padding: 2px 0 2px 6px; }
+.hrank { font: 700 22px var(--disp); color: var(--mut); text-align: center; }
+.hmain b { display: block; font: 600 17px var(--body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .hmain small { color: var(--mut); font-size: 12px; }
+.hmp { text-align: right; } .hmp b { display: block; font: 700 26px var(--disp); color: var(--gold); line-height: 1; } .hmp small { color: var(--mut); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.mcardc { max-width: 480px; }
+.mcardimg { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line2); box-shadow: 0 12px 40px rgba(0,0,0,.5); -webkit-touch-callout: default; }

@@ -2,6 +2,7 @@
 
 Doğumdan son düdüğe bir futbol hayat simülasyonu. Türkçe ve İngilizce (ana menüden seçilir). Tasarım: [TASARIM.md](TASARIM.md) · Teknik devir notu: [DEVIR.md](DEVIR.md).
 
+- Yeni (v3.9): **🏛 Miras Salonu** (biten hayatların sıralaması ve rekorlar) ve paylaşılabilir **Miras Kartı** görseli.
 - Oyun: `index.html` (tarayıcıda aç; tek dosya).
 - Kaynak: `src/` (veri, çekirdek, kadrolar, hikâye ağacı, hayat, kariyer, pazarlık, fizik maç motoru, finans, kulüp sahipliği, teknik direktörlük, miras, arayüz, stil).
 - Derleme: `python3 tools/build.py` → `index.html`.
