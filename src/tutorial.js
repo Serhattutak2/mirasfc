@@ -1,11 +1,11 @@
 /* ============================================================
-   MİRAS FC — ÖĞRETİCİ ve YAPIMCI BİLGİSİ (v3.6)
+   MİRAS FC — ÖĞRETİCİ ve YAPIMCI BİLGİSİ (v3.7)
    - İlk açılışta adım adım öğretici (istenirse "Öğreticiyi geç").
    - Menüden her zaman yeniden açılır.
    - İlk maç pozisyonunda kısa kontrol rehberi.
    - Yapımcı: Serhat Tutak · Sardur Technologies
    ============================================================ */
-const CREDIT = { maker: 'Serhat Tutak', studio: 'Sardur Technologies', year: 2026, ver: '3.6' };
+const CREDIT = { maker: 'Serhat Tutak', studio: 'Sardur Technologies', year: 2026, ver: '3.7' };
 const TUT = [
   { e: '⚽', t: 'Miras FC’ye hoş geldin', b: ['Bu oyun bir futbolcunun doğumundan son düdüğe kadar bütün hayatı.', 'Kararların kariyerini, aileni, servetini ve geride bırakacağın mirası belirler.', 'Bu öğretici her şeyi adım adım anlatır. İstersen aşağıdan geçebilirsin; menüden her zaman yeniden açılır.'] },
   { e: '🧒', t: '1 · Karakterini oluştur', b: ['Ad soyad yazmak zorunlu. Doğduğun ve büyüdüğün ülkeyi, şehrini, mevkini, oyun tarzını ve ayağını seç.', 'Ailenin durumu (yoksul, orta halli, varlıklı) hikâyeni değiştirir: yoksulluk hırs verir, varlık iyi akademilere kapı açar.', 'Çocukluk hayalini gerçekleştirirsen Miras Puanın büyük bonus kazanır.'] },
@@ -18,6 +18,7 @@ const TUT = [
   { e: '⚠️', t: '8 · Riskleri oku', b: ['Ok çekerken pası kesebilecek rakiplerin üstünde ⚠️ çıkar; ok turuncuya döner.', 'Sarı kesikli çizgi ofsayt çizgisidir. Pas anında arkadaşın çizginin önündeyse 🚩 ofsayt olur.', 'Sert ya da havadan gelen topu arkadaşın kontrol edemeyebilir; boşta kalan topa kim yakınsa o alır.', 'Kaleci çelerse dönen top için şansın sürebilir.'] },
   { e: '🏃', t: '9 · Arkadaşlarına koşu göster', b: ['Takım uyumun yüksekse bir arkadaşına dokunup sürükle: mavi okla koşacağı yeri gösterirsin.', 'Uyum %40 → 1, %70 → 2, %90 → 3 koşu hakkı (sol üstte 🏃).', 'Uyumu “Takım arkadaşlarıyla ek idman” ve maç oynayarak artırırsın.'] },
   { e: '🛡️', t: '10 · Savunma', b: ['Rakip pas atacakken kırmızı kesikli çizgi pas yolunu gösterir.', 'Oyuncunu pas yoluna SÜRÜKLE ya da yola dokun; yeşil “BURAYA KOŞ” halkası en iyi noktadır.', 'Rakip topla üstüne sürerse önüne çık: önden müdahale daha başarılıdır. Topu kazanınca saha döner, atağa çıkarsın.'] },
+  { e: '🎙️', t: 'Canlı maç', b: ['Spiker her anı yorumlar, tribün kaleye yaklaştıkça coşar. Sesi maç ekranındaki 🔊 düğmesiyle açıp kapatırsın.', 'Gol atınca son saniyeler ağır çekimde tekrar oynar; geçmek için sahaya dokun.', 'Bire birde kaleci kalesinden çıkar: topun altına basıp aşırt.', '🔋 Geç dakikalarda kondisyonun düşükse yavaşlarsın. Yağmurda top kayar, karda yavaşlar, rüzgâr havadan topu sürükler.'] },
   { e: '💰', t: '11 · Para ve yaşam', b: ['Finans sekmesinde ev, araç, kişisel ekip, yatırım, emlak ve şirketlerini yönetirsin.', 'Giderler gelirinle büyür; kötü yatırım seni batırabilir.', 'Servetin yeterince büyürse kulüp satın alabilir, bir kulüp grubu kurabilirsin.'] },
   { e: '👔', t: '12 · Futboldan sonra', b: ['Emekli olunca teknik direktör olabilir, kulüp sahibi olabilir ya da işe girebilirsin.', 'Teknik direktörken maç planı, antrenman, transfer ve canlı maç yönetimi senin elinde.', 'Kulüp sahibiyken genel müdür atayıp otopilotu açabilirsin.'] },
   { e: '🌳', t: '13 · Miras', b: ['Hayatın bitince mirası oğluna devredersin ve onunla devam edersin.', 'Kurucudan oğluna ilk devir ücretsizdir; sonraki kuşaklar için o kayda özel Miras Paketi gerekir.', 'Miras Puanın futbol, insan ve servet mirasından oluşur.'] },

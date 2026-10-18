@@ -1,0 +1,72 @@
+{0} vuruyor! ⇒ {0} shoots!
+Ve şut... {0}! ⇒ And the shot... {0}!
+{0} kaleyi yokluyor! ⇒ {0} tests the keeper!
+Şut geliyor, {0}! ⇒ Here comes the shot, {0}!
+{0} uzaktan deniyor! ⇒ {0} tries his luck from distance!
+Uzaktan bir füze, {0}! ⇒ A rocket from range, {0}!
+{0} ceza sahası dışından vurdu! ⇒ {0} lets fly from outside the box!
+{0} kalecinin üstünden aşırtıyor! ⇒ {0} chips it over the keeper!
+GOOOL! {0} ağları sarstı! ⇒ GOOOAL! {0} rattles the net!
+Ve gol! Tribünler ayakta, {0}! ⇒ And it's in! The stands are on their feet, {0}!
+Muhteşem! {0} topu ağlara gönderdi! ⇒ Magnificent! {0} sends it into the net!
+Kaleci çaresiz, gol {0}! ⇒ The keeper is helpless, goal for {0}!
+Kaleci son anda çıkardı! ⇒ The keeper keeps it out at the last moment!
+Harika kurtarış! ⇒ What a save!
+Kaleci uzandı ve kurtardı! ⇒ The keeper stretches and saves!
+Eldivenler konuştu! ⇒ Great hands from the keeper!
+Direk! Top direkten döndü! ⇒ Off the post! It bounces back out!
+Olamaz! Direğe çarptı! ⇒ Unbelievable! It hits the post!
+Az farkla dışarıda. ⇒ Just wide.
+Top auta gidiyor. ⇒ It's going out.
+İsabetsiz bir vuruş. ⇒ Off target.
+Üstten dışarı! ⇒ Over the bar!
+Top tribüne gitti! ⇒ That one's in the stands!
+{0} topu {1} ile buluşturdu. ⇒ {0} finds {1}.
+Top {1} oyuncusunda. ⇒ {1} has the ball.
+Top {0} oyuncusunda. ⇒ {0} has the ball.
+{0} pasını verdi, {1} kontrol etti. ⇒ {0} plays it, {1} controls.
+Sakin bir pas, {1} topla. ⇒ A calm pass, {1} on the ball.
+Sakin bir pas, {0} topla. ⇒ A calm pass, {0} on the ball.
+Harika bir pas! {0} savunmayı ikiye böldü. ⇒ Great pass! {0} splits the defence.
+Ne pas ama! {0} oyunu açtı. ⇒ What a pass! {0} opens up the game.
+{0} çizgi gibi bir pas çıkardı! ⇒ {0} threads a laser of a pass!
+{0} topu sürüyor. ⇒ {0} carries the ball.
+{0} boşluğa hareketleniyor. ⇒ {0} moves into space.
+{0} topla ilerliyor. ⇒ {0} drives forward.
+Pas kesildi, savunma okudu. ⇒ Intercepted, the defence read it.
+Araya girdiler, top kaybedildi. ⇒ They nip in, possession lost.
+Kayarak müdahale, top kaybedildi! ⇒ Sliding tackle, possession lost!
+Savunma topu ayaktan aldı. ⇒ The defence takes it off his feet.
+Bayrak havada, ofsayt! ⇒ Flag's up, offside!
+Yan hakem ofsayt diyor. ⇒ The linesman says offside.
+Faul! Hakem düdüğü çaldı. ⇒ Foul! The referee blows his whistle.
+Sert müdahale, hakem oyunu durdurdu. ⇒ Heavy challenge, the referee stops play.
+Kontrol kötü, top ayaktan açıldı! ⇒ Poor control, it gets away from him!
+İlk dokunuş tutmadı! ⇒ The first touch lets him down!
+Top boşta! Kim alacak? ⇒ Loose ball! Who'll get there first?
+Top yine bizde! ⇒ We've got it back!
+Kazanılan top, atak başlıyor! ⇒ Ball won, here comes the attack!
+Şut bloke edildi! ⇒ The shot is blocked!
+Savunma kendini topun önüne attı! ⇒ The defender throws himself in front of it!
+Hava topunu savunma kazandı. ⇒ The defence wins it in the air.
+Ne güzel paslaşma, {0} pas üst üste! ⇒ Lovely passing, {0} in a row!
+Oyuncularda yorgunluk belirtileri var. ⇒ The players are starting to tire.
+Bacaklar ağırlaşmaya başladı. ⇒ The legs are getting heavy.
+Kaleci kalesini terk ediyor, açıyı daraltıyor! ⇒ The keeper rushes out to narrow the angle!
+Zemin ıslak, top kayıyor. ⇒ The pitch is wet, the ball is skidding.
+Karlı zeminde top yavaş ilerliyor. ⇒ The ball is sluggish on the snowy pitch.
+Rüzgâr havadan topları etkiliyor. ⇒ The wind is playing with balls in the air.
+Golü bir kez daha izleyelim... ⇒ Let's see that goal again...
+Tekrarda o anı görelim... ⇒ Here's the replay...
+🔁 TEKRAR · AĞIR ÇEKİM ⇒ 🔁 REPLAY · SLOW MOTION
+Geçmek için dokun ⇒ Tap to skip
+🔊 Ses ⇒ 🔊 Sound
+🔇 Ses kapalı ⇒ 🔇 Sound off
+🔊 Ses açık ⇒ 🔊 Sound on
+🔁 Gol tekrarı oynatılıyor. Geçmek için sahaya dokun. ⇒ 🔁 Goal replay. Tap the pitch to skip.
+🔋 Yorgunluk: geç dakikalarda kondisyonun düşükse yavaşlarsın. ⇒ 🔋 Fatigue: late in the game, low fitness slows you down.
+Canlı maç ⇒ Live match
+Spiker her anı yorumlar, tribün kaleye yaklaştıkça coşar. Sesi maç ekranındaki 🔊 düğmesiyle açıp kapatırsın. ⇒ The commentator calls every moment and the crowd rises as you near goal. Toggle sound with the 🔊 button on the match screen.
+Gol atınca son saniyeler ağır çekimde tekrar oynar; geçmek için sahaya dokun. ⇒ After a goal the final seconds replay in slow motion; tap the pitch to skip.
+Bire birde kaleci kalesinden çıkar: topun altına basıp aşırt. ⇒ In a one-on-one the keeper rushes out: tap under the ball to chip him.
+🔋 Geç dakikalarda kondisyonun düşükse yavaşlarsın. Yağmurda top kayar, karda yavaşlar, rüzgâr havadan topu sürükler. ⇒ 🔋 Late in the game, low fitness slows you down. Rain makes the ball skid, snow slows it, wind carries lofted balls.
