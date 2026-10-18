@@ -97,6 +97,9 @@ jobs:
         run: |
           set -o pipefail
           exec > >(tee $RUNNER_TEMP/tf.log) 2>&1
+          # telefondan yapıştırırken gelen boşlukları/satır sonlarını temizle
+          TEAM=$(printf '%s' "$TEAM" | LC_ALL=C tr -cd 'A-Za-z0-9'); KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9'); ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
+          P8=$(printf '%s\n' "$P8" | tr -d '\r' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | grep -v '^$')
           echo "Kontrol: TEAM=${#TEAM} karakter, KEY_ID=${#KID} karakter, ISSUER=${#ISS} karakter, P8 satır=$(printf '%s\n' "$P8" | wc -l), ilk satır: $(printf '%s\n' "$P8" | head -1)"
           mkdir -p ~/.appstoreconnect/private_keys
           KP=~/.appstoreconnect/private_keys/AuthKey_$KID.p8
@@ -123,6 +126,7 @@ jobs:
           TEAM: ${{ secrets.IOS_TEAM_ID }}
         run: |
           f=$RUNNER_TEMP/tf.log; [ -f "$f" ] || exit 0
+          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-'); KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
           sed -i '' -e "s/$ISS/[ISSUER]/g" -e "s/$KID/[KEYID]/g" -e '/PRIVATE KEY/d' "$f" || true
           cp "$f" testflight-log.txt
           gh release view ci-logs >/dev/null 2>&1 || gh release create ci-logs --prerelease --title "CI günlükleri" --notes "Derleme günlükleri"
