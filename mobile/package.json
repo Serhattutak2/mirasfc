@@ -1,6 +1,6 @@
 {
   "name": "miras-fc-mobile",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "private": true,
   "description": "Miras FC iOS/Android sarmalayıcı (Capacitor)",
   "scripts": {
