@@ -1,0 +1,26 @@
+Topa doğru anda dokun! ⇒ Tap the ball at the right moment!
+Topun neresine vuracaksın? Yuvarlanan topa dokun: üst = alçak, alt = havalı, yan = falso. ⇒ Where will you strike it? Tap the rolling ball: top = low, bottom = lofted, side = curl.
+Kafayı tam vuramadın! ⇒ You didn't get a clean header!
+Topu ıskaladın, vuruş bozuldu! ⇒ You scuffed it!
+Tam zamanında! ⇒ Perfect timing!
+Geç kaldın, güç kaçtı ⇒ Mistimed, power lost
+Tam zamanında! Falsolu! ⇒ Perfect timing! With curl!
+Geç kaldın, güç kaçtı Falsolu! ⇒ Mistimed, power lost. With curl!
+ÜST: ALÇAK VE SERT ⇒ TOP: LOW AND HARD
+ALT: HAVALI · YAN: FALSO ⇒ BOTTOM: LOFTED · SIDE: CURL
+DOKUN: KAFA! ⇒ TAP: HEADER!
+Rakip pas atmak üzere! Oyuncunu pas yoluna SÜRÜKLE ya da yola dokun: oraya koşar. ⇒ The opponent is about to pass! DRAG your player into the passing lane or tap the lane: he runs there.
+Bir pas daha geliyor, yolu kes! ⇒ Another pass is coming, cut it out!
+Dokundun ama top sekti… ⇒ You got a touch but it bounced on…
+PASI KESTİN! ⇒ INTERCEPTED!
+Araya girip topu kaptın ⇒ You stepped in and won the ball
+Rakip pas atacak. Oyuncunu pas yoluna SÜRÜKLE ya da yola dokun; yetişirsen keser. ⇒ The opponent will pass. DRAG your player into the lane or tap it; reach it and you cut it out.
+👆 Parmağını sahaya koy, sapan gibi GERİ çek ve bırak: yön + güç. Sonra topun neresine vuracağını seç. ⇒ 👆 Put your finger on the pitch, pull BACK like a slingshot and release: direction + power. Then choose where to strike the ball.
+🎯 Kafa: geri çek ve bırak ya da köşe seç ⇒ 🎯 Header: pull back and release, or pick a corner
+🎯 Geri çekip bırak ya da köşe seç ⇒ 🎯 Pull back and release, or pick a corner
+⏸ SIRA SENDE ⇒ ⏸ YOUR MOVE
+Top sende, oyun durdu. Parmağını koy, GERİ çek ve bırak: ok yönü ve uzunluğu vuruşu gösterir. Sonra yuvarlanan topun neresine vuracağını seç. ⇒ Your ball, play is paused. Put your finger down, pull BACK and release: the arrow's direction and length set the kick. Then choose where to strike the rolling ball.
+Penaltı: geri çekip bırak (uzunluk = güç) ya da köşe seç; sonra topa dokun. Topun altına vurursan üstten gidebilir. ⇒ Penalty: pull back and release (length = power) or pick a corner, then tap the ball. Strike it underneath and it may fly over.
+Serbest vuruş: geri çekip bırak, sonra topun alt-yanına vur: top barajı aşıp falsoyla kaleye insin. Rüzgârı hesaba kat. ⇒ Free kick: pull back and release, then strike the lower side of the ball so it clears the wall and curls in. Mind the wind.
+RÜZGÂR ⇒ WIND
+GÜÇ {0} ⇒ POWER {0}

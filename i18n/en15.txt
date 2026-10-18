@@ -1,0 +1,59 @@
+Serbest vuruş: HAVADAN açıkken yumuşak ve kavisli kaydır; top barajı aşıp kaleye insin. Ya da orta aç, kısa oyna. ⇒ Free kick: with LOFTED on, swipe soft and curved so the ball clears the wall and dips into the goal. Or cross it, or play it short.
+Orta geliyor! Top başına yaklaşınca zaman yavaşlar: o anda kafayı kaleye doğru KAYDIR ya da köşe seç. ⇒ Cross incoming! Time slows as the ball reaches your head: SWIPE your header toward goal or pick a corner.
+Top sende, oyun durdu. Parmağını KAYDIR: yön, güç ve kavis senin elinde. Ya da bir arkadaşına / kaleye dokun, oklarla topu sür. Riski sen hesapla. ⇒ You have the ball and play is paused. SWIPE: direction, power and curl are in your hands. Or tap a teammate / the goal, or use the arrows to dribble. You judge the risk.
+Penaltı: kaleye doğru kaydır (uzunluk = güç; çok sert vurursan üstten gider) ya da köşe seç. Kaleci bir tarafa atlayacak. ⇒ Penalty: swipe toward goal (length = power; hit it too hard and it flies over) or pick a corner. The keeper will dive one way.
+Barajın üstünden falso ⇒ Curl it over the wall
+Orta aç: {0} ⇒ Cross: {0}
+Kısa pas: {0} ⇒ Short pass: {0}
+Köşe seç ya da kaleye kaydır ⇒ Pick a corner or swipe at goal
+{0} Topla sür ⇒ {0} Dribble
+Kalecinin üstünden ⇒ Over the keeper
+Köşeni seç, kaleye dokun ya da kaleye doğru KAYDIR. ⇒ Pick your corner, tap the goal or SWIPE toward it.
+Çok sert vurdun! ⇒ You hit it too hard!
+Falsolu! ⇒ With curl!
+ŞİMDİ! Kafayı kaleye doğru KAYDIR ya da köşe seç. ⇒ NOW! SWIPE your header at goal or pick a corner.
+KAFAYI KAÇIRDIN ⇒ MISSED THE HEADER
+Top başının üzerinden geçti ⇒ The ball sailed over your head
+Falsoyla köşeye! ⇒ Curled into the corner!
+Füze gibi! ⇒ Like a rocket!
+Doksana! ⇒ Top bins!
+Direkten içeri! ⇒ In off the post!
+Kaleci çeldi, dönen top sende! ⇒ The keeper parried it, the rebound is yours!
+Direkten döndü, top yine sende! ⇒ Off the post, and it's back at your feet!
+Top yine sende. ⇒ The ball is yours again.
+{0} topu sana verdi. Sıra sende! ⇒ {0} gave you the ball. Your move!
+KALECİ TOPU ALDI ⇒ KEEPER COLLECTS
+{0} şutunu tuttu ⇒ The keeper held {0}'s shot
+{0} bitirdi ⇒ {0} finished it
+Top üst direkten döndü ⇒ The ball came back off the crossbar
+Top auta çıktı ⇒ The ball went out
+TAÇ ⇒ THROW-IN
+Top taça çıktı ⇒ The ball went out for a throw-in
+KORNER ⇒ CORNER
+Kaleci son anda kornere çeldi ⇒ The keeper tipped it behind at the last moment
+{0} vücuduyla engelledi ⇒ {0} blocked it with his body
+Top sahipsiz kaldı ⇒ The ball ran loose
+{0} şutunu çekiyor! ⇒ {0} is shooting!
+{0} topu sana çeviriyor… ⇒ {0} is playing it back to you…
+{0} kafayı vuruyor! ⇒ {0} goes for the header!
+{0} müdahale etti ⇒ {0} made the tackle
+Orta geliyor… top başına yaklaşınca zaman yavaşlayacak! ⇒ Cross coming in… time will slow as the ball reaches your head!
+KAFA DÜELLOSU ⇒ AERIAL DUEL LOST
+{0} senden önce yükseldi ⇒ {0} rose above you
+Topa yetişemedin ⇒ You couldn't reach the ball
+AĞIR ÇEKİM — ŞİMDİ KAYDIR! ⇒ SLOW-MO — SWIPE NOW!
+👆 Kaydır: yön + güç + kavis · Dokun: yardımlı oyna ⇒ 👆 Swipe: direction + power + curl · Tap: assisted play
+🎯 Kafayı kaleye doğru kaydır ⇒ 🎯 Swipe your header toward goal
+🎯 Kaleye doğru kaydır ya da köşe seç ⇒ 🎯 Swipe toward goal or pick a corner
+⬆ Havadan: AÇIK ⇒ ⬆ Lofted: ON
+⬆ Havadan: kapalı ⇒ ⬆ Lofted: off
+KALEYE KAYDIR YA DA DOKUN ⇒ SWIPE OR TAP THE GOAL
+FALSO ↷ ⇒ CURL ↷
+FALSO ↶ ⇒ CURL ↶
+Kafa! ⇒ Header!
+Vurdun! ⇒ Struck!
+Şut! ⇒ Shot!
+{0} kanattan ortaya çeviriyor! ⇒ {0} whips it in from the wing!
+Orta ⇒ Centre
+Sağ köşe ⇒ Right corner
+Nasıl oynanır (New Star Soccer gibi): top sendeyken oyun durur. Parmağını koy, sapan gibi GERİ çek ve bırak: ok yönü ve uzunluğu vuruşu belirler. Sonra yuvarlanan topun neresine vuracağına dokun: üst = alçak ve sert, alt = havalı, yan = falso; zamanlama gücü belirler. Top gerçek fizikle uçar; rakipler yolu keser, kaleci uzanır. İstersen seçeneklere dokun; riski sen tartarsın. Kafada top başına gelince zaman yavaşlar. Savunmada oyuncunu pas yoluna sürükle; pası kesersen orta saha pasına, oradan çalım koşusuna (sağa/sola dokun) ve hücuma geçersin. Rakip güçlüyse kaleci daha hızlı, savunma daha sıkı. ⇒ How to play (like New Star Soccer): play pauses when you have the ball. Put your finger down, pull BACK like a slingshot and release: the arrow sets direction and power. Then tap where to strike the rolling ball: top = low and hard, bottom = lofted, side = curl; timing sets the power. The ball flies with real physics; opponents cut out passes, the keeper dives. You can also tap the options; you weigh the risk. On headers, time slows as the ball arrives. In defence, drag your player into the passing lane; win it and you move on to a midfield pass, then a dribbling run (tap left/right) and the attack. Stronger opponents mean a quicker keeper and a tighter defence.

@@ -1,0 +1,59 @@
+{0} maç {1} gol ⇒ {0} apps {1} goals
+{0} yükseltildi ⇒ {0} promoted
+{0} puan daha lazım ⇒ {0} more points needed
+{0} teknik direktörlüğünü kendin üstlen? ⇒ Take over as {0} manager yourself?
+Kalıcı izler: {0} ⇒ Lasting scars: {0}
+Kalıcı izler ⇒ Lasting scars
+{0} · {1} yaş: {2} ⇒ {0} · age {1}: {2}
+imza parası {0} ⇒ signing fee {0}
+Kötü bir haber: {0} trafik kazası geçirdi ve hayatını kaybetti. ⇒ Terrible news: {0} died in a car accident.
+{0} ile evlendin. Görkemli düğün {1} tuttu. ⇒ You married {0}. The lavish wedding cost {1}.
+{0} ile evlendin. Sade nikâh {1} tuttu. ⇒ You married {0}. The simple ceremony cost {1}.
+Görkemli düğün ⇒ Lavish wedding
+{0} maç, {1} gol, {2} kupa ⇒ {0} apps, {1} goals, {2} trophies
+{0} sezon T.D. ⇒ {0} seasons as manager
+{0} sahibi ⇒ owner of {0}
+Avukat ve mali müşavir işe alım ⇒ Hiring a lawyer and accountant
+Dünya Kupası ⇒ World Cup
+Avrupa Şampiyonası ⇒ European Championship
+{0} Dünya Kupası ⇒ {0} World Cup
+{0} Avrupa Şampiyonası ⇒ {0} European Championship
+yok ⇒ none
+Top bizde ⇒ Our ball
+Top rakipte ⇒ Their ball
+Kaleci yakaladı ⇒ Keeper holds it
+Kaleci çeldi ⇒ Keeper parries it
+Top dışarıda ⇒ Off target
+Topu kaptın! ⇒ Ball won!
+kiralık (ana kulüp: {0}) ⇒ on loan (parent club: {0})
+yıllık kira {0} ⇒ yearly rent {0}
+bakım {0}/yıl ⇒ upkeep {0}/yr
+Sakatsın ({0} hafta). ⇒ You're injured ({0} weeks).
+{0} – {1}: maç başladı. ⇒ {0} – {1}: kick-off.
+geçen sezon {0}. ⇒ last season #{0}
+{0} haftadır görmedin ⇒ not seen for {0} weeks
+{0} haftadır ilgilenmedin ⇒ neglected for {0} weeks
+Bütçe {0} ⇒ Budget {0}
+Satışları listeye koyabilirsin. ⇒ You can still list players for sale.
+puanın {0} ⇒ rating {0}
+{0} gol ⇒ {0} goals
+1 gol ⇒ 1 goal
+Grup {0}. maç: {1} ⇒ Group game {0}: {1}
+{0} Kupası ⇒ {0} Cup
+Lisans: {0} ⇒ Licence: {0}
+Lisans ⇒ Licence
+Kurye ⇒ Courier
+Garson ⇒ Waiter
+Spor mağazası satış ⇒ Sports shop sales
+Altyapı antrenörü ⇒ Academy coach
+TV maç yorumcusu ⇒ TV pundit
+Kulüp danışmanı ⇒ Club consultant
+Ofis işi ⇒ Office job
+Yeni işin: {0}. ⇒ New job: {0}.
+{0} işinden ayrıldın. ⇒ You quit your job as {0}.
+Yerel menajer ⇒ Local agent
+Üst düzey menajer ⇒ Top agent
+{0} yanında. ⇒ {0} is with you.
+{0} satıldı ({1}). Yeni güç {2}. ⇒ {0} sold ({1}). New strength {2}.
+Kulüp borç içindeydi; en iyi oyuncular satıldı. ⇒ The club was in debt; the best players were sold.
+tanışma: {0} ⇒ met: {0}

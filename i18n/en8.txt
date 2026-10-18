@@ -1,0 +1,410 @@
+Akşam yemeği (⚡8) ⇒ Dinner (⚡8)
+Birlikte tatile çık ({7}) ⇒ Go on holiday together ({7})
+Dışarı çık, yeni insanlarla tanış (⚡10) ⇒ Go out, meet new people (⚡10)
+Şu an bir ilişkin yok. ⇒ You're not in a relationship right now.
+Oğlun ⇒ Your son
+Kızın ⇒ Your daughter
+(gerçek: ⇒ (actual:
+· futbol okulunda ⇒ · at football school
+· {0} haftadır ilgilenmedin ⇒ · neglected for {0} weeks
+🔍 Gözlemci (🪙20) ⇒ 🔍 Scout (🪙20)
+Futbol okuluna yazdır ⇒ Enrol in football school
+Her şeyi ona devret ⇒ Hand everything over
+{1} · {2} yaş · futbol yeteneği {3}{4}{5} ⇒ {1} · age {2} · football talent {3}{4}{5}
+💬 Konuş ⇒ 💬 Talk
+Adını değiştir ⇒ Rename
+Çocuklarınla vakit geçir (⚡8) ⇒ Spend time with your kids (⚡8)
+Partner ve çocuklar ⇒ Partner and children
+(kulüp ödüyor) ⇒ (club pays)
+· yıllık kira {0}{1} ⇒ · yearly rent {0}{1}
+· bakım {0}/yıl ⇒ · upkeep {0}/yr
+Satın al ⇒ Buy
+Ücretsiz ⇒ Free
+Evin ⇒ Your home
+Kulüp aracı da var ⇒ Club car included
+Aracın ⇒ Your car
+Tutumlu ⇒ Frugal
+Normal ⇒ Normal
+Lüks ⇒ Luxury
+Yaşam tarzı ⇒ Lifestyle
+Yıllık giderlerin ⇒ Your yearly expenses
+Toplam ⇒ Total
+−{2}/yıl ⇒ −{2}/yr
+Haftalık {3}. Giderler maaşından her hafta düşer. ⇒ {3} per week. Expenses come out of your wages every week.
+Çalışıyor · bırak ⇒ Employed · let go
+Tut ⇒ Hire
+{1} · yılda {2} ⇒ {1} · {2} a year
+Kişisel ekibin ⇒ Your personal staff
+{1}/vardiya ⇒ {1}/shift
+İşe git (⚡{2}) ⇒ Go to work (⚡{2})
+İşten ayrıl ⇒ Quit job
+Şu an bir işin yok. ⇒ You don't have a job right now.
+Çalışıyorsun ⇒ Working here
+Başvur ⇒ Apply
+Vardiya başı {1} · ⚡{2} ⇒ {1} per shift · ⚡{2}
+İş ilanları ⇒ Job listings
+Profesyonel futbolcuyken başka işte çalışamazsın; şirketlerin ve yatırımların var. ⇒ You can't take another job while you're a pro footballer; you have your businesses and investments.
+Şu an uygun ilan yok. ⇒ No suitable listings right now.
+İşin ⇒ Your job
+Eğitim ⇒ Education
+Eğitim seviyesi ⇒ Education level
+Eğitim pazarlıkta, kurs ücretlerinde ve iş seçeneklerinde avantaj sağlar. “Kurs dersine çalış” eylemi (lisans kursunda değilken) eğitimi artırır. ⇒ Education helps in negotiations, course fees and job options. The “Study for course” action (when not on a licence course) raises your education.
+Geçmiş ⇒ History
+Mutluluk ⇒ Happiness
+Sağlık ⇒ Health
+Hırs ⇒ Ambition
+Sadakat ⇒ Loyalty
+Para ⇒ Money
+İç dünyan ⇒ Your inner world
+Değerlerin kararlarınla şekillenir ve karşına çıkan olayları değiştirir. ⇒ Your values are shaped by your choices and change the events you face.
+Tatil {0}; paran yetmiyor ⇒ The holiday costs {0}; you can't afford it
+Tatil için en az 15 enerji gerekli ⇒ A holiday needs at least 15 energy
+Tatil ⇒ Holiday
+{0} ile tatile çıktınız. ⇒ You went on holiday with {0}.
+İyi tatiller! ⇒ Enjoy the holiday!
+{0} “evet” dedi! Nasıl bir düğün? ⇒ {0} said “yes”! What kind of wedding?
+{0} henüz hazır olmadığını söyledi. ⇒ {0} said they're not ready yet.
+Henüz değil... ⇒ Not yet...
+{0} futbol okulu kaydı ⇒ {0}'s football school enrolment
+{0} futbol okuluna başladı. ⇒ {0} started football school.
+{0} futbol okulunda ⇒ {0} is at football school
+Özet ⇒ Overview
+Portföy ⇒ Portfolio
+Emlak ⇒ Property
+Şirketler ⇒ Businesses
+Sponsor ⇒ Sponsors
+Kulüp al ⇒ Buy a club
+Ekonomik kriz sürüyor. ⇒ An economic crisis is under way.
+Borçtasın: %12 yıllık faiz işliyor. ⇒ You're in debt: 12% yearly interest is accruing.
+Net servet ⇒ Net worth
+Nakit ⇒ Cash
+Bu yıl şimdiye kadar ⇒ This year so far
+Brüt gelir ⇒ Gross income
+Vergi ⇒ Tax
+Giderler ⇒ Expenses
+…kira ⇒ …rent
+Henüz hareket yok. ⇒ No transactions yet.
+Hesap hareketleri ⇒ Transactions
+Her harcama ve gelir anında nakdinden düşer ya da eklenir. Servet; nakit, yatırım, mülk, şirket ve evinin toplamıdır. ⇒ Every expense and income is taken from or added to your cash immediately. Net worth is cash plus investments, property, businesses and your home.
+Gider kalemleri (yıllık) ⇒ Expense items (yearly)
+Evi, aracı ve ekibi değiştir ⇒ Change home, car and staff
+Gelir ⇒ Income
+Gider ⇒ Expense
+Yatırım ⇒ Investment
+Net ⇒ Net
+İlk yıl sonunda gelir tablon burada görünecek. ⇒ Your income statement will appear here after the first year.
+Geçmiş yıllar ⇒ Past years
+Veraset vergisi ({1}): %{2}. ⇒ Inheritance tax ({1}): {2}%.
+Bu yılki araştırma bonusu: +%{0} getiri ⇒ This year's research bonus: +{0}% return
+{1} · beklenen getiri ~%{2} ⇒ {1} · expected return ~{2}%
++%10 nakit ⇒ +10% cash
+Bozdur ⇒ Cash out
+Portföy · nakit {0} ⇒ Portfolio · cash {0}
+Alış {1} · kira getirisi %{2} ({3}/yıl) ⇒ Bought {1} · rental yield {2}% ({3}/yr)
+Sat ⇒ Sell
+Henüz mülkün yok. ⇒ You don't own any property yet.
+Kira %{1} · değer artışı ~%{2} ⇒ Rent {1}% · appreciation ~{2}%
+Mülklerin ⇒ Your properties
+Satılık · nakit {1} ⇒ For sale · cash {1}
+En üst seviye ⇒ Top level
+Büyüt · ⇒ Expand ·
+{1} · seviye {2}/5 · geçen yıl {3}{4} ⇒ {1} · level {2}/5 · last year {3}{4}
+Reklam · {11} ⇒ Marketing · {11}
+Henüz şirketin yok. ⇒ You don't own a business yet.
+çok yüksek ⇒ very high
+yüksek ⇒ high
+düşük ⇒ low
+Kur ⇒ Found
+Getiri ~%{1} · risk {2} ⇒ Return ~{1}% · risk {2}
+Şirketlerin · nakit {0} ⇒ Your businesses · cash {0}
+Enerji sekmesindeki “Şirket toplantıları” şirketlerinin yıllık performansını artırır. ⇒ “Business meetings” in the Energy tab boost your businesses' yearly performance.
+Şirket kur ⇒ Start a business
+{0} · {1} yıl kaldı ⇒ {0} · {1} yrs left
+{2}/yıl ⇒ {2}/yr
+Aktif sponsorluğun yok. ⇒ You have no active sponsorships.
+{1} yıl ⇒ {1} yrs
+İmzala ⇒ Sign
+Ünün arttıkça markalar seni arayacak (ün {0}; ilk teklif için ~18). ⇒ Brands will call as your fame grows (fame {0}; ~18 for a first offer).
+Sponsorlukların ⇒ Your sponsorships
+Enerji sekmesindeki “Reklam çekimi” sponsorlardan ek gelir getirir. ⇒ “Commercial shoot” in the Energy tab earns extra sponsor income.
+Teklifler ⇒ Offers
+{2} · {3} · güç {4} ⇒ {2} · {3} · strength {4}
+Bütçene uygun kulüp yok. En ucuz kulüp yaklaşık {0}. ⇒ No club fits your budget. The cheapest is about {0}.
+Satılık kulüpler · nakit {0} ⇒ Clubs for sale · cash {0}
+Kulübü aldıktan sonra Kulübüm sekmesinden kadro, teknik direktör, stadyum, altyapı ve transferi yönetirsin. Emekliysen takımı kendin de çalıştırabilirsin. ⇒ After buying a club you manage the squad, manager, stadium, academy and transfers from the My Club tab. If you're retired you can coach the team yourself.
+· son maçlar {0} ⇒ · recent games {0}
+{1} (sen) ⇒ {1} (you)
+şu an · {2}. sezon ⇒ now · season {2}
+Antrenörlük kariyerin ⇒ Your coaching career
+İtibar ⇒ Reputation
+Dünya sıralaması: ⇒ World ranking:
+· Lisans {3}{4} ⇒ · Licence {3}{4}
+İtibar; hedefleri tutturmak, kupa ve terfiyle yükselir, küme düşme ve kovulmayla düşer. Büyük kulüpler yalnızca yüksek itibarlı hocalara bakar. ⇒ Reputation rises with targets met, trophies and promotion, and falls with relegation and sackings. Big clubs only look at highly rated managers.
+Şu an seni yakından izleyen kulüp yok. İyi sonuçlar ve itibar ilgiyi artırır. ⇒ No club is watching you closely right now. Good results and reputation raise interest.
+Piyasa · seni izleyen kulüpler ⇒ Market · clubs watching you
+İlgi 75'i geçen kulüpler teklif yapabilir. İlgi her ay güncellenir; kötü gidişte söner. ⇒ Clubs with interest above 75 may make an offer. Interest updates monthly and fades after bad runs.
+Antrenör menajerin ⇒ Your coaching agent
+Menajer ilgiyi hızlandırır, daha yüksek maaş getirir ve maaşından pay alır. ⇒ An agent speeds up interest, gets you a higher salary and takes a cut of it.
+Lisansına uygun boş koltuk yok. ⇒ No vacancies match your licence.
+Boş koltuklar · {0} ⇒ Vacancies · {0}
+Yılda en fazla 3 başvuru. Kabul şansı itibarına ve menajerine bağlı. Kalan hakkın: {2}. ⇒ Up to 3 applications per year. Your chance depends on reputation and agent. Remaining: {2}.
+sakat {0} hf ⇒ injured {0} wk
+· {0} maç {1} gol ⇒ · {0} apps {1} goals
+satış listesinde ⇒ transfer-listed
+sözleşme bitiyor ⇒ contract expiring
+{7} yaş · pot {8} · {9}/yıl · {10} yıl{11}{12}{13}{14} ⇒ age {7} · pot {8} · {9}/yr · {10} yrs{11}{12}{13}{14}
+★ gerçek oyuncu · altın satır: ilk 11 · ⨯ kadro dışı · € sat · ✎ sözleşmesini yenile. Maaş toplamı {1}/yıl. ⇒ ★ real player · gold row: starting XI · ⨯ left out · € sell · ✎ renew contract. Wage bill {1}/yr.
+{1} · {2} yaş · şu an {3} · potansiyel {4}{5} ⇒ {1} · age {2} · now {3} · potential {4}{5}
+A takıma al ⇒ Promote to first team
+Bu yılın altyapı adayları A takıma alındı ya da henüz yok. Her yıl yeni adaylar gelir. ⇒ This year's academy prospects have been promoted or haven't arrived yet. New prospects come every year.
+🟢 Transfer dönemi açık ⇒ 🟢 Transfer window open
+🔴 Transfer dönemi kapalı (1-4. ve 22-25. haftalar). Satışları listeye koyabilirsin. ⇒ 🔴 Transfer window closed (open weeks 1-4 and 22-25). You can still list players for sale.
+{2} · {3} yaş · reyting {4} · {5} · maaş {6} ⇒ {2} · age {3} · rating {4} · {5} · wage {6}
+Transfer et ⇒ Sign
+Pazarda uygun oyuncu yok. ⇒ No suitable players on the market.
+{0} · Bütçe {1} ⇒ {0} · Budget {1}
+Bir kulübün yok. ⇒ You don't own a club.
+Kulüp bulunamadı. ⇒ Club not found.
+Kulübün · {2} yıldır sahibisin ⇒ Your club · owned for {2} yrs
+{4} · {5} · güç {6}{7} · T.D.: {8} ⇒ {4} · {5} · strength {6}{7} · Manager: {8}
+Kulüp kasası ⇒ Club funds
+Geçen yıl ⇒ Last year
+Değer ⇒ Value
+Taraftar ⇒ Fans
+Kasa ⇒ Funds
+Kadro ⇒ Squad
+Transfer ⇒ Transfers
+Stadyum ⇒ Stadium
+Takımı sen çalıştırıyorsun; kadro, transfer ve altyapı T. Direktör sekmesinde. ⇒ You're coaching the team; squad, transfers and academy are in the Manager tab.
+T. Direktör sekmesine git ⇒ Go to the Manager tab
+Nakdinin %{1}'ini aktar ⇒ Transfer {1}% of your cash
+Kasadan %25 çek ⇒ Withdraw 25% of funds
+Kasaya aktardığın para transfer, altyapı ve stadyum için kullanılır. ⇒ Money you put into the club funds transfers, the academy and the stadium.
+Sıra ⇒ Pos
+TV+ödül ⇒ TV+prizes
+Bilet ⇒ Tickets
+Maaş ⇒ Wages
+İlk sezon sonunda bilanço burada. ⇒ The balance sheet appears here after the first season.
+Yıllık bilanço ⇒ Yearly balance sheet
+Oyuncu maaşları {1}/yıl. ⇒ Player wages {1}/yr.
+Kulübü sat ({0}) ⇒ Sell the club ({0})
+Diziliş ⇒ Formation
+Kadro · {1} oyuncu ⇒ Squad · {1} players
+Takımı sen çalıştırıyorsun. ⇒ You're coaching the team.
+kalite {1} · {2}/yıl ⇒ quality {1} · {2}/yr
+Teknik direktörün yok; takım zorlanır. ⇒ You have no manager; the team will struggle.
+Takımı kendim çalıştırayım ⇒ I'll coach the team myself
+Futbolu bıraktığında takımı kendin çalıştırabilirsin. ⇒ You can coach the team yourself once you retire from playing.
+{1} yaş · {2} · kalite {3} ⇒ age {1} · {2} · quality {3}
+{4}/yıl ⇒ {4}/yr
+Göreve getir ⇒ Appoint
+Adaylar ⇒ Candidates
+Kaliteli teknik direktör takım gücünü artırır. Mevcut hocayı gönderirsen yarım yıllık tazminat ödenir. ⇒ A good manager makes the team stronger. Sacking the current one costs half a year's compensation.
+Transfer pazarı ⇒ Transfer market
+Altyapıyı geliştir · ⇒ Upgrade academy ·
+Altyapı · seviye {0}/5 ⇒ Academy · level {0}/5
+Seviye arttıkça her yıl gelen gençlerin potansiyeli yükselir. ⇒ Higher levels raise the potential of each year's youngsters.
+Bu yılın adayları ⇒ This year's prospects
+Stadyumu büyüt · ⇒ Expand stadium ·
+Düşük ⇒ Low
+Yüksek ⇒ High
+Stadyum · {0} ⇒ Stadium · {0}
+Bilet ve sponsor gelirini artırır. ⇒ Raises ticket and sponsor income.
+Bilet fiyatı ⇒ Ticket price
+{0} · {1} yıl ⇒ {0} · {1} yrs
+· taraftar tepki gösterir ⇒ · fans will react
+{1} yıl{2} ⇒ {1} yrs{2}
+{3}/yıl ⇒ {3}/yr
+Forma sponsoru ⇒ Shirt sponsor
+· çocukluk kulübün ⇒ · your childhood club
+{4} · {5} · güç {6}{7} ⇒ {4} · {5} · strength {6}{7}
+{8}/yıl ⇒ {8}/yr
+Süre ⇒ Length
+{9} yıl ⇒ {9} yrs
+Beklenti ⇒ Expectation
+~{11}. sıra ⇒ ~{11}th place
+Kovulursa tazminat ⇒ Severance if sacked
+kalan maaşın %{13}'i ⇒ {13}% of remaining salary
+İş teklifleri ⇒ Job offers
+İş ara ⇒ Look for a job
+Lisansın, ünün ve antrenörlük geçmişin hangi kulüplerin seni arayacağını belirler. ⇒ Your licence, fame and coaching record decide which clubs will call you.
+Teklifleri yenile ⇒ Refresh offers
+Teknik direktörlük teklifleri futbolu bıraktıktan sonra gelir. Lisansı şimdiden alabilirsin. ⇒ Manager offers come after you retire from playing. You can get your licence now.
+Teknik direktörlük geçmişin ⇒ Your managerial history
+Taktik ⇒ Tactics
+Ekip ⇒ Staff
+· kendi kulübün ⇒ · your own club
+{0}/{1} galibiyet ⇒ {0}/{1} wins
+henüz maç yok ⇒ no games yet
+puan daha lazım ⇒ more points needed
+hedef tuttu ⇒ target met
+Ültimatom: {0} maçta {1} ⇒ Ultimatum: {1} in {0} games
+Rakipler oyununu çözmeye başladı: taktiği değiştir. ⇒ Opponents are figuring out your game: change tactics.
+Teknik direktör · {2}. sezon{3} ⇒ Manager · season {2}{3}
+{5} · güç {6} · {7} · {8} · {9} ⇒ {5} · strength {6} · {7} · {8} · {9}
+Yönetim güveni ⇒ Board confidence
+Yorgunluk ⇒ Fatigue
+Sezon hedefleri ⇒ Season objectives
+Hedefler sezon içinde değişebilir: iyi gidersen yönetim çıtayı yükseltir, transferle kadro güçlenirse beklenti artar. ⇒ Objectives can change mid-season: do well and the board raises the bar; strengthen the squad and expectations go up.
+Kulüp sahibisin ⇒ You own the club
+İstifa et ⇒ Resign
+Başlangıç ⇒ Start
+Kovulma tazminatı ⇒ Severance
+Yönetimden ek bütçe iste ⇒ Ask the board for more budget
+Kulüp kasası (bu sezon) ⇒ Club funds (this season)
+Maç/kupa/bilet geliri ⇒ Match/cup/ticket income
+Ekip maaşları (yıllık) ⇒ Staff wages (yearly)
+Oyuncu maaşları (yıllık) ⇒ Player wages (yearly)
+Gelirlerin yarısı transfer bütçesine eklenir. Sezon sonunda sıralama primi gelir. ⇒ Half of income goes to the transfer budget. A league-position bonus arrives at season's end.
+Bu kulüpteki sezonların ⇒ Your seasons at this club
+Kadro · {0} oyuncu · {1} ⇒ Squad · {0} players · {1}
+Az ⇒ Low
+Çok ⇒ High
+Hafif ⇒ Light
+Ağır ⇒ Heavy
+Diziliş ilk 11'i belirler; mevkisinde yeterli oyuncu yoksa başka mevkiden oynatılan oyuncu verimsiz olur. ⇒ The formation sets the starting XI; players used out of position perform worse.
+Oyun anlayışı ⇒ Playing style
+Antrenman yükü ⇒ Training load
+Ağır antrenman gençleri geliştirir ama sakatlık getirir; hafif antrenman yorgunluğu atar. ⇒ Heavy training develops youngsters but causes injuries; light training clears fatigue.
+En iyi ⇒ Best
+Geliştir ⇒ Upgrade
+İşe al ⇒ Hire
+{1} · seviye {2}/3 ⇒ {1} · level {2}/3
+Teknik ekip · bütçe {0} ⇒ Backroom staff · budget {0}
+Ekip maaşları kulüp bütçesinden her hafta düşer: yılda {1}. İşe alırken bir defalık imza ücreti ödenir. ⇒ Staff wages come out of the club budget every week: {1} a year. Hiring costs a one-off signing fee.
+Listede {0} oyuncu var. ⇒ {0} players are listed.
+Satış ⇒ Sales
+Kadro sekmesinde oyuncunun yanındaki € ile satarsın. Dönem kapalıyken oyuncu satış listesine girer ve dönem açılınca satılır.{1} ⇒ Sell with the € next to a player in the Squad tab. When the window is closed the player is listed and sold once it opens.{1}
+Kadroya git ⇒ Go to squad
+Altyapı adayları ⇒ Academy prospects
+Altyapı direktörü (Ekip) adayların kalitesini artırır. ⇒ An academy director (Staff) improves prospect quality.
+{0}/{1} · Hafta {2}/{3} ⇒ {0}/{1} · Week {2}/{3}
+Bu hafta maç yok. ⇒ No match this week.
+4 hafta ⇒ 4 weeks
+Sezonu bitir ⇒ Finish season
+Maçı yönet ⇒ Manage the match
+Hedefler · güven {0} ⇒ Objectives · confidence {0}
+Tüm detaylar ⇒ All details
+Henüz gol yok. ⇒ No goals yet.
+Devre arası ⇒ Half time
+Motive et ⇒ Motivate
+Genelde işe yarar ⇒ Usually works
+Sakin kal, plana güven ⇒ Stay calm, trust the plan
+Küçük ama güvenli etki ⇒ Small but safe effect
+Sert eleştir ⇒ Criticise harshly
+Büyük etki ya da ters tepki ⇒ Big effect or backfire
+Oyuncu değişikliği yap ⇒ Make a substitution
+İkinci yarı taktiği ⇒ Second-half tactics
+İkinci yarıyı başlat ⇒ Start second half
+Kazandınız! ⇒ You won!
+Berabere. ⇒ Draw.
+Kaybettiniz. ⇒ You lost.
+İşin: ⇒ Job:
+(yıllık gelir yazılır) ⇒ (yearly income credited)
+Bir işin yok. ⇒ You have no job.
+· Lisans: ⇒ · Licence:
+Teknik direktörlük ⇒ Management
+Yılı geç ⇒ Skip year
+{1} · emeklilik ⇒ {1} · retirement
+{2} yaşındasın. Zamanını ailene, işlerine ve futbolun başka yüzlerine ayırabilirsin. ⇒ You're {2}. You can give your time to your family, your businesses and the other sides of football.
+✔ gerçekleşti (+150) ⇒ ✔ achieved (+150)
+henüz gerçekleşmedi ⇒ not yet achieved
+Çocukluk hayalin: ⇒ Your childhood dream:
+{1} yaş · futbol yeteneği {2} · bağınız {3} ⇒ age {1} · football talent {2} · bond {3}
+Devret ve devam et ⇒ Hand over and continue
+Ölmeden önce her şeyi bir çocuğuna devredip onunla devam edebilirsin. Veraset vergisi %{0}. ⇒ Before you die you can hand everything over to a child and continue as them. Inheritance tax {0}%.
+Futbolu bıraktığında ya da 35 yaşından sonra çocuğuna devredebilirsin. ⇒ You can hand over to a child once you retire or after age 35.
+Henüz çocuğun yok. Mirasçın olmazsa hikâye seninle biter. ⇒ You have no children yet. Without an heir, the story ends with you.
+Mirası devret ⇒ Pass on the legacy
+⋮ aradaki kuşaklar ⇒ ⋮ generations in between
+maç, ⇒ apps,
+sezon T.D. ⇒ seasons as manager
+şampiyonluk ⇒ titles
+{1}. kuşak · {2} ⇒ Generation {1} · {2}
+{3}{4} yaş · {5}{6}{7}{8} ⇒ {3}{4} yrs · {5}{6}{7}{8}
+Soy ağacı · {0}. kuşak ⇒ Family tree · generation {0}
+{2}. kuşak · {3} ⇒ Generation {2} · {3}
+devam ediyor ⇒ ongoing
+Miras Puanı ⇒ Legacy Points
+Futbol mirası ⇒ Football legacy
+İnsan mirası ⇒ Human legacy
+Para mirası ⇒ Financial legacy
+Miras Defteri ⇒ Legacy Book
+Metni kopyala ⇒ Copy text
+Onunla devam et ⇒ Continue as them
+Mirasçın servetin, şirketlerin, mülklerin ve kulübünle devam eder. Veraset vergisi: %{0}. ⇒ Your heir carries on with your wealth, businesses, properties and club. Inheritance tax: {0}%.
+Geride çocuk bırakmadın. Hikâye burada biter. ⇒ You left no children. The story ends here.
+Son düdük ⇒ Final whistle
+Miras kime kalacak? ⇒ Who inherits?
+Menüye dön ⇒ Back to menu
+İlk profesyonel sözleşmen ⇒ Your first pro contract
+Serbest oyuncu teklifleri ⇒ Free-agent offers
+Transfer teklifleri ⇒ Transfer offers
+Sözleşme yenileme ⇒ Contract renewal
+Kiralık teklifleri ⇒ Loan offers
+Zengin yatırımcı ⇒ Rich investor
+Çocukluk kulübün ⇒ Your childhood club
+Altyapı kulübün ⇒ Your academy club
+Kiralık ⇒ Loan
+Mevcut kulübün ⇒ Your current club
+Şu anki sözleşmen · {2} ⇒ Your current contract · {2}
+Kulüp değiştirirsen uyumun sıfıra yakın başlar. ⇒ If you change clubs your chemistry starts near zero.
+Aynı kalır ( ⇒ Stays the same (
+Kiralayan kulübün katkısı ⇒ Loan club's contribution
+Ev ⇒ Home
+Araç ⇒ Car
+Pazarlık masası ⇒ Negotiating table
+{5} · {6} · güç {7}{8} ⇒ {5} · {6} · strength {7}{8}
+{13} yıl ⇒ {13} yrs
+Oynama şansı ⇒ Playing time
+Maç primi ⇒ Match bonus
+Ev / araç ⇒ Home / car
+Tesis ⇒ Facilities
+Şu an sana resmi bir teklif yok. ⇒ You have no formal offers right now.
+Kulübümde kalıyorum ⇒ I'm staying at my club
+Yenileme teklifini reddet ⇒ Reject the renewal
+Şimdilik hiçbirini kabul etme ⇒ Don't accept any for now
+{1} teklif masada ⇒ {1} offers on the table
+Genel {2} · {3} yaş · {4}. Rol, kulübün gücü ile senin seviyen arasındaki farka göre belirlenir. Pazarlık masasında her kalemi tek tek konuşabilirsin. ⇒ Overall {2} · age {3} · {4}. Your role depends on the gap between the club's strength and your level. At the table you can discuss each item one by one.
+yanında. ⇒ is with you.
+Menajerin yok; tek başınasın. ⇒ You have no agent; you're on your own.
+Ciddi ⇒ Serious
+Gergin ⇒ Tense
+Kopma noktasında ⇒ At breaking point
+sınır ≈ {0} ⇒ limit ≈ {0}
+Teklif: {1}{2} ⇒ Offer: {1}{2}
+🔍 Gözlemci raporu: sınırları gör (🪙20) ⇒ 🔍 Scout report: see the limits (🪙20)
+Anlaşmayı imzala ⇒ Sign the deal
+📺 Reklam izle: menajerin son kez arasın ⇒ 📺 Watch an ad: your agent makes one last call
+Tekliflere dön ⇒ Back to offers
+Menajerim konuşsun ⇒ Let my agent talk
+Teklifi sun ⇒ Make the offer
+İlk teklifi kabul et ⇒ Accept the first offer
+Masadan kalk ⇒ Walk away
+Pazarlık masası · {2}. tur ⇒ Negotiating table · round {2}
+Karşında sportif direktör {5}. {6} ⇒ Across from you: sporting director {5}. {6}
+Masadaki hava ⇒ Mood at the table
+Talepler ⇒ Demands
+Kulübün sınırlarını bilmiyorsun: ne kadar isteyeceğin senin riskin. Fazla zorlarsan sabır tükenir ve kulüp masadan kalkar. Sportif direktörün sözlerini dikkatle oku. ⇒ You don't know the club's limits: how much you ask is your risk. Push too hard and patience runs out and they walk away. Read the sporting director's words carefully.
+Masada konuşulanlar ⇒ What was said
+Forma numarası ⇒ Shirt number
+Boş bir numara seç ya da birinin numarasını iste (rolün yüksekse ve ünün varsa verebilir; vermezse uyum biraz düşer). ⇒ Pick a free number or ask for someone's (they may give it if your role and fame are high; if not, chemistry drops a little).
+Milli takım kadrosuna çağrıldın ⇒ You've been called up to the national team
+{2} teknik direktörü seni {3} kadrosuna aldı. Yazın dinlenme yerine turnuvada oynayacaksın. ⇒ The {2} manager has named you in the {3} squad. Instead of resting this summer you'll play in the tournament.
+Dinlenmek istiyorum ⇒ I want to rest
+Sezon tamamlandı ⇒ Season complete
+Ort. puan ⇒ Avg. rating
+Yıllık brüt gelir {0}, vergi {1}, giderler {2}, yatırım sonucu {3}{4}. ⇒ Yearly gross income {0}, tax {1}, expenses {2}, investment result {3}{4}.
+Sezon ödülü 🪙 {0} ⇒ Season reward 🪙 {0}
+Al ⇒ Claim
+📺 2 katı ⇒ 📺 Double it
+Sezon sonu · {0}/{1} ⇒ End of season · {0}/{1}
+Artık {6} yaşındasın. ⇒ You're now {6}.
+Eleme: {0} ⇒ Knocked out: {0}
+🏆 Şampiyon! ⇒ 🏆 Champions!
+Teklif: {1} ⇒ Offer: {1}
+Sözleşmeyi imzala ⇒ Sign the contract
+Geri dön ⇒ Go back
+Teknik direktör pazarlığı · {2}. tur ⇒ Manager negotiation · round {2}
+{5} · güç {6} · beklenti ~{7}. sıra ⇒ {5} · strength {6} · expected ~{7}th
+Yönetimin sınırını bilmiyorsun; ne kadar zorlayacağın senin kararın. ⇒ You don't know the board's limit; how hard you push is your call.

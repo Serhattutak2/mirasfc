@@ -1,0 +1,15 @@
+{
+  "name": "miras-fc-mobile",
+  "version": "3.6.0",
+  "private": true,
+  "description": "Miras FC iOS/Android sarmalayıcı (Capacitor)",
+  "scripts": {
+    "www": "cd .. && python3 tools/build.py && mkdir -p mobile/www && cp index.html mobile/www/index.html",
+    "sync": "npm run www && npx cap sync ios"
+  },
+  "dependencies": {
+    "@capacitor/cli": "8.5.3",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/ios": "8.5.3"
+  }
+}

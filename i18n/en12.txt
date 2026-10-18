@@ -1,0 +1,17 @@
+Nerede oynayacaksın? ⇒ Where will you play?
+Altyapı kapısı ⇒ The academy door
+A takım antrenmanı ⇒ First-team training
+%{0} (ün {1}) ⇒ {0}% (fame {1})
+{0} ile konuştun: “{1}” ⇒ You talked with {0}: “{1}”
+İşin: {0} (yıllık gelir yazılır) ⇒ Your job: {0} (yearly income credited)
+rahat ⇒ comfortable
+Ligi ilk {0} içinde bitir ⇒ Finish in the top {0}
+Avrupa’da çeyrek final ⇒ Reach the European quarter-finals
+Avrupa’da gruptan çık ⇒ Get out of the European group
+Altyapıdan en az 1 oyuncu yükselt ⇒ Promote at least 1 academy player
+Kazandı ⇒ Won
+Elendi ⇒ Knocked out
+Basın ⇒ Press
+Milli takım kararın ⇒ National team decision
+{0} sezon T.D., {1} şampiyonluk ⇒ {0} seasons as manager, {1} titles
+Baraja takıldı ⇒ Hit the wall

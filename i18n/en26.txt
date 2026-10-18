@@ -1,0 +1,85 @@
+Miras FC’ye hoş geldin ⇒ Welcome to Miras FC
+Bu oyun bir futbolcunun doğumundan son düdüğe kadar bütün hayatı. ⇒ This game is a footballer's whole life, from birth to the final whistle.
+Kararların kariyerini, aileni, servetini ve geride bırakacağın mirası belirler. ⇒ Your decisions shape your career, your family, your fortune and the legacy you leave behind.
+Bu öğretici her şeyi adım adım anlatır. İstersen aşağıdan geçebilirsin; menüden her zaman yeniden açılır. ⇒ This tutorial explains everything step by step. You can skip it; you can always reopen it from the menu.
+1 · Karakterini oluştur ⇒ 1 · Create your character
+Ad soyad yazmak zorunlu. Doğduğun ve büyüdüğün ülkeyi, şehrini, mevkini, oyun tarzını ve ayağını seç. ⇒ A full name is required. Choose where you were born and grew up, your city, position, playing style and stronger foot.
+Ailenin durumu (yoksul, orta halli, varlıklı) hikâyeni değiştirir: yoksulluk hırs verir, varlık iyi akademilere kapı açar. ⇒ Your family's situation (poor, middle class, wealthy) changes your story: poverty breeds hunger, wealth opens academy doors.
+Çocukluk hayalini gerçekleştirirsen Miras Puanın büyük bonus kazanır. ⇒ Fulfil your childhood dream and your Legacy Score gets a big bonus.
+2 · Çocukluk ve dönüm noktaları ⇒ 2 · Childhood and turning points
+Her yıl “Bir yıl yaşa” ile ilerlersin. Hikâye ülkene ve ailene göre farklı yazılır. ⇒ You move forward a year at a time. Your story is written differently depending on your country and family.
+5, 9, 12 ve 15 yaşında büyük kararlar (dönüm noktaları) gelir. Seçenek altındaki açıklama neyin değişeceğini söyler. ⇒ At ages 5, 9, 12 and 15 come big decisions (turning points). The text under each option tells you what will change.
+Ara olaylarda verdiğin cevaplar karakterini (hırs, sadakat, aile, para) şekillendirir. ⇒ Your answers to events shape your character (ambition, loyalty, family, money).
+3 · İlk sözleşme ⇒ 3 · Your first contract
+16 yaşında kulüpler teklif yapar. Rol (as, rotasyon, yedek), maaş ve süreye bak. ⇒ At 16 clubs make offers. Look at the role (starter, rotation, sub), the wage and the length.
+Pazarlık masasında maaşı, imza parasını ve maddeleri artırabilirsin; çok zorlarsan kulüp çekilir. ⇒ At the negotiating table you can push up the wage, signing fee and clauses; push too hard and the club walks away.
+Sonra forma numaranı seçersin. ⇒ Then you choose your shirt number.
+4 · Haftalık enerji ⇒ 4 · Weekly energy
+Her hafta enerjin var. Antrenman, dinlenme, medya ve aile eylemleri enerji harcar. ⇒ Each week you have energy. Training, rest, media and family actions spend it.
+Antrenman özelliklerini geliştirir, dinlenme sakatlık riskini azaltır, takımla ek idman UYUMU artırır. ⇒ Training improves your attributes, rest lowers injury risk, and extra sessions with teammates raise CHEMISTRY.
+Haftayı bitirince maç oynanır; form, moral ve kondisyon maç notunu etkiler. ⇒ When the week ends the match is played; form, morale and fitness affect your rating.
+5 · Maç: kritik anlar ⇒ 5 · Match: key moments
+Maç kendiliğinden akar; sen sadece kritik anlarda oynarsın. ⇒ The match plays itself; you only take control at key moments.
+Hücum, oyun kurma, kontra, birebir, kafa, serbest vuruş, penaltı ve savunma anları gelir. ⇒ You get attacking, build-up, counter, one-on-one, header, free kick, penalty and defending moments.
+Maç ekranında “Oyun tarzı” (savunma / dengeli / hücum) hangi anların geleceğini ve kondisyonunu etkiler. ⇒ On the match screen, your work rate (defensive / balanced / attacking) affects which moments you get and your fitness.
+6 · Pas ve şut: oku çek ⇒ 6 · Passing and shooting: pull the arrow
+Top sende olunca oyun durur. Parmağını sahaya koy ve ÇEK: oyuncundan bir ok uzar. ⇒ When you have the ball, play pauses. Put your finger on the pitch and PULL: an arrow grows from your player.
+Okun UCU topun gideceği yerdir. Az çekersen yumuşak ve kısa, çok çekersen sert ve uzun gider. ⇒ The arrow's TIP is where the ball goes. A short pull is soft and short; a long pull is hard and long.
+Arkadaşının ÖNÜNE atabilirsin; oraya en çabuk yetişen arkadaşın koşar. Ok kaleye uzanırsa şut olur. ⇒ You can play it INTO a teammate's path; whoever gets there first runs onto it. If the arrow reaches the goal, it's a shot.
+Kısa çekersen topla sürersin. Arkadaşına ya da kaleye dokunmak da hızlı pas/şut yapar. ⇒ A short pull dribbles. Tapping a teammate or the goal is a quick pass or shot.
+7 · Topa bas: yükseklik ve falso ⇒ 7 · Tap the ball: height and curl
+Vuruşta ekranda büyük bir top uçar; ona bas. ⇒ When you strike, a big ball flies across the screen; tap it.
+ORTASI: sert ve isabetli, yerden gider. ALTI: havalanır (ne kadar alttan, o kadar yüksek). YANI: falso. ⇒ CENTRE: hard and accurate, along the ground. BOTTOM: lofted (the lower, the higher). SIDE: curl.
+Kaleci öndeyken topun altına basarsan aşırtma yaparsın. Iskalasan da top gider, ama zayıf. ⇒ Tap underneath when the keeper is off his line to chip him. Even if you miss, the ball still goes, just weakly.
+8 · Riskleri oku ⇒ 8 · Read the risks
+Ok çekerken pası kesebilecek rakiplerin üstünde ⚠️ çıkar; ok turuncuya döner. ⇒ While aiming, ⚠️ appears over opponents who could cut out the pass, and the arrow turns orange.
+Sarı kesikli çizgi ofsayt çizgisidir. Pas anında arkadaşın çizginin önündeyse 🚩 ofsayt olur. ⇒ The yellow dashed line is the offside line. If your teammate is past it when you pass, it's 🚩 offside.
+Sert ya da havadan gelen topu arkadaşın kontrol edemeyebilir; boşta kalan topa kim yakınsa o alır. ⇒ A hard or lofted ball may not be controlled; whoever is closest wins the loose ball.
+Kaleci çelerse dönen top için şansın sürebilir. ⇒ If the keeper parries, you may get a second chance from the rebound.
+9 · Arkadaşlarına koşu göster ⇒ 9 · Show your teammates where to run
+Takım uyumun yüksekse bir arkadaşına dokunup sürükle: mavi okla koşacağı yeri gösterirsin. ⇒ With good chemistry, touch a teammate and drag: a blue arrow shows where he'll run.
+Uyum %40 → 1, %70 → 2, %90 → 3 koşu hakkı (sol üstte 🏃). ⇒ Chemistry 40% → 1, 70% → 2, 90% → 3 runs (🏃 top left).
+Uyumu “Takım arkadaşlarıyla ek idman” ve maç oynayarak artırırsın. ⇒ Raise chemistry with "Extra training with teammates" and by playing matches.
+10 · Savunma ⇒ 10 · Defending
+Rakip pas atacakken kırmızı kesikli çizgi pas yolunu gösterir. ⇒ When an opponent is about to pass, a red dashed line shows the passing lane.
+Oyuncunu pas yoluna SÜRÜKLE ya da yola dokun; yeşil “BURAYA KOŞ” halkası en iyi noktadır. ⇒ DRAG your player into the lane or tap it; the green "RUN HERE" ring is the best spot.
+Rakip topla üstüne sürerse önüne çık: önden müdahale daha başarılıdır. Topu kazanınca saha döner, atağa çıkarsın. ⇒ If he dribbles at you, get in front: tackles from the front work better. Win the ball and the pitch turns: you go on the attack.
+11 · Para ve yaşam ⇒ 11 · Money and life
+Finans sekmesinde ev, araç, kişisel ekip, yatırım, emlak ve şirketlerini yönetirsin. ⇒ In the Finance tab you manage your home, car, personal staff, investments, property and businesses.
+Giderler gelirinle büyür; kötü yatırım seni batırabilir. ⇒ Expenses grow with income; bad investments can ruin you.
+Servetin yeterince büyürse kulüp satın alabilir, bir kulüp grubu kurabilirsin. ⇒ If your fortune grows enough, you can buy a club and build a club group.
+12 · Futboldan sonra ⇒ 12 · After football
+Emekli olunca teknik direktör olabilir, kulüp sahibi olabilir ya da işe girebilirsin. ⇒ When you retire you can become a manager, a club owner or take a job.
+Teknik direktörken maç planı, antrenman, transfer ve canlı maç yönetimi senin elinde. ⇒ As a manager you control the match plan, training, transfers and live matches.
+Kulüp sahibiyken genel müdür atayıp otopilotu açabilirsin. ⇒ As an owner you can hire a CEO and turn on autopilot.
+13 · Miras ⇒ 13 · Legacy
+Hayatın bitince mirası oğluna devredersin ve onunla devam edersin. ⇒ When your life ends you hand the legacy to your son and carry on as him.
+Kurucudan oğluna ilk devir ücretsizdir; sonraki kuşaklar için o kayda özel Miras Paketi gerekir. ⇒ The first handover from founder to son is free; later generations need a Legacy Pack for that save.
+Miras Puanın futbol, insan ve servet mirasından oluşur. ⇒ Your Legacy Score combines your football, human and financial legacy.
+14 · Jeton ve mağaza ⇒ 14 · Tokens and shop
+Miras Jetonu ile kararı geri alabilir, enerji ve tedavi alabilir, görünüm değiştirebilirsin. ⇒ With Legacy Tokens you can undo a decision, buy energy and treatment, and change the look.
+Günlük giriş, başarımlar ve reklam izleyerek az miktarda jeton kazanırsın. ⇒ You earn a few tokens from daily logins, achievements and watching ads.
+Oyunu kazanmak için para gerekmez; jeton sadece zaman ve kolaylık sağlar. ⇒ You never need money to win; tokens only save time and add convenience.
+Hazırsın! ⇒ You're ready!
+Menüden boş bir kayda dokunarak yeni bir hayata başla. ⇒ Tap an empty slot in the menu to start a new life.
+Bu öğreticiyi menüdeki “📘 Öğretici” düğmesiyle istediğin zaman tekrar açabilirsin. ⇒ You can reopen this tutorial any time with the "📘 Tutorial" button in the menu.
+Öğretici · {0}/{1} ⇒ Tutorial · {0}/{1}
+Öğreticiyi geç ✕ ⇒ Skip tutorial ✕
+← Geri ⇒ ← Back
+İleri → ⇒ Next →
+Başla ⚽ ⇒ Let's play ⚽
+Öğreticiyi menüden tekrar açabilirsin ⇒ You can reopen the tutorial from the menu
+📘 Öğretici ⇒ 📘 Tutorial
+ℹ️ Hakkında ⇒ ℹ️ About
+Yapımcı ⇒ Producer
+Geliştirici stüdyo ⇒ Developer studio
+Kapat ⇒ Close
+Kulüp ve oyuncu isimleri gerçeğe benzetilmiş kurgudur. ⇒ Club and player names are fiction inspired by real ones.
+İlk pozisyonun! ⇒ Your first moment!
+🏹 Parmağını sahaya koy ve ÇEK: okun ucu topun gideceği yer. ⇒ 🏹 Put your finger on the pitch and PULL: the arrow tip is where the ball goes.
+📏 Az çek = yumuşak · çok çek = sert. ⇒ 📏 Short pull = soft · long pull = hard.
+👟 Arkadaşının önüne atabilirsin · ⚽ kaleye uzanırsa şut. ⇒ 👟 Play it into a teammate's path · ⚽ reach the goal to shoot.
+🎯 Topa bas: ortası yerden, altı havadan, yanı falso. ⇒ 🎯 Tap the ball: centre = ground, bottom = lofted, side = curl.
+⚠️ Kesilebilecek pasları gösterir · 🚩 sarı çizgi ofsayt. ⇒ ⚠️ marks passes that can be cut out · 🚩 yellow line = offside.
+Anladım, oynayalım ⇒ Got it, let's play
+Yapımcı: {0} · {1} ⇒ Producer: {0} · {1}

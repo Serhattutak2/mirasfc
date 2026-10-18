@@ -1,0 +1,301 @@
+ilk sözleşme ⇒ first contract
+seninle {0}'{1} yeni bir hayata başladı ⇒ started a new life with you in {0}
+uzak mesafe ilişkisi başladı ⇒ a long-distance relationship began
+{0} seninle {1}'{2} gelmedi; uzak mesafe ilişkisi başladı. ⇒ {0} didn't move to {1} with you; a long-distance relationship began.
+Sözleşme yeniledin ⇒ You renewed your contract
+Kiralık gittin ⇒ You went on loan
+İmza attın ⇒ You signed
+· {0}/yıl · {1} yıl ⇒ · {0}/yr · {1} yrs
+· imza parası ⇒ · signing bonus
+Çocukluk kulübüne döndün. Şehir seni bayramla karşıladı. ⇒ You returned to your childhood club. The city celebrated like a holiday.
+Zaten kiralıksın ⇒ You're already on loan
+Kiralık talebi genç oyuncular içindir (23 yaş ve altı) ⇒ Loan requests are for young players (23 and under)
+Takımında as oynuyorsun; kulüp seni bırakmaz ⇒ You're a starter; the club won't let you go
+Bu sezon zaten talep ettin ⇒ You already asked this season
+Kulüp kiralık talebini reddetti: “Seni burada izlemek istiyoruz.” ⇒ The club refused your loan request: "We want to watch you here."
+Kulüp kiralık talebini reddetti ⇒ The club refused your loan request
+Kulüp kiralık gitmene izin verdi; teklifler masada. ⇒ The club agreed to loan you out; offers are on the table.
+{0} numarasını vermedi ⇒ {0} wouldn't give up his number
+{0} {1} numarayı sana bıraktı. ⇒ {0} gave you the number {1}.
+Forma numaran: {0}. ⇒ Your shirt number: {0}.
+Şimdilik hiçbir teklifi kabul etmedin. Serbest oyuncusun. ⇒ You haven't accepted any offer for now. You're a free agent.
+Sözleşme yenileme teklifini reddettin. ⇒ You turned down the contract renewal.
+Antrenman ⇒ Training
+Sprint ve çeviklik ⇒ Sprints and agility
+Pas ve oyun görüşü ⇒ Passing and vision
+Şut ve bitiricilik ⇒ Shooting and finishing
+Top tekniği ve çalım ⇒ Ball skills and dribbling
+Savunma ve pozisyon ⇒ Defending and positioning
+Kuvvet ve dayanıklılık ⇒ Strength and stamina
+{0} gelişir, kondisyon −4 ⇒ {0} improves, fitness −4
+Rakip ve maç videosu analizi ⇒ Opponent and video analysis
+Form +, uyum + ⇒ Form +, chemistry +
+Takım arkadaşlarıyla ek idman ⇒ Extra work with teammates
+Uyum ++ ⇒ Chemistry ++
+Toparlanma ⇒ Recovery
+Fizyoterapi ve masaj ⇒ Physio and massage
+Kondisyon +12 ⇒ Fitness +12
+Erken yat, telefonu kapat ⇒ Early night, phone off
+Kondisyon +8, mutluluk + ⇒ Fitness +8, happiness +
+Yaşam ⇒ Life
+Partnerinle akşam yemeği ⇒ Dinner with your partner
+İlişki +, mutluluk + ⇒ Relationship +, happiness +
+Çocuklarınla vakit geçir ⇒ Spend time with your kids
+Çocuklarla bağ + ⇒ Bond with kids +
+Anne-babanı ziyaret et ⇒ Visit your parents
+Aile bağı + ⇒ Family bond +
+Kardeşlerinle buluş ⇒ Meet your siblings
+Kardeş bağı + ⇒ Sibling bond +
+Arkadaşlarınla buluş ⇒ Meet your friends
+Dostluk +, mutluluk + ⇒ Friendship +, happiness +
+Dışarı çık, yeni insanlarla tanış ⇒ Go out and meet new people
+İlişki fırsatı ⇒ Chance of romance
+Hastanedeki çocukları ziyaret et ⇒ Visit children in hospital
+Ün +, mutluluk + ⇒ Fame +, happiness +
+İşe git: {0} ⇒ Go to work: {0}
+Kazanç {0} ⇒ Earns {0}
+Şirket toplantıları ⇒ Company meetings
+Şirket performansı + ⇒ Company performance +
+Yatırım araştırması ⇒ Investment research
+Portföy getirisi + ⇒ Portfolio return +
+Kurs dersine çalış ⇒ Study for your course
+{0} ilerlemesi ⇒ {0} progress
+Eğitim + ⇒ Education +
+Medya ⇒ Media
+Sosyal medya paylaşımı ⇒ Social media post
+Ün + ⇒ Fame +
+Röportaj ver ⇒ Give an interview
+Ün ++ ⇒ Fame ++
+Reklam çekimi ⇒ Advert shoot
+Sponsor geliri ⇒ Sponsor income
+Taraftar imza günü ⇒ Fan signing day
+Moral +, uyum + ⇒ Morale +, chemistry +
+Frikik ustası ⇒ Free-kick specialist
+Vuruşların daha çok falso alır ⇒ Your shots curl more
+Duran top ve falso çalışması ⇒ Set pieces and curl practice
+Bitirici ⇒ Finisher
+Ceza sahası içinde şut isabeti artar ⇒ Better accuracy inside the box
+Kale önünde bitiricilik ⇒ Finishing in front of goal
+Uzaktan şutör ⇒ Long shot
+Ceza sahası dışından isabet artar ⇒ Better accuracy from outside the box
+Uzaktan şut çalışması ⇒ Long-range shooting practice
+Hava hâkimi ⇒ Aerial threat
+Kafa vuruşları isabetli ve güçlü ⇒ Accurate, powerful headers
+Kafa ve zıplama çalışması ⇒ Heading and jumping practice
+Oyun kurucu ⇒ Playmaker
+Paslar daha isabetli ⇒ More accurate passes
+Uzun ve ara pas çalışması ⇒ Long and through-ball practice
+İlk dokunuş ⇒ First touch
+Sert gelen topu kolay kontrol edersin ⇒ You control hard balls easily
+Top karşılama çalışması ⇒ Ball control practice
+Çalımcı ⇒ Dribbler
+Müdahalelerden daha kolay sıyrılırsın ⇒ You slip past tackles more easily
+Birebir çalım çalışması ⇒ One-on-one dribbling practice
+Top kesici ⇒ Ball winner
+Müdahalelerin daha başarılı ⇒ Your tackles succeed more often
+Zamanlama ve müdahale çalışması ⇒ Timing and tackling practice
+Soğukkanlı ⇒ Ice-cold
+Penaltıda titremezsin ⇒ You don't flinch at penalties
+Penaltı çalışması ⇒ Penalty practice
+Özel çalışma ⇒ Special training
+✔ {0} (tekrar: {1} +) ⇒ ✔ {0} (again: {1} +)
+{0} yolunda: {1}/{2} · {3} en az {4} ⇒ Towards {0}: {1}/{2} · {3} at least {4}
+✨ Yeni özel yetenek: {0}! {1}. ⇒ ✨ New special trait: {0}! {1}.
+Bu dönem sınırına ulaştın ⇒ You've hit this period's limit
+Enerjin yetmiyor ({0} gerekli, {1} kaldı) ⇒ Not enough energy ({0} needed, {1} left)
+Paran yetmiyor ⇒ Not enough money
+✨ Yeni yetenek: {0}! ⇒ ✨ New trait: {0}!
+Dengeli ⇒ Balanced
+{0}: {1} iş yapıldı · kalan {2}⚡ ⇒ {0}: {1} tasks done · {2}⚡ left
+Plana uygun yapılacak iş kalmadı ⇒ Nothing left to do for this plan
+Sakatlığın geçti, takımla çalışmaya döndün. ⇒ Your injury has healed; you're back training with the team.
+Ağır sakatlık: {0} kalıcı olarak düştü ⇒ Serious injury: {0} permanently reduced
+Ağır sakatlık {0}! {1} artık eskisi gibi olmayacak. {2} hafta yoksun. ⇒ Serious injury: {0}! Your {1} will never be the same. Out for {2} weeks.
+Sakatlandın ({0}), {1} hafta yoksun. ⇒ You're injured ({0}), out for {1} weeks.
+Maaş (ana kulüp) + kiralık katkısı ⇒ Salary (parent club) + loan top-up
+Maaş (vergi ve menajer sonrası) ⇒ Salary (after tax and agent)
+Teknik direktör maaşı ⇒ Manager's salary
+Yaşam giderleri (kira, faturalar…) ⇒ Living costs (rent, bills…)
+Sakatsın ({0} hafta) ⇒ You're injured ({0} weeks)
+Kırmızı kart cezalısın ⇒ You're suspended (red card)
+Yorgunsun, kulübede başlıyorsun ⇒ You're tired; starting on the bench
+Yorgunluk nedeniyle dinlendirildin ⇒ Rested due to fatigue
+Yedek kulübesindesin ⇒ You're on the bench
+Genç takımdasın; A takım kadrosunda yer almadın ⇒ You're in the youth team; not in the senior squad
+Teknik direktör seni kadroya almadı ⇒ The manager left you out of the squad
+Takımdaki rolün yükseldi: {0}. ⇒ Your squad role went up: {0}.
+Takımdaki rolün düştü: {0}. ⇒ Your squad role went down: {0}.
+Sözleşmede söz verilen rol verilmiyor; morali bozuk. ⇒ The role promised in the contract isn't being given; morale is low.
+🏆 {0} ŞAMPİYONU! ⇒ 🏆 {0} CHAMPIONS!
+Ligi {0}. sırada bitirdiniz. ⇒ You finished {0} in the league.
+Takımın üst lige çıktı! ⇒ Your team was promoted!
+Takımın küme düştü. ⇒ Your team was relegated.
+🥇 Altın Top senin! ⇒ 🥇 The Ballon d'Or is yours!
+⭐ Ligin en iyi oyuncusu seçildin. ⇒ ⭐ You were named the league's best player.
+👟 Gol kralı oldun ({0} gol). ⇒ 👟 You were top scorer ({0} goals).
+Bu sezon hayatının formundaydın. ⇒ You were in the form of your life this season.
+Bu sezon hiçbir şey yolunda gitmedi. ⇒ Nothing went right this season.
+Kiralık dönemin bitti; {0} kulübüne döndün. ⇒ Your loan is over; you're back at {0}.
+kiralıktan dönüş ⇒ return from loan
+Sadakat primi ⇒ Loyalty bonus
+Sadakat primi: {0}. ⇒ Loyalty bonus: {0}.
+{0} ile sözleşmen bitti. Serbest oyuncusun. ⇒ Your contract with {0} has ended. You're a free agent.
+{0} ile sözleşmen sona erdi. ⇒ Your contract with {0} expired.
+40 yaşında kramponları astın. ⇒ You hung up your boots at 40.
+Hayatını kaybettin. ⇒ You passed away.
+Futbolu bıraktın. Son kulübün: {0}. ⇒ You retired. Last club: {0}.
+Yıllık yaşam giderleri ⇒ Annual living costs
+İş geliri ⇒ Job income
+Son 16'da elendi ⇒ Out in the last 16
+Çeyrek finalde elendi ⇒ Out in the quarter-finals
+Yarı finalde elendi ⇒ Out in the semi-finals
+Finalist ⇒ Finalist
+Dünya Kupası ⇒ World Cup
+{0}, {1} {2} elemelerini geçemedi. ⇒ {0} failed to qualify for the {1} {2}.
+{0} kadrosundan çekildin. ⇒ You withdrew from the {0} squad.
+{0} {1} kadrosundasın! ⇒ You're in the {0} {1} squad!
+Grup {0}. maç ⇒ Group game {0}
+(pen. {0}-{1}) ⇒ (pens {0}-{1})
+· puanın {0}{1} ⇒ · your rating {0}{1}
+Grupta elendi ⇒ Out in the group
+Şampiyon ⇒ Champions
+🏆 {0} {1} ŞAMPİYONU! Ülken sokaklarda. ⇒ 🏆 {0} WIN THE {1}! Your country takes to the streets.
+{0} {1} şampiyonu: {2} ⇒ {0} {1} winners: {2}
+Yıllık maaş ⇒ Annual salary
+Sözleşme süresi ⇒ Contract length
+yıl ⇒ yrs
+Rol garantisi ⇒ Guaranteed role
+Maç başı prim ⇒ Appearance bonus
+Gol / asist primi ⇒ Goal / assist bonus
+Serbest kalma bedeli ⇒ Release clause
+Kulüp evi ⇒ Club house
+Var ⇒ Yes
+Yok ⇒ No
+Kulüp aracı ⇒ Club car
+İmaj hakları payı ⇒ Image rights share
+Sadakat primi (sözleşme sonunda) ⇒ Loyalty bonus (end of contract)
+Paramız var, ama aptal değiliz. ⇒ We have money, but we're not fools.
+Seni gerçekten istiyoruz. ⇒ We really want you.
+Teklifimiz ortada. ⇒ Our offer is on the table.
+{0} masaya oturdu: “{1}” ⇒ {0} sat down: "{1}"
+Menajerin söz aldı ve masayı yönetti. ⇒ Your agent took the floor and ran the talks.
+{0}: “Anlaştık. Hoş geldin!” ⇒ {0}: "Deal. Welcome aboard!"
+{0} dosyayı kapattı: “Bu şartlarla devam edemeyiz.” ⇒ {0} closed the file: "We can't go on with these terms."
+Kulüp masadan kalktı. ⇒ The club walked away.
+toplam paket ⇒ total package
+Bu talepler gerçekçi değil. ⇒ These demands aren't realistic.
+Çok uzaktayız. ⇒ We're far apart.
+Başka adaylarımız da var. ⇒ We have other candidates.
+Bu rakamlar bizi zorluyor. ⇒ These numbers stretch us.
+Bir adım geri atmanız lazım. ⇒ You need to take a step back.
+Yönetimi bununla ikna edemem. ⇒ I can't sell this to the board.
+Yakınız ama tam değil. ⇒ We're close, but not there.
+Biraz daha esneyin. ⇒ Give a little more.
+Bir iki kalemde anlaşamıyoruz. ⇒ We disagree on one or two items.
+{0}: “{1} Karşı teklifimizi masaya koyduk.” ⇒ {0}: "{1} We've put our counter-offer on the table."
+Savunmadasın. Oyuncun rakibi kendiliğinden kollar; dokunarak onu istediğin yere götür. Top rakipten açılınca MÜDAHALE et. KAYARAK daha uzağa uzanır ama faul riski büyük. ⇒ You're defending. Your player tracks the opponent automatically; tap to move him where you want. TACKLE when the ball leaves the opponent's foot. SLIDE reaches further but risks a foul.
+Penaltı: köşeye doğru sürükle. Uzun sürükleme sert ama kontrolsüz; kaleci bir tarafa atlayacak. ⇒ Penalty: drag towards a corner. A long drag is powerful but wild; the keeper will dive one way.
+Serbest vuruş: barajın yanından yay çizerek sürükle (falso) ya da “Havadan” ile barajın üstünden aşırt. Ceza sahasındaki arkadaşına orta da açabilirsin. ⇒ Free kick: drag in an arc around the wall (curl) or use "Lofted" to go over it. You can also cross to a teammate in the box.
+Orta geliyor! Top havadayken kaleye doğru sürükle: top sana gelince kafa ya da vole vurursun. Zamanlama önemli. ⇒ Cross incoming! While the ball is in the air, drag towards goal: you'll head or volley it when it arrives. Timing matters.
+Top sende, oyun durdu. Ekranda sürükle-bırak: ok yönü ve uzunluğu vuruşu belirler. Ok bir arkadaşını gösterirse otomatik pas olur. Kısa sürükleme topu önüne sürer ve oyun kısa süre akar. ⇒ You have the ball and play is paused. Drag and release: the arrow's direction and length set the kick. Point at a teammate for an automatic pass. A short drag pushes the ball ahead and play runs briefly.
+{0} boşa düştü! ⇒ {0} is unmarked!
+ATAK DEVAM ⇒ ATTACK ON
+{0} topu tuttu ⇒ {0} held the ball
+TOP KAPILDI ⇒ BALL LOST
+TOP RAKİPTE ⇒ THEIR BALL
+{0} müdahale etti ⇒ {0} tackled
+{0} topu kazandı ⇒ {0} won the ball
+Pas! Şimdi {0} tehlikeli. ⇒ Pass! Now {0} is dangerous.
+OFSAYT ⇒ OFFSIDE
+Sen ⇒ You
+{0} çizginin gerisindeydi ⇒ {0} was beyond the line
+⚽ {0} golü ⇒ ⚽ {0} goal
+GOL YEDİNİZ ⇒ GOAL CONCEDED
+Şutun önüne geçemedin ⇒ You couldn't block the shot
+Kaleci uzanamadı ⇒ The keeper couldn't reach it
+(direği yalayarak) ⇒ (off the post)
+⚽ GOL! {0}{1} ⇒ ⚽ GOAL! {0}{1}
+GOL! ⇒ GOAL!
+Direkten içeri! ⇒ In off the post!
+— asist senden ⇒ — your assist
+Asist: {0} ⇒ Assist: {0}
+{0} attı ⇒ {0} scored
+KALECİ TUTTU ⇒ SAVED
+Tehlike geçti ⇒ Danger over
+KALECİ YAKALADI ⇒ KEEPER'S BALL
+İyi şuttu ama kaleci yerindeydi ⇒ Good shot, but the keeper was there
+Top kaleciye gitti ⇒ Straight at the keeper
+TEHLİKE GEÇTİ ⇒ DANGER OVER
+Top oyun alanını terk etti ⇒ The ball went out of play
+KALECİ ÇELDİ ⇒ PARRIED
+Müthiş kurtarış, top dışarıda ⇒ Great save, pushed wide
+DİREK! ⇒ POST!
+AUT ⇒ OUT
+TOP DIŞARIDA ⇒ WIDE
+Top direkten dışarı çıktı ⇒ Off the post and out
+Top üst direğin üzerinden gitti ⇒ Over the bar
+Hedefi tutturamadın ⇒ Off target
+TOPU KAPTIN! ⇒ BALL WON!
+TOP BİZDE ⇒ OUR BALL
+Temiz müdahale ⇒ Clean tackle
+{0} topu aldı ⇒ {0} took the ball
+Top uzaklaştı ⇒ Cleared
+BARAJA TAKILDI ⇒ HIT THE WALL
+POZİSYON BİTTİ ⇒ CHANCE OVER
+Müthiş kurtarış ⇒ Great save
+Top barajdan döndü ⇒ Blocked by the wall
+Top boşta kaldı ⇒ Loose ball
+Oyun durdu ⇒ Play stopped
+Pas: {0} ⇒ Pass: {0}
+Vuruş hazır: top gelince vuracaksın. ⇒ Strike set: you'll hit it when the ball arrives.
+Topla ilerliyorsun… ⇒ Running with the ball…
+Kayarak topu uzaklaştırdın! ⇒ Sliding clearance!
+🟥 Kırmızı kart! 2 maç cezalısın. ⇒ 🟥 Red card! Banned for 2 games.
+⚽ Penaltı golü: {0} ⇒ ⚽ Penalty goal: {0}
+PENALTI ⇒ PENALTY
+Faul; penaltı gol oldu ⇒ Foul; penalty scored
+Penaltıyı kaleci kurtardı ⇒ Penalty saved
+KIRMIZI KART ⇒ RED CARD
+SARI KART ⇒ YELLOW CARD
+Sert kayarak müdahale ⇒ Reckless sliding tackle
+Arkadan müdahale ⇒ Tackle from behind
+Kaçırdın! Toparlan. ⇒ Missed! Recover.
+Kaydın ama çok uzaktaydın. ⇒ You slid in but were too far away.
+Çok uzaktasın: önce yaklaş. ⇒ Too far: get closer first.
+GOL ⇒ GOAL
+NİŞAN AL ⇒ AIM
+⏸ SIRA SENDE ⇒ ⏸ YOUR MOVE
+AĞIR ÇEKİM ⇒ SLOW-MO
+HAVADAN ⇒ LOFTED
+PAS ⇒ PASS
+DOKUNUŞ ⇒ TOUCH
+ÇOK SERT ⇒ TOO HARD
+GÜÇ ⇒ POWER
+RÜZGÂR ⇒ WIND
+SEN ⇒ YOU
+⚽ {0} golü: {1} ⇒ ⚽ {0} goal: {1}
+Devre: {0} {1}-{2} {3} ⇒ Half-time: {0} {1}-{2} {3}
+Oyuna girdin! ⇒ You came on!
+— kazandınız! ⇒ — you won!
+— elendiniz. ⇒ — you're out.
+Penaltılar: {0}-{1} {2} ⇒ Penalties: {0}-{1} {2}
+⚽ GOL! {0} ⇒ ⚽ GOAL! {0}
+⚽ {0} golü (pozisyonda sen vardın) ⇒ ⚽ {0} goal (you were in the move)
+⚽ Gol! Asist: {0} ⇒ ⚽ Goal! Assist: {0}
+Penaltıyı kaçırdın. ⇒ You missed the penalty.
+🏆 {0}'nı kazandınız! ⇒ 🏆 You won the {0}!
+{0}: {1}, {2} turunda {3} karşısında elendi. ⇒ {0}: {1} were knocked out by {3} in the {2}.
+{0}: grubu {1}. bitirdiniz, Son 16'dasınız. ⇒ {0}: you finished {1} in the group and reached the last 16.
+{0}: grupta {1}. oldunuz, elendiniz. ⇒ {0}: you finished {1} in the group and are out.
+{0}: {1} turunda elendiniz. ⇒ {0}: you were knocked out in the {1}.
+{0} adına resmi maça çıktın; artık başka bir milli takımı seçemezsin. ⇒ You've played a competitive game for {0}; you can't switch national teams now.
+Maç ve gol primleri ⇒ Match and goal bonuses
+maçta ⇒ in game
+Galibiyet primi ⇒ Win bonus
+MÜDAHALE ⇒ TACKLE
+KAYARAK ⇒ SLIDE
+⬆ Havadan (açık) ⇒ ⬆ Lofted (on)
+⬆ Havadan ⇒ ⬆ Lofted
+📺 Reklam izle, pozisyonu tekrar oyna ⇒ 📺 Watch an ad to replay the chance
+Devam ⇒ Continue
+Hücum pozisyonu ⇒ Attacking chance

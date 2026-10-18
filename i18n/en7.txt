@@ -1,0 +1,387 @@
+Basın belgeleri yayımladı. ⇒ The press published the documents.
+Doğduğun mahallenin amatör takımı kapanmak üzere. Kulübü devralıp yeniden kurabilirsin. ⇒ The amateur club in your old neighbourhood is about to fold. You could take it over and rebuild it.
+Kulübü kur, başkan ol ⇒ Found the club and become chairman
+Amatör kulübü kurmak ⇒ Founding the amateur club
+Mahalle kulübünü yeniden kurdun! ⇒ You rebuilt the neighbourhood club!
+Bağış yap, yönetime karışma ⇒ Donate, but stay out of management
+Mahalle kulübüne bağış ⇒ Donation to the local club
+Amatör kulübün {0}. kümede. Bir üst lige çıkmak için yatırım gerekiyor. ⇒ Your amateur club is in tier {0}. Going up needs investment.
+Saha ve tesis yatırımı ⇒ Invest in the pitch and facilities
+Kulüp tesisi ⇒ Club facilities
+Mahalle kulübün bir üst lige çıktı! ({0}. seviye) ⇒ Your neighbourhood club went up a division! (tier {0})
+Sezon iyi geçmedi; terfi seneye kaldı. ⇒ The season didn't go well; promotion will have to wait.
+Gençlere oynama şansı ver ⇒ Give the youngsters a chance
+Kurduğun mahalle kulübü profesyonel lige yükseldi! Şehir senin adını stadyuma vermek istiyor. ⇒ The neighbourhood club you founded reached the professional league! The city wants to name the stadium after you.
+{0} Stadyumu açıldı. ⇒ {0} Stadium opened.
+Sezon ödülü ⇒ Season reward
+Jeton ⇒ Tokens
+🎟 Bilet ⇒ 🎟 Pass
+Harca ⇒ Spend
+Görünüm ⇒ Looks
+Hikâyeler ⇒ Stories
+Başarımlar ⇒ Achievements
+Mağaza ⇒ Shop
+Ücretsiz kazan ⇒ Earn free
+📺 Reklam izle ⇒ 📺 Watch an ad
+Günde 5 kez · kalan {0} ⇒ 5 per day · {0} left
+Başarımlar, sezon sonu ödülleri ve Kariyer Bileti de jeton verir. ⇒ Achievements, season rewards and the Career Pass also give tokens.
+Jeton paketleri ⇒ Token packs
+Abonesin. Teşekkürler! ✨ ⇒ You're subscribed. Thank you! ✨
+Aylık abonelik ⇒ Monthly subscription
+Miras Kulübü ⇒ Miras Club
+Altın Bilet aktif ⇒ Gold Pass active
+Altın Bileti aç · {0} ⇒ Unlock the Gold Pass · {0}
+Kariyer Bileti · {0} ⇒ Career Pass · {0}
+Seviye {1}/{2} ⇒ Level {1}/{2}
+Maç oynamak, gol atmak, haftaları ve sezonları tamamlamak bilet puanı kazandırır. Her ay sıfırlanır. ⇒ Playing matches, scoring and completing weeks and seasons earn pass XP. Resets monthly.
+Önce bir hayata başla ⇒ Start a life first
+Son karar: ⇒ Last decision:
+Henüz geri alınacak karar yok ⇒ No decision to undo yet
+Jetonla ⇒ With tokens
+↶ Kararı geri al ⇒ ↶ Undo decision
+Haftada bir kez ⇒ Once a week
+🏥 Özel klinik ⇒ 🏥 Private clinic
+Sakatlık süresi yarıya iner ⇒ Halves injury time
+💾 Ek kayıt yuvası ⇒ 💾 Extra save slot
+Şu an {4}/6 ⇒ Now {4}/6
+Gözlemci raporu (🪙20): pazarlık masasında kulübün sınırlarını, Yaşam sekmesinde çocuğunun gerçek yeteneğini gösterir. ⇒ Scout report (🪙20): reveals the club's limits at the negotiating table and your child's true talent in the Life tab.
+Kullanılıyor ⇒ In use
+Sende ⇒ Owned
+Seç ⇒ Select
+Renk teması ⇒ Colour theme
+Maç sahası ⇒ Match pitch
+✔ Sende ⇒ ✔ Owned
+Hikâye paketleri ⇒ Story packs
+Paketler bütün kayıtlarında geçerlidir; olaylar koşulları oluştuğunda hikâyene girer. ⇒ Packs apply to all your saves; events join your story when their conditions are met.
+Başarımlar · {0}/{1} ⇒ Achievements · {0}/{1}
+Vazgeç ⇒ Cancel
+Evet ⇒ Yes
+Kaydet ⇒ Save
+Bir hata oluştu: ⇒ An error occurred:
+Hikâye ⇒ Story
+Aile ⇒ Family
+Yıl ⇒ Year
+Hafta ⇒ Week
+T. Direktör ⇒ Manager
+Fikstür ⇒ Fixtures
+Enerji ⇒ Energy
+Kariyer ⇒ Career
+Finans ⇒ Finance
+Kulübüm ⇒ My Club
+{0} yaş · {1} ⇒ Age {0} · {1}
+{0} yaş · T. direktör · {1} ⇒ Age {0} · Manager · {1}
+{0} yaş · Emekli ⇒ Age {0} · Retired
+· Kulüpsüz ⇒ · Clubless
+{0} yaş · {1}{2} ⇒ Age {0} · {1}{2}
+GENEL ⇒ OVR
+ENERJİ ⇒ ENERGY
+NAKİT ⇒ CASH
+Beklenmeyen hata ⇒ Unexpected error
+Ana ekrana dön ⇒ Back to home
+Menü ⇒ Menu
+Oğlunun ⇒ Your son's
+Kızının ⇒ Your daughter's
+{0} adını koy ⇒ Name: {0}
+Hata: ⇒ Error:
+Doğumdan son düdüğe bir futbol hayatı. Geriye ne bırakacaksın? ⇒ A football life from birth to the final whistle. What will you leave behind?
+Miras Jetonu ⇒ Miras Tokens
+Boş ⇒ Empty
+Çocukluk ⇒ Childhood
+Emekli ⇒ Retired
+Teknik direktör ⇒ Manager
+Kulüpsüz ⇒ Clubless
+{0} yaş · {1} · {2} ⇒ Age {0} · {1} · {2}
+Yeni bir hayata başla ⇒ Start a new life
+Sil ⇒ Delete
+Yeni hayat ⇒ New life
+Kayıt {0} ⇒ Save {0}
+v2.2 · Kulüp ve oyuncu isimleri gerçeğe benzetilmiş kurgudur. v1 kayıtları bu sürümde açılmaz. ⇒ v2.2 · Club and player names are fictional lookalikes. v1 saves don't open in this version.
+Bu kayıt eski bir sürüme ait. ⇒ This save is from an old version.
+Kayıt {0} kalıcı olarak silinsin mi? ⇒ Permanently delete save {0}?
+Kanat ⇒ Winger
+Sahte 9 ⇒ False 9
+Box-to-box ⇒ Box-to-box
+10 numara ⇒ Number 10
+Stoper ⇒ Centre-back
+Bek ⇒ Full-back
+Libero ⇒ Libero
+Kulübümün efsanesi olmak ⇒ Become a club legend
+Avrupa’nın devlerinde oynamak ⇒ Play for Europe's giants
+Milli takımla kupa kaldırmak ⇒ Lift a trophy with my country
+Ailemi zengin etmek ⇒ Make my family rich
+Babaannen {0}'{1} doğmuş; her yaz oradaki akrabalarını ziyaret ederdiniz. Bu yüzden {2} vatandaşlığın da var. ⇒ Your grandmother was born in {0}; every summer you visited relatives there. So you also hold {2} citizenship.
+Baban gençken {0}'{1} çalıştı; ailende {2} pasaportu var. ⇒ Your father worked in {0} when he was young; the family holds {2} passports.
+Annenin ailesi {0} kökenli; {1} vatandaşlığın hâlâ geçerli. ⇒ Your mother's family is from {0}; your {1} citizenship is still valid.
+Deden bir zamanlar {0} milli takımında forma giymişti; ailede {1} sevgisi hiç bitmedi. ⇒ Your grandfather once played for {0}; the family's love for {1} never faded.
+Ailen sen küçükken {0}'{1} taşındı. İki ülkenin de milli takımı seni isteyebilir. ⇒ Your family moved to {0} when you were small. Both countries' national teams may want you.
+Rastgele ⇒ Random
+Sadece buralıyız ⇒ We're just from here
+Babaannem oralı ⇒ Grandma is from there
+Babam orada çalıştı ⇒ Dad worked there
+Annemin ailesi ⇒ Mum's family
+Dedem milli oynadı ⇒ Grandpa played internationally
+Sağ ⇒ Right
+Sol ⇒ Left
+İki ayak (nadir) ⇒ Both feet (rare)
+Uzun ve güçlü ⇒ Tall and strong
+Çevik ⇒ Agile
+Yoksul ⇒ Poor
+Orta halli ⇒ Middle-class
+Varlıklı ⇒ Wealthy
+Hırslı ⇒ Ambitious
+Sadık ⇒ Loyal
+Aile insanı ⇒ Family-minded
+Paraya düşkün ⇒ Money-minded
+Tuttuğun takım ⇒ Team you support
+Şehrimin takımı ⇒ My city's team
+Yeni hayat · 1/3 Kimlik ⇒ New life · 1/3 Identity
+Karakterini oluştur ⇒ Create your character
+Ad Soyad ⇒ Full name
+Doğduğun ülke ⇒ Country of birth
+Büyüdüğün ve futbola başlayacağın ülke ⇒ Country where you grow up and start playing
+Şehir ⇒ City
+Şehrinin kulübü çocukluk kulübün olur; bir gün seni geri çağırabilir. ⇒ Your city's club becomes your childhood club; one day it may call you home.
+Aile kökeni ⇒ Family roots
+Belirli bir ülke seç… ⇒ Pick a specific country…
+Milli takım tercihin ⇒ National team preference
+Sonra karar veririm ⇒ I'll decide later
+2/3 Futbolcu ⇒ 2/3 Footballer
+Mevki ⇒ Position
+Oyun tarzı ⇒ Playing style
+Kullandığın ayak ⇒ Preferred foot
+Fiziksel yapı ⇒ Build
+Seçtiğin tarz ve yapı, çocukluğundan itibaren hangi özelliklerinin daha hızlı gelişeceğini belirler. ⇒ Your style and build decide which attributes grow faster from childhood on.
+3/3 Hayat ⇒ 3/3 Life
+Ailenin durumu ⇒ Family situation
+Yoksulluk hırs verir ama imkân kısıtlıdır; varlıklı aile iyi akademilere kapı açar. ⇒ Poverty breeds hunger but limits chances; a wealthy family opens doors to good academies.
+Kişilik ⇒ Personality
+Çocukluk hayalin ⇒ Childhood dream
+Hayalini gerçekleştirirsen Miras Puanın büyük bonus kazanır. Yeteneğin doğuştan gelir ve her hayatta farklıdır. ⇒ Fulfil your dream for a big Legacy Points bonus. Talent is innate and differs every life.
+Hayata başla ⇒ Begin life
+Geri ⇒ Back
+Baban gençken {0}'{1} çalıştı ve sen orada doğdun; {2} pasaportun var. ⇒ Your father worked in {0} when he was young and you were born there; you hold a {2} passport.
+Annenin ailesi yıllar önce {0}'{1}n göç etmiş; {2} vatandaşlığın hâlâ geçerli. ⇒ Your mother's family emigrated from {0} years ago; your {2} citizenship is still valid.
+Anneannen {0}'li; evde onun dilinde ninniler dinleyerek büyüdün. ⇒ Your grandmother is from {0}; you grew up on lullabies in her language.
+{0}'{1} doğdun; ailen sen küçükken {2}'{3} taşındı. ⇒ You were born in {0}; your family moved to {2} when you were small.
+Seni evde ⇒ At home, you were welcomed by
+karşıladı. ⇒ .
+Şehrin takımı {0}. ⇒ Your city's team: {0}.
+Evde herkes {0} tutuyor. ⇒ Everyone at home supports {0}.
+{0}'{1}, {2} büyüdün. Baban {3} {4}, annen {5} {6}.{7}{8}{9} Hayalin: {10}. ⇒ You grew up in {0}, {2}. Your father {3} is {4}; your mother {5} is {6}.{7}{8}{9} Your dream: {10}.
+Milli takım ⇒ National team
+Hayatından bir an ⇒ A moment from your life
+Basın toplantısı ⇒ Press conference
+Soyunma odası ⇒ Dressing room
+Sürpriz teklif ⇒ Surprise offer
+({2}, güç {3}) seni hemen teknik direktör olarak istiyor. Maaş {4}/yıl, {5} yıl, transfer bütçesi {6}. Bonservisini kulüp ödeyecek. ⇒ ({2}, strength {3}) want you as manager right away. Salary {4}/yr, {5} yrs, transfer budget {6}. They'll pay your release fee.
+Kulübüme sadığım ⇒ I'm loyal to my club
+{1} yaş ⇒ age {1}
+16 yaşına gir ⇒ Turn 16
+Yılı yaşa ⇒ Live the year
+gelişim ⇒ development
+Yerel altyapı ⇒ Local academy
+Büyük kulüp altyapısı ⇒ Big club academy
+Yurtdışı akademi ⇒ Academy abroad
+Altyapıda değilsin ⇒ Not in an academy
+Gelişimin ⇒ Your development
+Potansiyel: {1}{2} · {3} ⇒ Potential: {1}{2} · {3}
+Hikâyen ⇒ Your story
+Son karar: {0} ⇒ Last decision: {0}
+↶ Geri al (🪙30) ⇒ ↶ Undo (🪙30)
+Profesyonel kariyerin başlamak üzere. ⇒ Your professional career is about to begin.
+Teklifleri gör ⇒ See offers
+Haftayı geç ⇒ Skip the week
+Futbolu bırak ⇒ Retire
+Serbest oyuncu · {1} · hafta {2} ⇒ Free agent · {1} · week {2}
+Bir kulübün yok. Formunu korumak için kendi başına çalış, istersen bir işte çalış; teklifler her an gelebilir. ⇒ You have no club. Train alone to stay sharp, or take a job; offers could come any time.
+Önce karar vermen gereken bir durum var ⇒ There's a decision to make first
+Geçen hafta {0}⚡ dinlenmeye gitti. ⇒ Last week {0}⚡ went to rest.
+Harcamadığın enerji hafta sonunda dinlenmeye döner (her 10⚡ = +2 kondisyon).{3} ⇒ Unspent energy turns into rest at the end of the week (every 10⚡ = +2 fitness).{3}
+Takım uyumu ⇒ Team chemistry
+her şey yolunda gidiyor 🔥 ⇒ everything's clicking 🔥
+zor bir sezon, hiçbir şey tutmuyor ⇒ a tough season, nothing works
+iyi gidiyor ⇒ going well
+biraz durgun ⇒ a bit flat
+Sezon havası: {0} ⇒ Season mood: {0}
+📺 Tedaviyi hızlandır ⇒ 📺 Speed up treatment
+🪙25 özel klinik ⇒ 🪙25 private clinic
+Sakatsın: {0} hafta ⇒ Injured: {0} weeks
+Form ⇒ Form
+Kondisyon ⇒ Fitness
+Moral ⇒ Morale
+Kadroda yok ⇒ Not in squad
+İlk 11 ⇒ Starting XI
+Tahmini giriş {0}' ⇒ Expected on {0}'
+· tarafsız saha ⇒ · neutral ground
+· iç saha ⇒ · home
+· deplasman ⇒ · away
+· geçen sezon {0}. ⇒ · last season {0}
+güç {8} ⇒ strength {8}
+güç {11}{12} ⇒ strength {11}{12}
+{0} sezonu · Hafta {1}/{2} ⇒ {0} season · Week {1}/{2}
+Bu hafta maç yok. Antrenman ve hayatına odaklan. ⇒ No match this week. Focus on training and life.
+Haftayı başlat ⇒ Start the week
+4 hafta simüle et ⇒ Simulate 4 weeks
+Sezonu simüle et ⇒ Simulate the season
+Maçı izle ⇒ Watch the match
+Maça çık ⇒ Play the match
+Hızlı sonuç ⇒ Quick result
+Maç oynanmadı. ⇒ Match not played.
+Bu hafta özelliklerinde değişim olmadı; ilerleme birikiyor. ⇒ No attribute changes this week; progress is building up.
+Hafta özeti ⇒ Week summary
+Sonraki hafta ⇒ Next week
+Tüm tablo ⇒ Full table
+Takım ⇒ Team
+Av ⇒ GD
+Futbol dünyasından ⇒ Around the football world
+Dönüm noktaların ⇒ Your turning points
+Bu yıl ⇒ This year
+Bu hafta ⇒ This week
+her yıl ⇒ every year
+her hafta ⇒ every week
+Emeklilikte her iş bir yıllık etki yaratır. ⇒ In retirement, each activity lasts a whole year.
+📺 Reklam izle +25⚡ ⇒ 📺 Watch an ad +25⚡
+🏋 Gelişim ⇒ 🏋 Growth
+⚖ Dengeli ⇒ ⚖ Balanced
+❤ Aile ⇒ ❤ Family
+😴 Dinlen ⇒ 😴 Rest
+Ana antrenman odağın ⇒ Main training focus
+{0} enerjin ⇒ Your energy {0}
+Enerji {4} dolar. Aşağıdaki işlere sen harcarsın; her iş bir şey kazandırır, bir şeyden götürür. ⇒ Energy refills {4}. You spend it on the tasks below; each one gives something and costs something.
+Harcamadığın enerji dinlenmeye döner ⇒ Unspent energy turns into rest
+(her 10⚡ = +2 kondisyon). Maçlar enerji harcamaz ama kondisyon düşürür.{5} ⇒ (every 10⚡ = +2 fitness). Matches don't use energy but do cost fitness.{5}
+Hızlı plan · tek dokunuşla doldur ⇒ Quick plan · fill with one tap
+Simülasyonda kullanılacak plan ⇒ Plan used when simulating
+Emeklilikte yıl sonunda kendiliğinden tamamlanır. ⇒ In retirement it completes itself at year's end.
+{0} kursu ⇒ {0} course
+Dersler ⇒ Lessons
+“Kurs dersine çalış” eylemiyle ilerler.{4} ⇒ Progress with the "Study for your course" action.{4}
+Kalıcı izler: ⇒ Lasting marks:
+Özellikler ⇒ Attributes
+Potansiyel: {1} · {2} gelişim · Yaş çarpanı ×{3}. İnce yeşil çizgi bir sonraki puana ilerlemeyi gösterir.{4} ⇒ Potential: {1} · {2} development · Age factor ×{3}. The thin green line shows progress to the next point.{4}
+Takvim ⇒ Calendar
+Şu an bir takvimin yok. ⇒ You have no calendar right now.
+Takvim yok. ⇒ No calendar.
+Sezon takvimi · lig, kupa, Avrupa ve milli maçlar ⇒ Season calendar · league, cup, Europe and internationals
+Terfi ⇒ Promotion
+{0} · {1}. hafta sonrası ⇒ {0} · after week {1}
+Küme düşme ⇒ Relegation
+Geçildi ⇒ Through
+Sıradaki ⇒ Next
+· elendiniz ⇒ · knocked out
+Eleme turları: {0}{1} ⇒ Knockout rounds: {0}{1}
+{0} · Grup ⇒ {0} · Group
+Kalan süre ⇒ Time left
+Sözleşmedeki rol ⇒ Contract role
+(garantili) ⇒ (guaranteed)
+Gol/asist primi ⇒ Goal/assist bonus
+İmaj hakları ⇒ Image rights
+Haftalık net (vergi sonrası) ⇒ Weekly net (after tax)
+· kiralık (ana kulüp: ⇒ · on loan (parent club:
+· altyapısında yetiştin ⇒ · academy graduate
+Kaptansın ⇒ You're captain
+Hayır ⇒ No
+Sözleşmen ⇒ Your contract
+Transfer talebin iletildi ⇒ Transfer request submitted
+Transfer talep et ⇒ Request a transfer
+Kiralık gitmek istiyorum ⇒ I want to go on loan
+Kulübün{2}{3} ⇒ Your club{2}{3}
+{5} · {6} · Takım gücü {7} · Tesis {8} ⇒ {5} · {6} · Team strength {7} · Facilities {8}
+Forma numaran ⇒ Shirt number
+Kulüpteki yılın ⇒ Years at club
+Kaptanlık ⇒ Captaincy
+Piyasa değerin ⇒ Market value
+Uyum ⇒ Chemistry
+Uyum kulüpte kaldıkça, takımla çalıştıkça ve oynadıkça artar; her transfer sıfıra yakın başlatır. Yüksek uyum performansını ve kaptanlık şansını artırır. ⇒ Chemistry grows the longer you stay, train and play; each transfer resets it near zero. High chemistry boosts performance and captaincy chances.
+Komisyon % ⇒ Commission %
+(ün ⇒ (fame
+Menajer ⇒ Agent
+Menajer daha çok ve daha iyi teklif getirir, maaşını yükseltir ve pazarlık masasında senin yerine konuşur. ⇒ An agent brings more and better offers, raises your salary and speaks for you at the table.
+Ş. Kupası ⇒ CL
+A. Ligi ⇒ EL
+Gol kr. ⇒ Top sc.
+Dünya K. ⇒ WC
+Kıta Ş. ⇒ Cont.
+Maç ⇒ Apps
+Ün ⇒ Fame
+Sezon sezon ⇒ Season by season
+Sezon ⇒ Season
+Kulüp ⇒ Club
+Rol ⇒ Role
+Ort. ⇒ Avg
+Doğduğun ülke. ⇒ Your birth country.
+Kesin ⇒ Final
+A takım seviyesindesin ⇒ Senior team level
+U21 seviyesindesin ⇒ U21 level
+Milli takımı bıraktın ⇒ Retired from internationals
+Kadro dışı ⇒ Not selected
+Resmi maça çıktığın için seçimin kesinleşti. ⇒ Your choice is final since you've played a competitive game.
+Bir ülkeyle resmi maça çıkana kadar diğer federasyonlar seni davet edebilir. ⇒ Until you play a competitive game for one country, other federations can invite you.
+Oynayabileceğin ülkeler ⇒ Countries you can play for
+Milli takıma dön ⇒ Return to the national team
+Turnuvalar ⇒ Tournaments
+A takım ⇒ Senior team
+{4} maç · {5} gol ⇒ {4} caps · {5} goals
+{6} maç · {7} gol ⇒ {6} caps · {7} goals
+Seçilme eşiği ⇒ Selection threshold
+~{8} (sen {9}) ⇒ ~{8} (you {9})
+Milli takım gücü ⇒ National team strength
+Milli maçlar 10, 20 ve 31. haftalarda oynanır; çağrıldığında katılıp katılmamak senin kararın. Maçları kendin oynayabilirsin. ⇒ Internationals are in weeks 10, 20 and 31; when called up, it's your choice to go. You can play the matches yourself.
+Talebin zaten masada ⇒ Your request is already on the table
+Kulübüne transfer talebini ilettin. ⇒ You handed in a transfer request.
+Bu menajer için ün {0} gerekli (senin {1}) ⇒ This agent needs fame {0} (yours: {1})
+{0} ile anlaştın. ⇒ You signed with {0}.
+{0}/{1} çalışma · {2} {3}/{4} ⇒ {0}/{1} sessions · {2} {3}/{4}
+Özel yetenekler · {0}/{1} ⇒ Special traits · {0}/{1}
+“Özel çalışma” eylemleriyle açılır ve maçta gerçekten etki eder. ⇒ Unlocked by "Special training" actions; they really matter in matches.
+Altyapı ⇒ Academy
+Kulüp yolculuğun ⇒ Your club journey
+↓ {0} A takımına yükseldin ⇒ ↓ Promoted to the {0} first team
+↓ Profesyonel kariyerine {0} ile başladın ⇒ ↓ Started your pro career at {0}
+bugün ⇒ today
+· şu an burada ⇒ · here now
+{5}–{6} · {7} sezon · {8}{9} ⇒ {5}–{6} · {7} seasons · {8}{9}
+Ülke ⇒ Country
+O zamanki güç ⇒ Strength then
+maç ⇒ apps
+Çubuk, o kulüpte oynadığın maçların kariyerindeki payını gösterir. ⇒ The bar shows that club's share of your career appearances.
+· artık dostsunuz ⇒ · friends now
+Genel ⇒ Overall
+Milli maç ⇒ International
+⚔ Yaşayan rakip ⇒ ⚔ Lifelong rival
+Eğitimin kurs ücretini düşürüyor. ⇒ Your education lowers the course fee.
+{0} dersleri ⇒ {0} lessons
+Ders çalış (⚡12) ⇒ Study (⚡12)
+{0} kursuna yazıl · {1} ⇒ Enrol on {0} · {1}
+En üst lisansa sahipsin. ⇒ You hold the top licence.
+Antrenörlük lisansı ⇒ Coaching licence
+Kurs ücretini öde, sonra “Kurs dersine çalış” eylemiyle dersleri tamamla (oynarken de olur). 3. lig için C, 2. lig için B, 1. lig için A, büyük kulüpler için Pro gerekir.{1} ⇒ Pay the course fee, then complete lessons with "Study for your course" (works while playing too). Tier 3 needs C, tier 2 B, top flight A, big clubs Pro.{1}
+arkadaş ⇒ friend
+· hayatını kaybetti ⇒ · passed away
+· {0} haftadır görüşmediniz ⇒ · not seen for {0} weeks
+{1} · {2} yaşından beri{3} ⇒ {1} · since age {2}{3}
+Arkadaşlarınla buluş (⚡8) ⇒ Meet your friends (⚡8)
+Arkadaşların ⇒ Your friends
+Vakit ayırmadığın ilişkiler zamanla zayıflar. ⇒ Relationships you neglect fade over time.
+yaş ⇒ age
+Erkek ⇒ Brother
+Kız ⇒ Sister
+{1} kardeş · {2} yaş ⇒ {1} sibling · age {2}
+Ailen · {0} ⇒ Your family · {0}
+Ev ve yaşam ⇒ Home and lifestyle
+· {0} haftadır görmedin ⇒ · not seen for {0} weeks
+Ziyaret et (⚡10) ⇒ Visit (⚡10)
+Kardeşlerinle buluş (⚡6) ⇒ Meet your siblings (⚡6)
+Aile desteğini kes ⇒ Stop family support
+Ailene yıllık destek ver ( ⇒ Give your family yearly support (
+Anne, baba, kardeşler ⇒ Parents and siblings
+Flört ⇒ Dating
+Sevgilin ⇒ Partner
+Eşin ⇒ Spouse
+Partnerin ⇒ Your partner
+· {0} haftadır baş başa vakit geçirmediniz ⇒ · no time alone for {0} weeks
+· tanışma: ⇒ · met:
+· şu an uzak mesafe ⇒ · long-distance now
+ilişkide kriz var ⇒ relationship in crisis
+Evlenme teklif et ⇒ Propose
+{1} · {2} yıl{3} ⇒ {1} · {2} yrs{3}

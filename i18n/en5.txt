@@ -1,0 +1,335 @@
+Birebir! ⇒ One-on-one!
+Oyun kurma ⇒ Build-up
+Orta geliyor ⇒ Cross incoming
+Serbest vuruş ⇒ Free kick
+Penaltı ⇒ Penalty
+Rakip hücumda ⇒ Opponent attacking
+Maç sonu ⇒ Full time
+· pen. {0}-{1} ⇒ · pens {0}-{1}
+Hakem düdüğü çaldı. ⇒ The referee blew the whistle.
+Zemin kaygan: top ıslak çimde hızlı kayar, kontrol zorlaşır. ⇒ Slippery pitch: the ball skids on wet grass and is harder to control.
+Kar: top çabuk durur, sekme düşük. Yerden paslar kısa kalır. ⇒ Snow: the ball stops quickly and bounces low. Ground passes fall short.
+Rüzgâr havadaki topu sürükler; sağ üstteki oka bak. ⇒ Wind pushes the ball in the air; check the arrow top right.
+Sıcak: ikinci yarıda oyuncular yavaşlar, kondisyon hızlı düşer. ⇒ Heat: players slow down in the second half and tire fast.
+Sis: uzağı görmek zor. ⇒ Fog: hard to see far.
+Senin puanın ⇒ Your rating
+Gol ⇒ Goals
+Asist ⇒ Assists
+Top kapma ⇒ Tackles won
+{5} dakika oynadın. ⇒ You played {5} minutes.
+Bu maçta forma giymedin. ⇒ You didn't play in this match.
+Maç raporu ⇒ Match report
+Yedek kulübesindesin. {0}. dakikada oyuna gireceksin. ⇒ You're on the bench. You'll come on in the {0}th minute.
+Bu maçta oynamıyorsun ⇒ You're not playing in this match
+Nasıl oynanır: sahada herhangi bir yere bas ve vurmak istediğin yöne sürükle; ok yönü ve uzunluğu vuruşu gösterir, bırakınca vurursun. Yay çizerek sürüklersen falso verirsin. Kısa sürükleme topu önüne sürer. “Havadan” topu kaldırır. Top sendeyken zaman yavaşlar ama rakip üstüne gelir. ⇒ How to play: press anywhere on the pitch and drag the way you want to kick; the arrow's direction and length show the strike, and releasing kicks. Drag in an arc to add curl. A short drag pushes the ball ahead. "Lofted" lifts the ball. Time slows while you have the ball, but opponents close in.
+Sonraki pozisyon · {0}' · {1} ⇒ Next chance · {0}' · {1}
+Kalan {2} pozisyonu simüle et ⇒ Simulate the remaining {2} chances
+Maçı tamamla ⇒ Finish the match
+Yedek kulübesindesin. ⇒ You're on the bench.
+İlk 11'desin. ⇒ You're in the starting XI.
+{0} – {1}: maç başladı. {2} ⇒ {0} – {1}: kick-off. {2}
+Vadeli mevduat ⇒ Fixed deposit
+Düşük getiri, risksiz ⇒ Low return, no risk
+Yatırım fonu ⇒ Investment fund
+Orta risk, dengeli ⇒ Medium risk, balanced
+Hisse senetleri ⇒ Stocks
+Yüksek getiri, dalgalı ⇒ High return, volatile
+Kripto para ⇒ Crypto
+Çok riskli ⇒ Very risky
+Daire ⇒ Flat
+Rezidans katı ⇒ Residence flat
+Villa ⇒ Villa
+Ofis katı ⇒ Office floor
+Arsa ⇒ Land plot
+Butik otel ⇒ Boutique hotel
+Restoran zinciri ⇒ Restaurant chain
+Gıda ⇒ Food
+Spor giyim markası ⇒ Sportswear brand
+İnşaat şirketi ⇒ Construction company
+Yapı ⇒ Building
+Teknoloji girişimi ⇒ Tech start-up
+Teknoloji ⇒ Tech
+Futbol akademisi ⇒ Football academy
+Futbol Akademisi ⇒ Football Academy
+Medya ajansı ⇒ Media agency
+Kafe ve spor barı ⇒ Café and sports bar
+Kafe ⇒ Café
+Ailenin evi ⇒ Family home
+Annenle babanla yaşıyorsun. ⇒ You live with your parents.
+Kiralık stüdyo daire ⇒ Rented studio
+Küçük ama senin. ⇒ Small, but yours.
+Kiralık daire ⇒ Rented flat
+İki oda, balkon. ⇒ Two rooms, balcony.
+Kiralık rezidans ⇒ Rented luxury flat
+Kapıcı, spor salonu, havuz. ⇒ Concierge, gym, pool.
+Kiralık villa ⇒ Rented villa
+Bahçeli, deniz manzaralı. ⇒ Garden, sea view.
+Kendi dairen ⇒ Your own flat
+Kira derdi bitti. ⇒ No more rent.
+Müstakil ev ⇒ Detached house
+Bahçede çocuklar top oynar. ⇒ Kids play football in the garden.
+Havuzlu, güvenlikli. ⇒ Pool and security.
+Malikâne ⇒ Mansion
+Efsanelere yakışır. ⇒ Fit for a legend.
+Toplu taşıma ⇒ Public transport
+İkinci el otomobil ⇒ Used car
+Orta sınıf otomobil ⇒ Mid-range car
+Lüks otomobil ⇒ Luxury car
+Süper otomobil ⇒ Supercar
+Kişisel antrenör ⇒ Personal trainer
+Antrenman gelişimi +%15 ⇒ Training gains +15%
+Özel aşçı / diyetisyen ⇒ Private chef / nutritionist
+Kondisyon toparlanması +, sağlık + ⇒ Fitness recovery +, health +
+Moral düşüşleri yumuşar ⇒ Softens morale drops
+Avukat ve mali müşavir ⇒ Lawyer and accountant
+Vergi %3 azalır, dava riskine karşı koruma ⇒ Tax −3%, protection against lawsuits
+Güvenlik ve şoför ⇒ Security and driver
+Ün +, kaza riski azalır ⇒ Fame +, fewer accidents
+Kira (kulüp ödüyor) ⇒ Rent (paid by club)
+Kira ⇒ Rent
+Ev bakımı ve aidat ⇒ Home upkeep and fees
+Sosyal yaşam, alışveriş, tatil ⇒ Social life, shopping, holidays
+Aileye ve akrabalara yardımlar ⇒ Help for family and relatives
+Mutfak ve günlük yaşam ⇒ Groceries and daily life
+Faturalar (elektrik, su, internet) ⇒ Bills (power, water, internet)
+Araç yakıtı (araç kulüpten) ⇒ Fuel (club car)
+Araç sigorta ve yakıt ⇒ Car insurance and fuel
+Çocukların okulu ({0}) ⇒ Children's school ({0})
+Çocukların futbol okulu ⇒ Children's football school
+Aileye aylık destek ⇒ Monthly support to family
+Borç faizi ⇒ Debt interest
+Ailenin evi artık yok ⇒ The family home is gone
+Paran yetmiyor: {0} gerekli (eski evin {1} eder, nakit {2}) ⇒ Not enough money: {0} needed (old home worth {1}, cash {2})
+Ev: {0} ⇒ Home: {0}
+{0} ödedin. ⇒ You paid {0}.
+Eski evini {0} karşılığında sattın. ⇒ You sold your old home for {0}.
+Yıllık kira {0}. ⇒ Annual rent {0}.
+Taşındın: {0}.{1}{2}{3} ⇒ You moved: {0}.{1}{2}{3}
+Yeni evin: {0} ⇒ New home: {0}
+Paran yetmiyor: {0} gerekli ⇒ Not enough money: {0} needed
+Araç: {0} ⇒ Car: {0}
+Yeni aracın: {0}. ⇒ New car: {0}.
+Bunun için ünün yetersiz ⇒ You're not famous enough for this
+İşe alım için {0} gerekli ⇒ Hiring needs {0}
+işe alım ⇒ hire
+{0}: −{1} şimdi, yılda {2} ⇒ {0}: −{1} now, {2} per year
+{0} bırakıldı ⇒ {0} let go
+{0} tuttun (yılda {1}). ⇒ You hired a {0} ({1} per year).
+{0} ile yollarınızı ayırdın. ⇒ You parted ways with your {0}.
+Tutumlu yaşam ⇒ Frugal lifestyle
+Normal yaşam ⇒ Normal lifestyle
+Lüks yaşam ⇒ Luxury lifestyle
+Ailene yılda {0} destek vermeye başladın. ⇒ You started supporting your family with {0} a year.
+Yatıracak nakit yok ⇒ No cash to invest
+Yatırım: {0} ⇒ Investment: {0}
+{0}: {1} yatırdın. ⇒ {0}: you invested {1}.
+{0} yatırıldı ⇒ {0} invested
+Bu kalemde para yok ⇒ Nothing invested here
+Bozdurma: {0} ⇒ Cash-out: {0}
+{0} bozduruldu: {1}. ⇒ {0} cashed out: {1}.
+{0} nakde döndü ⇒ {0} back to cash
+Mülk alımı: {0} ⇒ Property purchase: {0}
+{0} satın aldın ({1}). ⇒ You bought a {0} ({1}).
+{0} senin ⇒ {0} is yours
+{0}, {1} karşılığında satılsın mı? ⇒ Sell {0} for {1}?
+Mülk satışı: {0} ⇒ Property sale: {0}
+{0} satıldı. ⇒ {0} sold.
+Şirket kurdun ⇒ You founded a company
+Bu sektörde zaten şirketin var ⇒ You already have a company in this sector
+En fazla 5 şirket yönetebilirsin ⇒ You can run at most 5 companies
+Paran yetmiyor: {0} gerekli, nakit {1} ⇒ Not enough money: {0} needed, cash {1}
+Şirket kuruldu: {0} ⇒ Company founded: {0}
+{0} {1} kuruldu ⇒ {0} {1} founded
+Şirket en üst seviyede ⇒ Company is at max level
+Büyütmek için {0} gerekli, nakit {1} ⇒ Expanding needs {0}, cash {1}
+Şirket büyütme: {0} ⇒ Company expansion: {0}
+{0} büyüdü: seviye {1}. ⇒ {0} grew: level {1}.
+{0} → seviye {1} ⇒ {0} → level {1}
+Bu yıl zaten kampanya var ⇒ There's already a campaign this year
+Kampanya için {0} gerekli ⇒ A campaign needs {0}
+Reklam kampanyası: {0} ⇒ Ad campaign: {0}
+{0} için reklam kampanyası başlattın ({1}). ⇒ You launched an ad campaign for {0} ({1}).
+Kampanya başladı ⇒ Campaign launched
+Şirket satışı: {0} ⇒ Company sale: {0}
+En fazla 4 sponsorla çalışabilirsin ⇒ You can have at most 4 sponsors
+Sponsorluk: {0}, yılda {1}, {2} yıl. ⇒ Sponsorship: {0}, {1} per year, {2} years.
+{0} ile anlaştın ⇒ Deal signed with {0}
+Küresel ekonomik kriz: piyasalar sarsıldı. ⇒ Global economic crisis: markets shaken.
+Ekonomik kriz başladı. Yatırımlar ve şirketler zor günlerde. ⇒ An economic crisis has begun. Investments and companies are struggling.
+{0}'nden yetişen bir genç profesyonel oldu. ⇒ A youngster from {0} turned professional.
+{0} iflas etti. ⇒ {0} went bankrupt.
+Kira, şirket ve sponsor gelirleri (vergi sonrası) ⇒ Rent, company and sponsor income (after tax)
+Borçtasın ({0}). Faiz işliyor; varlık satmayı düşün. ⇒ You're in debt ({0}). Interest is running; consider selling assets.
+Küçük tribünler ⇒ Small stands
+Yenilenmiş stat ⇒ Renovated stadium
+Modern arena ⇒ Modern arena
+Akıllı stadyum ⇒ Smart stadium
+Efsane arena ⇒ Legendary arena
+Zaten bir kulübün var; önce onu sat ⇒ You already own a club; sell it first
+{0}, {1} karşılığında satın alınsın mı? ⇒ Buy {0} for {1}?
+Kulüp satın alındı: {0} ⇒ Club purchased: {0}
+{0} kulübünü satın aldın! ⇒ You bought {0}!
+{0} kulübünün yeni sahibi: {1} ⇒ {0} has a new owner: {1}
+Aktaracak nakit yok ⇒ No cash to transfer
+Kulüp kasasına aktarım ⇒ Transfer to club funds
+Kulübüne {0} aktardın. ⇒ You put {0} into your club.
+{0} kulüp kasasına ⇒ {0} to club funds
+Kulüp kasası boş ⇒ Club funds are empty
+Kulüp kasasından çekim ⇒ Withdrawal from club funds
+Kulüp kasasından {0} çektin. Taraftar hoşnutsuz. ⇒ You took {0} out of club funds. The fans are unhappy.
+{0} cebine ⇒ {0} to your pocket
+Altyapı en üst seviyede ⇒ Academy is at max level
+Kulüp bütçesi yetmiyor: {0} gerekli ⇒ Not enough club budget: {0} needed
+{0} altyapısı seviye {1} oldu. ⇒ {0} academy reached level {1}.
+Altyapı seviye {0} ⇒ Academy level {0}
+Stadyum zaten efsane ⇒ The stadium is already legendary
+Stadyum yatırımı: {0} ({1}). ⇒ Stadium investment: {0} ({1}).
+Ucuz bilet: taraftar mutlu ⇒ Cheap tickets: fans happy
+Normal bilet ⇒ Normal tickets
+Pahalı bilet: gelir artar, taraftar söylenir ⇒ Expensive tickets: more income, fans grumble
+Bahis şirketi ⇒ Betting company
+Mevcut sponsor sözleşmesi bitmeden yenisi yapılamaz ⇒ You can't sign a new sponsor until the current deal ends
+{0} forma sponsoru: {1} (yılda {2}, {3} yıl). ⇒ {0} shirt sponsor: {1} ({2} per year, {3} years).
+Sponsor: {0} ⇒ Sponsor: {0}
+Hücumcu ⇒ Attacking
+Savunmacı ⇒ Defensive
+Gençlere şans veren ⇒ Trusts youth
+Disiplinli ⇒ Disciplined
+Takımı şu an sen çalıştırıyorsun ⇒ You're managing the team yourself
+Bütçe yetmiyor: tazminat {0} + ön ödeme {1} ⇒ Budget too low: compensation {0} + advance {1}
+{0} görevden alındı (tazminat {1}). ⇒ {0} was sacked (compensation {1}).
+Yeni teknik direktör: {0} ({1}, kalite {2}). Yıllık {3}. ⇒ New manager: {0} ({1}, quality {2}). {3} per year.
+{0} teknik direktörünü açıkladı: {1} ⇒ {0} announced their new manager: {1}
+{0} göreve başladı ⇒ {0} took charge
+Futbolu bırakmadan kendi takımını çalıştıramazsın ⇒ You can't manage your own team before retiring
+Zaten bir takım çalıştırıyorsun ⇒ You're already managing a team
+görevden alınacak. ⇒ will be dismissed.
+Lisansın olmadığı için federasyondan özel izin alınacak. ⇒ Without a licence you'll need special permission from the federation.
+{0} teknik direktörlüğünü kendin üstlen? {1}{2} ⇒ Take over as {0} manager yourself? {1}{2}
+{0} ile yollar ayrıldı; takımı sen çalıştıracaksın. ⇒ {0} has left; you'll manage the team.
+Transfer dönemi kapalı (1-4. ve 22-25. haftalar) ⇒ Transfer window closed (open weeks 1-4 and 22-25)
+Listeden çıkarıldı ⇒ Removed from the list
+Transfer listesine kondu; dönem açılınca satılacak ⇒ Transfer-listed; will be sold when the window opens
+{0} satılsın mı? (tahmini {1}) ⇒ Sell {0}? (est. {1})
+{0} kasaya girdi ⇒ {0} received
+Sözleşmesi yenilenecek ⇒ Contract will be renewed
+Yenileme iptal ⇒ Renewal cancelled
+Diziliş {0} · güç {1} ⇒ Formation {0} · strength {1}
+Teknik direktörlüğün de sona erer. ⇒ Your managerial job ends too.
+{0}, {1} karşılığında satılsın mı?{2} ⇒ Sell {0} for {1}?{2}
+Kulübü sattı ⇒ Sold the club
+Kulüp satışı ⇒ Club sale
+{0} kulübünü {1} karşılığında sattın. ⇒ You sold {0} for {1}.
+Kulübün {0} üst lige çıktı! ⇒ Your club {0} was promoted!
+Kulübün {0} küme düştü. ⇒ Your club {0} was relegated.
+Kulübün {0} lig şampiyonu oldu! ⇒ Your club {0} won the league!
+Kulüp borcunu kapattın ⇒ You cleared the club's debt
+Kulübün borcunu kendi cebinden kapattın ({0}). ⇒ You paid off the club's debt yourself ({0}).
+Kulüp borç içindeydi; en iyi oyuncular satıldı. ⇒ The club was in debt; the best players were sold.
+Kulübün {0}: {1}{2}, yıllık sonuç {3}{4}, kasa {5}. ⇒ Your club {0}: {1}{2}, annual result {3}{4}, funds {5}.
+Hücum ⇒ Attack
+Çok gol atar, çok yer ⇒ Scores a lot, concedes a lot
+Riski dengeler ⇒ Balances risk
+Otobüs ⇒ Park the bus
+Az gol, az risk ⇒ Few goals, low risk
+Kontra ⇒ Counter
+Güçlü rakibe karşı etkili ⇒ Effective against strong teams
+Yüksek pres ⇒ High press
+Etkili ama yorar ⇒ Effective but tiring
+Topa sahip ol ⇒ Possession
+Teknik kadro ister ⇒ Needs a technical squad
+Yardımcı antrenör ⇒ Assistant coach
+Takım gücü + ⇒ Team strength +
+Maç analisti ⇒ Match analyst
+Takım gücü +, rakip analizi ⇒ Team strength +, opponent analysis
+Fizyoterapi ekibi ⇒ Physio team
+Sakatlık riski ve süresi azalır ⇒ Fewer and shorter injuries
+Kaleci antrenörü ⇒ Goalkeeping coach
+Kalecilerin gelişimi + ⇒ Keeper development +
+Gözlemci ağı ⇒ Scouting network
+Transfer pazarında daha iyi oyuncular ⇒ Better players on the market
+Altyapı direktörü ⇒ Academy director
+Altyapı adayları daha yetenekli ⇒ More talented academy intake
+En üst lisansa sahipsin ⇒ You hold the top licence
+Zaten bir kurstasın ⇒ You're already on a course
+Kurs ücreti {0}, nakit {1} ⇒ Course fee {0}, cash {1}
+{0} kurs ücreti ⇒ {0} course fee
+{0} kursuna yazıldın ({1}). {2} ders gerekiyor; dersleri Enerji sekmesinden alabilirsin. ⇒ You enrolled on the {0} course ({1}). {2} lessons needed; take them from the Energy tab.
+{0} kursu başladı ⇒ {0} course started
+🎓 {0} lisansını aldın! ⇒ 🎓 You earned the {0} licence!
+{0} lisansı alındı ⇒ {0} licence earned
+Önce UEFA C lisansı almalısın ⇒ You need the UEFA C licence first
+Şu an teknik direktörlük için uygun bir teklif yok. ⇒ No suitable management offers right now.
+Uygun teklif yok; ün ve lisans gerekli ⇒ No offers; you need fame and a licence
+{0} sana teknik direktörlük teklif etti. ⇒ {0} offered you the manager's job.
+Başka kulübe geçti ⇒ Moved to another club
+Teknik direktör oldun: {0} ({1}). Maaş {2}/yıl, {3} yıl. ⇒ You're the new manager of {0} ({1}). Salary {2}/yr, {3} yrs.
+{0} yeni teknik direktörünü açıkladı: {1} ⇒ {0} unveiled their new manager: {1}
+Teknik direktör tazminatı ⇒ Manager compensation
+Tazminat aldın: {0}. ⇒ You received compensation: {0}.
+Şampiyonluk ⇒ Win the title
+Üst lige çık (ilk 3) ⇒ Get promoted (top 3)
+Ligde kal ⇒ Avoid relegation
+Ligi ilk {0} içinde bitir ⇒ Finish in the top {0}
+Kupada yarı final ⇒ Cup semi-final
+Kupada son 16 ⇒ Cup last 16
+Avrupa’da çeyrek final ⇒ European quarter-final
+Avrupa’da gruptan çık ⇒ Get out of the European group
+Altyapıdan en az 1 oyuncu yükselt ⇒ Promote at least 1 academy player
+Maaş bütçesini aşma ⇒ Stay within the wage budget
+Kazandı ⇒ Won
+Devam · ⇒ Still in ·
+Elendi · ⇒ Out ·
+Elendi ⇒ Out
+yükseltildi ⇒ raised
+Yönetim iyi gidişi gördü ve çıtayı yükseltti. ⇒ The board saw the good run and raised the bar.
+Yönetim hedefi düşürdü ama sabrı azalıyor. ⇒ The board lowered the target, but their patience is thinning.
+Yönetim: “Hedef değişmedi, toparlanmanı bekliyoruz.” ⇒ Board: "The target hasn't changed; we expect you to turn it round."
+Yönetim gidişattan memnun. ⇒ The board is happy with progress.
+Sezon ortası değerlendirme: {0} ⇒ Mid-season review: {0}
+Diziliş: {0} · güç {1} ⇒ Formation: {0} · strength {1}
+Taktik: {0} ⇒ Tactic: {0}
+Rotasyon az: en iyiler oynar, yorulur ⇒ Little rotation: best players play and tire
+Dengeli rotasyon ⇒ Balanced rotation
+Bol rotasyon: dinç ama zayıf ⇒ Heavy rotation: fresh but weaker
+Hafif antrenman ⇒ Light training
+Normal antrenman ⇒ Normal training
+Ağır antrenman ⇒ Hard training
+{0} kadro dışı ⇒ {0} dropped from the squad
+{0} kadroya döndü ⇒ {0} back in the squad
+En iyi ekip zaten burada ⇒ You already have the best staff
+{0} seviye {1}: imza {2}, yıllık maaş {3} bütçeden ödenecek. ⇒ {0} level {1}: signing fee {2}, annual wage {3} paid from the budget.
+{0} → {1}. seviye · −{2} · yılda −{3} ⇒ {0} → level {1} · −{2} · −{3}/yr
+Kulüp bütçesi eksiye düştü; yönetim harcamalardan rahatsız. ⇒ The club budget is in the red; the board is unhappy with spending.
+{0} transfer listesine kondu; dönem açılınca satılacak. ⇒ {0} was transfer-listed; he'll be sold when the window opens.
+Transfer listesine kondu ⇒ Transfer-listed
+{0} karşılığında satıldı ⇒ Sold for {0}
+{0} bir oyuncusunu {1} karşılığında sattı. ⇒ {0} sold a player for {1}.
+{0}: sözleşme yenilenecek (+%10 maaş) ⇒ {0}: contract to be renewed (+10% wage)
+Bu sezon zaten bütçe istedin ⇒ You already asked for budget this season
+Yönetim ek transfer bütçesi verdi: {0}. ⇒ The board gave an extra transfer budget: {0}.
++{0} bütçe ⇒ +{0} budget
+Yönetim ek bütçe talebini reddetti; ilişkiler gerildi. ⇒ The board refused extra budget; relations are strained.
+Talep reddedildi ⇒ Request refused
+Kadro güçlendi; yönetimin beklentisi de yükseldi. ⇒ The squad is stronger; so are the board's expectations.
+Yönetim hedefi yükseltti ⇒ The board raised the target
+Bir gazeteci yıldız oyuncunun disiplinsizliğini soruyor. ⇒ A journalist asks about your star player's indiscipline.
+Oyuncumu korurum ⇒ I protect my player
+Kurallar herkese eşit ⇒ Rules are the same for everyone
+Başkan yüksek sesle transfer eleştirisi yaptı. ⇒ The president publicly criticised your transfers.
+Kamuoyu önünde cevap ver ⇒ Respond in public
+Kapalı kapılar ardında konuş ⇒ Talk behind closed doors
+Taraftarlar tesise pankart astı: “Taktik yok, ruh yok!” ⇒ Fans hung a banner at the training ground: "No tactics, no soul!"
+Hücum futboluna dön ⇒ Go back to attacking football
+Kendi yolumdan şaşmam ⇒ I stick to my way
+Rakip teknik direktör seni “şanslı” diye küçümsedi. ⇒ The rival manager dismissed you as "lucky".
+Sahada cevap veririz ⇒ We'll answer on the pitch
+Sert bir karşılık ver ⇒ Fire back
+Hakem kararları soruluyor; maçta net bir penaltı verilmedi. ⇒ You're asked about refereeing; a clear penalty wasn't given.
+Hakemi eleştir (ceza riski) ⇒ Criticise the referee (risk of fine)
+Federasyon para cezası ⇒ Federation fine
+Federasyon para cezası verdi. ⇒ The federation issued a fine.
+Konuşmayayım ⇒ No comment
+Altyapıdan bir genç çok konuşuluyor. “Ne zaman şans vereceksiniz?” ⇒ An academy kid is the talk of the town. "When will you give him a chance?"
+Yakında A takımda ⇒ He'll be in the first team soon
+Acele etmeyeceğiz ⇒ We won't rush

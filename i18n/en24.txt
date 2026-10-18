@@ -1,0 +1,16 @@
+🏃 KOŞU VERİLDİ ⇒ 🏃 RUN ORDERED
+{0} bir sonraki hamlede oraya koşacak. Kalan koşu: {1} ⇒ {0} will run there on your next move. Runs left: {1}
+{0} bir sonraki hamlede oraya koşacak. ⇒ {0} will run there on your next move.
+🎯 Oku kaleye doğru çek. ⇒ 🎯 Pull the arrow toward goal.
+👟 Oku kaleye ya da boşluğa çek; ucuna en yakın arkadaşın koşar. ⇒ 👟 Pull the arrow toward goal or into space; the nearest teammate runs onto it.
+önüne ⇒ into his path
+🛡️ HAVA TOPU ⇒ 🛡️ AERIAL DUEL
+🎯 Penaltı! Oku kaleye doğru çek (uzunluk = sertlik), sonra topa bas. Yanına basarsan falso. ⇒ 🎯 Penalty! Pull the arrow toward goal (length = power), then tap the ball. Tap its side for curl.
+🎯 Serbest vuruş: oku kaleye çek, sonra topun alt-yanına bas: havalanıp falsoyla barajı aşar. Ya da bir arkadaşının önüne çek. ⇒ 🎯 Free kick: pull the arrow toward goal, then tap the lower side of the ball: it lifts and curls over the wall. Or pull it into a teammate's path.
+🏹 Parmağını koy ve ÇEK: okun ucu topun gideceği yer. Az çek = yumuşak, çok çek = sert. Arkadaşının önüne atabilirsin. Topun altına basarsan havadan, ortasına basarsan yerden gider. ⇒ 🏹 Put your finger down and PULL: the arrow's tip is where the ball goes. Short pull = soft, long pull = hard. You can play it into a teammate's path. Tap the bottom of the ball to loft it, the middle to keep it on the ground.
+🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster ({0}). ⇒ 🏃 Touch a teammate and drag: show him where to run ({0}).
+🏹 okun ucu = hedef ⇒ 🏹 arrow tip = target
+📏 uzun = sert ⇒ 📏 long = hard
+⬆️ alttan bas = havadan ⇒ ⬆️ tap low = lofted
+💨 kısa = sür ⇒ 💨 short = dribble
+🏃 arkadaşı sürükle = koşu ⇒ 🏃 drag a teammate = run

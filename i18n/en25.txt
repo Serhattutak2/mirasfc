@@ -1,0 +1,12 @@
+⚽ BOŞTA TOP ⇒ ⚽ LOOSE BALL
+🙌 TOP SENDE ⇒ 🙌 YOUR BALL
+🙌 TOP BİZDE ⇒ 🙌 OUR BALL
+TOP RAKİPTE ⇒ THEIR BALL
+{0} boştaki topu aldı ⇒ {0} won the loose ball
+Top oyun dışına çıktı ⇒ The ball went out of play
+😬 KÖTÜ KONTROL ⇒ 😬 HEAVY TOUCH
+🧤 KALECİ ÇELDİ ⇒ 🧤 PARRIED
+Dönen topu savunma uzaklaştırdı ⇒ The defence cleared the rebound
+🟨 FAUL ⇒ 🟨 FOUL
+🟨 {0} faul yaptı ⇒ 🟨 Foul by {0}
+Faul! Top yine sizde, oyun devam ediyor. ⇒ Foul! Still your ball, play goes on.

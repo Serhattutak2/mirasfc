@@ -1,0 +1,34 @@
+🎯 Penaltı! Toptan kaleye bir yol çiz. Kavis falso verir; kaleci bir tarafa atlayacak. ⇒ 🎯 Penalty! Draw a line from the ball into the goal. A curve adds bend; the keeper will dive one way.
+🎯 Serbest vuruş: barajın etrafından kavisli bir yol çiz ya da bir arkadaşına pas çiz. ⇒ 🎯 Free kick: draw a curved line around the wall, or draw a pass to a teammate.
+✍️ Toptan başlayarak bir yol çiz: arkadaşına → pas · kaleye → şut · boşluğa → topla sür. 🟥 Kırmızı = rakip keser. ⇒ ✍️ Draw a line starting from the ball: to a teammate → pass · into the goal → shot · into space → dribble. 🟥 Red = an opponent will cut it out.
+Orta geliyor! Top başına gelince kaleye bir yol çiz: kafa vuruşu. ⇒ Cross incoming! When it reaches your head, draw a line to goal: header.
+Bu pozisyonda yol bir arkadaşında ya da kalede bitmeli. ⇒ Here the line must end at a teammate or in the goal.
+🎯 Kafa! Kaleye ya da bir arkadaşına yol çiz. ⇒ 🎯 Header! Draw a line to goal or to a teammate.
+👟 arkadaşa = pas ⇒ 👟 to teammate = pass
+🎯 kaleye = şut ⇒ 🎯 into goal = shot
+💨 boşluğa = sür ⇒ 💨 into space = dribble
+🟥 = kesilir ⇒ 🟥 = will be cut out
+⚡ Otomatik hamle ⇒ ⚡ Auto move
+Devam ▶ ⇒ Continue ▶
+çok uzun: sürüş kısalır ⇒ too long: the run will be shorter
+TOP KAÇTI ⇒ BALL LOST
+{0} topu kontrol edemedi ⇒ {0} couldn't control it
+{0} şutu engelledi ⇒ {0} blocked the shot
+{0} topu ayağından aldı ⇒ {0} took it off your feet
+{0} şutunu kaleci çıkardı ⇒ The keeper kept out {0}'s shot
+Uzaktan füze! ⇒ A rocket from distance!
+{0} havada önce davrandı ⇒ {0} won it in the air
+⚽ GOL! ⇒ ⚽ GOAL!
+🧤 KURTARIŞ ⇒ 🧤 SAVE
+❌ KESİLDİ ⇒ ❌ INTERCEPTED
+🛡️ BLOK ⇒ 🛡️ BLOCKED
+🛡️ UZAKLAŞTIRDI ⇒ 🛡️ CLEARED
+🥅 DİREK ⇒ 🥅 POST
+😩 ÜSTTEN ⇒ 😩 OVER
+😩 AUT ⇒ 😩 WIDE
+😬 KONTROL ⇒ 😬 MISCONTROL
+🤕 DÜELLO ⇒ 🤕 DUEL LOST
+🎯 KAFA! ⇒ 🎯 HEADER!
+💨 SÜRDÜ ⇒ 💨 DRIBBLE
+KALECİ ÇELDİ ⇒ KEEPER PARRIES
+Nasıl oynanır: pozisyonda oyun durur. Topu kimde ise ondan başlayarak parmağınla bir YOL ÇİZ: arkadaşında biterse pas, kalede biterse şut (kavis = falso), boşlukta biterse topla sürersin. Şut ve paslarında top havaya çıkar: topa bas, ortasına basarsan mükemmel vuruş. Kırmızı yanan yerleri rakip keser. Pası kesersen ya da hamle zinciri kurarsan 🔥 puanın artar. Savunmada oyuncunu pas yoluna sürükle. ⇒ How to play: play pauses at each moment. Starting from whoever has the ball, DRAW A LINE with your finger: end on a teammate to pass, in the goal to shoot (curve = bend), in space to dribble. On your shots and passes the ball pops up: tap it, hit the middle for a perfect strike. Red spots will be cut out by opponents. Interceptions and move chains 🔥 boost your rating. In defence, drag your player into the passing lane.

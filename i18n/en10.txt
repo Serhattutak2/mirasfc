@@ -1,0 +1,35 @@
+mimar ⇒ an architect
+Seni evde {0} karşıladı. ⇒ {0} was waiting for you at home.
+Seni evde {0} ve {1} karşıladı. ⇒ {0} and {1} were waiting for you at home.
+Şehrin takımı {0}. ⇒ Your city's team: {0}.
+Kulüp kurucusu ⇒ Club founder
+Gurbet ⇒ Far from home
+Skandal ⇒ Scandal
+{0} hikâye paketi ⇒ {0} story pack
+{0} teması ⇒ {0} theme
+Gece mavisi ⇒ Midnight blue
+Kızıl gece ⇒ Crimson night
+Zümrüt ⇒ Emerald
+Günlük ödül ⇒ Daily reward
+{0}. gün ⇒ day {0}
+İlk tutku ⇒ First love
+{0} yaş: {1} ⇒ Age {0}: {1}
+{0} yaş ⇒ Age {0}
+Takım gücü {0} ⇒ Team strength {0}
+Tesis {0} ⇒ Facilities {0}
+Satın al {0} ⇒ Buy {0}
+{0}. hafta ⇒ Week {0}
+iç saha ⇒ home
+deplasman ⇒ away
+{0} sezon ⇒ {0} seasons
+(ün {0}) ⇒ (fame {0})
+Gelişim ⇒ Development
+İş ⇒ Work
+Yaş çarpanı ×{0}. ⇒ Age multiplier ×{0}.
+Yaş çarpanı ×{0} ⇒ Age multiplier ×{0}
+İnce yeşil çizgi bir sonraki puana ilerlemeyi gösterir. ⇒ The thin green line shows progress to the next point.
+Bıraktığı servet: {0}. ⇒ Fortune left behind: {0}.
+Miras Puanı {0} — {1}. ⇒ Legacy Points {0} — {1}.
+Ailene yıllık destek ver ({0}) ⇒ Give your family yearly support ({0})
+{0} gelişim ⇒ {0} development
+Dalgalı ⇒ Up-and-down

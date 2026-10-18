@@ -1,0 +1,24 @@
+yılda {0} ⇒ {0} a year
+Dönüm noktası {0} ⇒ Turning point {0}
+{0} kalıcı olarak düştü ⇒ {0} permanently reduced
+yıllık kira {0} (kulüp ödüyor) ⇒ yearly rent {0} (club pays)
+T.D.: {0} ⇒ Manager: {0}
+Top kapıldı ⇒ Ball lost
+{0} maç, {1} gol ⇒ {0} apps, {1} goals
+İmza: {0} ⇒ Signed: {0}
+Spor psikoloğu işe alım ⇒ Hiring a sports psychologist
+Özel aşçı / diyetisyen işe alım ⇒ Hiring a private chef / dietitian
+{0} işe alım ⇒ Hiring: {0}
+Kapıdaki menajer ⇒ The agent at the door
+Diz ⇒ The knee
+Evdeki yük ⇒ The weight at home
+İki çağrı ⇒ Two calls
+{0}. sıra ⇒ {0}th place
+✨ Yeni yetenek: {0}! ⇒ ✨ New skill: {0}!
+Dinlen ⇒ Rest
+Teknik direktör olmak için önce futbolu bırakmalısın ⇒ Retire from playing before becoming a manager
+Futbolu bıraktın; oyuncu teklifleri artık gelmiyor ⇒ You've retired from playing; player offers no longer come
+Menajer görüşmeleri oyunculuk döneminde yapılır ⇒ Agent meetings are for your playing days
+Örn. {0} ⇒ e.g. {0}
+1 sezon ⇒ 1 season
+1 yıl ⇒ 1 yr

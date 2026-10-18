@@ -1,0 +1,13 @@
+Top sende! Zaman ağır akıyor ama rakipler üstüne geliyor. KAYDIR: kısa = topu sür, uzun = pas ya da şut, eğri = falso. Arkadaşına dokunursan pas atarsın. ⇒ The ball is yours! Time runs in slow motion, but opponents are closing in. SWIPE: short = dribble, long = pass or shoot, curved = curl. Tap a teammate to pass.
+👆 Kısa kaydır: topu sür · Uzun kaydır: pas / şut · Eğri kaydır: falso ⇒ 👆 Short swipe: dribble · Long swipe: pass / shoot · Curved swipe: curl
+Yardımlı oyna (dokunarak) ⇒ Assisted play (tap)
+⏸ DURAN TOP ⇒ ⏸ SET PIECE
+◔ AĞIR ÇEKİM · TOP SENDE ⇒ ◔ SLOW-MO · YOUR BALL
+Top geliyor! Tek vuruşta KAYDIR (şut/pas) ya da bekle, top ayağına gelsin. ⇒ Ball incoming! SWIPE for a first-time shot/pass, or wait and take it on your foot.
+Tek vuruş! ⇒ First-time shot!
+Tek pas! ⇒ First-time pass!
+Çok bekledin, savunma yerleşti ⇒ You waited too long; the defence got set
+{0} ayağından aldı ⇒ {0} took it off your feet
+{0} kaydı, sıyrıldın! ⇒ {0} went to ground, you skipped past!
+{0} topu önünden aldı ⇒ {0} nicked the ball off you
+Top kaçtı ⇒ The ball got away

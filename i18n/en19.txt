@@ -1,0 +1,39 @@
+Çalım koşusu ⇒ Dribbling run
+Pası kestin! ⇒ Interception!
+Pası kestin! Şimdi oyunu kur: arkadaşına pas ver. ⇒ Interception! Now build the play: pass to a teammate.
+Basit pas ⇒ Simple pass
+İyi pas ⇒ Good pass
+Harika pas! ⇒ Great pass!
+Muhteşem pas!! ⇒ Amazing pass!!
+{0} ({1} m) ⇒ {0} ({1} m)
+{0} · {1} m ⇒ {0} · {1} m
+{0}. Top yine sende, şimdi çalım koşusu! ⇒ {0}. The ball's back with you, now a dribbling run!
+{0}. Hücum başlıyor! ⇒ {0}. The attack is on!
+HARİKA PAS! ⇒ GREAT PASS!
+İYİ PAS ⇒ GOOD PASS
+BASİT PAS ⇒ SIMPLE PASS
+{0} topla buluştu ⇒ {0} took it in his stride
+Çalım koşusu! Oyuncun topla ileri koşuyor. Rakip önüne çıkınca ekranın SOLUNA ya da SAĞINA dokun (ya da kaydır): o yana sıyrılırsın. Doğru anda yaparsan rakip ters yöne gider. ⇒ Dribbling run! Your player drives forward with the ball. When a defender steps in, tap the LEFT or RIGHT side of the screen: you sidestep that way. Time it right and he goes the wrong way.
+Çalım! {0} ters yöne gitti ⇒ Feint! {0} went the wrong way
+{0} geride kaldı! ⇒ {0} left behind!
+{0} önünü kesti ⇒ {0} blocked your path
+Çalım koşusu: savunmayı geçtin! ⇒ Dribbling run: you beat the defence!
+Savunmayı geçtin! Şimdi bitir. ⇒ You're through! Now finish it.
+SOLA / SAĞA DOKUN: SIYRIL ⇒ TAP LEFT / RIGHT: SIDESTEP
+Oyun tarzın (pozisyon türlerini ve kondisyonu etkiler): ⇒ Your work rate (affects the moments you get and your fitness):
+Savunma ⇒ Defensive
+Dengeli ⇒ Balanced
+Hücum ⇒ Attacking
+TOPA DOKUN! ⇒ TAP THE BALL!
+ÜST: ALÇAK · ALT: HAVALI · YAN: FALSO ⇒ TOP: LOW · BOTTOM: LOFTED · SIDE: CURL
+ARAYA GİR ⇒ INTERCEPT
+PAS ⇒ PASS
+ÇALIM ⇒ DRIBBLE
+HÜCUM ⇒ ATTACK
+BİREBİR ⇒ ONE-ON-ONE
+KONTRA ⇒ COUNTER
+KAFA ⇒ HEADER
+SERBEST VURUŞ ⇒ FREE KICK
+PENALTI ⇒ PENALTY
+İYİ PAS ⇒ GOOD PASS
+MUHTEŞEM PAS!! ⇒ AMAZING PASS!!

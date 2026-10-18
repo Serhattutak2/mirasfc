@@ -1,0 +1,370 @@
+Hediye al (pahalı) ⇒ Buy a gift (expensive)
+Bir gece kulübünde biri sana açıkça ilgi gösteriyor. Partnerin şehir dışında. ⇒ Someone at a nightclub is openly flirting with you. Your partner is out of town.
+Kibarca uzaklaş ⇒ Politely walk away
+Bir içki iç ⇒ Have a drink
+Fotoğraflarınız magazine düştü. ⇒ Photos of you two hit the tabloids.
+magazin skandalı ⇒ tabloid scandal
+boşanmak ⇒ a divorce
+ayrılmak ⇒ to break up
+{0} artık {1} istiyor. ⇒ {0} now wants {1}.
+Son bir şans iste ⇒ Ask for one last chance
+İlişkiniz zor da olsa devam ediyor. ⇒ Your relationship carries on, though it's hard.
+Çift terapisine gidelim ⇒ Let's try couples therapy
+Terapi işe yaradı. ⇒ Therapy worked.
+Kabul et ⇒ Accept
+{0} ile aranızda soğuk bir sessizlik var. “Böyle devam edemeyiz” dedi. ⇒ There's a cold silence between you and {0}. "We can't go on like this," they said.
+Bir hafta sadece ona ayır ⇒ Give them a whole week
+Konuşalım, ne istediğini söylesin ⇒ Let's talk; let them say what they want
+Zamanla geçer ⇒ It'll pass with time
+{0} okul maçında oynayacak ve tribünde seni arayacak. Aynı gün önemli bir işin var. ⇒ {0} is playing in a school match and will look for you in the stands. You have important business that day.
+Maça git ⇒ Go to the match
+İşe git ⇒ Go to work
+{0} için bir altyapı seçmesi daveti geldi. “Babasının oğlu/kızı” baskısı da olacak. ⇒ {0} has been invited to an academy trial. There'll be "like father, like child" pressure too.
+Desteklerim, ama baskı yapmam ⇒ I'll support them, but no pressure
+Önce okul ⇒ School first
+Ona kendim antrenörlük yapacağım ⇒ I'll coach them myself
+{0} okulda kavgaya karıştı; “ünlü babanın çocuğu” diye alay ediyorlarmış. ⇒ {0} got into a fight at school; kids were mocking them as "the famous dad's kid".
+Onunla uzun bir yürüyüşe çık ⇒ Take them for a long walk
+Okul değiştirt (özel okul) ⇒ Change schools (private school)
+Cezalandır ⇒ Punish them
+{0} evleniyor! ⇒ {0} is getting married!
+Düğünü sen üstlen ({0}) ⇒ Pay for the wedding ({0})
+Duygusal bir konuşma yap ⇒ Give an emotional speech
+Torunun dünyaya geldi! ⇒ Your grandchild was born!
+Hastaneye koş ⇒ Rush to the hospital
+Hediye olarak bir hesap aç ⇒ Open a savings account as a gift
+Annen ⇒ Your mother
+Baban ⇒ Your father
+{0} {1} hastanede; ameliyat olması gerekiyor. ⇒ {0} {1} is in hospital and needs surgery.
+En iyi hastaneyi ayarla ({0}) ⇒ Arrange the best hospital ({0})
+Her gün yanında ol (antrenmanı aksat) ⇒ Be there every day (miss training)
+Kardeşlerim ilgilensin ⇒ Let my siblings handle it
+Annen {0} babanın ardından yalnız kaldı. ⇒ Your mother {0} is alone since your father passed.
+Yanına taşı (ev değiştir) ⇒ Move her in with you (move house)
+Ona yakın bir ev al ({0}) ⇒ Buy a house near her ({0})
+Daha sık ara ⇒ Call more often
+{0} evleniyor. Düğün maç gününe denk geliyor. ⇒ {0} is getting married. The wedding falls on a match day.
+Kulüpten izin iste, düğüne git ⇒ Ask the club for leave and go
+Gidemem ama düğünü ben öderim ({0}) ⇒ I can't go, but I'll pay for the wedding ({0})
+{0} iş kurmak istiyor ve senden 100 B€ istiyor. ⇒ {0} wants to start a business and asks you for 100 B€.
+Ver ⇒ Give it
+Kardeşinin işi tuttu, parayı fazlasıyla geri verdi. ⇒ Your sibling's business took off and they paid you back with interest.
+Ortak olarak gir ⇒ Come in as a partner
+Kardeşinle ortaklık ⇒ Partnership with your sibling
+Reddet ⇒ Refuse
+Çocukluk arkadaşın {0} evleniyor ve seni sağdıç istiyor. ⇒ Your childhood friend {0} is getting married and wants you as best man.
+Sağdıç ol ⇒ Be the best man
+Hediye gönder ⇒ Send a gift
+{0} zor durumda ve senden borç istiyor. ⇒ {0} is in trouble and asks you for a loan.
+Ver ({0}) ⇒ Lend it ({0})
+Hayır de ⇒ Say no
+{0} borcunu ödemiyor ve telefonlarına çıkmıyor. ⇒ {0} isn't paying you back and won't answer your calls.
+Affet, dostluk paradan önemli ⇒ Forgive — friendship matters more than money
+Avukata ver ⇒ Hand it to a lawyer
+Kötü bir haber: {0} trafik kazası geçirdi ve hayatını kaybetti. ⇒ Terrible news: {0} died in a car crash.
+Cenazede tabutunu taşı ⇒ Carry the coffin at the funeral
+{0} toprağa verildi. ⇒ {0} was laid to rest.
+Ailesine destek ol ⇒ Support the family
+Takım arkadaşın {0} ile antrenman sonrası sohbetler uzuyor. ⇒ Your chats with teammate {0} after training keep getting longer.
+Ailecek akşam yemeğine çağır ⇒ Invite them to a family dinner
+takım ⇒ team
+İş ve özel hayatı ayırırım ⇒ I keep work and private life apart
+Teknik direktör seni yine yedek bıraktı. Antrenmanda göz göze geldiniz. ⇒ The manager left you on the bench again. You locked eyes in training.
+Odasına git ve konuş ⇒ Go to his office and talk
+Hoca sana daha çok şans vereceğini söyledi. ⇒ The manager said he'd give you more chances.
+Basına sitem et ⇒ Complain to the press
+Sözlerin manşet oldu; hoca hiç hoşlanmadı. ⇒ Your words made headlines; the manager wasn't pleased.
+Sus ve çalış ⇒ Keep quiet and work
+Takım arkadaşların ve teknik direktör, {0}'{1} kaptan olmanı öneriyor. ⇒ Your teammates and manager want you to captain {0}.
+Bandı gururla tak ⇒ Wear the armband with pride
+{0} kaptanı oldun. ⇒ You became {0} captain.
+Daha deneyimli birine bırak ⇒ Leave it to someone more experienced
+Soyunma odasında iki takım arkadaşın arasında kavga çıktı. Herkes sana bakıyor. ⇒ Two teammates are fighting in the dressing room. Everyone's looking at you.
+Araya gir ve barıştır ⇒ Step in and make peace
+Hocaya bırak ⇒ Leave it to the manager
+Taraf tut ⇒ Take sides
+Takımdan biri seni hafta ortası gece kulübüne çağırıyor. ⇒ A teammate invites you to a nightclub midweek.
+Gece fotoğrafların sosyal medyaya düştü. ⇒ Photos of your night out hit social media.
+Evde kal ⇒ Stay home
+Tanımadığın biri, bir maçta “kötü oynaman” için büyük para teklif ediyor. ⇒ A stranger offers you big money to "play badly" in a match.
+Reddet ve kulübe bildir ⇒ Refuse and report it to the club
+Şike girişimini ihbar ettin. Federasyon soruşturma açtı. ⇒ You reported the fixing attempt. The federation opened an investigation.
+Reddet, sessiz kal ⇒ Refuse and keep quiet
+Şike ortaya çıktı: uzun süreli men ve rezalet. ⇒ The fix came out: a long ban and disgrace.
+Antidoping testine çağrıldın. Geçen hafta soğuk algınlığı için bir ilaç kullanmıştın. ⇒ You've been called for a doping test. Last week you took cold medicine.
+İlacı doktora bildir, prospektüsü ver ⇒ Declare it to the doctor and hand over the leaflet
+Test pozitif çıktı; 2 ay men cezası aldın. ⇒ The test came back positive; you got a 2-month ban.
+Bir maç sonrası tünelde çocukluk idolün {0} ile karşılaştın. Seni tanıyormuş! ⇒ After a match you met your childhood idol {0} in the tunnel. He knows who you are!
+Forma değişimi iste ⇒ Ask to swap shirts
+Ondan tavsiye iste ⇒ Ask for advice
+Çocukken imzalattığın formayı göster ⇒ Show him the shirt he signed when you were a kid
+Fotoğraf çektir ⇒ Take a photo
+Basın seni sürekli {0} ile kıyaslıyor; şu an o senden önde. ⇒ The press keeps comparing you with {0}; right now he's ahead.
+Antrenmanı ikiye katla ⇒ Double your training
+Kendi yoluma bakarım ⇒ I'll walk my own path
+{0} zor bir dönemden geçiyor ve gece yarısı seni aradı. ⇒ {0} is going through a rough patch and called you at midnight.
+Yanına git ⇒ Go to them
+Mesafeli dur ⇒ Keep your distance
+{0} röportajında senin hakkında iğneleyici şeyler söyledi. ⇒ {0} took a dig at you in an interview.
+Sert cevap ver ⇒ Hit back hard
+Açıklaman disiplin cezası getirdi. ⇒ Your statement earned you a disciplinary fine.
+Sahada cevap veririm ⇒ I'll answer on the pitch
+Uykuların bozuk, maçlardan zevk almıyorsun. Kulüp psikoloğu görüşme öneriyor. ⇒ You're sleeping badly and not enjoying games. The club psychologist suggests a talk.
+Terapiye başla ⇒ Start therapy
+Ben güçlüyüm, geçer ⇒ I'm strong, it'll pass
+Bunalım sahaya yansıdı. ⇒ The slump showed on the pitch.
+Kısa bir izin iste ⇒ Ask for a short break
+Eski kulübün senin için bir jübile maçı düzenlemek istiyor. ⇒ Your old club wants to hold a testimonial match for you.
+Kabul et, eski dostları çağır ⇒ Accept and invite old friends
+Jübile maçında tribünler senin adını haykırdı. ⇒ The stands chanted your name at the testimonial.
+Gelirini bir hayır kurumuna bağışla ⇒ Donate the proceeds to charity
+Büyük bir spor kanalı canlı yayın röportajı istiyor. ⇒ A big sports channel wants a live interview.
+Samimi ve dürüst ol ⇒ Be open and honest
+Kulübü eleştir ⇒ Criticise the club
+Sosyal medyada eski bir paylaşımın yüzünden linç ediliyorsun. ⇒ You're being piled on over an old social media post.
+Özür dile ⇒ Apologise
+Hesabı kapat ⇒ Delete the account
+Doğduğun {0}'{1} bir okulun spor salonu yıkılmak üzere. ⇒ A school gym in your birthplace {0} is about to collapse.
+Yeniden yaptır ({0}) ⇒ Rebuild it ({0})
+Bağış kampanyası başlat ⇒ Start a fundraiser
+Geç ⇒ Skip
+Kötü giden maçlardan sonra taraftarlar idmanı bastı. ⇒ After a run of bad results, fans stormed training.
+Konuşmaya çık ⇒ Go out and talk
+Kulüp binasında kal ⇒ Stay inside the club building
+Bir parti, doğduğun {0} için belediye başkan adayı olmanı istiyor. ⇒ A party wants you to run for mayor of your hometown {0}.
+Aday ol ⇒ Run
+{0} belediye başkanı seçildin! ⇒ You were elected mayor of {0}!
+Seçimi kaybettin. ⇒ You lost the election.
+Futbol adamıyım, siyaset değil ⇒ I'm a football man, not a politician
+Bir enerji içeceği ⇒ An energy drink
+Bir saat markası ⇒ A watch brand
+Bir bahis sitesi ⇒ A betting site
+Bir otomobil markası ⇒ A car brand
+Bir banka ⇒ A bank
+{0} reklam yüzü olmanı istiyor ({1}). ⇒ {0} wants you as the face of its campaign ({1}).
+Reklam anlaşması: {0}. ⇒ Endorsement deal: {0}.
+Değerlerime uymuyor ⇒ It doesn't fit my values
+Eski bir arkadaşın bir restoran zinciri kurmak için ortak arıyor. ⇒ An old friend is looking for a partner to start a restaurant chain.
+Ortak ol (250 B€, şirket olarak eklenir) ⇒ Become a partner (250 B€, added as a company)
+Ortaklık ⇒ Partnership
+Takım arkadaşın yeni bir kripto paradan çok para kazandığını anlatıyor. ⇒ A teammate brags about making a fortune on a new crypto coin.
+100 B€ yatır ⇒ Invest 100 B€
+Riskli, uzak dur ⇒ Too risky, stay away
+Çok kârlı görünen bir gayrimenkul projesi için acele imza isteniyor. ⇒ You're being rushed to sign for a very profitable-looking property project.
+İmzala (300 B€) ⇒ Sign (300 B€)
+Proje gerçek çıktı, iki katından fazla kazandın. ⇒ The project was real; you more than doubled your money.
+Proje sahte çıktı. Paran gitti. ⇒ The project was fake. Your money is gone.
+Avukatıma inceletmeden olmaz ⇒ Not without my lawyer checking it
+Vergi müfettişleri gelirlerini incelemeye aldı. ⇒ Tax inspectors are auditing your income.
+Her şeyi açıkça göster ⇒ Show them everything
+Pahalı bir avukat tut ⇒ Hire an expensive lawyer
+Ceza çıktı ve haberlere yansıdı. ⇒ You were fined and it made the news.
+Eski menajerin, komisyon alacağı olduğunu iddia ederek sana dava açtı. ⇒ Your former agent is suing you for unpaid commission.
+Uzlaş, öde ⇒ Settle and pay
+Mahkemede savaş ⇒ Fight it in court
+Davayı kazandın. ⇒ You won the case.
+Davayı kaybettin. ⇒ You lost the case.
+Yağmurlu bir gecede hızlı giderken aracın kaydı. ⇒ Driving fast on a rainy night, your car skidded.
+Fren! ⇒ Brake!
+Kaza geçirdin; birkaç hafta yoksun. ⇒ You crashed; you're out for a few weeks.
+Son anda kurtardın. Kalbin hâlâ çarpıyor. ⇒ You saved it at the last moment. Your heart is still racing.
+Bundan sonra şoför tutacağım ⇒ From now on I'll hire a driver
+Doktor kontrolünde kolesterolün yüksek çıktı. ⇒ A check-up showed high cholesterol.
+Hayatımı değiştiririm ⇒ I'll change my life
+Bir şey olmaz ⇒ It'll be fine
+Göğsünde bir ağrıyla uyandın. Hastaneye kaldırıldın. ⇒ You woke with chest pain and were rushed to hospital.
+Bypass ameliyatı ol ⇒ Have bypass surgery
+Ameliyat başarılı geçti. ⇒ The surgery went well.
+İlaçla devam ⇒ Stick with medication
+Kalp krizi geçirdin ve hayatını kaybettin. ⇒ You had a heart attack and died.
+Çocuklar/eşin bir köpek sahiplenmek istiyor. ⇒ The kids/your partner want to adopt a dog.
+Sahiplenelim ⇒ Let's adopt
+Evde hayvan istemem ⇒ No pets in the house
+Bir televizyon kanalı seni maç yorumcusu yapmak istiyor. ⇒ A TV channel wants you as a match pundit.
+Kabul et (iş olarak eklenir) ⇒ Accept (added as a job)
+Maç yorumculuğuna başladın. ⇒ You started working as a pundit.
+Bir yayınevi hayat hikâyeni yazmanı istiyor. ⇒ A publisher wants you to write your life story.
+Yaz ⇒ Write it
+Geçmişte kalsın ⇒ Leave the past behind
+Çocukluk kulübün {0} seni teknik direktör olarak geri istiyor. ⇒ Your childhood club {0} wants you back as manager.
+Evine dön ⇒ Come home
+Teşekkür et, reddet ⇒ Thank them and decline
+Romantik ⇒ Romantic
+küçük sürprizlere bayılıyor. ⇒ loves little surprises.
+Sakin ⇒ Calm
+gürültüden uzak, huzurlu biri. ⇒ quiet and peaceful.
+Maceracı ⇒ Adventurous
+yeni yerler görmeye can atıyor. ⇒ longs to see new places.
+Kariyerine düşkün ⇒ Career-driven
+kendi işinde yükselmeye kararlı. ⇒ determined to rise in their own field.
+Kıskanç ⇒ Jealous
+tutkulu ama biraz kıskanç. ⇒ passionate but a little jealous.
+bir mimar ⇒ an architect
+bir avukat ⇒ a lawyer
+bir hemşire ⇒ a nurse
+bir öğretmen ⇒ a teacher
+bir grafik tasarımcı ⇒ a graphic designer
+bir gazeteci ⇒ a journalist
+bir veteriner ⇒ a vet
+bir doktor ⇒ a doctor
+bir yazılımcı ⇒ a software developer
+bir şef ⇒ a chef
+bir fotoğrafçı ⇒ a photographer
+bir fizyoterapist ⇒ a physiotherapist
+Bir arkadaşının doğum gününde ⇒ At a friend's birthday party
+Bir hayır gecesinde ⇒ At a charity gala
+Spor salonunda ⇒ At the gym
+Bir kafede yanlışlıkla aynı masaya oturunca ⇒ Sitting at the same café table by mistake
+Bir uçak yolculuğunda ⇒ On a flight
+Kardeşinin düğününde ⇒ At your sibling's wedding
+Bir kitapçıda ⇒ In a bookshop
+okul aşkın ⇒ your school crush
+{0} ile görüşmeye başladın. ⇒ You started seeing {0}.
+{0} yaş: {1} ⇒ {0} age: {1}
+ilk kez ⇒ for the first time
+{0} U21 Milli Takımı seni {1} kampa çağırdı. A takım hocası da izleyecek. ⇒ The {0} U21 team called you up {1}. The senior coach will be watching too.
+{0} Milli Takımı teknik direktörü seni {1}kadroya çağırdı. ⇒ The {0} national team coach called you up {1}.
+Katıl ⇒ Join
+İlk kez A Milli Takım kampına katıldın! ⇒ You joined the senior national team for the first time!
+Sakatlığımı bahane et, kulübümde dinleneyim ⇒ Use an injury as an excuse and rest at my club
+Milli takımı bıraktığımı açıkla ⇒ Announce my international retirement
+Milli takımı bıraktığını açıkladın. ⇒ You announced your international retirement.
+Şu an ⇒ Right now
+kadrosuna çağrılıyorsun ama henüz resmi maça çıkmadın. ⇒ squad call-ups, but no competitive cap yet.
+Henüz hiçbir milli takımla resmi maça çıkmadın. ⇒ You haven't played a competitive game for any national team yet.
+{0} Futbol Federasyonu'ndan bir telefon: “{1} Formamızı giymeni isteriz.” {2} ⇒ A call from the {0} Football Federation: "{1} We'd love you to wear our shirt." {2}
+{0} formasını seç ⇒ Choose {0}
+İlk resmi maçından sonra karar kesinleşir. ⇒ The choice is final after your first competitive game.
+Milli takım kararın: {0}. {1} ⇒ Your national team choice: {0}. {1}
+{0}, {1} milli takımını seçti. ⇒ {0} chose the {1} national team.
+{0} için beklemeye devam ⇒ Keep waiting for {0}
+Bu davet bir daha gelmeyebilir. ⇒ This invitation may never come again.
+Bir spor gazetesi, büyük bir kulübün seni izlediğini yazdı. Takım arkadaşların takılıyor, taraftar tedirgin. ⇒ A sports paper says a big club is watching you. Teammates tease you; fans are nervous.
+Kulübüme bağlılığımı açıkla ⇒ Declare my loyalty to the club
+Sus, ilgiyi sakla ⇒ Stay quiet and keep the interest alive
+Menajerime haberleri büyüt de ⇒ Tell my agent to fan the rumours
+Sakatlığın uzun sürecek. Doktorlar iki yol öneriyor. ⇒ Your injury will be long. The doctors offer two options.
+Ameliyat ol, sabırla dön ⇒ Have surgery and return patiently
+İğneyle erken dön ⇒ Come back early with injections
+Erken dönüş bedelini ağır ödedin; vücudun eskisi gibi değil. ⇒ The early return cost you dearly; your body isn't the same.
+Yurtdışında özel bir klinik ⇒ A private clinic abroad
+Özel klinik ⇒ Private clinic
+Üst üste kötü maçlar. Tribünden ıslıklar geliyor, sosyal medyada hakaret yağıyor. ⇒ Bad game after bad game. Whistles from the stands, abuse on social media.
+Spor psikoloğuyla çalış ⇒ Work with a sports psychologist
+Spor psikoloğu ⇒ Sports psychologist
+Ekstra antrenmanla cevap ver ⇒ Answer with extra training
+Telefonu kapat, ailene sığın ⇒ Switch off the phone and lean on family
+Sezonun yarısı geçti ve neredeyse hiç oynamadın. Teknik direktörün kapısı önündesin. ⇒ Half the season is gone and you've barely played. You're at the manager's door.
+Kapıyı çal, açık konuş ⇒ Knock and speak plainly
+Hoca sana bir şans sözü verdi. ⇒ The manager promised you a chance.
+Hoca: “Antrenmanda göster.” ⇒ Manager: "Show me in training."
+Kiralık iste ⇒ Ask for a loan
+Sabret, çalış ⇒ Be patient, keep working
+Kardeşin {0} de futbolcu olmak istiyor ve senin kulübünün altyapısında deneme istiyor. ⇒ Your sibling {0} wants to be a footballer too and wants a trial at your club's academy.
+Torpil yapmam, kendi yolunu bulsun ⇒ No favours; they'll find their own way
+Kulübe sözümü geçireyim ⇒ I'll pull some strings
+{0} altyapıya alındı; soyunma odasında fısıltılar başladı. ⇒ {0} joined the academy; the dressing room is whispering.
+Onu kendim çalıştırırım ⇒ I'll train them myself
+Oğlun/kızın {0} ilk kez tribünde. Maçtan önce “bana gol at” diye bağırdı. ⇒ Your child {0} is in the stands for the first time and shouted "score one for me!" before kick-off.
+Golü ona adayacağım ⇒ I'll dedicate a goal to them
+babasının ona adadığı gol ⇒ the goal their father dedicated to them
+Onu soyunma odasına götür ⇒ Take them into the dressing room
+Menajerin {0} komisyonunu artırmak istiyor; aksi halde seni başka bir oyuncuya odaklanmakla tehdit ediyor. ⇒ Your agent {0} wants a bigger commission, or he'll focus on another player.
+Pazarlık et ⇒ Negotiate
+Ortada buluştunuz. ⇒ You met in the middle.
+Menajerin kırıldı. ⇒ Your agent is hurt.
+Yollarımızı ayıralım ⇒ Let's part ways
+Menajerinle yollarını ayırdın. ⇒ You parted ways with your agent.
+Takımın en iyilerindensin ama maaşın yıldızların yarısı kadar. Yönetimle konuşma vakti. ⇒ You're one of the best in the team but earn half what the stars do. Time to talk to the board.
+Zam iste ⇒ Ask for a raise
+Yönetim zammı onayladı: yeni maaşın {0}. ⇒ The board approved a raise: your new salary is {0}.
+Yönetim zam talebini reddetti. ⇒ The board turned down your request.
+Sezon sonunu bekle ⇒ Wait until the end of the season
+Antrenmana çıkmam! ⇒ I'm not training!
+Yönetim baskıya dayanamadı. ⇒ The board caved in.
+Kadro dışı bırakıldın; taraftar sana döndü. ⇒ You were frozen out; the fans turned on you.
+Takıma 18 yaşında bir harika çocuk geldi. Senin mevkinde oynuyor ve basın onu konuşuyor. ⇒ An 18-year-old wonderkid has joined. He plays your position and the press loves him.
+Ona ağabeylik yap ⇒ Take him under your wing
+Formayı bırakmam, daha çok çalışırım ⇒ I won't give up my place; I'll work harder
+Hocaya tecrübenin önemini hatırlat ⇒ Remind the manager experience matters
+{0} taraftarı, belki de son sezonun olabileceğini düşünerek sana dev bir koreografi hazırladı. ⇒ Thinking it may be your last season, {0} fans made a giant tifo for you.
+Gözyaşlarını tutma ⇒ Let the tears flow
+Formayı tribüne fırlat ⇒ Throw your shirt into the crowd
+çalıştı ⇒ worked
+Baban {0} emekli oldu. Yıllarca {1}. Ona nasıl teşekkür edeceksin? ⇒ Your father {0} has retired. For years he {1}. How will you thank him?
+Memleketinde bir ev al ⇒ Buy him a house back home
+Babana ev ⇒ A house for Dad
+Birlikte uzun bir tatil ⇒ A long holiday together
+Babayla tatil ⇒ Holiday with Dad
+Bir telefon yeter ⇒ A phone call is enough
+Bayram. Bütün aile annenlerin evinde toplanıyor; aynı gün kulübün sponsor gecesi var. ⇒ It's a holiday and the whole family is gathering at your parents'. The club's sponsor gala is the same day.
+Aile önce gelir ⇒ Family comes first
+Sponsor gecesine git ⇒ Go to the sponsor gala
+Sponsor gecesi ⇒ Sponsor gala
+İkisine de yetiş (çok yorucu) ⇒ Make it to both (exhausting)
+{0} kariyerinde büyük bir fırsat yakaladı ama başka bir şehirde. ⇒ {0} has a big career opportunity, but in another city.
+Destekle, uzak ilişki ⇒ Support them; long-distance it is
+kariyeri için başka şehre gitti, seni hiç bırakmadı ⇒ moved cities for their career but never left you
+Kalmasını iste ⇒ Ask them to stay
+fırsatını senin için geri çevirdi ⇒ turned down the opportunity for you
+Ben de transferi oraya ayarlarım ⇒ I'll arrange a transfer there
+{0}'{1} annesi bir süre sizinle yaşamak istiyor. ⇒ {0}'s mother wants to live with you for a while.
+Kapımız açık ⇒ Our door is open
+Ona yakın bir daire tutalım ⇒ Let's rent her a flat nearby
+Kayınvalideye daire ⇒ Flat for the mother-in-law
+Olmaz ⇒ No way
+{0} ile {1}. yılınız. Nasıl kutlayacaksınız? ⇒ Year {1} with {0}. How will you celebrate?
+Tanıştığımız yere götür ⇒ Take them where we met
+evlilik yıl dönümünde tanıştığınız yere döndünüz ⇒ you returned to where you met for your anniversary
+Pahalı bir hediye ⇒ An expensive gift
+Yıl dönümü hediyesi ⇒ Anniversary gift
+Unuttun! ⇒ You forgot!
+yıl dönümünüzü unuttun ⇒ you forgot your anniversary
+Kardeşin {0} ağır bir hastalık teşhisi aldı. Tedavi pahalı. ⇒ Your sibling {0} was diagnosed with a serious illness. Treatment is expensive.
+Bütün masrafları karşıla ⇒ Cover all the costs
+Kardeşin tedavisi ⇒ Sibling's treatment
+{0} iyileşti. “Hayatımı sana borçluyum.” ⇒ {0} recovered. "I owe you my life."
+{0} tüm çabalara rağmen hayatını kaybetti. ⇒ Despite everything, {0} passed away.
+Devletin hastanesi yeter ⇒ The state hospital will do
+{0} hayatını kaybetti; pişmanlığın hiç geçmedi. ⇒ {0} passed away; your regret never faded.
+Eski sevgilin {0} mesaj attı: “Seni özledim.” ⇒ Your ex {0} texted: "I miss you."
+Görmezden gel ve sil ⇒ Ignore and delete
+Partnerine göster ⇒ Show your partner
+Bir kahve, ne olacak? ⇒ Just a coffee, what's the harm?
+eski sevgilinle görüştüğünü öğrendi ⇒ found out you met your ex
+{0} her şeyi öğrendi. ⇒ {0} found out everything.
+Yıllardır çocuğunuz olmadı. Eşinle evlat edinmeyi konuşuyorsunuz. ⇒ Years have passed without children. You and your spouse are discussing adoption.
+Evlat edinelim ⇒ Let's adopt
+Ailenize yeni bir çocuk katıldı. ⇒ A new child joined your family.
+Tedaviyi deneyelim ⇒ Let's try treatment
+Tüp bebek tedavisi ⇒ IVF treatment
+Tedavi bu sefer olmadı. ⇒ The treatment didn't work this time.
+İkimiz yeteriz ⇒ The two of us are enough
+{0} ergenlik krizinde: geç saatlere kadar dışarıda, sana kapıyı çarpıyor. ⇒ {0} is in a teenage crisis: out late and slamming doors on you.
+Sakin bir konuşma ⇒ A calm talk
+Onunla bir maça git ⇒ Take them to a match
+{0} üniversite sınavını kazandı! Bir yanda yurtdışında bir okul var. ⇒ {0} passed the university exam! There's also a school abroad.
+Yurtdışı okulunu ben öderim ⇒ I'll pay for the school abroad
+Yurtdışı üniversite ⇒ University abroad
+Burada oku, yakınımızda kal ⇒ Study here and stay close
+Okul değil, futbol! ⇒ Football, not school!
+{0}: “Bu senin hayalin, benim değil!” ⇒ {0}: "That's your dream, not mine!"
+{0} kendi şirketini kurmak istiyor ve senden sermaye istiyor. ⇒ {0} wants to start a company and asks you for capital.
+Yatırım yap ⇒ Invest
+Çocuğunun şirketi ⇒ Your child's company
+{0} ile ortak şirket ⇒ Joint company with {0}
+{0}'{1} şirketi tuttu! ⇒ {0}'s company took off!
+{0}'{1} şirketi batmadı ama kâr da etmiyor. ⇒ {0}'s company hasn't gone under, but it isn't profitable either.
+Önce bir iş planı göster ⇒ Show me a business plan first
+Kendi parasını kazansın ⇒ Let them earn their own money
+Torunun hafta sonu sende kalmak istiyor. Bahçede top oynuyorsunuz; şaşırtıcı derecede yetenekli. ⇒ Your grandchild is staying for the weekend. You kick a ball in the garden — they're surprisingly gifted.
+Ona bütün numaralarımı öğreteceğim ⇒ I'll teach them all my tricks
+Çocuk çocukluğunu yaşasın ⇒ Let the kid be a kid
+Doğduğun mahalledeki ilkokul seni söyleşiye çağırıyor. ⇒ The primary school in your old neighbourhood invites you to give a talk.
+Git, çocuklarla top oyna ⇒ Go and play football with the kids
+Okula spor salonu yaptır ⇒ Build the school a gym
+Okula spor salonu ⇒ School gym
+Programım dolu ⇒ My schedule is full
+Belediye, futbola katkılarından dolayı adına bir heykel dikmek istiyor. ⇒ The council wants to put up a statue of you for your services to football.
+Onurlandım ⇒ I'm honoured
+{0} adına heykel açıldı. ⇒ A statue of {0} was unveiled.

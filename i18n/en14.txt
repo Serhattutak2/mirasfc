@@ -1,0 +1,524 @@
+Büyüdüğün ülke. ⇒ The country you grew up in.
+Büyüdüğün ve futbola başladığın ülke. ⇒ The country where you grew up and started playing.
+Milli takım seviyesine geldin ve birden fazla ülkeyi temsil etme hakkın var. Hangi formayı giymek istiyorsun? İlk resmi maçından sonra bu karar kesinleşir. ⇒ You've reached national-team level and you're eligible for more than one country. Which shirt do you want to wear? The choice becomes final after your first competitive game.
+{0} formasını giy ⇒ Wear the {0} shirt
+Milli takım kararın: {0}. ⇒ National team decision: {0}.
+Şimdilik karar vermeyeceğim ⇒ I won't decide yet
+Bu arada milli maça çıkmazsın; bir sonraki arada yeniden sorulur. ⇒ You won't play in this break; you'll be asked again at the next one.
+{0} Güç {1} · seçilme eşiği ~{2} ⇒ {0} Strength {1} · call-up threshold ~{2}
+Milli takım kararını vermen gerekiyor ⇒ You need to decide on your national team
+Kontra atak! ⇒ Counter-attack!
+Rakip topla üstüne geliyor. KOLLA ile önünde kal ve onu yavaşlat; doğru anda MÜDAHALE et: göstergeyi yeşilde durdur. KAYARAK daha geniş ama faul riski büyük. ⇒ The attacker is running at you. JOCKEY to stay in front and slow him down; TACKLE at the right moment by stopping the meter in the green. A SLIDE reaches further but risks a foul.
+Penaltı: köşeni seç, sonra göstergeyi yeşilde durdur. Köşeler kalecinin uzanamayacağı yer ama dışarı gitme riski var. ⇒ Penalty: pick your corner, then stop the meter in the green. The keeper can't reach the corners, but you might miss the target.
+Serbest vuruş: doğrudan kaleye vurabilir (barajın üstünden falso), ceza sahasına orta açabilir ya da kısa oynayabilirsin. ⇒ Free kick: shoot directly (curl it over the wall), cross into the box or play it short.
+Orta geliyor! Önce kafayı hangi köşeye vuracağını seç, top gelince göstergeyi yeşilde durdur. ⇒ Cross incoming! Pick the corner for your header, then stop the meter in the green as the ball arrives.
+Top sende, oyun durdu. Bir arkadaşına dokun (pas), kaleye dokun (şut) ya da oklarla topu sür. Yüzdeler başarı şansıdır. ⇒ You have the ball and play is paused. Tap a teammate (pass), the goal (shoot) or an arrow (dribble). Percentages are your chance of success.
+POZİSYON SÖNDÜ ⇒ CHANCE FIZZLED OUT
+Savunma yerleşti ⇒ The defence got organised
+Kaleye vur ⇒ Shoot at goal
+Hedef seç, sonra göstergeyi durdur ⇒ Pick a target, then stop the meter
+Kafa vuruşu için ceza sahasına ⇒ Into the box for a header
+Oyunu baştan kur ⇒ Build up again
+Şut çek ⇒ Shoot
+Kaleye dokun, göstergeyi durdur ⇒ Tap the goal, stop the meter
+İleride, tehlikeli ⇒ Ahead, dangerous
+Geriye, güvenli ⇒ Backwards, safe
+Yanına ⇒ Sideways
+Topla sür ⇒ Dribble
+{0} karşında ⇒ {0} in front of you
+Önün boş ⇒ Space ahead
+Aşırtma ⇒ Chip
+Kaleci önde, üstünden ⇒ Keeper off his line, go over him
+Kalede bir noktaya dokun (ya da aşağıdan köşe seç). ⇒ Tap a spot in the goal (or pick a corner below).
+PAS KESİLDİ ⇒ PASS INTERCEPTED
+{0} araya girdi ⇒ {0} cut it out
+Pas sahipsiz kaldı ⇒ The pass went astray
+{0} kanattan ortaya çeviriyor! ⇒ {0} is crossing from the wing!
+Orta geliyor! Köşeni seç, top gelince göstergeyi durdur. ⇒ Cross incoming! Pick your corner, then stop the meter as the ball arrives.
+⚽ GOL! {0} — asist senden ⇒ ⚽ GOAL! {0} — your assist
+KALECİ KURTARDI ⇒ KEEPER SAVES
+{0} şutunu çıkardı ⇒ The keeper kept out {0}'s shot
+{0} topu sana geri verdi. Sıra sende! ⇒ {0} gave it back to you. Your move!
+{0} topu kaptırdı ⇒ {0} lost the ball
+{0} geride kaldı! ⇒ You left {0} behind!
+Faul! Hakem penaltıyı gösterdi! ⇒ Foul! The referee points to the spot!
+Faul! Serbest vuruş kazandın. ⇒ Foul! You've won a free kick.
+Top ayağından kaçtı ⇒ The ball got away from you
+Aşırtma! Kaleci çaresiz ⇒ Chipped! The keeper was helpless
+ÜSTTEN AUT ⇒ OVER THE BAR
+Aşırtma az farkla dışarıda ⇒ The chip just missed
+⚽ GOL! {0} kafayla — asist senden ⇒ ⚽ GOAL! {0} with a header — your assist
+SAVUNMA UZAKLAŞTIRDI ⇒ CLEARED
+Orta iyiydi ama kafa isabetsiz ⇒ Good cross, but the header was off target
+Top geliyor… göstergeyi YEŞİLDE durdur! ⇒ Ball incoming… stop the meter in the GREEN!
+Göstergeyi YEŞİLDE durdur! ⇒ Stop the meter in the GREEN!
+Kusursuz zamanlama! ⇒ Perfect timing!
+İyi vuruş. ⇒ Good strike.
+Zamanlama kaçtı… ⇒ Mistimed…
+Kafayla! ⇒ With a header!
+Penaltı golü ⇒ Penalty scored
+Serbest vuruştan! ⇒ From the free kick!
+Köşeye! ⇒ Into the corner!
+Ağlarla buluştu ⇒ It hits the net
+BLOK ⇒ BLOCKED
+Savunmacı araya girdi ⇒ A defender got in the way
+Top direkten döndü ⇒ Off the post
+Atak yavaşladı, takım yerleşti ⇒ The attack slowed and the team got set
+Müdahale ⇒ Tackle
+Göstergeyi yeşilde durdur ⇒ Stop the meter in the green
+Kayarak ⇒ Slide
+Geniş ama faul riski ⇒ Longer reach, foul risk
+Kolla ⇒ Jockey
+Önünde kal, yavaşlat ⇒ Stay in front, slow him down
+Yaklaş ve önünü kes ⇒ Close in and block his path
+Pas yolunu kapat: {0} ⇒ Cut the passing lane: {0}
+Taşıyıcı tek kalır ⇒ Leaves the carrier isolated
+Göstergeyi YEŞİLDE durdur: müdahale anı! ⇒ Stop the meter in the GREEN: tackle now!
+Pas! Şimdi {0} topla. ⇒ Pass! Now {0} has the ball.
+TOP BİZDE ⇒ OUR BALL
+Kollaman işe yaradı, arkadaşın topu aldı ⇒ Your jockeying worked; a teammate won the ball
+ŞUTU BLOKLADIN ⇒ SHOT BLOCKED
+Vücudunu siper ettin ⇒ You put your body on the line
+{0} affetmedi ⇒ {0} made no mistake
+KAYARAK KESTİN! ⇒ SLIDING TACKLE!
+Topu uzaklaştırdın ⇒ You cleared it
+Kusursuz zamanlama ⇒ Perfect timing
+Son anda ⇒ Just in time
+Geç kaldın, faul ⇒ Too late, foul
+Geçildin! ⇒ You've been beaten!
+KALEDE BİR NOKTAYA DOKUN ⇒ TAP A SPOT IN THE GOAL
+DOKUN: MÜDAHALE! ⇒ TAP: TACKLE!
+DOKUN: VUR! ⇒ TAP: SHOOT!
+Sol köşe ⇒ Left corner
+Orta ⇒ Centre
+Sağ köşe ⇒ Right corner
+MÜDAHALE! ⇒ TACKLE!
+VUR! ⇒ SHOOT!
+Nasıl oynanır: top sendeyken oyun durur. Ekrandaki seçeneklerden birine dokun (pas, şut, topla sür); yüzdeler başarı şansıdır. Şut ve müdahalede kayan göstergeyi yeşil bölgede durdur. Rakip ne kadar güçlüyse yeşil bölge o kadar dar. ⇒ How to play: when you have the ball, play stops. Tap one of the options (pass, shoot, dribble); the percentages are your chances. For shots and tackles, stop the sliding meter in the green zone. The stronger the opponent, the narrower the green zone.
+Kanat ağırlıklı ⇒ Wing play
+Kanatlardan orta ve bindirmeyle gelir. ⇒ Attacks with crosses and overlaps down the flanks.
+Uzun top ⇒ Long ball
+Savunmanın arkasına uzun toplar atar. ⇒ Plays long balls in behind the defence.
+Ön alan presi ⇒ High press
+Topu kaptığı yerde bitirmek ister. ⇒ Wants to win the ball high and finish quickly.
+Kontra atak ⇒ Counter-attack
+Bekler, topu kazanınca hızla çıkar. ⇒ Sits deep, breaks fast after winning the ball.
+Topa sahip olma ⇒ Possession
+Sabırlı pas oyunu, oyunu uyutur. ⇒ Patient passing that slows the game down.
+Otobüsü çeker ⇒ Parks the bus
+Derinde bekler, beraberliğe oynar. ⇒ Sits deep and plays for a draw.
+Derin ⇒ Deep
+Sol kanat ⇒ Left wing
+Merkez ⇒ Centre
+Sağ kanat ⇒ Right wing
+Savunma hattı ⇒ Defensive line
+Pres ⇒ Press
+Oyun tarzı: {0} — {1} ⇒ Style: {0} — {1}
+Öneri: {0} → {1} ⇒ Tip: {0} → {1}
+Kaçın: {0} → {1} ⇒ Avoid: {0} → {1}
+Zayıf bölge: {0} ⇒ Weak zone: {0}
+Zayıf bölge: {0} · Tehlikeli isim: {1} ({2}) ⇒ Weak zone: {0} · Danger man: {1} ({2})
+Daha fazla ayrıntı için maç analistini geliştir (Ekip). ⇒ Upgrade your match analyst for more detail (Staff).
+Maç analisti tutarsan rakibin zaafları ortaya çıkar (Ekip). ⇒ Hire a match analyst to reveal the opponent's weaknesses (Staff).
+Maç planı · {0} ⇒ Match plan · {0}
+Maç planı ⇒ Match plan
+Hücum yönü ⇒ Attack focus
+{0}'ı özel markaja al ⇒ Man-mark {0}
+✓ {0}'ı özel markaja al ⇒ ✓ Man-mark {0}
+Taktik uyumu {0} · Antrenman: {1} ⇒ Tactical familiarity {0} · Training: {1}
+Plan değerlendirmesi: {0} ⇒ Plan assessment: {0}
+👍 rakibe uygun ⇒ 👍 suits this opponent
+⚠ riskli ⇒ ⚠ risky
+nötr ⇒ neutral
+Taktik çalışma ⇒ Tactical work
+Taktik uyumu hızla artar ⇒ Tactical familiarity rises fast
+Kondisyon ⇒ Conditioning
+Yorgunluk ve sakatlık azalır ⇒ Less fatigue and fewer injuries
+Duran toplar ⇒ Set pieces
+Korner ve frikiklerden gol ⇒ Goals from corners and free kicks
+Bitiricilik ⇒ Finishing
+Hücum etkinliği artar ⇒ Better attacking output
+Savunma organizasyonu ⇒ Defensive shape
+Daha az gol yersin ⇒ Concede fewer goals
+Gençlere özel ⇒ Youth focus
+21 yaş altı hızlı gelişir ⇒ Under-21s develop faster
+Antrenman: {0} ⇒ Training: {0}
+Haftalık antrenman programı ⇒ Weekly training programme
+Taktik uyumu ⇒ Tactical familiarity
+Taktiği değiştirince uyum düşer; taktik çalışması onu hızla yükseltir. Uyum yüksekse takım planı iyi uygular. ⇒ Changing tactics lowers familiarity; tactical work raises it quickly. High familiarity means the team executes the plan well.
+Antrenman ⇒ Training
+Kariyer ⇒ Career
+Lider ⇒ Leader
+Hassas ⇒ Sensitive
+Profesyonel ⇒ Professional
+Asi ⇒ Rebel
+Öv ⇒ Praise
+Güven ver ⇒ Show faith
+Eleştir ⇒ Criticise
+Daha fazlasını iste ⇒ Demand more
+Forma sözü ver ⇒ Promise game time
+6 hafta içinde en az 3 maç ⇒ At least 3 games within 6 weeks
+Kaptan yap ⇒ Make captain
+Takımın sesi olsun ⇒ Let him lead the team
+{0} · ⚡3 ⇒ {0} · ⚡3
+{0} ile bu hafta zaten konuştun ⇒ You already spoke to {0} this week
+Konuşma için 3⚡ gerekli ⇒ A talk needs 3⚡
+çok olumlu karşıladı ⇒ took it very well
+olumlu karşıladı ⇒ took it well
+kırıldı ⇒ was hurt
+{0} kaptanlık bandını kaybettiği için üzgün. ⇒ {0} is upset about losing the armband.
+ve basına konuştu ⇒ and went to the press
+{0} ile konuştun ({1}): {2}. ⇒ You spoke to {0} ({1}): {2}.
+{0}'e verdiğin forma sözünü tuttun. ⇒ You kept your game-time promise to {0}.
+{0}'e verdiğin sözü tutmadın; soyunma odasında güven sarsıldı. ⇒ You broke your promise to {0}; trust in the dressing room is shaken.
+Birebir görüşme ⇒ One-to-one
+· Kaptan ⇒ · Captain
+Moral ⇒ Morale
+Forma sözü verdin: {0} hafta içinde {1} maç daha. ⇒ Game-time promise: {1} more games within {0} weeks.
+Kişilik tepkiyi belirler: hassas oyuncular eleştiriyi kaldıramaz, liderler kaptanlıkla soyunma odasını toparlar. Sözünü tutmazsan güven sarsılır. ⇒ Personality shapes the reaction: sensitive players can't take criticism, leaders unite the dressing room as captain. Break a promise and trust suffers.
+💬 ile oyuncuyla birebir konuş: övgü, eleştiri, forma sözü ya da kaptanlık. ⇒ Use 💬 for a one-to-one: praise, criticism, a game-time promise or the captaincy.
+Kapat ⇒ Close
+Gençlere şans ⇒ Youth first
+Altyapıdan oyuncu oynatmak güven kazandırır ⇒ Playing academy graduates earns trust
+Hücum futbolu ⇒ Attacking football
+Bol gollü galibiyetler güven kazandırır ⇒ High-scoring wins earn trust
+Mali disiplin ⇒ Financial discipline
+Maaş bütçesini aşmamak önemli ⇒ Staying within the wage budget matters
+Hemen başarı ⇒ Instant success
+Sonuç her şeydir: galibiyet ve yenilgi çok sert yansır ⇒ Results are everything: wins and losses weigh heavily
+{0} yönetim felsefesi: {1}. ⇒ {0} board philosophy: {1}.
+Yönetim felsefesi: ⇒ Board philosophy:
+Koltuğun sağlam. ⇒ Your job is safe.
+Yönetim izliyor. ⇒ The board is watching.
+⚠ Koltuk ısınıyor. ⇒ ⚠ The seat is getting hot.
+🔥 Kovulmanın eşiğindesin. ⇒ 🔥 You're on the brink of the sack.
+{0} kiralık süresi bitti, kulübüne döndü. ⇒ {0}'s loan ended; he returned to his club.
+{0} şampiyonu ⇒ {0} champions
+{0} Yılın Teknik Direktörü ⇒ {0} Manager of the Year
+Yılın Teknik Direktörü ödülü ⇒ Manager of the Year award
+{0} Yılın Teknik Direktörü seçildi. ⇒ {0} was named Manager of the Year.
+🎖 Yılın Teknik Direktörü seçildin! ⇒ 🎖 You were named Manager of the Year!
+Bu oyuncu için bu hafta zaten teklif yaptın ⇒ You already bid for this player this week
+Bütçe yetmiyor: {0} gerekli ⇒ Not enough budget: {0} needed
+{0}, {1} için {2} teklifini reddetti. ⇒ {0} rejected your {2} bid for {1}.
+{0} reddetti; daha yüksek teklif ister ⇒ {0} said no; they want a higher bid
+{0} kulübüne gelmek istemedi. ⇒ {0} didn't want to join your club.
+{0} teklifini geri çevirdi ⇒ {0} turned down your offer
+{0} imzaladı! ⇒ {0} signed!
+Bu oyuncuyu bu sezon zaten kiralamak istedin ⇒ You already asked to loan this player this season
+{0} kiralamaya yanaşmadı ⇒ {0} won't loan him out
+{0}, {1} için kiralık talebini reddetti. ⇒ {0} rejected your loan request for {1}.
+{0} sezon sonuna kadar kiralandı (maaşının yarısını sen ödüyorsun). ⇒ {0} joins on loan until the end of the season (you pay half his wages).
+{0} kiralık olarak {1} yolunda. ⇒ {0} heads to {1} on loan.
+{0} kiralandı ⇒ {0} loaned in
+Transfer görüşmesi ⇒ Transfer talks
+İstenen bonservis {0} · maaş beklentisi {1}/yıl · bütçe {2} ⇒ Asking fee {0} · wage demand {1}/yr · budget {2}
+Bonservis teklifi × maaş ⇒ Fee offer × wage
+{0} · maaş %{1} ⇒ {0} · wage {1}%
+kulüp %{0} · oyuncu %{1} ⇒ club {0}% · player {1}%
+Sezon sonuna kadar kiralık iste ⇒ Ask to loan him until the end of the season
+Her oyuncuya haftada bir teklif yapabilirsin. Düşük teklif kulübü, düşük maaş oyuncuyu kaçırır. ⇒ You can bid once a week per player. A low fee puts off the club; a low wage puts off the player.
+🔴 Transfer dönemi kapalı (1-4. ve 22-25. haftalar) ⇒ 🔴 Transfer window closed (open weeks 1-4 and 22-25)
+Görüş ⇒ Talk
+Öne çık! ⇒ Push forward!
+Topu tut, sakin ⇒ Keep the ball, calm
+Kanatları kullan ⇒ Use the wings
+Sert oyna ⇒ Get stuck in
+Takımı ateşle ⇒ Fire them up
+Başlama düdüğü. {0} ⇒ Kick-off. {0}
+Başlama düdüğü. ⇒ Kick-off.
+Planın rakibe uyuyor ({0} doğru hamle). ⇒ Your plan suits the opponent ({0} smart choices).
+Plan rakibin oyununa ters olabilir. ⇒ Your plan may play into their hands.
+Baskı sizde, rakip kendi yarı alanına gömüldü. ⇒ You're on top; they're pinned in their own half.
+Bir şut direği yaladı! ⇒ A shot grazed the post!
+Kaleci son anda çeldi. ⇒ The keeper saved at the last second.
+Orta sahada topu çeviren siz oldunuz. ⇒ You controlled the midfield.
+Rakip baskı kuruyor. ⇒ The opponents are pressing.
+Kalecin iki kritik kurtarış yaptı. ⇒ Your keeper made two big saves.
+Savunma zor anlar yaşadı. ⇒ The defence had a tough spell.
+Oyun ortada kilitlendi. ⇒ The game is locked in midfield.
+🟥 Kırmızı kart! 10 kişi kaldınız. ⇒ 🟥 Red card! You're down to 10.
+🟨 Sarı kart; oyuncun dikkatli olmalı. ⇒ 🟨 Yellow card; your player must be careful.
+🟥 Rakipten kırmızı kart! Sayısal üstünlük sizde. ⇒ 🟥 Red card for them! You have the extra man.
+🚑 {0} sakatlandı! Değişiklik yapmalısın. ⇒ 🚑 {0} is injured! You need to make a change.
+Rakip hücuma döndü; arkada boşluk bırakıyor. ⇒ They've gone on the attack and are leaving space behind.
+Değişiklik hakkın bitti ⇒ No substitutions left
+🔁 {0} oyuna girdi, {1} çıktı. ⇒ 🔁 {0} comes on for {1}.
+Devre: {0}-{1} ⇒ Half time: {0}-{1}
+Maç bitti: {0}-{1} ⇒ Full time: {0}-{1}
+Maç bitti: {0}-{1}{2} ⇒ Full time: {0}-{1}{2}
+Siz ⇒ You
+Rakip ⇒ Them
+{0} kişi ⇒ {0} men
+Momentum ⇒ Momentum
+{0} · Pres {1} · Hat {2} · Değişiklik {3}/{4} ⇒ {0} · Press {1} · Line {2} · Subs {3}/{4}
+Devre arası konuşması ⇒ Half-time team talk
+Sakatlık! Önce çıkacak oyuncu seçili; yedeklerden birini oyuna al. ⇒ Injury! The injured player is selected; bring on a substitute.
+Kenardan talimat ⇒ Touchline instruction
+Kenardan talimat · {0} ⇒ Touchline instruction · {0}
+🔁 Oyuncu değişikliği ({0}/{1}) ⇒ 🔁 Substitution ({0}/{1})
+Oyuncu değişikliği · {0}/{1} ⇒ Substitutions · {0}/{1}
+Yedek yok ⇒ No substitutes
+Yerine girecek: ⇒ Coming on:
+15 dakika oynat ⇒ Play 15 minutes
+Sonuna kadar ⇒ To the end
+Maçı yönet (canlı) ⇒ Manage the match (live)
+{0} Futbol Federasyonu sana milli takım teknik direktörlüğü teklif etti. ⇒ The {0} Football Federation offered you the national team job.
+{0} Milli Takımı'nın teknik direktörü oldun! ⇒ You're the new {0} national team manager!
+{0} milli takımına yeni hoca: {1} ⇒ New {0} national team manager: {1}
+milli takım görevi ⇒ national team job
+Milli takım görevinden ayrılmak istiyor musun? ⇒ Do you want to leave the national team job?
+{0} milli takımındaki görevini bıraktın. ⇒ You left the {0} national team job.
+Milli takım maaşı ⇒ National team salary
+{0} milli takımı: eleme/hazırlık maçlarında {1}G {2}B {3}M. ⇒ {0} national team: {1}W {2}D {3}L in qualifiers and friendlies.
+{0} başlıyor! T. Direktör sekmesinden turnuvayı yönet. ⇒ {0} begins! Manage the tournament from the Manager tab.
+{0} federasyonu seninle yollarını ayırdı. ⇒ The {0} federation parted ways with you.
+milli takımdan gönderilme ⇒ sacked by the national team
+{0} ile sözleşmen bitti. ⇒ Your contract with {0} ended.
+{0} federasyonu sözleşmeni 4 yıl uzattı. ⇒ The {0} federation extended your contract by 4 years.
+Grup {0}. maç: {1} {2}-{3} {4} ⇒ Group game {0}: {1} {2}-{3} {4}
+Grubu {0}. bitirdiniz, son 16'dasınız! ⇒ You finished {0} in the group and reached the last 16!
+Grupta {0}. oldunuz, elendiniz. ⇒ You finished {0} in the group and are out.
+Son 16 ⇒ Last 16
+Çeyrek final ⇒ Quarter-final
+Yarı final ⇒ Semi-final
+Final ⇒ Final
+{0}de elendi ⇒ Out in the {0}
+Grupta elendi ⇒ Out in the group stage
+ŞAMPİYON ⇒ CHAMPIONS
+{0}, {1} yönetiminde {2} şampiyonu! ⇒ {0} win the {2} under {1}!
+{0}: {1}. ⇒ {0}: {1}.
+Önce milli takım turnuvasını tamamla ⇒ Finish the national team tournament first
+Milli takım teklifi ⇒ National team offer
+{0} federasyonu seni milli takımın başında görmek istiyor. Maaş {1}/yıl, 4 yıl. Milli takım gücü {2}. ⇒ The {0} federation wants you as national team manager. Salary {1}/yr, 4 years. Team strength {2}.
+federasyonu seni milli takımın başında görmek istiyor. Maaş {0}/yıl, 4 yıl. Milli takım gücü {1}. ⇒ federation wants you as national team manager. Salary {0}/yr, 4 years. Team strength {1}.
+Kabul et ⇒ Accept
+Reddet ⇒ Decline
+Milli takım teknik direktörü ⇒ National team manager
+Federasyon güveni ⇒ Federation confidence
+Maçlar ⇒ Matches
+{0}G {1}B {2}M ⇒ {0}W {1}D {2}L
+Sözleşme ⇒ Contract
+{0} yıl · {1}/yıl ⇒ {0} yrs · {1}/yr
+Görevi bırak ⇒ Leave the job
+Tecrübe ⇒ Experience
+Gençlik ⇒ Youth
+Kadro tercihi ⇒ Squad approach
+Sıradaki: {0} ⇒ Next: {0}
+Grup {0}. maç · {1} ⇒ Group game {0} · {1}
+Savunmada kal ⇒ Stay defensive
+Dengeli oyna ⇒ Play balanced
+Hücuma çık ⇒ Go on the attack
+Turnuvayı simüle et ⇒ Simulate the tournament
+Sonuç: {0} ⇒ Result: {0}
+Kupa dolabı ⇒ Trophy cabinet
+Dünya Kupası ⇒ World Cup
+Copa América ⇒ Copa América
+Asya Kupası ⇒ Asian Cup
+Gold Cup ⇒ Gold Cup
+Afrika Uluslar Kupası ⇒ Africa Cup of Nations
+Kıta Kupası ⇒ Continental Cup
+{0} federasyonu seni teknik direktör olarak istiyor. ⇒ The {0} federation wants you as their manager.
+{0} başladı; takımını sen yöneteceksin. ⇒ The {0} has started; you'll lead your team.
+Teknik direktörlüğe git ⇒ Go to management
+Milli takım ⇒ National team
+{0} yönetiliyor ⇒ Now managing {0}
+En fazla {0} kulüp sahibi olabilirsin ⇒ You can own at most {0} clubs
+Bu kulüp zaten senin ⇒ You already own this club
+{0}, {1} karşılığında satın alınsın mı? Kulüp grubuna eklenecek. ⇒ Buy {0} for {1}? It will join your club group.
+{0} kulübünü satın aldın! Grubunda artık {1} kulüp var. ⇒ You bought {0}! Your group now has {1} clubs.
+Grubunda artık {0} kulüp var. ⇒ Your group now has {0} clubs.
+{0} satılsın mı? Payın {1}, banka borcu {2} kapanır. ⇒ Sell {0}? Your share is {1}; the {2} bank loan will be repaid.
+{0} satılsın mı? Payın {1}. ⇒ Sell {0}? Your share is {1}.
+{0} satılsın mı? Payın {1}. Teknik direktörlüğün de sona erer. ⇒ Sell {0}? Your share is {1}. Your managerial job ends too.
+{0} kulübünü sattın (eline geçen {1}). ⇒ You sold {0} (you received {1}).
+Tutumlu ⇒ Frugal
+Kâr eder, az harcar, borçtan kaçar ⇒ Makes a profit, spends little, avoids debt
+Dengeli ⇒ Balanced
+Büyümeyi ve kasayı birlikte gözetir ⇒ Balances growth and finances
+İddialı ⇒ Ambitious
+Başarı için harcar, risk alır ⇒ Spends for success, takes risks
+Altyapıcı ⇒ Youth-focused
+Gençlere, tesise ve gelecek yıllara yatırır ⇒ Invests in youth, facilities and the future
+Eski futbolcu ⇒ Ex-footballer
+Bankacı ⇒ Banker
+Pazarlamacı ⇒ Marketer
+Sportif direktör ⇒ Sporting director
+{0} genel müdürü: {1} ({2}, kalite {3}). Otopilot açık. ⇒ {0} CEO: {1} ({2}, quality {3}). Autopilot on.
+{0} göreve başladı ⇒ {0} has started
+{0} ile yollar ayrıldı. ⇒ You parted ways with {0}.
+Önce bir genel müdür tut ⇒ Hire a CEO first
+Otopilot açık: kulübü genel müdür yönetecek ⇒ Autopilot on: the CEO will run the club
+Otopilot kapalı: kararlar sende ⇒ Autopilot off: decisions are yours
+Vizyon: {0} ⇒ Vision: {0}
+Bilet fiyatı: {0}. ⇒ Ticket price: {0}.
+Forma sponsoru: {0} ({1}/yıl). ⇒ Shirt sponsor: {0} ({1}/yr).
+Teknik direktör değişti: {0} ({1}). ⇒ Manager changed: {0} ({1}).
+{0} satıldı ({1}). ⇒ {0} sold ({1}).
+Transfer: {0} ({1}) {2}. ⇒ Signing: {0} ({1}) {2}.
+{0} seviye {1}. ⇒ {0} level {1}.
+Banka borcu kapatıldı ({0}). ⇒ Bank loan repaid ({0}).
+Masa: {0} ⇒ Desk: {0}
+Stadyum ⇒ Stadium
+Bilet, sponsor ve isim hakkı geliri artar. İnşaat bir sezon sürer; o sezon bilet geliri %15 düşer. ⇒ Increases ticket, sponsor and naming-rights income. Construction takes a season; ticket income drops 15% meanwhile.
+Altyapı ⇒ Academy
+Her yıl gelen gençlerin potansiyeli yükselir. ⇒ Raises the potential of each year's youngsters.
+Antrenman merkezi ⇒ Training centre
+Oyuncular her yıl daha hızlı gelişir; takım gücü biraz artar. ⇒ Players develop faster every year; team strength rises a little.
+Sağlık merkezi ⇒ Medical centre
+Sakatlıklar daha seyrek ve daha kısa. ⇒ Fewer and shorter injuries.
+Gözlem ağı ⇒ Scouting network
+Transfer pazarında daha iyi ve daha genç oyuncular. ⇒ Better and younger players on the transfer market.
+Mağaza ve dijital ⇒ Store and digital
+Forma ve ürün satışı geliri artar. ⇒ Increases shirt and merchandise income.
+{0} en üst seviyede ⇒ {0} is at the top level
+Stadyum inşaatı zaten sürüyor ⇒ Stadium construction is already under way
+{0}: stadyum inşaatı başladı ({1}); sezon sonunda {2} açılacak. ⇒ {0}: stadium construction started ({1}); {2} opens at season's end.
+{0}: {1} seviye {2} ({3}). ⇒ {0}: {1} level {2} ({3}).
+{0} → seviye {1} ⇒ {0} → level {1}
+{0} → inşaat başladı ⇒ {0} → construction started
+Kulüp bütçesi yetmiyor: {0} gerekli ⇒ Club budget too low: {0} needed
+Banka daha fazla kredi vermiyor (kulüp değerinin %60'ı sınır) ⇒ The bank won't lend more (limit: 60% of club value)
+{0} bankadan {1} kredi çekti (yıllık %7 faiz). ⇒ {0} took a {1} bank loan (7% yearly interest).
++{0} kredi ⇒ +{0} loan
+Borç yok ⇒ No debt
+Kasada para yok ⇒ No money in the coffers
+{0} {1} borç ödedi. ⇒ {0} repaid {1} of debt.
+−{0} borç ⇒ −{0} debt
+{0}, {1} için {2} teklif etti. Oyuncu gitmeye hevesli. ⇒ {0} bid {2} for {1}. The player is keen to go.
+Daha fazlasını iste ⇒ Ask for more
+Oyuncu artık kulüpte değil. ⇒ The player is no longer at the club.
+{0} {1} karşılığında satıldı. ⇒ {0} sold for {1}.
+{0} kalıyor ama morali bozuk. ⇒ {0} stays, but his morale has dropped.
+Pazarlık işe yaradı: {0} {1} karşılığında satıldı. ⇒ The haggling worked: {0} sold for {1}.
+{0} teklifini geri çekti. ⇒ {0} withdrew their bid.
+Bir yatırım fonu kulübün %{0}'i için {1} ödemeye hazır. Para kulüp kasasına girer, satışta payın küçülür. ⇒ An investment fund will pay {1} for {0}% of the club. The money goes to the club; your share of any sale shrinks.
+Hisseyi sat ⇒ Sell the stake
+Yatırımcı teklifini geri çevirdin. ⇒ You turned the investor down.
+Kulübün %{0}'i satıldı; kasaya {1} girdi. ⇒ {0}% of the club sold; {1} added to the club funds.
+Bir yatırımcı grubu kulübün tamamı için {0} teklif ediyor. ⇒ An investor group is offering {0} for the whole club.
+Kulübü sat ⇒ Sell the club
+Satılık değil ⇒ Not for sale
+Kulüp satılık değil dedin. ⇒ You said the club isn't for sale.
+Kulübü sattın; eline {0} geçti. ⇒ You sold the club and received {0}.
+Teknik direktör {0} kadroyu güçlendirmek için {1} ek bütçe istiyor. ⇒ Manager {0} wants an extra {1} to strengthen the squad.
+Bütçeyi ver ⇒ Grant the budget
+Teknik direktör hayal kırıklığı yaşadı. ⇒ The manager is disappointed.
+Kasada yeterli para yoktu. ⇒ There wasn't enough money in the coffers.
+{0} transfer edildi. ⇒ {0} was signed.
+Bütçe verildi; hoca memnun. ⇒ Budget granted; the manager is happy.
+Taraftar grupları pahalı biletleri protesto ediyor; tribünler boş kalabilir. ⇒ Fan groups are protesting expensive tickets; the stands could empty.
+Taraftar grupları kötü gidişi protesto ediyor; tribünler boş kalabilir. ⇒ Fan groups are protesting poor results; the stands could empty.
+Bilet fiyatını indir ⇒ Cut ticket prices
+Yıldız transferi sözü ver ⇒ Promise a star signing
+Görmezden gel ⇒ Ignore it
+Biletler ucuzladı; taraftar memnun. ⇒ Tickets are cheaper; the fans are happy.
+Söz verdin; taraftar bekliyor. ⇒ You made a promise; the fans are waiting.
+Protestolar büyüdü. ⇒ The protests grew.
+Belediye, yeni stadyum için şehir merkezinde arsa öneriyor. İnşaat {0}; stadyum iki seviye birden büyür. ⇒ The council is offering a city-centre site for a new stadium. Construction costs {0}; the stadium jumps two levels.
+Projeyi başlat ⇒ Start the project
+Şimdi değil ⇒ Not now
+Arsa teklifini geri çevirdin. ⇒ You turned down the site.
+Yeni stadyum inşaatı başladı! ⇒ Construction of the new stadium has begun!
+Altyapıdaki {0} (potansiyel ~{1}) büyük kulüplerin radarında. Menajeri profesyonel sözleşme istiyor. ⇒ Academy player {0} (potential ~{1}) is on the big clubs' radar. His agent wants a pro contract.
+A takıma al, sözleşme ver ⇒ Promote him with a contract
+Satış için pazarlık et ⇒ Negotiate a sale
+Bekle ⇒ Wait
+Oyuncu artık altyapıda değil. ⇒ The player is no longer in the academy.
+{0} profesyonel oldu. ⇒ {0} turned professional.
+{0} bedelsiz olarak başka kulübe gitti. ⇒ {0} left for another club on a free.
+{0} şimdilik kaldı. ⇒ {0} stays for now.
+{0}, stadyumun adı için {1} yıl boyunca yılda {2} ödemek istiyor. ⇒ {0} wants to pay {2} a year for {1} years to name your stadium.
+Stadyumun adı tarihimizdir ⇒ The stadium's name is our history
+Taraftar kararını alkışladı. ⇒ The fans applauded your decision.
+Stadyumun yeni adı: {0} Arena. ⇒ The stadium's new name: {0} Arena.
+{0}, genç yeteneği {1}'i ({2}, {3}) bir sezonluğuna bedelsiz kiralamak istiyor. ⇒ {0} want to loan you their young talent {1} ({2}, {3}) for a season, free of charge.
+Kadroda yer yok ⇒ No room in the squad
+Kiralık teklifini geri çevirdin. ⇒ You turned down the loan.
+{0} kiralık olarak geldi. ⇒ {0} arrived on loan.
+Transfer dönemi kapalı ⇒ Transfer window closed
+{0} grup içi transferle {1} kulübüne geçti. ⇒ {0} moved to {1} in an intra-group transfer.
+{0}: yeni stadyum açıldı — {1}! ⇒ {0}: new stadium opened — {1}!
+{0} yeni stadyumunu açtı. ⇒ {0} opened their new stadium.
+{0}: stadyum isim hakkı sözleşmesi bitti. ⇒ {0}: the stadium naming deal has ended.
+{0}: Finansal Fair Play ihlali! Bir sezon transfer yasağı ve {1} ceza. ⇒ {0}: Financial Fair Play breach! One-season transfer ban and a {1} fine.
+{0} FFP cezası aldı. ⇒ {0} were punished under FFP.
+{0}: FFP uyarısı — zararı azaltmazsan transfer yasağı gelecek. ⇒ {0}: FFP warning — cut losses or face a transfer ban.
+{0}: taraftara verdiğin transfer sözü tutulmadı. ⇒ {0}: your transfer promise to the fans wasn't kept.
+{0} genel müdürü: {1} ⇒ {0} CEO: {1}
+Kulüp grubun · {0} kulüp · toplam değer {1} ⇒ Your club group · {0} clubs · total value {1}
+kasa {0} ⇒ funds {0}
+Kulübün · {0} yıldır sahibisin · payın %{1} ⇒ Your club · owned for {0} yrs · your share {1}%
+· GM: {0} ⇒ · CEO: {0}
+(otopilot) ⇒ (autopilot)
+FFP cezası: bu sezon transfer yasağı var. ⇒ FFP penalty: transfer ban this season.
+FFP uyarısı: zarar sınırı aşıldı. ⇒ FFP warning: loss limit exceeded.
+Borç ⇒ Debt
+Masa ({0}) ⇒ Desk ({0})
+Masa ⇒ Desk
+Yönetim ⇒ Management
+Tesisler ⇒ Facilities
+Ticari ⇒ Commercial
+Finans ⇒ Finance
+📥 Masanda {0} karar bekliyor. ⇒ 📥 {0} decisions are waiting on your desk.
+🏗 Stadyum inşaatı sürüyor → {0} ⇒ 🏗 Stadium construction under way → {0}
+Durum ⇒ Status
+Antrenman merkezi ⇒ Training centre
+Geçen yılın bilançosu ⇒ Last year's accounts
+TV + ödül ⇒ TV + prizes
+Ürün satışı ⇒ Merchandise
+Maaşlar ⇒ Wages
+Diğer ⇒ Other
+En fazla {0} kulüplük bir grup kurabilirsin. Yeni kulüpleri Finans → Kulüp al ekranından satın alırsın; kulüpler arasında oyuncu gönderebilir, her birine ayrı genel müdür atayabilirsin. ⇒ You can build a group of up to {0} clubs. Buy new clubs under Finance → Buy a club; you can send players between them and appoint a separate CEO to each.
+Sahip masası · {0} ⇒ Owner's desk · {0}
+Masanda bekleyen karar yok. Teklifler, yatırımcılar ve taraftar talepleri burada birikir; cevap vermezsen yıl sonunda genel müdür (ya da varsayılan) karar verir. ⇒ No decisions waiting. Bids, investors and fan demands pile up here; if you don't answer, the CEO (or a default) decides at year's end.
+Genel müdür ve otopilot ⇒ CEO and autopilot
+{0} · {1} ⇒ {0} · {1}
+kalite {0} · {1}/yıl ⇒ quality {0} · {1}/yr
+🤖 Otopilot açık ⇒ 🤖 Autopilot on
+Otopilotu aç ⇒ Turn on autopilot
+Görevden al ⇒ Dismiss
+Genel müdür tutarsan otopilotu açabilirsin: bilet, sponsor, sözleşmeler, transferler, teknik direktör ve tesis yatırımlarını senin vizyonuna göre o yönetir. Sen istediğin an araya girersin. ⇒ Hire a CEO to switch on autopilot: tickets, sponsors, contracts, transfers, the manager and facility investment are run according to your vision. You can step in any time.
+Kulüp vizyonu ⇒ Club vision
+Kaliteli genel müdür daha iyi sponsor ve transfer bulur. ⇒ A better CEO finds better sponsors and signings.
+Genel müdür raporu ⇒ CEO report
+{0} · kalite {1} ⇒ {0} · quality {1}
+Grup içi transfer ⇒ Intra-group transfer
+Bir oyuncuyu grubundaki başka kulübe bedelsiz gönder (transfer döneminde ya da emekliyken). ⇒ Send a player to another club in your group for free (during a window or when retired).
+→ {0} ⇒ → {0}
+FFP cezası: bu sezon oyuncu alamazsın. ⇒ FFP penalty: you can't sign players this season.
+Transfer pazarı · gözlem ağı {0} ⇒ Transfer market · scouting network {0}
+Tesisler · kasa {0} ⇒ Facilities · funds {0}
+{0} · {1}/{2} ⇒ {0} · {1}/{2}
+En üst ⇒ Max
+İnşaatta ⇒ Building
+Tesislerin yıllık bakım gideri vardır; büyük yatırımlar kasayı zorlar. ⇒ Facilities have yearly upkeep; big investments strain the finances.
+Pahalı bilet gelir getirir ama taraftarı küstürür. ⇒ Expensive tickets earn more but anger the fans.
+{0} Arena · {1} yıl ⇒ {0} Arena · {1} yrs
+Stadyumun büyüdükçe markalar isim hakkı için teklif getirir (Masa). ⇒ As your stadium grows, brands bid for naming rights (Desk).
+Stadyum isim hakkı ⇒ Stadium naming rights
+Forma ve ürün satışı taraftar sayısına, ligine, kadrodaki yıldızlara ve mağaza seviyene bağlıdır. Geçen yıl: {0}. ⇒ Shirt and merchandise sales depend on your fan base, league, star players and store level. Last year: {0}.
+Banka ⇒ Bank
+Kredi: değerin %10'u ⇒ Loan: 10% of value
+Kredi: değerin %25'i ⇒ Loan: 25% of value
+Borç öde ⇒ Repay debt
+Yıllık %7 faiz; her yıl borcun %12'si kasadan ödenir. ⇒ 7% yearly interest; 12% of the debt is repaid from club funds each year.
+⚠ Sınıra yaklaşıyorsun. ⇒ ⚠ You're close to the limit.
+✔ Kurallara uygunsun. ⇒ ✔ You're compliant.
+✘ Sınır aşıldı: bir yıl daha aşarsan transfer yasağı ve para cezası. ⇒ ✘ Limit exceeded: one more year over it brings a transfer ban and a fine.
+Kendi cebinden aktardığın para bu hesaba girmez. ⇒ Money you put in from your own pocket doesn't count.
+Finansal Fair Play ⇒ Financial Fair Play
+Son 3 yıl net sonuç ⇒ Net result, last 3 years
+İzin verilen zarar ⇒ Allowed loss
+Ürün ⇒ Merch
+Kulübü sat ({0}) ⇒ Sell the club ({0})
+Aileden kalan kulüp: {0}. ⇒ Club inherited from the family: {0}.
+Aileden kalan kulüpler: {0}. ⇒ Clubs inherited from the family: {0}.
+Kulübü aldıktan sonra Kulübüm sekmesinden kadro, teknik direktör, stadyum, altyapı ve transferi yönetirsin. Emekliysen takımı kendin de çalıştırabilirsin. En fazla {0} kulüplük bir grup kurabilirsin (şu an {1}). ⇒ After buying a club you manage its squad, manager, stadium, academy and transfers from the My Club tab. If you're retired you can coach it yourself. You can own up to {0} clubs (now {1}).
+· kiralık ⇒ · on loan
+Yaklaşan maç yok. ⇒ No upcoming match.
+Kenardaki adam ⇒ Man on the touchline
+Teknik direktör olmak için önce futbolu bırakmalısın ⇒ Retire from playing before becoming a manager
+Teklif geldi! ⇒ Offer received!
+{0}, {1} karşılığında satıldı. ⇒ {0} sold for {1}.
+Pazarlık işe yaradı: {0}, {1} karşılığında satıldı. ⇒ The haggling worked: {0} sold for {1}.

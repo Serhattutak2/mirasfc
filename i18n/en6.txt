@@ -1,0 +1,308 @@
+Basın: {0} → {1} ⇒ Press: {0} → {1}
+Ağır antrenman: {0} {1} hafta sakat. ⇒ Hard training: {0} injured for {1} weeks.
+Sürpriz teklif: {0} seni istiyor. ⇒ Surprise offer: {0} want you.
+{0} yönetimi seni görevden aldı. ⇒ The {0} board sacked you.
+{0}, {1} ile yollarını ayırdı. ⇒ {0} parted ways with {1}.
+Görevden alındı ⇒ Sacked
+{0} teklifini kabul ettin; eski kulübüne bonservis ödendi. ⇒ You accepted {0}'s offer; your old club was paid compensation.
+{0} teklifini geri çevirdin. Yönetim sadakatini takdir etti. ⇒ You turned down {0}. The board appreciated your loyalty.
+{0} maçta sakatlandı ({1} hafta). ⇒ {0} was injured in the match ({1} weeks).
+Yönetimin ültimatomunu geçtin; güven tazelendi. ⇒ You passed the board's ultimatum; confidence restored.
+Soyunma odası ateşlendi! ⇒ The dressing room is fired up!
+Konuşma ters tepti, oyuncular gergin. ⇒ The talk backfired; the players are tense.
+Sakin konuştun; takım planına sadık. ⇒ You stayed calm; the team sticks to the plan.
+Sert eleştiri işe yaradı! ⇒ The hairdryer treatment worked!
+Sert eleştiri bazı oyuncuları kırdı. ⇒ The harsh words upset some players.
+İkinci yarı: {0} ⇒ Second half: {0}
+Taze bacaklar oyuna girdi. ⇒ Fresh legs came on.
+{0}. sırada bitirdin. ⇒ You finished {0}.
+🏆 ŞAMPİYON! ⇒ 🏆 CHAMPIONS!
+Lig şampiyonu! ⇒ League champions!
+Şampiyonluk primi ⇒ Title bonus
+Şampiyonluk primi {0}. ⇒ Title bonus {0}.
+Takım üst lige çıktı! ⇒ The team was promoted!
+şampiyonluk ya da terfi ⇒ title or promotion
+Küme düştünüz. ⇒ You were relegated.
+küme düşme ⇒ relegation
+Sıralama primi {0} bütçeye eklenecek. ⇒ Placement prize {0} will go into the budget.
+kümede zor kalış ⇒ narrow escape from relegation
+Hedefler: %{0} ⇒ Objectives: {0}%
+Teknik direktör sezonu: {0} ⇒ Manager's season: {0}
+Yönetim sözleşmeni feshetti. ⇒ The board terminated your contract.
+Sözleşme feshedildi ⇒ Contract terminated
+Sözleşmen {0} yıl uzatıldı, yeni maaş {1}. ⇒ Your contract was extended by {0} years, new salary {1}.
+Sözleşmen sona erdi; yönetim yenilemedi. ⇒ Your contract ended; the board didn't renew it.
+Sözleşme bitti ⇒ Contract over
+Görevinden istifa etmek istediğine emin misin? Tazminat alamazsın. ⇒ Are you sure you want to resign? You won't get compensation.
+{0} görevinden istifa ettin. ⇒ You resigned from {0}.
+İstifa ⇒ Resign
+Yönetim kurulu toplandı: “Sonraki 3 maçta en az 4 puan istiyoruz, yoksa yollar ayrılır.” ⇒ The board met: "We want at least 4 points from the next 3 games, or we part ways."
+Anlaşıldı, takımı toparlayacağım ⇒ Understood, I'll turn it around
+{0} (güç {1}) oynamadığı için mutsuz ve basına konuşmaya hazırlanıyor. ⇒ {0} (rating {1}) is unhappy about playing time and about to go to the press.
+İlk 11’e alacağım (söz ver) ⇒ I'll start him (promise)
+Formayı hak etmeli ⇒ He has to earn his place
+Satış listesine koy ⇒ Put him on the transfer list
+{0} sözleşmesinin bitmek üzere olduğunu söylüyor ve %30 zam istiyor (şimdi {1}/yıl). ⇒ {0} says his contract is almost up and wants a 30% raise (now {1}/yr).
+Zammı ver, 3 yıl uzat ⇒ Give the raise, extend 3 years
+%10 öner ⇒ Offer 10%
+Reddet, giderse gitsin ⇒ Refuse; let him go if he wants
+{0} antrenmana geç kaldı ve kaptanla tartıştı. ⇒ {0} was late to training and argued with the captain.
+Para cezası ver ⇒ Fine him
+Kadro dışı bırak (1 hafta) ⇒ Drop him (1 week)
+{0} ilk 11 sözü aldı. ⇒ {0} was promised a starting place.
+{0} basına konuştu: “Teknik direktör bana güvenmiyor.” ⇒ {0} told the press: "The manager doesn't trust me."
+{0} transfer listesinde. ⇒ {0} is on the transfer list.
+{0} 3 yıl daha imzaladı. ⇒ {0} signed for 3 more years.
+{0} %10 zamla kaldı. ⇒ {0} stayed with a 10% raise.
+{0} teklifi küçümsedi; sezon sonunda gidecek. ⇒ {0} scoffed at the offer; he'll leave at season's end.
+{0} ile anlaşamadınız. ⇒ No agreement with {0}.
+Transfer bütçesi ⇒ Transfer budget
+Kovulma tazminatı (kalan maaşın) ⇒ Severance (rest of your salary)
+Sizi gerçekten istiyoruz. ⇒ We really want you.
+Teklifimiz ortada, hocam. ⇒ Our offer stands, boss.
+Başkan masaya oturdu: “{0}” ⇒ The president sat down: "{0}"
+Başkan: “Tamam hocam, anlaştık.” ⇒ President: "OK boss, we have a deal."
+Başkan: “Başka bir isimle devam edeceğiz.” ⇒ President: "We'll go with someone else."
+Bu şartlar kulübü batırır. ⇒ These terms would ruin the club.
+Çok uzaktayız hocam. ⇒ We're far apart, boss.
+Biraz daha yaklaşın. ⇒ Come a bit closer.
+Bir iki kalemde zorlanıyoruz. ⇒ One or two items are difficult for us.
+Başkan: “{0} Karşı teklifimizi yazdık.” ⇒ President: "{0} We've written our counter-offer."
+Menajerim yok ⇒ No agent
+Antrenör menajeri ⇒ Coaching agent
+Uluslararası süper menajer ⇒ International super-agent
+yükseldi ⇒ rose
+düştü ⇒ fell
+İtibarın {0} ({1}{2}): {3}. ⇒ Your reputation {0} ({1}{2}): {3}.
+{0} seni uzun süredir izliyordu ve resmi teklif yaptı. ⇒ {0} have been watching you for a while and made a formal offer.
+Bu menajer için itibar {0} gerekli (senin {1}) ⇒ This agent needs reputation {0} (yours: {1})
+{0} ile çalışmaya başladın (maaşının %{1}'i). ⇒ You started working with {0} ({1}% of your salary).
+Antrenör menajerinle yollarını ayırdın. ⇒ You parted ways with your coaching agent.
+Bu yıl en fazla 3 başvuru yapabilirsin ⇒ You can apply for at most 3 jobs this year
+{0} başvurunu olumlu karşıladı ve sözleşme önerdi. ⇒ {0} liked your application and offered a contract.
+Teklif geldi! ⇒ Offer received!
+{0} başka bir adayla anlaştı. ⇒ {0} hired another candidate.
+Reddedildin (şansın ~%{0} idi) ⇒ Rejected (your chance was ~{0}%)
+Lig primi ⇒ League prize
+Bilet + lig primi ⇒ Tickets + league prize
+Kupa turu primi ⇒ Cup round prize
+Avrupa primi ⇒ European prize
+Yönetim kurulu: “Kasayı rahatlatmak için en değerli oyuncumuz {0} satılmalı.” ⇒ Board: "To ease the finances, our most valuable player {0} must be sold."
+Kabul, satıyoruz ⇒ Agreed, we sell
+Hayır, o takımın yıldızı ⇒ No, he's the team's star
+Bir sezon daha süre iste ⇒ Ask for one more season
+Yönetim maaş yükünden şikâyetçi: “Maaş bütçesini %10 düşür.” ⇒ The board complains about wages: "Cut the wage bill by 10%."
+Yüksek maaşlı iki yedeği gönder ⇒ Release two high-paid reserves
+Mümkün değil ⇒ Impossible
+Kendi maaşımdan %10 indirim yap ⇒ Cut my own salary by 10%
+Başkan altyapıdan oyuncu görmek istiyor: “Bu sezon en az iki genç forma giymeli.” ⇒ The president wants academy players: "At least two youngsters must play this season."
+Söz veriyorum ⇒ I promise
+Kadro buna hazır değil ⇒ The squad isn't ready for that
+Kulüp sponsorları büyük hedef istiyor. Başkan: “Hedefi bir sıra yükseltelim, bütçe de artsın.” ⇒ Sponsors want ambition. President: "Let's raise the target one place, and the budget too."
+Kabul (bütçe +, hedef +) ⇒ Accept (budget +, target +)
+Mevcut hedefte kal ⇒ Keep the current target
+Taraftar grupları son sonuçlardan rahatsız; tribünlerde tepki var. ⇒ Supporter groups are unhappy with recent results; there are protests in the stands.
+Taraftarla buluş, özür dile ⇒ Meet the fans and apologise
+yıldız ⇒ star
+Yönetimin isteğiyle {0} {1} karşılığında satıldı. ⇒ At the board's request, {0} was sold for {1}.
+{0} ile karşılıklı anlaşarak yollar ayrıldı. ⇒ {0} left by mutual consent.
+Altyapıdan 2 oyuncu yükselt ⇒ Promote 2 academy players
+Efsane ⇒ Legend
+Saygın ⇒ Respected
+Sıradan ⇒ Ordinary
+Unutulmuş ⇒ Forgotten
+{0}, {1}'{2}, {3} şehrinde {4} bir ailede doğdu. Babası {5}, annesi {6}. ⇒ {0} was born in {3}, {1}, to a {4} family. Father: {5}; mother: {6}.
+Futbolu {0} altyapısında öğrendi. ⇒ Learned the game in the {0} academy.
+Çocukluğunda verdiği kararlar: ⇒ Childhood decisions:
+{0} yaşında “{1}” ⇒ at {0}: "{1}"
+Profesyonel futbolda forma giyemedi; hayatı sahanın dışında şekillendi. ⇒ Never played professionally; life took shape off the pitch.
+, {0} lig şampiyonluğu yaşadı ⇒ , won {0} league titles
+{0} maçta {1} gol, {2} asist üretti{3}. ⇒ Scored {1} goals and made {2} assists in {0} games{3}.
+Tek kulübü {0} oldu. ⇒ A one-club man: {0}.
+İlk kulübü {0}, son kulübü {1}; {2} kulüpte oynadı. ⇒ First club {0}, last club {1}; played for {2} clubs.
+{0} ulusal kupa ⇒ {0} national cups
+{0} Şampiyonlar Kupası ⇒ {0} Champions Cups
+{0} Avrupa Ligi ⇒ {0} Europa Leagues
+{0} Altın Top ⇒ {0} Ballon d'Or
+{0} gol krallığı ⇒ {0} golden boots
+Vitrinindekiler: ⇒ Trophy cabinet:
+Dünya Kupası kazandı. ⇒ Won the World Cup.
+Kıta şampiyonu oldu. ⇒ Became continental champion.
+Milli formayı {0} kez giydi, {1} gol attı.{2} ⇒ Won {0} caps and scored {1} international goals.{2}
+En zor anı {0} yaşındaydı: {1}. ⇒ Hardest moment, at {0}: {1}.
+sonunda tarih onu öne yazdı ⇒ in the end history ranked him higher
+çoğu zaman onun gölgesinde kaldı ⇒ he mostly stayed in his shadow
+, ama zor gününde yanında oldu ⇒ , but stood by him on his hardest day
+Hayatı boyunca yaşıtı {0} ile kıyaslandı; {1}{2}. ⇒ All his life he was compared to {0}; {1}{2}.
+şampiyonluk kazandı ⇒ won a title
+Futbolun ardından {0} sezon teknik direktörlük yaptı{1}. ⇒ After playing, he managed for {0} seasons{1}.
+{0} kulübünün sahibi oldu. ⇒ Became owner of {0}.
+Kurduğu şirketler: {0}. ⇒ Companies founded: {0}.
+{0} ile {1} yıl evli kaldı. ⇒ Married to {0} for {1} years.
+Geride {0} çocuk bıraktı: {1}. ⇒ Left {0} children: {1}.
+Geride çocuk bırakmadı. ⇒ Left no children.
+Onu tanıyanlar hırsını hatırlıyor. ⇒ Those who knew him remember his hunger.
+Sadakatiyle anılıyor. ⇒ Remembered for his loyalty.
+Önceliği hep ailesiydi. ⇒ Family always came first.
+Kararlarında parayı hep yakından gözetti. ⇒ Always kept a close eye on the money.
+Bıraktığı servet: {0}. Miras Puanı {1} — {2}. ⇒ Fortune left: {0}. Legacy Points {1} — {2}.
+Miras FC — ⇒ Miras FC —
+Kopyalandı ⇒ Copied
+Kopyalanamadı; metni seçip kopyala ⇒ Couldn't copy; select the text and copy it
+Kopyalanamadı ⇒ Couldn't copy
+her şeyi devretti ⇒ handed everything over
+hayatını kaybetti ⇒ passed away
+{0} {1}. Mirasçısı {2} oldu. Veraset vergisi: {3}. ⇒ {0} {1}. Heir: {2}. Inheritance tax: {3}.
+Aileden kalan kulüp: {0}. ⇒ Family club: {0}.
+Futbol için geç; ailenin mirasını yönetmeye odaklanıyorsun. ⇒ Too late for football; you focus on managing the family legacy.
+Devretmek için futbolu bırakmış ya da 35 yaşını geçmiş olmalısın ⇒ To hand over you must be retired or over 35
+, kulüp ⇒ , the club
+Her şeyi {0}'{1} devret ve onunla devam et? {2} hikâyeden çekilir; servet, şirketler{3} mirasçıya geçer (veraset vergisi ödenir). ⇒ Hand everything to {0} and continue as them? {2} steps out of the story; wealth, companies{3} pass to the heir (inheritance tax applies).
+{0} her şeyi {1}'{2} devretti ve sessiz bir hayata çekildi. ⇒ {0} handed everything to {1} and retired to a quiet life.
+{0} jeton gerekli (sende {1}). Mağazadan kazanabilirsin. ⇒ {0} tokens needed (you have {1}). Earn more in the shop.
+Günlük ödül · {0}. gün ⇒ Daily reward · day {0}
+Günlük ödül · {0}/7. gün ⇒ Daily reward · day {0}/7
+Her gün gir, seri büyüsün. 7. gün büyük ödül! ⇒ Log in daily to grow your streak. Big prize on day 7!
+🪙 {2} al ⇒ 🪙 Claim {2}
+📺 İzle, 2 katı al ⇒ 📺 Watch, get double
+İlk imza ⇒ First signature
+İlk profesyonel sözleşmeni imzala ⇒ Sign your first pro contract
+İlk gol ⇒ First goal
+Profesyonel ilk golünü at ⇒ Score your first pro goal
+Golcü ⇒ Goalscorer
+Kariyerinde 100 gol ⇒ 100 career goals
+Efsane golcü ⇒ Legendary striker
+Kariyerinde 300 gol ⇒ 300 career goals
+Emektar ⇒ Veteran
+300 resmi maç ⇒ 300 official games
+Lig şampiyonluğu yaşa ⇒ Win a league title
+Kupa kaldır ⇒ Lift a cup
+Ulusal kupa kazan ⇒ Win a national cup
+Avrupa’nın zirvesi ⇒ Top of Europe
+Şampiyonlar Kupası kazan ⇒ Win the Champions Cup
+Ay yıldızlı ⇒ International
+Milli takımda forma giy ⇒ Play for your national team
+Dünya şampiyonu ⇒ World champion
+Dünya Kupası kazan ⇒ Win the World Cup
+Altın Top ⇒ Ballon d'Or
+Altın Top ödülünü kazan ⇒ Win the Ballon d'Or
+Kaptan ⇒ Captain
+Kaptanlık bandını tak ⇒ Wear the captain's armband
+Hayat arkadaşı ⇒ Life partner
+Evlen ⇒ Get married
+Anne/baba ⇒ Parent
+Çocuğun olsun ⇒ Have a child
+Kalabalık aile ⇒ Big family
+3 çocuk sahibi ol ⇒ Have 3 children
+Girişimci ⇒ Entrepreneur
+Bir şirket kur ⇒ Found a company
+Milyoner ⇒ Millionaire
+10 M€ servete ulaş ⇒ Reach a 10 M€ fortune
+Başkan ⇒ Chairman
+Bir kulüp satın al ⇒ Buy a club
+Hoca adayı ⇒ Coach in training
+UEFA C lisansı al ⇒ Earn the UEFA C licence
+Pro lisans ⇒ Pro licence
+UEFA Pro lisansı al ⇒ Earn the UEFA Pro licence
+Kenardaki adam ⇒ Man on the touchline
+Teknik direktör ol ⇒ Become a manager
+Şampiyon hoca ⇒ Title-winning manager
+T.D. olarak lig kazan ⇒ Win a league as manager
+Miras ⇒ Legacy
+Mirası çocuğuna devret ⇒ Pass the legacy to your child
+Hanedan ⇒ Dynasty
+5. kuşağa ulaş ⇒ Reach the 5th generation
+Hayalini yaşadın ⇒ Dream come true
+Çocukluk hayalini gerçekleştir ⇒ Fulfil your childhood dream
+Hayırsever ⇒ Philanthropist
+3 hayır işi yap ⇒ Do 3 charitable acts
+Miras Puanı 2400 ⇒ 2400 Legacy Points
+Gurbetçi ⇒ Abroad
+Yurtdışında bir kulüpte oyna ⇒ Play for a club abroad
+Eve dönüş ⇒ Homecoming
+Çocukluk kulübünde oyna ⇒ Play for your childhood club
+Dünyanın en iyisi ⇒ World's best
+Antrenörler sıralamasında ilk 10 ⇒ Top 10 in the coach rankings
+🏆 Başarım: {0} (+{1} jeton) ⇒ 🏆 Achievement: {0} (+{1} tokens)
+🎟 Kariyer Bileti seviye {0}! ⇒ 🎟 Career Pass level {0}!
+Bu seviyeye henüz ulaşmadın ⇒ You haven't reached this level yet
+Zaten aldın ⇒ Already claimed
+Altın yol için Altın Bilet gerekli ⇒ The gold track needs a Gold Pass
++ tema ⇒ + theme
+🎟 Ödül alındı: 🪙 {0}{1} ⇒ 🎟 Reward claimed: 🪙 {0}{1}
+Ödüllü reklam ⇒ Rewarded ad
+Reklam ⇒ Ad
+saniye… ⇒ seconds…
+Bitti ⇒ Done
+Ödülü al ⇒ Claim reward
+{0} · deneme ⇒ {0} · test
+Burada gerçek uygulamada bir reklam görünecek. ⇒ In the real app, an ad will show here.
+Bugünkü reklam ödülü hakkın doldu (5/5) ⇒ You've used today's ad rewards (5/5)
+Reklam ödülü ({0}/5) ⇒ Ad reward ({0}/5)
+Bu hafta enerji reklamını kullandın ⇒ You've used this week's energy ad
+⚡ +25 enerji ⇒ ⚡ +25 energy
+Tedavi hızlandı: {0} hafta ⇒ Treatment sped up: {0} weeks
+Menajerin son bir kez aradı; kulüp masaya döndü. ⇒ Your agent made one last call; the club came back to the table.
+100 jeton ⇒ 100 tokens
+550 jeton ⇒ 550 tokens
+1.200 jeton ⇒ 1,200 tokens
+En çok tercih edilen ⇒ Most popular
+2.500 jeton ⇒ 2,500 tokens
+Altın Bilet (bu ay) ⇒ Gold Pass (this month)
+Miras Kulübü (aylık) ⇒ Miras Club (monthly)
+Zorunlu reklam yok · her ay 150 jeton · +3 kayıt yuvası ⇒ No forced ads · 150 tokens monthly · +3 save slots
+Bu web sürümünde gerçek ödeme yok. Test satın alması yapılsın mı? (Ücret alınmaz.) ⇒ This web version has no real payments. Make a test purchase? (You won't be charged.)
+Test et ⇒ Test it
+Teşekkürler! {0} hesabına eklendi ⇒ Thanks! {0} added to your account
+İmza: ⇒ Signature:
+Geri alınacak bir karar yok ⇒ No decision to undo
+Kararı geri al ⇒ Undo decision
+Karar geri alındı ⇒ Decision undone
+Haftada bir kez alınabilir ⇒ Once per week
++25 enerji ⇒ +25 energy
+Sakat değilsin ⇒ You're not injured
+Hızlı tedavi ⇒ Fast treatment
+Gözlemci raporu ⇒ Scout report
+En fazla 6 kayıt yuvası ⇒ At most 6 save slots
+Ek kayıt yuvası ⇒ Extra save slot
+Altın (varsayılan) ⇒ Gold (default)
+Gece mavisi ⇒ Midnight blue
+Zümrüt ⇒ Emerald
+Kızıl gece ⇒ Crimson night
+Klasik çim ⇒ Classic grass
+Retro (eski TV) ⇒ Retro (old TV)
+Gece maçı ⇒ Night game
+teması ⇒ theme
+Gurbet ⇒ Far From Home
+Yurtdışında yalnızlık, dil, kültür şoku ve sıla hasreti olayları ⇒ Loneliness, language, culture shock and homesickness abroad
+Skandal ⇒ Scandal
+Bahis iddiaları, basın krizleri, mahkeme ve itibar savaşları ⇒ Betting claims, press storms, court cases and reputation battles
+Kulüp kurucusu ⇒ Club Founder
+Sıfırdan bir amatör kulüp kurup yükseltme hikâyesi ⇒ Found an amateur club from scratch and take it up the leagues
+Bu paket zaten sende ⇒ You already own this pack
+hikâye paketi ⇒ story pack
+📖 {0} hikâye paketi açıldı. ⇒ 📖 {0} story pack unlocked.
+{0}'{1} ilk kışın. Dil bilmiyorsun, soyunma odasındaki şakaları anlamıyorsun. ⇒ Your first winter in {0}. You don't speak the language or get the dressing-room jokes.
+Akşamları dil kursuna git ⇒ Take evening language classes
+Ülkemden oyuncularla takıl ⇒ Hang out with players from home
+Annen telefonda ağlıyor: “Ne zaman döneceksin oğlum/kızım?” ⇒ Your mother cries on the phone: "When are you coming home?"
+Ailemi yanıma getireyim ⇒ Bring my family over
+Ailenin taşınması ⇒ Family relocation
+Devre arasında uçarım ⇒ I'll fly back at the winter break
+Sokakta ırkçı bir saldırıya uğradın. Basın konuyu büyütüyor. ⇒ You were racially abused in the street. The press is all over it.
+Kampanyanın yüzü ol ⇒ Become the face of the campaign
+Sessiz kal, ülkeme dön ⇒ Stay quiet and go home
+Bir bahis çetesi, sarı kart görmen için sana büyük para teklif ediyor. ⇒ A betting gang offers you big money to get a yellow card.
+Polise git ⇒ Go to the police
+{0} şike girişimini ihbar etti. ⇒ {0} reported a match-fixing attempt.
+Rüşvet ⇒ Bribe
+Şike soruşturmasında adın çıktı; 2 yıl men cezası aldın. ⇒ Your name came up in the fixing probe; you got a 2-year ban.
+Duymamış ol ⇒ Pretend you didn't hear
+Eski bir arkadaşın, yıllar önceki bir olayı “çarpıtarak” bir gazeteye satmış. ⇒ An old friend sold a twisted version of an old story to a newspaper.
+Dava aç ve gerçeği anlat ⇒ Sue and tell the truth
+Dava uzadı, adın lekelendi. ⇒ The case dragged on and your name was tarnished.
+Arkadaşınla yüz yüze konuş ⇒ Talk to your friend face to face
+Kulübünün mali tablolarında usulsüzlük çıktı; savcılık soruşturma açtı. ⇒ Irregularities were found in your club's accounts; prosecutors opened an investigation.
+Tam iş birliği yap ⇒ Cooperate fully
+Avukatlarla kapat ⇒ Bury it with lawyers
+Avukatlar ⇒ Lawyers

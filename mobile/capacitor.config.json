@@ -1,0 +1,7 @@
+{
+  "appId": "com.serhattutak.mirasfc",
+  "appName": "Miras FC",
+  "webDir": "www",
+  "backgroundColor": "#0b1210",
+  "ios": { "contentInset": "never", "backgroundColor": "#0b1210", "scrollEnabled": true }
+}

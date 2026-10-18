@@ -1,0 +1,25 @@
+Bugünkü reklam ödülü hakkın doldu (3/3) ⇒ You've used today's ad rewards (3/3)
+Reklam ödülü ({0}/3) ⇒ Ad reward ({0}/3)
+Günde 3 kez · kalan {0} ⇒ 3 per day · {0} left
+Mirası sadece oğulların devralabilir ⇒ Only your sons can inherit the legacy
+{0}. kuşağa geçmek için Miras Paketi gerekir ({1}). Paket yalnızca bu kayıt için geçerlidir; alınca bu ailenin bütün kuşakları açılır. ⇒ Continuing to generation {0} needs the Legacy Pack ({1}). The pack is valid for this save only; it unlocks every future generation of this family.
+Paketi al ⇒ Get the pack
+Miras Paketi bu kayıt için açıldı ⇒ Legacy Pack unlocked for this save
+Mirası devralabilecek bir oğlun yok; hikâye seninle biter. ⇒ You have no son to inherit the legacy; the story ends with you.
+🔒 {0}. kuşak için Miras Paketi gerekir · {1} · yalnızca bu kayıt için ⇒ 🔒 Generation {0} needs the Legacy Pack · {1} · this save only
+Kızların mirası devralmaz. ⇒ Daughters don't take over the legacy.
+Miras Paketi (bu kayıt) ⇒ Legacy Pack (this save)
+Torunla ve sonraki kuşaklarla devam et · sadece bu kayıt için ⇒ Continue with your grandson and beyond · this save only
+Miras Paketi ⇒ Legacy Pack
+Bu kayıtta açık: bütün kuşaklarla devam edebilirsin. ✨ ⇒ Unlocked in this save: you can continue through every generation. ✨
+👨‍👦 Kuşaklar boyu devam ⇒ 👨‍👦 Carry on through the generations
+Önce bir hayat başlat ⇒ Start a life first
+Kurucudan oğluna ilk devir ücretsizdir. Paket yalnızca alındığı kayıt için geçerlidir. ⇒ The first handover from the founder to his son is free. The pack only applies to the save it was bought in.
+Satılık kulüpler · nakit {0} · bütün varlıklarınla {1} ⇒ Clubs for sale · cash {0} · with all your assets {1}
+Varlık satıp al ⇒ Sell assets & buy
+Nakit {0}, kulüp {1}. Eksik {2} için yatırımların, mülklerin ve gerekirse şirketlerin satılsın mı? ⇒ Cash {0}, club {1}. Sell your investments, properties and, if needed, companies to cover the missing {2}?
+Sat ve devam et ⇒ Sell and continue
+Bütün varlıkların bile yetmiyor: {0} gerekli ⇒ Even all your assets aren't enough: {0} needed
+Kulüp alımı için varlıklar nakde çevrildi: {0}. ⇒ Assets cashed in for the club purchase: {0}.
+Kulüp grubuna eklenecek. ⇒ It will join your club group.
+Orta iyiydi ama rakip kafayla uzaklaştırdı ⇒ Good cross, but a defender headed it clear

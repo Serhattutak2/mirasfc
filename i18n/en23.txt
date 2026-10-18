@@ -1,0 +1,10 @@
+⚠️ Rakip topla üstüne sürüyor! Oyuncunu önüne SÜRÜKLE, yolunu kes ve müdahale et. ⇒ ⚠️ The opponent is dribbling at you! DRAG your player in front of him, cut off his path and tackle.
+💥 TOPU KAPTIN ⇒ 💥 BALL WON
+Müdahale: topu kaptın! ⇒ Tackle: you won the ball!
+😤 GEÇTİ ⇒ 😤 BEATEN
+{0} müdahaleni atlattı! ⇒ {0} skipped past your tackle!
+💥 TOP BİZDE ⇒ 💥 OUR BALL
+⚡ Top sende! Arkadaşların koşuyor: atağı kur. ⇒ ⚡ It's your ball! Your teammates are making runs: build the attack.
+🚩 OFSAYT ⇒ 🚩 OFFSIDE
+OFSAYT ⇒ OFFSIDE
+{0} ofsayt çizgisinin gerisinde değildi ⇒ {0} wasn't behind the offside line

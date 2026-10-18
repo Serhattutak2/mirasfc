@@ -1,0 +1,309 @@
+Türkiye ⇒ Turkey
+İngiltere ⇒ England
+İspanya ⇒ Spain
+Almanya ⇒ Germany
+İtalya ⇒ Italy
+Fransa ⇒ France
+Suudi Arabistan ⇒ Saudi Arabia
+Hız ⇒ Pace
+Pas ⇒ Passing
+Şut ⇒ Shooting
+Teknik ⇒ Technique
+Savunma ⇒ Defending
+Fizik ⇒ Physical
+Forvet ⇒ Forward
+Orta saha ⇒ Midfielder
+Defans ⇒ Defender
+Kaleci ⇒ Goalkeeper
+Genç ⇒ Youth
+Yedek ⇒ Sub
+Rotasyon ⇒ Rotation
+As ⇒ Starter
+Yıldız ⇒ Star
+yaş: ⇒ y/o:
+Avrupa Şampiyonlar Kupası ⇒ European Champions Cup
+Avrupa Ligi ⇒ Europa League
+Avrupa Şampiyonası ⇒ European Championship
+Libertadores Kupası ⇒ Libertadores Cup
+Sudamericana Kupası ⇒ Sudamericana Cup
+Asya Şampiyonlar Ligi ⇒ Asian Champions League
+Asya Kupası 2 ⇒ Asian Cup 2
+Asya Kupası ⇒ Asian Cup
+CONCACAF Şampiyonlar Kupası ⇒ CONCACAF Champions Cup
+Liglerarası Kupa ⇒ Leagues Cup
+Altın Kupa ⇒ Gold Cup
+Afrika Şampiyonlar Ligi ⇒ African Champions League
+Konfederasyon Kupası ⇒ Confederation Cup
+Afrika Uluslar Kupası ⇒ Africa Cup of Nations
+1. Tur ⇒ Round 1
+2. Tur ⇒ Round 2
+Son 16 ⇒ Last 16
+Çeyrek Final ⇒ Quarter-final
+Yarı Final ⇒ Semi-final
+Final ⇒ Final
+Kupası ⇒ Cup
+Oynandı (sen yoktun) ⇒ Played (before you arrived)
+Sezon ortasında geldiğin için bu sezon kupa ve Avrupa kadrosunda yoksun. ⇒ You joined mid-season, so you are not registered for the cup or Europe this season.
+Lig ⇒ League
+Kupa ⇒ Cup
+Avrupa ⇒ Europe
+Grup ⇒ Group
+Milli Takımı ⇒ National Team
+Milli ⇒ National
+Hazırlık maçı ⇒ Friendly
+Eleme maçı ⇒ Qualifier
+Açık ⇒ Clear
+Bulutlu ⇒ Cloudy
+Yağmurlu ⇒ Rainy
+Rüzgârlı ⇒ Windy
+Karlı ⇒ Snowy
+Çok sıcak ⇒ Very hot
+Sisli ⇒ Foggy
+{0} şampiyonu: {1} ⇒ {0} champions: {1}
+{0} futbolu bıraktı. ⇒ {0} retired from football.
+{0} sözleşmesi bittiği için kulüpten ayrıldı. ⇒ {0} left the club as his contract expired.
+{0} altyapıdan A takıma yükseldi ({1} numara, potansiyel {2}). ⇒ {0} was promoted from the academy (shirt {1}, potential {2}).
+Bütçe yetmiyor: {0} gerekli, bütçe {1} ⇒ Not enough budget: {0} needed, budget {1}
+{0} transfer edildi ({1}). Yeni güç {2}. ⇒ {0} signed ({1}). New strength {2}.
+{0} satıldı ({1}). Yeni güç {2}. ⇒ {0} sold ({1}). New strength {2}.
+Diğer gelir ⇒ Other income
+Diğer harcama ⇒ Other spending
+Dönüm noktası 1/4 — İlk tutku ⇒ Turning point 1/4 — First love
+Futbolu kimden, nasıl öğreneceksin? Bu seçim karakterinin temelini atar. ⇒ Who will teach you the game, and how? This choice shapes who you become.
+Babamla her akşam parkta ⇒ Every evening in the park with Dad
+Pas ve teknik artar, babanla bağın güçlenir. ⇒ Passing and technique grow; your bond with your father deepens.
+Mahalle maçlarında büyüklerle ⇒ Street games with the older kids
+Fizik ve teknik artar, hırsın büyür. Mahallede bir dost edinirsin. ⇒ Physique and technique grow, and so does your hunger. You make a friend in the neighbourhood.
+çocukluk ⇒ childhood
+Ekrandaki yıldızı taklit ederek ⇒ Copying the star on TV
+Şut artar; bir idolün olur ve bir gün karşına çıkabilir. ⇒ Shooting grows; you get an idol you may one day face.
+Annemin isteğiyle önce okul ⇒ School first, as Mum wants
+Eğitim artar: ileride antrenörlük, iş ve pazarlıkta avantaj. ⇒ Education grows: an edge later in coaching, business and negotiations.
+Dönüm noktası 2/4 — Nerede oynayacaksın? ⇒ Turning point 2/4 — Where will you play?
+Artık ciddi bir takıma ihtiyacın var. ⇒ You need a proper team now.
+Ücretli futbol okulu ⇒ Paid football school
+Potansiyel ve teknik artar. Dar gelirli ailede bütçe zorlanır. ⇒ Potential and technique grow. A tight family budget will feel it.
+Şehrimin kulübünün minikler takımı ⇒ My city club's under-10s
+Düzenli maç, takım ruhu; çocukluk kulübün olur ve seni unutmaz. ⇒ Regular games and team spirit; it becomes your childhood club and never forgets you.
+Sokakta özgür kal ⇒ Stay free on the streets
+Teknik çok artar ama disiplin eksik kalır. ⇒ Technique grows a lot, but discipline lags.
+Atletizmle birlikte iki spor ⇒ Two sports, with athletics
+Hız ve dayanıklılık artar. ⇒ Pace and stamina grow.
+Dönüm noktası 3/4 — Altyapı kapısı ⇒ Turning point 3/4 — The academy door
+Gözlemciler seni izledi. Önünde farklı yollar var. ⇒ Scouts have watched you. Different roads lie ahead.
+Büyük kulübün altyapısı (şehir değiştir, yurtta kal) ⇒ A big club's academy (move city, live in the dorm)
+Gelişim hızlanır; 16 yaşında o kulüpten teklif şansın yüksek. Aileden uzak kalırsın. ⇒ Faster development and a good chance of an offer from them at 16. You'll be far from family.
+Şehrimin kulübünün altyapısı ⇒ My city club's academy
+Bol maç oynarsın; çocukluk kulübün seni bekler. ⇒ Plenty of games; your childhood club waits for you.
+Okul ve aile öncelikli, hafta sonu futbol ⇒ School and family first, football at weekends
+Gelişim yavaşlar, eğitim ve aile bağı güçlenir. ⇒ Slower development; education and family bonds grow.
+Yurtdışında bir akademi ⇒ An academy abroad
+En hızlı gelişim; o ülkeden teklif gelir. Ailenden çok uzaktasın. ⇒ Fastest development and offers from that country. You'll be very far from home.
+Dönüm noktası 4/4 — Kapıdaki menajer ⇒ Turning point 4/4 — An agent at the door
+Takım elbiseli, hızlı konuşan bir menajer ailene ön sözleşme ve peşin para teklif ediyor. ⇒ A fast-talking agent in a suit offers your family a pre-contract and cash up front.
+İmzala (peşin para, menajerin olur) ⇒ Sign (cash now, you get an agent)
+Menajerin olur (+teklif), komisyon %8. Para düşkünlüğün artar. ⇒ You get an agent (+offers), 8% commission. You become more money-minded.
+Ailece reddet ⇒ Refuse as a family
+Ailenle bağın güçlenir. ⇒ Your family bond grows.
+Avukata göster, şartları değiştir ⇒ Show a lawyer, change the terms
+Menajerin olur, komisyon düşük (%5). ⇒ You get an agent at a low 5% commission.
+Dönüm noktası 4/4 — Diz ⇒ Turning point 4/4 — The knee
+Bir antrenmanda dizin içe döndü. Doktor iki yol söylüyor. ⇒ Your knee twisted in training. The doctor offers two paths.
+Ameliyat ol (hızlı dönüş, kalıcı iz riski) ⇒ Surgery (quick return, risk of lasting damage)
+%40 ihtimalle hız tavanın kalıcı düşer. ⇒ 40% chance your pace ceiling drops for good.
+Diz ameliyatı: hız tavanı düştü ⇒ Knee surgery: pace ceiling lowered
+Ameliyat başarılı ama hız tavanın düştü. ⇒ The surgery worked, but your pace ceiling dropped.
+Ameliyat başarılı, iz kalmadı. ⇒ The surgery worked with no lasting damage.
+Uzun rehabilitasyon ⇒ Long rehabilitation
+Bir yıl geri kalırsın ama iz kalmaz. Sabır öğrenirsin. ⇒ You lose a year but no lasting damage. You learn patience.
+Ağrıyla oynamaya devam ⇒ Play through the pain
+%50 kalıcı hasar riski. ⇒ 50% risk of lasting damage.
+Kronik diz: hız ve fizik tavanı düştü ⇒ Chronic knee: pace and physical ceilings lowered
+Dizin kronikleşti. ⇒ Your knee problem became chronic.
+Dönüm noktası 4/4 — Evdeki yük ⇒ Turning point 4/4 — Trouble at home
+Ailende biri ağır hastalandı. Evde her şey değişti. ⇒ Someone in your family fell seriously ill. Everything at home changed.
+Futbola bir süre ara ver, ailene bak ⇒ Take a break from football and care for family
+Gelişim yavaşlar, aile bağı derinleşir. ⇒ Slower development; family bonds deepen.
+Antrenmana devam, geceleri yardım et ⇒ Keep training, help out at night
+Sağlığın zorlanır, hırsın büyür. ⇒ Your health suffers; your hunger grows.
+Akrabalardan yardım iste ⇒ Ask relatives for help
+Yük paylaşılır. ⇒ The burden is shared.
+Dönüm noktası 4/4 — İki çağrı ⇒ Turning point 4/4 — Two calls
+U17 Milli Takımı seni çağırdı. Aynı hafta kulübünün en önemli turnuvası var. ⇒ The U17 national team called you up. The same week is your club's biggest tournament.
+Milli takıma git ⇒ Join the national team
+Ünün artar, gözlemciler seni tanır. ⇒ Your fame grows and scouts get to know you.
+Kulübümde kal ⇒ Stay with my club
+Kulübün minnettar; 16 yaşında daha iyi teklif yapar. ⇒ Your club is grateful and will make a better offer at 16.
+Dönüm noktası 4/4 — A takım antrenmanı ⇒ Turning point 4/4 — First-team training
+Altyapı hocası seni A takımın antrenmanına çağırdı. Aynı akşam en yakın arkadaşının doğum günü var. ⇒ Your academy coach invited you to first-team training. That same evening is your best friend's birthday.
+A takım antrenmanına git, kendini göster ⇒ Go to first-team training and show yourself
+Kulüp seni not eder; 16 yaşında rolün bir kademe iyi olabilir. ⇒ The club takes note; your role at 16 may be a level higher.
+Arkadaşının doğum gününe git ⇒ Go to your friend's birthday
+Dostluğun pekişir; fırsat bir sonraki sefere kalır. ⇒ Your friendship grows; the chance will come again.
+{0} altyapısına katıldın. ⇒ You joined the {0} academy.
+Mahalle maçında şutun komşunun camını kırdı. Komşu kapıda bağırıyor. ⇒ Your shot in a street game smashed a neighbour's window. He's shouting at the door.
+Kapıyı çalıp özür dile ⇒ Knock and apologise
+Kaç ve saklan ⇒ Run and hide
+Harçlığınla camı ödemeyi teklif et ⇒ Offer to pay with your pocket money
+Arkadaşın eski kramponlarını satıyor ama evde para dar. ⇒ A friend is selling his old boots, but money is tight at home.
+Harçlığını biriktirip al ⇒ Save up and buy them
+Babandan iste ⇒ Ask your father
+Eski ayakkabılarla devam ⇒ Carry on in old trainers
+Okul turnuvasının finali. Son dakikada penaltı kazandınız; top sende. ⇒ School tournament final. A last-minute penalty — the ball is yours.
+Kendin at ⇒ Take it yourself
+Penaltıyı attın, kupa sizin! ⇒ You scored — the cup is yours!
+Penaltıyı kaçırdın. Bütün gece uyuyamadın. ⇒ You missed. You couldn't sleep all night.
+En iyi arkadaşına ver ⇒ Give it to your best friend
+Kardeşin seninle oynamak istiyor ama antrenmana geç kalacaksın. ⇒ Your sibling wants to play with you, but you'll be late for training.
+Kardeşinle oyna ⇒ Play with your sibling
+Antrenmana git ⇒ Go to training
+Onu da antrenmana götür ⇒ Take them to training too
+Uzun süren bir hastalık yüzünden iki ay sahalardan uzak kaldın. ⇒ A long illness kept you off the pitch for two months.
+Sabırla iyileş ⇒ Recover patiently
+Erken dön ⇒ Come back early
+Yatakta maç izleyip not tut ⇒ Watch matches in bed and take notes
+Matematikten kalmak üzeresin. Öğretmenin ailene not yazdı. ⇒ You're about to fail maths. Your teacher wrote to your parents.
+Antrenmanı azalt, ders çalış ⇒ Train less, study more
+Futbola odaklan ⇒ Focus on football
+Kopya çekmeyi dene ⇒ Try cheating
+Kopya çekerken yakalandın; ailen çok kızdı. ⇒ You were caught cheating; your parents were furious.
+{0} şehrine maça geliyor. Biletler çok pahalı. ⇒ {0} is playing in your city. Tickets are very expensive.
+Babanla birlikte git ⇒ Go with your father
+Televizyondan izle ⇒ Watch on TV
+Otel önünde saatlerce bekle ⇒ Wait for hours outside the hotel
+İdolün formana imza attı. O formayı hiç yıkamadın. ⇒ Your idol signed your shirt. You never washed it again.
+Altyapıda iki yaş büyük bir oyuncu sana sürekli sataşıyor. ⇒ A player two years older keeps picking on you at the academy.
+Hocaya söyle ⇒ Tell the coach
+Sahada cevap ver ⇒ Answer on the pitch
+Görmezden gel ⇒ Ignore it
+Sınıftan biri çantana küçük bir not bırakmış. ⇒ Someone in your class slipped a little note into your bag.
+Cevap yaz ⇒ Write back
+Futbol her şeyden önce ⇒ Football comes first
+Babanın işi bitti; evde ciddi para sıkıntısı var. ⇒ Your father lost his job; money is seriously tight at home.
+Hafta sonları çalış ⇒ Work at weekends
+Futboldan vazgeçme ⇒ Don't give up football
+Bir gözlemci maçını izledi ve kartvizitini bıraktı. ⇒ A scout watched your game and left his card.
+Seçmelere git ⇒ Go to the trial
+Seçmelerde elendin. Kapı kapanmadı ama zorlaştı. ⇒ You were cut at the trial. The door isn't closed, but it's harder.
+Şimdilik değil ⇒ Not now
+Baban {0} her maçına geliyor ama son zamanlarda kenardan bağırarak yönlendiriyor. Utanıyorsun. ⇒ Your father {0} comes to every game, but lately he shouts instructions from the touchline. You're embarrassed.
+Onunla konuş ⇒ Talk to him
+Bir şey söyleme ⇒ Say nothing
+Yazın özel bir futbol kampına gitme fırsatı var. ⇒ There's a chance to attend a private football camp this summer.
+Kampa git (ailene yük olabilir) ⇒ Go to camp (may strain the family)
+Mahallede kendi kendine çalış ⇒ Train on your own in the neighbourhood
+En yakın arkadaşın {0} başka bir şehre taşınıyor. ⇒ Your best friend {0} is moving to another city.
+Ona veda maçı düzenle ⇒ Organise a farewell match
+Mektuplaşmaya söz ver ⇒ Promise to write
+Kabuğuna çekil ⇒ Withdraw into your shell
+Deden hastanede. Seni görmek istiyor ama aynı gün turnuvan var. ⇒ Your grandfather is in hospital and wants to see you, but you have a tournament that day.
+Dedenin yanına git ⇒ Go to your grandfather
+Deden sana eski bir futbol hikâyesi anlattı. O son konuşmanızdı. ⇒ Your grandfather told you an old football story. It was your last conversation.
+Turnuvaya git, akşam uğrarım ⇒ Go to the tournament and visit in the evening
+Akşam yetişemedin. Deden aynı gece vefat etti. ⇒ You didn't make it that evening. Your grandfather passed away that night.
+Bisikletle yokuş aşağı inerken düştün; kolun alçıda. ⇒ You fell off your bike going downhill; your arm is in plaster.
+Tek kolla bile top sektir ⇒ Do keepy-uppies even with one arm
+Dinlen ve kitap oku ⇒ Rest and read
+Altyapı hocan seni takım kaptanı yapmak istiyor ama takımda senden büyükler var. ⇒ Your academy coach wants to make you captain, but there are older boys in the team.
+Bandı kabul et ⇒ Take the armband
+Daha büyüklerden birine verilsin ⇒ Give it to one of the older boys
+Yerel televizyon “geleceğin yıldızları” programı için seninle röportaj yapmak istiyor. ⇒ Local TV wants to interview you for a "stars of tomorrow" show.
+Heyecanla kabul et ⇒ Accept excitedly
+Utanıp kaç ⇒ Shyly avoid it
+Mahallede para karşılığı oynanan bir maça çağrıldın. ⇒ You were invited to a street game played for money.
+Oyna, kazan ⇒ Play and win
+Böyle maçlara girmem ⇒ I don't play those games
+{0} bir dükkândan çikolata çaldı ve sen de yanındaydın. Dükkân sahibi sizi gördü. ⇒ {0} stole chocolate from a shop while you were with him. The owner saw you both.
+Arkadaşını koru, birlikte kaç ⇒ Cover for your friend and run
+Akşam dükkân sahibi evinize geldi. ⇒ That evening the shopkeeper came to your house.
+Dükkâncıya parayı öde ⇒ Pay the shopkeeper
+Yaz tatilinde bir çay bahçesinde garsonluk teklifi var. ⇒ There's a summer job waiting tables at a tea garden.
+Çalış (harçlık + disiplin) ⇒ Work (pocket money + discipline)
+Bütün yaz futbol ⇒ Football all summer
+Aileyle tatile çık ⇒ Go on holiday with family
+Antrenmandan dönerken yağmurda ıslanmış bir köpek yavrusu seni takip etti. ⇒ On the way home from training, a soaked puppy followed you in the rain.
+Eve götür, adını koy ⇒ Take it home and name it
+Bir köpeğin oldu: {0}. ⇒ You have a dog now: {0}.
+Mahalleye bırak, mama getir ⇒ Leave it in the street and bring food
+Bir maçta {0} ile itiştiniz; iki takım birbirine girdi. ⇒ You shoved {0} in a game; both teams piled in.
+Özür dile ve el sıkış ⇒ Apologise and shake hands
+Geri adım atma ⇒ Don't back down
+Yurtta arkadaşlar gece gizlice dışarı çıkmayı planlıyor. ⇒ The boys in the dorm plan to sneak out at night.
+Onlarla git ⇒ Go with them
+Yakalandınız; hoca seni bir ay kadro dışı bıraktı. ⇒ You were caught; the coach dropped you for a month.
+Odada kal ⇒ Stay in your room
+Bir öğretmenin “futbolcu olmak bir hayal, ciddi bir meslek seç” dedi. ⇒ A teacher said: "Being a footballer is a dream — choose a real profession."
+Ona kendini kanıtlayacağım ⇒ I'll prove her wrong
+Belki haklıdır, yedek planım olsun ⇒ Maybe she's right; I'll have a plan B
+Annen seni akşamları İngilizce kursuna yazdırmak istiyor. ⇒ Your mother wants to enrol you in evening English classes.
+Git ⇒ Go
+O saatler antrenmanın ⇒ Those are training hours
+Mahallenin tek toprak sahası otopark yapılacak. Çocuklar imza topluyor. ⇒ The neighbourhood's only dirt pitch will become a car park. The kids are collecting signatures.
+Kampanyanın başına geç ⇒ Lead the campaign
+Saha kurtuldu! Mahalle sana “kaptan” diyor. ⇒ The pitch is saved! The neighbourhood calls you "captain".
+Saha yine de yıkıldı. İlk kaybettiğin maç buydu. ⇒ The pitch was destroyed anyway. It was the first match you ever lost.
+Başka saha buluruz ⇒ We'll find another pitch
+Baban {0} işten çıkarıldı. Akşam yemeğinde kimse konuşmuyor. ⇒ Your father {0} was laid off. Nobody talks at dinner.
+Babana sarıl, “düzelecek” de ⇒ Hug your father and say "it'll be okay"
+Odana çekil, daha çok çalış ⇒ Go to your room and work harder
+Bir aracı, “seni büyük kulübe götürürüm” diyerek ailenden para istiyor. ⇒ A middleman asks your family for money, promising to take you to a big club.
+Güven, parayı ver ⇒ Trust him and pay
+Aracı ortadan kayboldu. Dolandırılmıştınız. ⇒ The middleman vanished. You'd been scammed.
+Aracı gerçekten bir denemeye götürdü. ⇒ The middleman really did get you a trial.
+Kapıyı göster ⇒ Show him the door
+İlk uzak deplasmanınız; otobüs yolculuğu 9 saat sürecek. ⇒ Your first long away trip: a 9-hour bus ride.
+Yol boyunca takımla şarkı söyle ⇒ Sing with the team all the way
+Uyu ve maça hazırlan ⇒ Sleep and prepare for the game
+Yıllar sonra okul aşkın {0} ile bir düğünde karşılaştınız. {1} artık {2}. ⇒ Years later you ran into your school crush {0} at a wedding. {1} is now {2}.
+{0}, {1} ile tanıştın. {2}; {3} ⇒ {0}, you met {1}. {2}; {3}
+Numarasını iste ⇒ Ask for their number
+Bir kahve ısmarla, acele etme ⇒ Buy a coffee, take it slow
+{0} ile bir kahve içtiniz ama arkası gelmedi. ⇒ You had coffee with {0}, but nothing came of it.
+Kariyerim önce ⇒ Career first
+flört ⇒ dating
+{0} ile ilk buluşmanız. Nereye gidiyorsunuz? ⇒ Your first date with {0}. Where are you going?
+Şık bir restoran ⇒ A fancy restaurant
+ilk buluşma şık bir restoranda ⇒ first date at a fancy restaurant
+Sahilde uzun bir yürüyüş ⇒ A long walk on the beach
+sahilde uzun bir yürüyüş ⇒ a long walk on the beach
+Benim maçıma gelsin ⇒ Invite them to my match
+ilk buluşma tribünde ⇒ first date in the stands
+{0} ile {1} yıldır birliktesiniz. Evlilik konusu açıldı. ⇒ You and {0} have been together for {1} years. Marriage has come up.
+Büyük düğün ({0}) ⇒ Big wedding ({0})
+Sade bir nikâh ⇒ A simple ceremony
+Henüz hazır değilim ⇒ I'm not ready yet
+evlilik teklifini erteledin ⇒ you put off the proposal
+{0} ile çocuk sahibi olmayı konuşuyorsunuz. ⇒ You and {0} are talking about having children.
+Bebek istiyoruz ⇒ We want a baby
+bebek kararı ⇒ deciding on a baby
+Şimdi değil ⇒ Not now
+Yaz geldi. {0} tatil planı yapmak istiyor. ⇒ Summer's here. {0} wants to plan a holiday.
+Ege'de bir koy ({0}) ⇒ A cove on the Aegean ({0})
+Ege'de bir koy tatili ⇒ a holiday in an Aegean cove
+Avrupa şehir turu ({0}) ⇒ European city tour ({0})
+Avrupa şehir turu ⇒ European city tour
+Bu yaz kamp ve hazırlık var ⇒ There's camp and pre-season this summer
+{0} başka bir şehirde büyük bir iş teklifi aldı. Kabul ederse haftada bir görüşebileceksiniz. ⇒ {0} got a big job offer in another city. If they accept, you'll only see each other once a week.
+Destekle, mesafeyi idare ederiz ⇒ Support them; we'll manage the distance
+onun kariyerini destekledin ⇒ you supported their career
+Kalmasını rica et ⇒ Ask them to stay
+{0} ilk kez ailenle yemeğe geliyor. ⇒ {0} is coming to dinner with your family for the first time.
+Annemin yemekleriyle evde ⇒ At home with Mum's cooking
+ailenle sıcak bir akşam ⇒ a warm evening with your family
+ailenle gergin bir akşam ⇒ a tense evening with your family
+Annen onu çok sevdi. ⇒ Your mother loved them.
+Babanla siyaset konuşunca masa gerildi. ⇒ Things got tense when politics came up with your father.
+Restoranda, tarafsız alanda ⇒ At a restaurant, on neutral ground
+ailenle restoranda bir akşam ⇒ an evening at a restaurant with your family
+{0} sosyal medyada sana yazan hayranları gördü ve bozuldu. ⇒ {0} saw fans messaging you on social media and got upset.
+Hesaplarımı birlikte yönetelim ⇒ Let's manage my accounts together
+Bu işimin parçası ⇒ It's part of my job
+{0} ile {1}. yılınız. Ne yapıyorsunuz? ⇒ Your {1}th year with {0}. What are you doing?
+Sürpriz hediye ({0}) ⇒ Surprise gift ({0})
+{0}. yıl sürprizi ⇒ year {0} surprise
+İlk buluştuğumuz yere git ⇒ Go back to where we first met
+ilk buluştuğunuz yere döndünüz ⇒ you went back to where you first met
+Unuttum… ⇒ I forgot…
+{0}: “Evde hiç yoksun. Seni en son ne zaman gerçekten dinledim?” ⇒ {0}: "You're never home. When did I last really listen to you?"
+Haklısın, değişeceğim ⇒ You're right, I'll change
+Kariyerim için katlanmalısın ⇒ You have to put up with it for my career
