@@ -256,9 +256,11 @@ step = function (dt) {
       const keep = V9.rpPre + V9.rpPost + .6; while (s.fr.length && s.frC - s.fr[0].c > keep) s.fr.shift();
       if (s.phase === 'done' && (s.rpRec -= dt) <= 0) {
         s.rpRec = 0; const F = s.fr.filter(f => f.c >= s.rpGoal - V9.rpPre);
-        if (F.length > 10) { s.rp = { F, i: 0, t: -.35, T: F[F.length - 1].c - F[0].c, c0: F[0].c, goal: s.rpGoal - F[0].c }; say('replay'); drawUIControls(); }
+        if (F.length > 10) s.rpReady = { F, i: 0, t: -.35, T: F[F.length - 1].c - F[0].c, c0: F[0].c, goal: s.rpGoal - F[0].c };
       }
     }
+    /* tekrar: gol sevinci bittikten sonra başlar (ayarlardan kapatılabilir) */
+    if (s.rpReady && !s.cel && !s.rp) { const R0 = s.rpReady; s.rpReady = null; if (typeof setOf !== 'function' || setOf('rp')) { s.rp = R0; say('replay'); drawUIControls(); } }
   }
   /* tekrarı oynat */
   if (s.rp) {

@@ -1,0 +1,26 @@
+⚙️ Ayarlar ⇒ ⚙️ Settings
+Kapat ✕ ⇒ Close ✕
+Ses ⇒ Sound
+Ses efektleri ⇒ Sound effects
+Vuruş, düdük, ağ, direk ⇒ Kicks, whistle, net, post
+Taraftar sesi ⇒ Crowd noise
+Tribün uğultusu, alkış, gol kükremesi ⇒ Stadium buzz, clapping, goal roar
+Spiker sesi ⇒ Commentator voice
+Maçı sesli anlatır (oyunun dilinde) ⇒ Calls the match out loud (in the game's language)
+Ses düzeyi ⇒ Volume
+🔈 Sesi dene ⇒ 🔈 Test sound
+Maç ayarları ⇒ Match
+Spiker yazısı ⇒ Commentary text
+Sahanın altında yorum satırı ⇒ A commentary line under the pitch
+Gol sevinci ⇒ Goal celebration
+Kamera golcüye yakınlaşır, takım kutlar ⇒ The camera zooms in on the scorer, the team celebrates
+Gol tekrarı ⇒ Goal replay
+Golden sonra ağır çekim ⇒ Slow motion after a goal
+Dil ⇒ Language
+Spiker, oyunun diliyle konuşur. Ses gelmiyorsa telefonun ses düzeyini aç. ⇒ The commentator speaks the game's language. No sound? Turn up your phone's volume.
+Tamam ⇒ OK
+🎉 Gol sevinci! Geçmek için sahaya dokun. ⇒ 🎉 Goal celebration! Tap the pitch to skip.
+GOOOL! ⇒ GOAL!
+Spiker oyunun dilinde konuşur. Sesleri ⚙️ Ayarlar’dan açıp kapatırsın. ⇒ The commentator speaks the game's language. Turn sounds on or off in ⚙️ Settings.
+Gol atınca kamera golcüye yakınlaşır, takım kutlar; sonra ağır çekim tekrar gelir. Geçmek için sahaya dokun. ⇒ After a goal the camera zooms in on the scorer and the team celebrates, then a slow-motion replay follows. Tap the pitch to skip.
+Spiker her anı yorumlar, tribün kaleye yaklaştıkça coşar. Spiker oyunun dilinde konuşur. Sesleri ⚙️ Ayarlar’dan açıp kapatırsın. ⇒ The commentator calls every moment in the game's language and the crowd rises as you near goal. Turn sounds on or off in ⚙️ Settings.
