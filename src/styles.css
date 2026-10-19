@@ -345,3 +345,38 @@ html, body { overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
 .enb { position: relative; height: 16px; background: rgba(255,255,255,.07); border-radius: 8px; overflow: hidden; } .enb i { position: absolute; inset: 0 auto 0 0; border-radius: 8px; } .enb b { position: absolute; inset: 0; display: grid; place-items: center; font: 700 11px var(--body); color: #0b1210; mix-blend-mode: normal; text-shadow: 0 0 2px rgba(255,255,255,.6); }
 .enav { font: 800 15px var(--disp); text-align: center; color: var(--gold); } .enl2 { font: 600 13px var(--disp); text-align: center; color: var(--mut); }
 .lmv canvas { box-shadow: 0 6px 20px rgba(0,0,0,.35); margin: 6px 0; }
+/* v4.0 ödül gecesi */
+.awc .awl { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; } .awc .awl span { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--bg2); border: 1px solid var(--line2); } .awc .awl span.w { border-color: #56c98d; color: #9ff0c4; } .awc .awl span.l { opacity: .6; }
+.awp { position: fixed; inset: 0; z-index: 60; background: radial-gradient(ellipse at 50% 0%, #2a2240 0%, #0b0a12 70%); display: flex; align-items: safe center; justify-content: center; overflow-y: auto; padding: max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom)); animation: awfade .4s ease; }
+@keyframes awfade { from { opacity: 0; } to { opacity: 1; } }
+.awstage { position: relative; width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; text-align: center; }
+.awspot { position: absolute; left: 50%; top: -60px; width: 340px; height: 520px; transform: translateX(-50%); background: conic-gradient(from 180deg at 50% 0%, transparent 160deg, rgba(255,240,190,.13) 175deg, rgba(255,240,190,.2) 180deg, rgba(255,240,190,.13) 185deg, transparent 200deg); pointer-events: none; animation: awsway 6s ease-in-out infinite; }
+@keyframes awsway { 0%,100% { transform: translateX(-50%) rotate(-4deg); } 50% { transform: translateX(-50%) rotate(4deg); } }
+.awtop { display: flex; justify-content: space-between; align-items: center; position: relative; }
+.awcat { position: relative; } .awe { font-size: 54px; line-height: 1; filter: drop-shadow(0 6px 18px rgba(255,214,90,.45)); animation: awpop .6s cubic-bezier(.2,1.6,.4,1); } .awcat h2 { font-size: 32px; margin: 6px 0 2px; background: linear-gradient(180deg, #fff6c8, #e8c468); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@keyframes awpop { from { transform: scale(.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.awnoms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: relative; }
+.awn { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 6px; animation: awpop .5s both; transition: transform .4s, opacity .4s, box-shadow .4s, border-color .4s; }
+.awn b { font-size: 13px; line-height: 1.2; } .awn span { font-size: 10px; color: var(--mut); }
+.awav { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font: 800 17px var(--disp); background: linear-gradient(140deg, #3a3f55, #1d2030); border: 2px solid rgba(255,255,255,.18); }
+.awn.me .awav { background: linear-gradient(140deg, var(--gold), var(--gold2)); color: #17130a; border-color: #fff3; }
+.awn.win { transform: scale(1.08); border-color: #ffe34d; box-shadow: 0 0 0 2px rgba(255,227,77,.35), 0 10px 40px rgba(255,214,90,.35); background: rgba(255,227,77,.1); }
+.awn.lose { opacity: .4; transform: scale(.94); }
+.awmid { position: relative; min-height: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.awbtn { min-width: 220px; }
+.awdrum { font: 800 22px var(--disp); color: #fff; animation: awpulse .35s ease-in-out infinite alternate; }
+@keyframes awpulse { from { transform: scale(1); opacity: .7; } to { transform: scale(1.06); opacity: 1; } }
+.awtro { font-size: 88px; line-height: 1; animation: awlift 1s cubic-bezier(.2,1.5,.4,1); filter: drop-shadow(0 10px 30px rgba(255,214,90,.6)); }
+@keyframes awlift { from { transform: translateY(60px) scale(.2) rotate(-20deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.awwin { font: 900 28px var(--disp); color: #ffe34d; letter-spacing: .02em; text-transform: uppercase; animation: awpop .6s .3s both; }
+.awconf { position: fixed; inset: 0; pointer-events: none; overflow: hidden; } .awconf i { position: absolute; top: -12px; width: 7px; height: 12px; border-radius: 2px; animation: awfall 2.6s linear infinite; }
+@keyframes awfall { to { transform: translateY(110vh) rotate(540deg); } }
+.awx { font: 900 120px/1 var(--disp); color: #ff4b3a; text-shadow: 0 8px 40px rgba(255,75,58,.5); animation: awpop .5s cubic-bezier(.2,1.6,.4,1); }
+.awlose { font: 800 24px var(--disp); color: #ffb3a9; text-transform: uppercase; }
+.awq { font-style: italic; }
+/* v4.0 hikâye paketleri */
+.pkch { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.pkrw { background: rgba(232,196,104,.1); border: 1px solid rgba(232,196,104,.35); border-radius: 12px; padding: 10px 12px; font-weight: 600; color: var(--gold); }
+.pkj { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.pkchips { display: flex; flex-wrap: wrap; gap: 5px; } .pkchips span { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--bg2); border: 1px solid var(--line); color: var(--mut); } .pkchips span.on { color: #9ff0c4; border-color: rgba(86,201,141,.45); }
+.pkrw2 { color: var(--gold); }

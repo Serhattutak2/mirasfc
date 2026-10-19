@@ -115,3 +115,42 @@ if (_trOffer39) trOffer = function (i, f, w) {
   if (C.trT && C.trT[key]) return ask(`Bu hafta ${pname(x)} için teklif yaptın. ${NEGO_TOK / 2} jetonla yeni bir teklif yapılsın mı?`, () => { if (!tokSpend(NEGO_TOK / 2, 'Yeni transfer teklifi')) return; delete C.trT[key]; _trOffer39(i, f, w); }, `🪙 ${NEGO_TOK / 2} · Yeni teklif`);
   return _trOffer39(i, f, w);
 };
+
+/* ============================================================
+   Mirasçı: tuttuğu takım ve mevki seçimi, mevki uyumu
+   Her mirasçının doğal bir mevkisi vardır (çoğu zaman babasınınki).
+   Uyumu düşük mevkiyi seçersen potansiyelin ve ilgili özelliklerin düşer.
+   ============================================================ */
+const _inheritH = inherit;
+inherit = function (ki) {
+  const o = g, fpos = o && o.pos, fclub = o && o.favClub, kid = o && o.fam && o.fam.kids[ki];
+  _inheritH(ki);
+  if (!g || g === o || g.heirSet) return;
+  const nat = fpos && Math.random() < .5 ? fpos : P(['FW', 'MF', 'DF']), apt = {};
+  ['FW', 'MF', 'DF'].forEach(p => { apt[p] = p === nat ? 100 : R(62, 84); });
+  g.posApt = apt; g.posNat = nat; g.pos = nat; g.heirSet = 0; if (fclub && !g.favClub) g.favClub = fclub; sv();
+  setTimeout(heirSetup, 300);
+};
+function heirSetup() {
+  if (!g || g.heirSet || !g.posApt) return;
+  let el = document.getElementById('setp'); if (!el) { el = document.createElement('div'); el.id = 'setp'; el.className = 'tut'; document.body.appendChild(el); }
+  const A = g.posApt, sel = g.pos, clubs = (CLUBS1[g.ct] || []).map(r => r[0]), fav = g.favPick || '';
+  const pen = p => Math.round((100 - A[p]) * .12);
+  el.hidden = false;
+  el.innerHTML = `<div class="tutc card"><div class="eyebrow gold">Yeni kuşak · ${esc(g.name)}</div><h2>Mirasçının yolu</h2><p class="m">Ailenin hikâyesi onunla sürüyor. Tuttuğu takımı ve oynayacağı mevkiyi seç.</p>
+  ${clubs.length ? `<label class="lbl" for="hfav">Tuttuğu takım</label><select id="hfav" onchange="g.favPick=this.value"><option value="">Babasının takımı</option>${clubs.map(c => `<option value="${esc(c)}" ${fav === c ? 'selected' : ''}>${esc(clubName(c))}</option>`).join('')}</select>` : ''}
+  <div class="lbl">Mevki uyumu · doğal mevkisi: <b class="gold">${POSN[g.posNat]}</b></div>
+  ${['FW', 'MF', 'DF'].map(p => `<button class="act ${sel === p ? 'on' : ''}" onclick="g.pos='${p}';heirSetup()"><div><b>${POSN[p]} ${sel === p ? '✓' : ''}</b><span>${A[p] >= 100 ? 'Doğal mevkisi: tam güç' : `Uyum %${A[p]} · potansiyel −${pen(p)}, mevki özellikleri düşer`}</span></div><div class="ac"><b style="color:${A[p] >= 95 ? '#56c98d' : A[p] >= 75 ? '#e8c468' : '#ff6b5b'}">%${A[p]}</b></div></button>`).join('')}
+  <p class="m">${A[sel] >= 100 ? '👍 Doğal mevkisinde oynayacak.' : `⚠️ ${POSN[sel]} onun doğal mevkisi değil: gücü ${pen(sel)} puan kadar düşük kalacak.`}</p>
+  <div class="actions"><button class="btn big" style="flex:1" onclick="heirDone()">Onayla</button></div></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+function heirDone() {
+  const el = document.getElementById('setp'), sv0 = document.getElementById('hfav'); if (sv0) g.favPick = sv0.value;
+  if (g.favPick) { const fc = Object.values(CI).map(x => x.c).find(c => c.n === g.favPick); if (fc) g.favClub = fc.id; }
+  const A = g.posApt, p = g.pos, pen = 100 - A[p];
+  if (pen > 0) { g.pot = clr(g.pot - Math.round(pen * .12), 30, 99); K.forEach(k => { const w = (W[p] || {})[k] || 0; if (w > .15) g.st[k] = clr(g.st[k] - Math.round(pen * .1 * w * 3), 1, 99); }); }
+  else K.forEach(k => { const w = (W[p] || {})[k] || 0; if (w > .2) g.st[k] = clr(g.st[k] + 2, 1, 99); });
+  L(`${g.name} ${POSN[p].toLocaleLowerCase('tr')} olarak yetişecek${pen > 0 ? ` (doğal mevkisi ${POSN[g.posNat].toLocaleLowerCase('tr')}; uyum %${A[p]})` : ''}.`);
+  g.heirSet = 1; sv(); if (el) el.hidden = true; draw();
+}

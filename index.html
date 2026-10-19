@@ -349,6 +349,41 @@ html, body { overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
 .enb { position: relative; height: 16px; background: rgba(255,255,255,.07); border-radius: 8px; overflow: hidden; } .enb i { position: absolute; inset: 0 auto 0 0; border-radius: 8px; } .enb b { position: absolute; inset: 0; display: grid; place-items: center; font: 700 11px var(--body); color: #0b1210; mix-blend-mode: normal; text-shadow: 0 0 2px rgba(255,255,255,.6); }
 .enav { font: 800 15px var(--disp); text-align: center; color: var(--gold); } .enl2 { font: 600 13px var(--disp); text-align: center; color: var(--mut); }
 .lmv canvas { box-shadow: 0 6px 20px rgba(0,0,0,.35); margin: 6px 0; }
+/* v4.0 ödül gecesi */
+.awc .awl { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; } .awc .awl span { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--bg2); border: 1px solid var(--line2); } .awc .awl span.w { border-color: #56c98d; color: #9ff0c4; } .awc .awl span.l { opacity: .6; }
+.awp { position: fixed; inset: 0; z-index: 60; background: radial-gradient(ellipse at 50% 0%, #2a2240 0%, #0b0a12 70%); display: flex; align-items: safe center; justify-content: center; overflow-y: auto; padding: max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom)); animation: awfade .4s ease; }
+@keyframes awfade { from { opacity: 0; } to { opacity: 1; } }
+.awstage { position: relative; width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; text-align: center; }
+.awspot { position: absolute; left: 50%; top: -60px; width: 340px; height: 520px; transform: translateX(-50%); background: conic-gradient(from 180deg at 50% 0%, transparent 160deg, rgba(255,240,190,.13) 175deg, rgba(255,240,190,.2) 180deg, rgba(255,240,190,.13) 185deg, transparent 200deg); pointer-events: none; animation: awsway 6s ease-in-out infinite; }
+@keyframes awsway { 0%,100% { transform: translateX(-50%) rotate(-4deg); } 50% { transform: translateX(-50%) rotate(4deg); } }
+.awtop { display: flex; justify-content: space-between; align-items: center; position: relative; }
+.awcat { position: relative; } .awe { font-size: 54px; line-height: 1; filter: drop-shadow(0 6px 18px rgba(255,214,90,.45)); animation: awpop .6s cubic-bezier(.2,1.6,.4,1); } .awcat h2 { font-size: 32px; margin: 6px 0 2px; background: linear-gradient(180deg, #fff6c8, #e8c468); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@keyframes awpop { from { transform: scale(.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.awnoms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: relative; }
+.awn { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 6px; animation: awpop .5s both; transition: transform .4s, opacity .4s, box-shadow .4s, border-color .4s; }
+.awn b { font-size: 13px; line-height: 1.2; } .awn span { font-size: 10px; color: var(--mut); }
+.awav { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font: 800 17px var(--disp); background: linear-gradient(140deg, #3a3f55, #1d2030); border: 2px solid rgba(255,255,255,.18); }
+.awn.me .awav { background: linear-gradient(140deg, var(--gold), var(--gold2)); color: #17130a; border-color: #fff3; }
+.awn.win { transform: scale(1.08); border-color: #ffe34d; box-shadow: 0 0 0 2px rgba(255,227,77,.35), 0 10px 40px rgba(255,214,90,.35); background: rgba(255,227,77,.1); }
+.awn.lose { opacity: .4; transform: scale(.94); }
+.awmid { position: relative; min-height: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.awbtn { min-width: 220px; }
+.awdrum { font: 800 22px var(--disp); color: #fff; animation: awpulse .35s ease-in-out infinite alternate; }
+@keyframes awpulse { from { transform: scale(1); opacity: .7; } to { transform: scale(1.06); opacity: 1; } }
+.awtro { font-size: 88px; line-height: 1; animation: awlift 1s cubic-bezier(.2,1.5,.4,1); filter: drop-shadow(0 10px 30px rgba(255,214,90,.6)); }
+@keyframes awlift { from { transform: translateY(60px) scale(.2) rotate(-20deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.awwin { font: 900 28px var(--disp); color: #ffe34d; letter-spacing: .02em; text-transform: uppercase; animation: awpop .6s .3s both; }
+.awconf { position: fixed; inset: 0; pointer-events: none; overflow: hidden; } .awconf i { position: absolute; top: -12px; width: 7px; height: 12px; border-radius: 2px; animation: awfall 2.6s linear infinite; }
+@keyframes awfall { to { transform: translateY(110vh) rotate(540deg); } }
+.awx { font: 900 120px/1 var(--disp); color: #ff4b3a; text-shadow: 0 8px 40px rgba(255,75,58,.5); animation: awpop .5s cubic-bezier(.2,1.6,.4,1); }
+.awlose { font: 800 24px var(--disp); color: #ffb3a9; text-transform: uppercase; }
+.awq { font-style: italic; }
+/* v4.0 hikâye paketleri */
+.pkch { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.pkrw { background: rgba(232,196,104,.1); border: 1px solid rgba(232,196,104,.35); border-radius: 12px; padding: 10px 12px; font-weight: 600; color: var(--gold); }
+.pkj { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.pkchips { display: flex; flex-wrap: wrap; gap: 5px; } .pkchips span { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--bg2); border: 1px solid var(--line); color: var(--mut); } .pkchips span.on { color: #9ff0c4; border-color: rgba(86,201,141,.45); }
+.pkrw2 { color: var(--gold); }
 </style></head><body>
 <div id="app"></div><div id="nav"></div>
 <div id="dlg" class="dlg" hidden role="dialog" aria-modal="true"><div class="card"><p class="dlg-t lead"></p><input class="dlg-in" hidden maxlength="18" aria-label="Metin"><div class="actions"><button class="btn dlg-ok" onclick="dlgEnd(1)">Evet</button><button class="btn ghost" onclick="dlgEnd(0)">Vazgeç</button></div></div></div>
@@ -4600,7 +4635,237 @@ const EN_DICT = {
 "Yeni teklif": "New offer",
 "Teklifi geri getir": "Revive the offer",
 "Yeni transfer teklifi": "New transfer offer",
-"🎙️ Stüdyo spiker": "🎙️ Studio commentator"
+"🎙️ Stüdyo spiker": "🎙️ Studio commentator",
+"🏆 Ödül Gecesi": "🏆 Awards Night",
+"🏆 Ödül Gecesi · {0}/{1}": "🏆 Awards Night · {0}/{1}",
+"{0} kategoride aday gösterildin; {1} ödül kazandın.": "You were nominated in {0} categories; you won {1}.",
+"{0} kategoride aday gösterildin.": "You were nominated in {0} categories.",
+"🎬 Töreni izle": "🎬 Watch the ceremony",
+"🎬 Töreni tekrar izle": "🎬 Watch the ceremony again",
+"{0} sezonu · adaylar": "{0} season · nominees",
+"ömürlük rakibin": "your lifelong rival",
+"sen": "you",
+"✉️ Zarfı aç": "✉️ Open the envelope",
+"🥁 Ve ödülü kazanan…": "🥁 And the winner is…",
+"Ödül konuşmanı yap": "Give your acceptance speech",
+"Kazanamadın": "You didn't win",
+"Ödülü {0} kazandı.": "{0} won the award.",
+"Ödülü {0} kazandı. Ömürlük rakibin sahnede…": "{0} won the award. Your lifelong rival is on stage…",
+"Sonraki ödül →": "Next award →",
+"Töreni bitir": "End the ceremony",
+"Geç ✕": "Skip ✕",
+"Yılın Oyuncusu": "Player of the Year",
+"Gol Kralı": "Top Scorer",
+"Asist Kralı": "Assist King",
+"Yılın Genç Oyuncusu": "Young Player of the Year",
+"Sezonun 11'i": "Team of the Season",
+"{0} ödülü": "{0} award",
+"{0} {1} ödülünü kazandın!": "{0} You won the {1} award!",
+"{0} ödülünü ömürlük rakibin {1} kazandı. Bu acıttı.": "Your lifelong rival {1} won the {0} award. That hurt.",
+"{0} ödül konuşması: {1}": "{0} acceptance speech: {1}",
+"❤️ “Bu ödül aileme…”": "❤️ \"This award is for my family…\"",
+"🤝 “Takım arkadaşlarım olmasa…”": "🤝 \"Without my teammates…\"",
+"📣 “Bu kupa tribünlerin!”": "📣 \"This trophy belongs to the fans!\"",
+"😄 Esprili bir konuşma": "😄 A witty speech",
+"Mutluluk ++, aile bağı +": "Happiness ++, family bond +",
+"Takım uyumu ++, moral +": "Team harmony ++, morale +",
+"Ün ++, sponsorlar ilgilenir": "Fame ++, sponsors take notice",
+"Ün +, sosyal medyada viral": "Fame +, goes viral on social media",
+"Ve ödül... {0}!": "And the award goes to... {0}!",
+"Hikâye paketi açıldı": "Story pack unlocked",
+"Hikâye tamamlandı": "Story completed",
+"Ne zaman başlar?": "When does it start?",
+"Bölümler ({0})": "Chapters ({0})",
+"Tamamlayınca ({0} bölüm)": "On completion ({0} chapters)",
+"Hikâyeye başla": "Start the story",
+"Harika!": "Great!",
+"📖 Hikâye günlüğü": "📖 Story journal",
+"Her paket {0} bölümlük bir hikâye ve tamamlayınca kalıcı bir ödül içerir. Pakete dokunarak içeriğini gör.": "Each pack is a {0}-chapter story with a permanent reward on completion. Tap a pack to see what's inside.",
+"{0} hikâyesi tamamlandı": "{0} story completed",
+"Yurtdışındaki bir kulüpte oynarken başlar.": "Starts while you play for a club abroad.",
+"Profesyonel olunca ve ünün arttıkça başlar.": "Starts once you turn pro and your fame grows.",
+"Futbolu bırakınca (ya da teknik direktörken) yeterli paran varsa başlar.": "Starts after you retire (or while coaching) if you have enough money.",
+"Dünya Vatandaşı: yurtdışında takım uyumun %50 daha hızlı artar · +40 jeton": "Citizen of the World: team harmony grows 50% faster abroad · +40 tokens",
+"Temiz Sayfa ya da Kötü Çocuk: seçimlerine göre kalıcı bir ün ve gelir etkisi · +40 jeton": "Clean Slate or Bad Boy: a permanent fame and income effect based on your choices · +40 tokens",
+"Kulüp Babası: kulübün her hafta gelir getirir ve her sezon altyapısından yetenek çıkar · +40 jeton": "Club Patriarch: your club earns every week and produces talent every season · +40 tokens",
+"İlk kış": "First winter",
+"Annenin sesi": "Your mother's voice",
+"Sokaktaki nefret": "Hate in the street",
+"Bayram sofrası": "The holiday table",
+"Yerel dilde ilk röportaj": "First interview in the local language",
+"Uykusuz geceler": "Sleepless nights",
+"Tribünün şarkısı": "The fans' song",
+"Sıla: eve dönüş": "Homecoming",
+"Bahis çetesi": "The betting ring",
+"Çarpıtılmış haber": "Twisted story",
+"Mali soruşturma": "Financial investigation",
+"Sahte video": "Fake video",
+"Paparazzi": "Paparazzi",
+"Gece kulübü kavgası": "Nightclub brawl",
+"Belgesel teklifi": "Documentary offer",
+"Hesaplaşma": "The reckoning",
+"Mahalle kulübü": "The neighbourhood club",
+"Küme küme yükseliş": "Climbing the divisions",
+"İlk forma sponsoru": "First shirt sponsor",
+"Mahallenin yeteneği": "The neighbourhood prodigy",
+"Taraftar grubu": "The supporters' group",
+"Devle kupa maçı": "Cup tie against a giant",
+"Adını taşıyan stadyum": "A stadium in your name",
+"Takım arkadaşın seni ailesinin bayram sofrasına davet etti. Hiç bilmediğin yemekler, hiç bilmediğin şarkılar…": "A teammate invited you to his family's holiday dinner. Food you've never tasted, songs you've never heard…",
+"Git, her şeyi tat": "Go and taste everything",
+"Kibarca reddet, evde dinlen": "Politely decline and rest at home",
+"O akşam bir ailen daha oldu.": "That evening you gained another family.",
+"Maçtan sonra mikrofon uzatıldı. Tercüman bekliyor ama sen ülkenin dilini öğrendin.": "After the match a microphone is held out. The interpreter waits, but you've learned the language.",
+"Yerel dilde konuş": "Speak in the local language",
+"Tercümana bırak, risk alma": "Leave it to the interpreter",
+"{0} röportajını {1} dilinde verdi; taraftarlar çok sevdi.": "{0} gave his interview in the language of {1}; the fans loved it.",
+"Gece uyuyamıyorsun. Memleketin kokusu, annenin yemekleri, eski sokağın… Performansın düşmeye başladı.": "You can't sleep. The smell of home, your mother's cooking, your old street… Your performances are slipping.",
+"Bir psikologla çalış": "Work with a psychologist",
+"Hafta sonu memlekete uç": "Fly home for the weekend",
+"Dişini sık, geçer": "Grit your teeth, it'll pass",
+"{0} taraftarları senin için kendi dilinde bir tezahürat besteledi. Tüm stat aynı anda söylüyor.": "{0} fans wrote a chant for you in their language. The whole stadium sings it.",
+"Gözyaşlarını tutamadan tribüne koş": "Run to the stand in tears",
+"Formanı tribüne fırlat": "Throw your shirt into the crowd",
+"Yıllar sonra memleketine döndün. Havaalanında binlerce kişi seni bekliyor; ellerinde senin formanın olduğu pankartlar.": "Years later you're back home. Thousands wait at the airport holding banners with your shirt.",
+"Kalabalığın içine yürü": "Walk into the crowd",
+"Sessizce ailene git": "Quietly go to your family",
+"{0} memleketine kahraman gibi döndü.": "{0} returned home a hero.",
+"Sosyal medyada seni “hakemi itiyormuş” gibi gösteren montaj bir video yayıldı. Milyonlarca kişi izledi.": "A doctored video showing you \"shoving the referee\" went viral. Millions watched it.",
+"Orijinal görüntüleri yayımla": "Release the original footage",
+"Karşı saldırı: rakip taraftarlara yüklen": "Hit back at the rival fans",
+"Gerçek ortaya çıktı; montajı yapan hesap kapatıldı.": "The truth came out; the account behind the fake was shut down.",
+"Paparazziler seni ve {0} tatilde gizlice fotoğrafladı; dergiler kapak yaptı.": "Paparazzi secretly photographed you and {0} on holiday; it made the magazine covers.",
+"Birlikte açıklama yapın": "Make a joint statement",
+"Fotoğrafçıya saldır": "Attack the photographer",
+"Hiç umursama": "Ignore it completely",
+"Bir gece kulübünde takım arkadaşın kavgaya karıştı; sen de oradaydın. Kulüp başkanı ne olduğunu soruyor.": "A teammate got into a fight at a nightclub; you were there too. The chairman wants to know what happened.",
+"Doğruyu anlat": "Tell the truth",
+"Arkadaşını koru, yalan söyle": "Protect your friend, lie",
+"Kamera kayıtları çıktı; yalanın ortaya çıktı.": "CCTV footage surfaced; your lie was exposed.",
+"Bir yayın platformu hayatını belgesel dizi yapmak istiyor: kamera her yerde olacak, evinde bile.": "A streaming platform wants a documentary series about your life: cameras everywhere, even at home.",
+"Kabul et, her şeyi göster": "Accept and show everything",
+"Sadece futbolu çeksinler": "Football only",
+"{0} belgeseli rekor izlendi.": "The {0} documentary broke viewing records.",
+"Federasyon seni yılın Fair Play elçisi seçti. Yıllarca çamur atıldı ama sen hep dik durdun.": "The federation named you Fair Play ambassador of the year. They threw mud for years but you stood tall.",
+"Bir spor kanalı seni “futbolun kötü çocuğu” ilan etti. Herkes seni konuşuyor; cesur markalar kapında.": "A sports channel crowned you \"football's bad boy\". Everyone's talking about you; edgy brands are at your door.",
+"Ödülü gururla al": "Accept the award proudly",
+"Kötü çocuk imajını sahiplen": "Embrace the bad boy image",
+"Mahalle kulübün ilk forma sponsorunu arıyor: yerel bir fırın mı, büyük bir bahis şirketi mi?": "Your neighbourhood club needs its first shirt sponsor: the local bakery or a big betting company?",
+"Mahalle fırını (az para, çok sevgi)": "The local bakery (little money, lots of love)",
+"Bahis şirketi (çok para)": "Betting company (lots of money)",
+"Kulübünün U13 takımında 12 yaşında bir çocuk herkesi geçiyor. Büyük kulüpler gözlemci yolladı.": "A 12-year-old in your club's U13s is beating everyone. Big clubs have sent scouts.",
+"Onu kendi altyapında tut": "Keep him in your academy",
+"Büyük kulübe sat, kulübe yatırım yap": "Sell him to a big club and invest",
+"Mahallenin yeteneği kulübünde kalıyor; adı yakında duyulacak.": "The prodigy stays at your club; you'll hear his name soon.",
+"Genç oyuncu satışı": "Youth player sale",
+"Mahallenin gençleri kulübe bir taraftar grubu kurdu. Senin adınla bir marş yazdılar.": "The local youngsters founded a supporters' group and wrote an anthem with your name.",
+"Maçlarda onlarla tribüne çık": "Join them in the stands",
+"Gruba otobüs ve forma al": "Buy the group a bus and shirts",
+"Kupada kura çekildi: mahalle kulübün ülkenin en büyük takımıyla eşleşti. Bütün ülke bu maçı konuşuyor.": "The cup draw is out: your neighbourhood club faces the biggest team in the country. The whole nation is talking.",
+"Kenarda sen otur": "Sit on the bench yourself",
+"Gelirle tesis yap, maçı izle": "Use the revenue for facilities, just watch",
+"İNANILMAZ! Mahalle kulübün devi eledi!": "UNBELIEVABLE! Your neighbourhood club knocked out the giant!",
+"Onurlu bir yenilgi; ama bütün ülke kulübünü tanıdı.": "An honourable defeat, but the whole country now knows your club.",
+"{0} mahalle kulübü kupada devi devirdi!": "{0}'s neighbourhood club toppled a giant in the cup!",
+"Kulübünün geliri": "Your club's income",
+"Cesur marka reklamları": "Edgy brand deals",
+"Temiz imaj sponsor primi": "Clean-image sponsor bonus",
+"😈 Kötü çocuk imajın reklam getirdi.": "😈 Your bad boy image brought in ad money.",
+"Mahalle kulübünün altyapısından bir genç profesyonel oldu; herkes senin adını anıyor.": "A youngster from your neighbourhood club turned pro; everyone mentions your name.",
+"🌍 Gurbet hikâyesini tamamladın: artık bir Dünya Vatandaşısın.": "🌍 You completed the Abroad story: you're now a Citizen of the World.",
+"⚖️ Skandal hikâyesi bitti: Temiz Sayfa. Adın artık güvenin simgesi.": "⚖️ The Scandal story is over: Clean Slate. Your name now stands for trust.",
+"😈 Skandal hikâyesi bitti: Kötü Çocuk. Herkes seni konuşuyor ve markalar bunu seviyor.": "😈 The Scandal story is over: Bad Boy. Everyone's talking about you and brands love it.",
+"🏟️ Kurucu hikâyesi tamamlandı: Kulüp Babası. Kulübün artık sana gelir getiriyor.": "🏟️ The Founder story is complete: Club Patriarch. Your club now earns you money.",
+"Şike": "Match fixing",
+"Yasa dışı bahis": "Illegal betting",
+"Alkollü araç kullanma ve kaza": "Drink-driving and a crash",
+"📁 {0} dosyan açıldı. Bir gün ortaya çıkabilir…": "📁 A {0} file was opened on you. It may surface one day…",
+"⚖️ {0} ortaya çıktı! Savcılık dava açtı.": "⚖️ The {0} came to light! Prosecutors have filed charges.",
+"{0} hakkında {1} soruşturması açıldı.": "An investigation into {1} has been opened against {0}.",
+"⚖️ {0} davası görülüyor. Savcı {1} hapis ve ağır para cezası istiyor. Salon gazeteciyle dolu.": "⚖️ The {0} trial begins. The prosecutor demands {1} in prison and a heavy fine. The courtroom is full of reporters.",
+"En iyi avukatları tut ({0})": "Hire the best lawyers ({0})",
+"Suçunu kabul et, iş birliği yap": "Plead guilty and cooperate",
+"Masumum! Sonuna kadar savaş": "I'm innocent! Fight to the end",
+"Avukatların davayı çevirdi: hapis yok, sadece para cezası.": "Your lawyers turned the case: no prison, only a fine.",
+"Avukatlar cezayı indirebildi ama hapisten kurtaramadı.": "The lawyers reduced the sentence but couldn't keep you out of prison.",
+"İtirafın cezanı hafifletti; kamuoyu dürüstlüğünü takdir etti.": "Your confession reduced the sentence; the public respected your honesty.",
+"Mahkeme seni BERAAT ettirdi! Kanıtlar yetersiz bulundu.": "The court ACQUITTED you! The evidence was insufficient.",
+"İnkârın mahkemeyi kızdırdı: ceza ağırlaştırıldı.": "Your denial angered the court: the sentence was increased.",
+"⚖️ Karar: {0}": "⚖️ Verdict: {0}",
+"{0} para cezası": "{0} fine",
+"Futboldan {0} men edildin.": "You've been banned from football for {0}.",
+"{0} sözleşmeni tek taraflı feshetti.": "{0} terminated your contract.",
+"🔒 {0} hapis cezası aldın. Kapılar arkandan kapandı.": "🔒 You were sentenced to {0} in prison. The doors closed behind you.",
+"{0} {1} hapis cezasına çarptırıldı.": "{0} was sentenced to {1} in prison.",
+"🔓 Cezaevinden çıktın.": "🔓 You've been released from prison.",
+"Cezaevinin kapısı açıldı. Dışarıda seni kimin beklediğine bakıyorsun…": "The prison gate opens. You look to see who's waiting outside…",
+"Gençlere suçtan uzak durmayı anlatan bir vakıf kur": "Start a foundation keeping kids away from crime",
+"Hayatını anlatan bir kitap yaz": "Write a book about your life",
+"Doğruca ailene git": "Go straight to your family",
+"Vakıf": "Foundation",
+"Kitap": "Book",
+"Men cezan bitti; yeniden sahalara dönebilirsin.": "Your ban is over; you can play again.",
+"{0} dosyan zaman aşımına uğradı. Derin bir nefes aldın.": "Your {0} file expired under the statute of limitations. You breathe a sigh of relief.",
+"Cezaevindesin ({0} hafta)": "In prison ({0} weeks)",
+"Men cezalısın ({0} hafta)": "Banned ({0} weeks)",
+"Cezaevindesin": "You're in prison",
+"🔒 Cezaevindesin": "🔒 You're in prison",
+"{0} hafta kaldı.": "{0} weeks left.",
+"Futbol oynayamazsın. Ailen seni ziyaret edebilir; kurs çalışabilirsin. Enerji işlerinin çoğu kapalı.": "You can't play football. Your family can visit; you can study a course. Most energy actions are locked.",
+"⛔ Men cezası": "⛔ Ban",
+"{0} hafta boyunca resmi maçlarda oynayamazsın.": "You can't play official matches for {0} weeks.",
+"📁 Kapanmamış {0} dosyan var. Her yıl ortaya çıkabilir; zaman aşımı 6 yıl.": "📁 You have {0} open file(s). They may surface any year; they expire after 6 years.",
+"Cezaevindeyken kulüpler seninle görüşmüyor": "Clubs won't talk to you while you're in prison",
+"Men cezan bitmeden kulüpler teklif yapmıyor": "Clubs won't make offers until your ban ends",
+"Bir arkadaşın, kendi maçlarına sahte hesaptan bahis oynayarak “kolay para” kazanmanı öneriyor.": "A friend suggests making \"easy money\" by betting on your own matches through a fake account.",
+"Asla": "Never",
+"Bir kere oynarım, kimse bilmez": "Just once, nobody will know",
+"Bahis kazancı": "Betting winnings",
+"Bir kutlama gecesinden çıktın; biraz fazla içtin. Arabanın anahtarı elinde.": "You're leaving a celebration; you've had a bit too much. Your car keys are in your hand.",
+"Taksi çağır": "Call a taxi",
+"Kısa mesafe, ben sürerim": "It's close, I'll drive",
+"Bir park halindeki araca çarptın; polis alkol testi yaptı.": "You hit a parked car; the police breathalysed you.",
+"Vergi kaçırma kazancı": "Tax evasion gain",
+"Şike parası": "Match-fixing money",
+"Test pozitif çıktı; uzun süreli men cezası aldın.": "The test came back positive; you got a long ban.",
+"{0} doping nedeniyle men edildi.": "{0} was banned for doping.",
+"Altyapısından çıktığın {0} zor günlerden geçiyor. Kulüp başkanı bizzat aradı: “Seni biz yetiştirdik. Maaşın düşük olacak ama bu forma seni bekliyor. Geri döner misin?”": "{0}, the club whose academy raised you, is going through hard times. The chairman called personally: \"We made you. The wage will be low, but this shirt is waiting for you. Will you come back?\"",
+"Büyüdüğün şehrin takımı {0} sana ihtiyacı var. Başkan bizzat aradı: “Sana fazla para veremeyiz ama bu şehir seni bekliyor. Gelir misin?”": "{0}, your hometown club, needs you. The chairman called personally: \"We can't pay you much, but this city is waiting for you. Will you come?\"",
+"Eski kulübün seni arıyor.": "Your old club is calling.",
+"Memleketime dönüyorum (düşük maaş)": "I'm going home (low wage)",
+"Teşekkür ederim ama kalıyorum": "Thank you, but I'm staying",
+"Söz veriyorum: sözleşmem bitince döneceğim": "I promise: I'll come back when my contract ends",
+"Memleket taraftarı biraz kırıldı ama seni anlıyor.": "The hometown fans are a little hurt but they understand.",
+"Verdiğin söz şehirde dilden dile dolaşıyor.": "Your promise is the talk of the town.",
+"{0} düşük maaşlı bir teklif gönderdi.": "{0} sent a low-wage offer.",
+"Memleket çağrısı: maaş düşük, sevgi büyük.": "Hometown call: low wage, big love.",
+"Verdiğin sözü hatırlatıyorlar: “Eve dön.”": "They remind you of your promise: \"Come home.\"",
+"🏠 Eve döndün! Tribünler adını haykırıyor.": "🏠 You're home! The stands are chanting your name.",
+"{0} memleketi {1} döndü.": "{0} returned to his hometown club {1}.",
+"Listeden seç ya da yaz": "Pick from the list or type",
+"Şehrinin takımı": "Your city's club",
+"Tuttuğun takım (sen seç)": "The team you support (your choice)",
+"Yeni kuşak · {0}": "New generation · {0}",
+"Mirasçının yolu": "The heir's path",
+"Ailenin hikâyesi onunla sürüyor. Tuttuğu takımı ve oynayacağı mevkiyi seç.": "The family story continues with him. Choose the team he supports and his position.",
+"Tuttuğu takım": "Team he supports",
+"Babasının takımı": "His father's team",
+"Mevki uyumu · doğal mevkisi: {0}": "Position fit · natural position: {0}",
+"Doğal mevkisi: tam güç": "Natural position: full strength",
+"Uyum %{0} · potansiyel −{1}, mevki özellikleri düşer": "Fit {0}% · potential −{1}, position attributes drop",
+"👍 Doğal mevkisinde oynayacak.": "👍 He'll play in his natural position.",
+"⚠️ {0} onun doğal mevkisi değil: gücü {1} puan kadar düşük kalacak.": "⚠️ {0} isn't his natural position: he'll be about {1} points weaker.",
+"Onayla": "Confirm",
+"Satın almalar yalnızca App Store’dan indirilen Miras FC uygulamasında yapılabilir. Jeton kazanmak için günlük ödülü ve reklam ödülünü kullanabilirsin.": "Purchases are only available in the Miras FC app from the App Store. You can earn tokens with the daily reward and ad rewards.",
+"Bu ürün şu an satın alınamıyor": "This item can't be purchased right now",
+"🛒 App Store açılıyor…": "🛒 Opening the App Store…",
+"Satın alma iptal edildi": "Purchase cancelled",
+"Ürün App Store’da henüz hazır değil": "This item isn't available on the App Store yet",
+"Ödeme tamamlanamadı": "Payment couldn't be completed",
+"Reklam hazırlanıyor, birazdan tekrar dene": "The ad is loading, try again in a moment",
+"{0}. kuşağa geçmek için Miras Paketi gerekir ({1}). Paket yalnızca bu kayıt için geçerlidir.": "Continuing to generation {0} requires the Legacy Pack ({1}). The pack applies to this save only.",
+"{0} {1} olarak yetişecek (doğal mevkisi {2}; uyum %{3}).": "{0} will develop as a {1} (natural position {2}; fit {3}%).",
+"{0} {1} olarak yetişecek.": "{0} will develop as a {1}."
 };
 
 /* ============================================================
@@ -12544,6 +12809,45 @@ if (_trOffer39) trOffer = function (i, f, w) {
 };
 
 /* ============================================================
+   Mirasçı: tuttuğu takım ve mevki seçimi, mevki uyumu
+   Her mirasçının doğal bir mevkisi vardır (çoğu zaman babasınınki).
+   Uyumu düşük mevkiyi seçersen potansiyelin ve ilgili özelliklerin düşer.
+   ============================================================ */
+const _inheritH = inherit;
+inherit = function (ki) {
+  const o = g, fpos = o && o.pos, fclub = o && o.favClub, kid = o && o.fam && o.fam.kids[ki];
+  _inheritH(ki);
+  if (!g || g === o || g.heirSet) return;
+  const nat = fpos && Math.random() < .5 ? fpos : P(['FW', 'MF', 'DF']), apt = {};
+  ['FW', 'MF', 'DF'].forEach(p => { apt[p] = p === nat ? 100 : R(62, 84); });
+  g.posApt = apt; g.posNat = nat; g.pos = nat; g.heirSet = 0; if (fclub && !g.favClub) g.favClub = fclub; sv();
+  setTimeout(heirSetup, 300);
+};
+function heirSetup() {
+  if (!g || g.heirSet || !g.posApt) return;
+  let el = document.getElementById('setp'); if (!el) { el = document.createElement('div'); el.id = 'setp'; el.className = 'tut'; document.body.appendChild(el); }
+  const A = g.posApt, sel = g.pos, clubs = (CLUBS1[g.ct] || []).map(r => r[0]), fav = g.favPick || '';
+  const pen = p => Math.round((100 - A[p]) * .12);
+  el.hidden = false;
+  el.innerHTML = `<div class="tutc card"><div class="eyebrow gold">Yeni kuşak · ${esc(g.name)}</div><h2>Mirasçının yolu</h2><p class="m">Ailenin hikâyesi onunla sürüyor. Tuttuğu takımı ve oynayacağı mevkiyi seç.</p>
+  ${clubs.length ? `<label class="lbl" for="hfav">Tuttuğu takım</label><select id="hfav" onchange="g.favPick=this.value"><option value="">Babasının takımı</option>${clubs.map(c => `<option value="${esc(c)}" ${fav === c ? 'selected' : ''}>${esc(clubName(c))}</option>`).join('')}</select>` : ''}
+  <div class="lbl">Mevki uyumu · doğal mevkisi: <b class="gold">${POSN[g.posNat]}</b></div>
+  ${['FW', 'MF', 'DF'].map(p => `<button class="act ${sel === p ? 'on' : ''}" onclick="g.pos='${p}';heirSetup()"><div><b>${POSN[p]} ${sel === p ? '✓' : ''}</b><span>${A[p] >= 100 ? 'Doğal mevkisi: tam güç' : `Uyum %${A[p]} · potansiyel −${pen(p)}, mevki özellikleri düşer`}</span></div><div class="ac"><b style="color:${A[p] >= 95 ? '#56c98d' : A[p] >= 75 ? '#e8c468' : '#ff6b5b'}">%${A[p]}</b></div></button>`).join('')}
+  <p class="m">${A[sel] >= 100 ? '👍 Doğal mevkisinde oynayacak.' : `⚠️ ${POSN[sel]} onun doğal mevkisi değil: gücü ${pen(sel)} puan kadar düşük kalacak.`}</p>
+  <div class="actions"><button class="btn big" style="flex:1" onclick="heirDone()">Onayla</button></div></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+function heirDone() {
+  const el = document.getElementById('setp'), sv0 = document.getElementById('hfav'); if (sv0) g.favPick = sv0.value;
+  if (g.favPick) { const fc = Object.values(CI).map(x => x.c).find(c => c.n === g.favPick); if (fc) g.favClub = fc.id; }
+  const A = g.posApt, p = g.pos, pen = 100 - A[p];
+  if (pen > 0) { g.pot = clr(g.pot - Math.round(pen * .12), 30, 99); K.forEach(k => { const w = (W[p] || {})[k] || 0; if (w > .15) g.st[k] = clr(g.st[k] - Math.round(pen * .1 * w * 3), 1, 99); }); }
+  else K.forEach(k => { const w = (W[p] || {})[k] || 0; if (w > .2) g.st[k] = clr(g.st[k] + 2, 1, 99); });
+  L(`${g.name} ${POSN[p].toLocaleLowerCase('tr')} olarak yetişecek${pen > 0 ? ` (doğal mevkisi ${POSN[g.posNat].toLocaleLowerCase('tr')}; uyum %${A[p]})` : ''}.`);
+  g.heirSet = 1; sv(); if (el) el.hidden = true; draw();
+}
+
+/* ============================================================
    MİRAS FC — v3.9 · Teknik direktör merkezi (görsel)
    - Kulüp panosu: forma renklerinde başlık, lig sırası, puan, son 5 maç,
      dört gösterge halkası (yönetim, soyunma odası, taktik uyumu, zindelik)
@@ -12909,6 +13213,401 @@ if (admobPlugin()) {
   });
   if (document.addEventListener) ['touchend', 'click'].forEach(ev => document.addEventListener(ev, () => { admobInit(); }, { once: true, capture: true }));
 }
+
+/* ============================================================
+   MİRAS FC — Gerçek ödeme (App Store / StoreKit)
+   - Uygulamada @capgo/native-purchases ile satın alma; ödeme onaylanmadan
+     hiçbir şey açılmaz. Tarayıcı sürümünde satın alma yoktur.
+   - App Store Connect'te ürün kimlikleri SKU tablosundakiyle AYNI olmalı
+     (Uygulama İçi Satın Almalar). TestFlight'ta Apple sandbox ödemesi
+     kullanılır (gerçek para çekilmez).
+   ============================================================ */
+const SKU = { tok100: 'com.serhattutak.mirasfc.tok100', tok550: 'com.serhattutak.mirasfc.tok550', tok1200: 'com.serhattutak.mirasfc.tok1200', tok2500: 'com.serhattutak.mirasfc.tok2500', gold: 'com.serhattutak.mirasfc.gold', miras: 'com.serhattutak.mirasfc.miras', sub: 'com.serhattutak.mirasfc.sub' };
+function iapPlugin() { try { const C = window.Capacitor; if (!C || !(C.isNativePlatform && C.isNativePlatform())) return null; return (C.Plugins && C.Plugins.NativePurchases) || (C.registerPlugin ? C.registerPlugin('NativePurchases') : null); } catch (e) { return null; } }
+const IAPST = { busy: 0, prices: {} };
+async function iapPrices() { const P = iapPlugin(); if (!P) return; try { const r = await P.getProducts({ productIdentifiers: Object.values(SKU).filter(x => !x.endsWith('.sub')) }); (r.products || []).forEach(p => { const k = Object.keys(SKU).find(k2 => SKU[k2] === p.identifier); if (k) IAPST.prices[k] = p.priceString; }); } catch (e) { } }
+if (iapPlugin()) {
+  window.MirasNative = Object.assign(window.MirasNative || {}, {
+    purchase(id, cb) {
+      const P = iapPlugin(), sku = SKU[id]; if (!P || !sku) return toast('Bu ürün şu an satın alınamıyor');
+      if (IAPST.busy) return; IAPST.busy = 1; toast('🛒 App Store açılıyor…');
+      P.purchaseProduct({ productIdentifier: sku, productType: id === 'sub' ? 'subs' : 'inapp', isConsumable: id !== 'sub', quantity: 1 })
+        .then(tx => { IAPST.busy = 0; if (tx && (tx.transactionId || tx.productIdentifier)) cb(true); else cb(false); })
+        .catch(e => { IAPST.busy = 0; const m = String(e && (e.message || e)); toast(/cancel/i.test(m) ? 'Satın alma iptal edildi' : /not found|invalid|product/i.test(m) ? 'Ürün App Store’da henüz hazır değil' : 'Ödeme tamamlanamadı'); cb(false); });
+    },
+  });
+  setTimeout(iapPrices, 2500);
+}
+/* tarayıcıda ödeme yok: ücretsiz "deneme satın alması" kaldırıldı */
+IAP.buy = function (id, cb) {
+  if (window.MirasNative && window.MirasNative.purchase) return window.MirasNative.purchase(id, ok => ok && cb());
+  ask('Satın almalar yalnızca App Store’dan indirilen Miras FC uygulamasında yapılabilir. Jeton kazanmak için günlük ödülü ve reklam ödülünü kullanabilirsin.', () => { }, 'Tamam');
+};
+/* Miras Paketi: ödeme onayı olmadan açılmaz */
+heirBuy = function (cb) { IAP.buy('miras', () => { g.heirPass = 1; sv(); toast('Miras Paketi bu kayıt için açıldı'); if (cb) cb(); else draw(); }); };
+/* "Her şeyi ona devret" yolu da paket kontrolünden geçer */
+const _inheritIAP = inherit;
+inherit = function (ki) {
+  if (g && typeof needHeirPass === 'function' && needHeirPass()) { const k = g.fam.kids[ki]; return ask(`${heirGen() + 1}. kuşağa geçmek için Miras Paketi gerekir (${heirPrice()}). Paket yalnızca bu kayıt için geçerlidir.`, () => heirBuy(() => _inheritIAP(ki)), 'Paketi al'); }
+  return _inheritIAP(ki);
+};
+const _handOverIAP = handOver;
+handOver = function (ki) { if (g && needHeirPass()) return heirGo(ki, 1); return _handOverIAP(ki); };
+
+/* ============================================================
+   MİRAS FC — v4.0 · Ödül Gecesi
+   Sezon sonunda aday olduğun kategorilerde tören: sahne, spot ışığı,
+   üç aday, davul sesi, zarf açılır. Kazanırsan kupa yükselir, konfeti,
+   tribün kükrer ve konuşmanı seçersin (aile / takım / taraftar).
+   Kazanamazsan büyük kırmızı ✗ ve ödülü alan isim.
+   Kategoriler: Yılın Oyuncusu, Gol Kralı, Asist Kralı, Yılın Genç
+   Oyuncusu, Sezonun 11'i, Altın Top. Ömürlük rakibin de aday olabilir.
+   ============================================================ */
+const AWC = [
+  { k: 'altin', n: 'Altın Top', e: '🥇', nom: x => x.t1 && x.ap >= 15 && x.avg >= 7.3 && x.ovr >= 82, win: x => x.ap >= 15 && x.avg >= 7.6 && x.ovr >= 84 && x.t1, rw: { rep: 0, hap: 0, tok: 25 } },
+  { k: 'yilin', n: 'Yılın Oyuncusu', e: '⭐', nom: x => x.ap >= 12 && x.avg >= 7.0, win: x => x.ap >= 15 && x.avg >= 7.3, rw: { tok: 10 } },
+  { k: 'golk', n: 'Gol Kralı', e: '👟', nom: x => x.pos !== 'DF' && x.g >= 12, win: x => x.g >= 20 && x.pos !== 'DF', rw: { tok: 10 } },
+  { k: 'asist', n: 'Asist Kralı', e: '🎯', nom: x => x.a >= 8, win: x => x.a >= 14, rw: { rep: 3, hap: 4, tok: 8 } },
+  { k: 'genc', n: 'Yılın Genç Oyuncusu', e: '🌟', nom: x => x.age <= 21 && x.ap >= 10 && x.avg >= 6.9, win: x => x.age <= 21 && x.ap >= 12 && x.avg >= 7.2, rw: { rep: 4, hap: 6, tok: 8 } },
+  { k: 'onbir', n: 'Sezonun 11\'i', e: '🏟️', nom: x => x.ap >= 15 && x.avg >= 6.95, win: x => x.ap >= 18 && x.avg >= 7.15, rw: { rep: 2, hap: 3, tok: 5 } },
+];
+const SPEECH = [
+  { k: 'aile', l: '❤️ “Bu ödül aileme…”', d: 'Mutluluk ++, aile bağı +', f: () => { g.hap = clr(g.hap + 6, 0, 100); try { aliveParent().forEach(p => relAdj(p, 6)); if (g.fam.partner) relAdj(g.fam.partner, 6); g.fam.kids.forEach(k => relAdj(k, 5)); } catch (e) { } } },
+  { k: 'takim', l: '🤝 “Takım arkadaşlarım olmasa…”', d: 'Takım uyumu ++, moral +', f: () => { g.uyum = clr((g.uyum || 50) + 10, 0, 100); g.mor = clr(g.mor + 6, 0, 100); } },
+  { k: 'taraftar', l: '📣 “Bu kupa tribünlerin!”', d: 'Ün ++, sponsorlar ilgilenir', f: () => { g.rep = cl(g.rep + 4, 0, 100); g.fans = (g.fans || 0) + 1; } },
+  { k: 'mizah', l: '😄 Esprili bir konuşma', d: 'Ün +, sosyal medyada viral', f: () => { g.rep = cl(g.rep + 2, 0, 100); g.hap = clr(g.hap + 3, 0, 100); } },
+];
+function awNames(n, excl) {
+  const out = [], NP = NAMES[cinfo(g.club ? g.club.ct : g.ct).lang] || NAMES.tr;
+  if (g.rv && !g.rv.ret && g.rv.club && Math.random() < .6) out.push({ n: g.rv.n, rv: 1 });
+  try { const L = []; Object.keys(g.sq || {}).forEach(id => { if (g.club && +id === g.club.id) return; (g.sq[id] || []).forEach(p => { if (p.r >= 78) L.push(p); }); }); L.sort(() => Math.random() - .5).slice(0, 6).forEach(p => out.push({ n: pname(p) })); } catch (e) { }
+  while (out.length < n + 2) out.push({ n: P(NP.f) + ' ' + P(NP.l) });
+  const o2 = []; out.forEach(x => { if (x.n !== excl && !o2.some(y => y.n === x.n)) o2.push(x); }); while (o2.length < n) o2.push({ n: P(NP.f) + ' ' + P(NP.l) }); return o2.slice(0, n);
+}
+/* sezon sonu: adaylıkları hesapla, yeni kategorilerin ödülünü ver */
+const _seasonEndAw = seasonEnd;
+seasonEnd = function () {
+  const ss = g.ss || {}, x = { ap: ss.ap || 0, g: ss.g || 0, a: ss.a || 0, avg: ss.ap ? ss.rs / ss.ap : 0, ovr: ovr(), age: g.age, pos: g.pos, t1: !!(g.lg && g.lg.t === 1), club: g.club ? g.club.n : '' };
+  const pro = g.phase === 'pro';
+  _seasonEndAw.apply(this, arguments);
+  if (!pro || !g.lastSeason) return;
+  const aw = [];
+  AWC.forEach(c => { if (!c.nom(x)) return; const win = !!c.win(x), rivals = awNames(2, g.name);
+    aw.push({ k: c.k, n: c.n, e: c.e, win: win ? 1 : 0, nom: [{ n: g.name, me: 1 }].concat(rivals), w: win ? g.name : rivals[0].n, rv: rivals[0].rv ? 1 : 0 });
+    if (win) { const r = c.rw || {}; if (r.rep) g.rep = cl(g.rep + r.rep, 0, 100); if (r.hap) g.hap = clr(g.hap + r.hap, 0, 100); if (r.tok) tokAdd(r.tok, `${c.n} ödülü`); g.car = g.car || {}; g.car['aw_' + c.k] = (g.car['aw_' + c.k] || 0) + 1; (g.cab = g.cab || []).push({ y: g.season - 1, k: c.e, n: c.n, c: x.club || g.ct }); if (!['altin', 'yilin', 'golk'].includes(c.k)) g.lastSeason.lines.push(`${c.e} ${c.n} ödülünü kazandın!`); }
+    else if (rivals[0].rv) L(`${c.n} ödülünü ömürlük rakibin ${rivals[0].n} kazandı. Bu acıttı.`); });
+  if (aw.length) { g.lastSeason.aw = aw; g.lastSeason.awSeen = 0; }
+};
+/* sezon sonu ekranında tören kartı; ilk açılışta tören kendiliğinden başlar */
+const _seasonUIAw = seasonUI;
+seasonUI = function () {
+  const h = _seasonUIAw(), s = g.lastSeason; if (!s || !s.aw) return h;
+  const won = s.aw.filter(a => a.win).length;
+  const card = `<div class="card awc"><div class="eyebrow gold">🏆 Ödül Gecesi</div><p class="lead">${s.aw.length} kategoride aday gösterildin${s.awSeen ? `; ${won} ödül kazandın` : ''}.</p><div class="awl">${s.aw.map(a => `<span class="${s.awSeen ? (a.win ? 'w' : 'l') : ''}">${a.e} ${esc(a.n)}${s.awSeen ? (a.win ? ' ✓' : ' ✗') : ''}</span>`).join('')}</div><button class="btn ${s.awSeen ? 'ghost' : 'big'}" onclick="awOpen()">${s.awSeen ? '🎬 Töreni tekrar izle' : '🎬 Töreni izle'}</button></div>`;
+  if (!s.awSeen && !AWS) setTimeout(() => { if (scr === 'season' && !AWS) awOpen(); }, 400);
+  return card + h;
+};
+let AWS = null;
+function awOpen() { const s = g.lastSeason; if (!s || !s.aw) return; try { audioUnlock(); } catch (e) { } AWS = { i: 0, st: 'intro' }; awDraw(); }
+function awNext() { const s = g.lastSeason; AWS.i++; AWS.st = 'intro'; if (AWS.i >= s.aw.length) return awClose(); awDraw(); }
+function awClose() { const el = document.getElementById('awp'); if (el) el.remove(); AWS = null; if (g.lastSeason) g.lastSeason.awSeen = 1; sv(); draw(); }
+function awReveal() {
+  if (!AWS || AWS.st !== 'intro') return; AWS.st = 'drum'; awDraw();
+  try { for (let i = 0; i < 9; i++) setTimeout(() => clap(0), i * 170); } catch (e) { }
+  setTimeout(() => { if (!AWS) return; const a = g.lastSeason.aw[AWS.i]; AWS.st = 'res'; awDraw();
+    try { if (a.win) { sfx('roar'); voiceSay('goal', LANG === 'en' ? `And the award goes to... ${g.name}!` : `Ve ödül... ${g.name}!`, 3); if (typeof speak === 'function' && setOf('voice')) setTimeout(() => speak(LANG === 'en' ? `${g.name}!` : `${g.name}!`, 3), 1900); } else { sfx('groan'); } } catch (e) { }
+  }, 1800);
+}
+function awSpeech(k) { const a = g.lastSeason.aw[AWS.i], sp = SPEECH.find(x => x.k === k); if (!sp || a.sp) return; sp.f(); a.sp = k; L(`${a.n} ödül konuşması: ${sp.l.replace(/^\S+\s/, '')}`); toast('🎤 ' + T(sp.d)); sv(); awDraw(); }
+function awDraw() {
+  const s = g.lastSeason, a = s && s.aw[AWS.i]; if (!a) return;
+  let el = document.getElementById('awp'); if (!el) { el = document.createElement('div'); el.id = 'awp'; el.className = 'awp'; document.body.appendChild(el); }
+  const nom = a.nom.map((n, i) => { const isW = AWS.st === 'res' && n.n === a.w, isL = AWS.st === 'res' && !isW; return `<div class="awn ${n.me ? 'me' : ''} ${isW ? 'win' : ''} ${isL ? 'lose' : ''}" style="animation-delay:${.15 + i * .18}s"><div class="awav">${esc(initials(n.n))}</div><b>${esc(n.n)}</b>${n.rv ? '<span>ömürlük rakibin</span>' : n.me ? '<span>sen</span>' : '<span>&nbsp;</span>'}</div>`; }).join('');
+  let mid = '';
+  if (AWS.st === 'intro') mid = `<button class="btn big awbtn" onclick="awReveal()">✉️ Zarfı aç</button>`;
+  if (AWS.st === 'drum') mid = `<div class="awdrum">🥁 Ve ödülü kazanan…</div>`;
+  if (AWS.st === 'res' && a.win) mid = `<div class="awtro">🏆</div><div class="awwin">${esc(g.name)}</div><div class="awconf">${Array.from({ length: 40 }, (_, i) => `<i style="left:${(i * 37) % 100}%;animation-delay:${(i % 10) * .12}s;background:${['#ffe34d', '#ff6b5b', '#56c98d', '#7fb2ff', '#fff'][i % 5]}"></i>`).join('')}</div>
+    ${a.sp ? `<p class="m awq">🎤 ${esc(T(SPEECH.find(x => x.k === a.sp).l))}</p><button class="btn big awbtn" onclick="awNext()">${AWS.i + 1 < s.aw.length ? 'Sonraki ödül →' : 'Töreni bitir'}</button>` : `<div class="eyebrow">Ödül konuşmanı yap</div><div class="opts">${SPEECH.map(sp => `<button class="opt" onclick="awSpeech('${sp.k}')"><b>${sp.l}</b><span>${sp.d}</span></button>`).join('')}</div>`}`;
+  if (AWS.st === 'res' && !a.win) mid = `<div class="awx">✗</div><div class="awlose">Kazanamadın</div><p class="m">Ödülü <b>${esc(a.w)}</b> kazandı.${a.rv ? ' Ömürlük rakibin sahnede…' : ''}</p><button class="btn big awbtn" onclick="awNext()">${AWS.i + 1 < s.aw.length ? 'Sonraki ödül →' : 'Töreni bitir'}</button>`;
+  el.innerHTML = `<div class="awstage"><div class="awspot"></div><div class="awtop"><span class="eyebrow">🏆 Ödül Gecesi · ${AWS.i + 1}/${s.aw.length}</span><button class="lnk" onclick="awClose()">Geç ✕</button></div>
+    <div class="awcat"><div class="awe">${a.e}</div><h2>${esc(a.n)}</h2><div class="m">${g.season - 1}/${String(g.season).slice(2)} sezonu · adaylar</div></div><div class="awnoms">${nom}</div><div class="awmid">${mid}</div></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+
+/* ============================================================
+   MİRAS FC — v4.0 · Hikâye paketleri 2.0
+   Paket alan oyuncu ne aldığını görür ve karşılığını alır:
+   - Satın alınca "Paket açıldı" ekranı: bölümler, ne zaman başlar,
+     tamamlayınca kazanılacak özel ödül.
+   - Mağazada ve Miras sekmesinde Hikâye Günlüğü: bölüm bölüm ilerleme.
+   - Her pakete yeni bölümler (Gurbet 8, Skandal 8, Kurucu 7) ve paket
+     olayları daha sık çıkar.
+   - Tamamlama ödülleri kalıcı ve oyunu değiştirir:
+     🌍 Gurbet  → "Dünya Vatandaşı": yurtdışında takım uyumu %50 hızlı,
+                  +40 jeton.
+     ⚖️ Skandal → dürüst kaldıysan "Temiz Sayfa": ünün 25'in altına
+                  düşmez, sponsor primi; değilse "Kötü Çocuk": her sezon
+                  cesur markalardan reklam geliri. +40 jeton.
+     🏟️ Kurucu  → "Kulüp Babası": kulübün her hafta gelir getirir,
+                  altyapısından her sezon bir yetenek çıkar. +40 jeton.
+   ============================================================ */
+const abroad = () => g.club && g.club.ct && g.club.ct !== g.ct;
+const PK2 = {
+  gurbet: { e: '🌍', need: 6, rw: 'Dünya Vatandaşı: yurtdışında takım uyumun %50 daha hızlı artar · +40 jeton', when: 'Yurtdışındaki bir kulüpte oynarken başlar.',
+    ch: [['pk_gurbet1', 'İlk kış'], ['pk_gurbet2', 'Annenin sesi'], ['pk_gurbet3', 'Sokaktaki nefret'], ['pk_gurbet4', 'Bayram sofrası'], ['pk_gurbet5', 'Yerel dilde ilk röportaj'], ['pk_gurbet6', 'Uykusuz geceler'], ['pk_gurbet7', 'Tribünün şarkısı'], ['pk_gurbet8', 'Sıla: eve dönüş']] },
+  skandal: { e: '⚖️', need: 6, rw: 'Temiz Sayfa ya da Kötü Çocuk: seçimlerine göre kalıcı bir ün ve gelir etkisi · +40 jeton', when: 'Profesyonel olunca ve ünün arttıkça başlar.',
+    ch: [['pk_skandal1', 'Bahis çetesi'], ['pk_skandal2', 'Çarpıtılmış haber'], ['pk_skandal3', 'Mali soruşturma'], ['pk_skandal4', 'Sahte video'], ['pk_skandal5', 'Paparazzi'], ['pk_skandal6', 'Gece kulübü kavgası'], ['pk_skandal7', 'Belgesel teklifi'], ['pk_skandal8', 'Hesaplaşma']] },
+  kurucu: { e: '🏟️', need: 6, rw: 'Kulüp Babası: kulübün her hafta gelir getirir ve her sezon altyapısından yetenek çıkar · +40 jeton', when: 'Futbolu bırakınca (ya da teknik direktörken) yeterli paran varsa başlar.',
+    ch: [['pk_kurucu1', 'Mahalle kulübü'], ['pk_kurucu2', 'Küme küme yükseliş'], ['pk_kurucu4', 'İlk forma sponsoru'], ['pk_kurucu5', 'Mahallenin yeteneği'], ['pk_kurucu6', 'Taraftar grubu'], ['pk_kurucu7', 'Devle kupa maçı'], ['pk_kurucu3', 'Adını taşıyan stadyum']] },
+};
+const pkClean = d => { g.flags.temizP = (g.flags.temizP || 0) + d; };
+const PACK_EV2 = [
+  /* --- Gurbet --- */
+  { id: 'pk_gurbet4', a: [18, 40], once: 1, w: 3, f: () => hasPack('gurbet') && abroad(), t: 'Takım arkadaşın seni ailesinin bayram sofrasına davet etti. Hiç bilmediğin yemekler, hiç bilmediğin şarkılar…', c: [{ l: 'Git, her şeyi tat', f: () => { g.uyum = clr(g.uyum + 10, 0, 100); g.hap = clr(g.hap + 5, 0, 100); g.flags.dil = 1; L('O akşam bir ailen daha oldu.'); }, v: [0, 2, 3, 0] }, { l: 'Kibarca reddet, evde dinlen', f: () => { g.fit = clr(g.fit + 6, 0, 100); g.uyum = clr(g.uyum - 3, 0, 100); }, v: [1, 0, 0, 0] }] },
+  { id: 'pk_gurbet5', a: [19, 40], once: 1, w: 3, f: () => hasPack('gurbet') && abroad() && g.flags.dil, t: 'Maçtan sonra mikrofon uzatıldı. Tercüman bekliyor ama sen ülkenin dilini öğrendin.', c: [{ l: 'Yerel dilde konuş', f: () => { g.rep = cl(g.rep + 6, 0, 100); g.uyum = clr(g.uyum + 6, 0, 100); news(`${g.name} röportajını ${g.club.ct} dilinde verdi; taraftarlar çok sevdi.`); }, v: [1, 3, 1, 0] }, { l: 'Tercümana bırak, risk alma', f: () => { }, v: [0, 0, 0, 0] }] },
+  { id: 'pk_gurbet6', a: [18, 40], once: 1, w: 3, f: () => hasPack('gurbet') && abroad(), t: 'Gece uyuyamıyorsun. Memleketin kokusu, annenin yemekleri, eski sokağın… Performansın düşmeye başladı.', c: [{ l: 'Bir psikologla çalış', f: () => { money(-famCost(6), 'Psikolog'); g.hap = clr(g.hap + 8, 0, 100); g.form = cl(g.form + .4, 3, 10); }, v: [2, 0, 2, -1] }, { l: 'Hafta sonu memlekete uç', f: () => { g.hap = clr(g.hap + 12, 0, 100); g.fit = clr(g.fit - 10, 0, 100); aliveParent().forEach(p => relAdj(p, 8)); }, v: [0, 0, 4, -1] }, { l: 'Dişini sık, geçer', f: () => { g.form = cl(g.form - .5, 3, 10); g.val.am = clr(g.val.am + 3, 0, 100); }, v: [3, 0, -2, 0] }] },
+  { id: 'pk_gurbet7', a: [19, 40], once: 1, w: 3, f: () => hasPack('gurbet') && abroad() && (g.uyum || 0) >= 55, t: () => `${clubName(g.club.n)} taraftarları senin için kendi dilinde bir tezahürat besteledi. Tüm stat aynı anda söylüyor.`, c: [{ l: 'Gözyaşlarını tutamadan tribüne koş', f: () => { g.hap = clr(g.hap + 12, 0, 100); g.mor = clr(g.mor + 10, 0, 100); g.rep = cl(g.rep + 3, 0, 100); }, v: [0, 2, 3, 0] }, { l: 'Formanı tribüne fırlat', f: () => { g.rep = cl(g.rep + 5, 0, 100); g.mor = clr(g.mor + 6, 0, 100); }, v: [0, 3, 1, 0] }] },
+  { id: 'pk_gurbet8', a: [21, 42], once: 1, w: 4, f: () => hasPack('gurbet') && (g.flags.gurbetS || 0) >= 1 && g.club && g.club.ct === g.ct, t: 'Yıllar sonra memleketine döndün. Havaalanında binlerce kişi seni bekliyor; ellerinde senin formanın olduğu pankartlar.', c: [{ l: 'Kalabalığın içine yürü', f: () => { g.hap = clr(g.hap + 15, 0, 100); g.rep = cl(g.rep + 6, 0, 100); news(`${g.name} memleketine kahraman gibi döndü.`); }, v: [0, 3, 4, 0] }, { l: 'Sessizce ailene git', f: () => { aliveParent().forEach(p => relAdj(p, 12)); g.hap = clr(g.hap + 10, 0, 100); }, v: [0, 1, 5, 0] }] },
+  /* --- Skandal --- */
+  { id: 'pk_skandal4', a: [19, 45], once: 1, w: 3, f: () => hasPack('skandal') && g.rep >= 20, t: 'Sosyal medyada seni “hakemi itiyormuş” gibi gösteren montaj bir video yayıldı. Milyonlarca kişi izledi.', c: [{ l: 'Orijinal görüntüleri yayımla', f: () => { pkClean(1); g.rep = cl(g.rep + 4, 0, 100); L('Gerçek ortaya çıktı; montajı yapan hesap kapatıldı.'); }, v: [0, 3, 0, 0] }, { l: 'Dava aç', f: () => { pkClean(1); money(-famCost(8), 'Avukat'); g.rep = cl(g.rep + 2, 0, 100); }, v: [1, 2, 0, -1] }, { l: 'Karşı saldırı: rakip taraftarlara yüklen', f: () => { pkClean(-1); g.rep = cl(g.rep - 4, 0, 100); g.flags.hot = 1; }, v: [2, -3, 0, 1] }] },
+  { id: 'pk_skandal5', a: [20, 50], once: 1, w: 3, f: () => hasPack('skandal') && g.fam.partner, t: () => `Paparazziler seni ve ${g.fam.partner.n}'${loc(g.fam.partner.n)} tatilde gizlice fotoğrafladı; dergiler kapak yaptı.`, c: [{ l: 'Birlikte açıklama yapın', f: () => { pkClean(1); relAdj(g.fam.partner, 6); g.rep = cl(g.rep + 2, 0, 100); }, v: [0, 2, 3, 0] }, { l: 'Fotoğrafçıya saldır', f: () => { pkClean(-1); g.rep = cl(g.rep - 6, 0, 100); money(-famCost(15), 'Tazminat'); g.flags.hot = 1; }, v: [2, -4, 0, -1] }, { l: 'Hiç umursama', f: () => { relAdj(g.fam.partner, -4); }, v: [1, 0, -1, 0] }] },
+  { id: 'pk_skandal6', a: [19, 38], once: 1, w: 3, f: () => hasPack('skandal') && g.club, t: 'Bir gece kulübünde takım arkadaşın kavgaya karıştı; sen de oradaydın. Kulüp başkanı ne olduğunu soruyor.', c: [{ l: 'Doğruyu anlat', f: () => { pkClean(1); g.uyum = clr(g.uyum - 6, 0, 100); g.rep = cl(g.rep + 3, 0, 100); }, v: [0, 3, 0, 0] }, { l: 'Arkadaşını koru, yalan söyle', f: () => { pkClean(-1); g.uyum = clr(g.uyum + 8, 0, 100); if (Math.random() < .4) { g.rep = cl(g.rep - 8, 0, 100); L('Kamera kayıtları çıktı; yalanın ortaya çıktı.'); } }, v: [1, -2, 2, 0] }] },
+  { id: 'pk_skandal7', a: [23, 70], once: 1, w: 3, f: () => hasPack('skandal') && g.rep >= 45, t: 'Bir yayın platformu hayatını belgesel dizi yapmak istiyor: kamera her yerde olacak, evinde bile.', c: [{ l: 'Kabul et, her şeyi göster', f: () => { money(famCost(90), 'Belgesel'); g.rep = cl(g.rep + 10, 0, 100); if (g.fam.partner) relAdj(g.fam.partner, -8); news(`${g.name} belgeseli rekor izlendi.`); }, v: [0, 1, -2, 4] }, { l: 'Sadece futbolu çeksinler', f: () => { pkClean(1); money(famCost(40), 'Belgesel'); g.rep = cl(g.rep + 5, 0, 100); }, v: [1, 2, 1, 2] }, { l: 'Reddet', f: () => { pkClean(1); g.hap = clr(g.hap + 3, 0, 100); }, v: [0, 1, 2, -1] }] },
+  { id: 'pk_skandal8', a: [24, 80], once: 1, w: 4, f: () => hasPack('skandal') && pkSeen('skandal') >= 5, t: () => (g.flags.temizP || 0) >= 0 ? 'Federasyon seni yılın Fair Play elçisi seçti. Yıllarca çamur atıldı ama sen hep dik durdun.' : 'Bir spor kanalı seni “futbolun kötü çocuğu” ilan etti. Herkes seni konuşuyor; cesur markalar kapında.', c: [{ l: () => (g.flags.temizP || 0) >= 0 ? 'Ödülü gururla al' : 'Kötü çocuk imajını sahiplen', f: () => { }, v: [0, 2, 0, 0] }] },
+  /* --- Kurucu --- */
+  { id: 'pk_kurucu4', a: [35, 95], once: 1, w: 3, f: () => hasPack('kurucu') && g.flags.kurucu, t: 'Mahalle kulübün ilk forma sponsorunu arıyor: yerel bir fırın mı, büyük bir bahis şirketi mi?', c: [{ l: 'Mahalle fırını (az para, çok sevgi)', f: () => { g.hap = clr(g.hap + 6, 0, 100); g.rep = cl(g.rep + 2, 0, 100); g.flags.kurucuGelir = (g.flags.kurucuGelir || 1) + .2; }, v: [0, 3, 1, 0] }, { l: 'Bahis şirketi (çok para)', f: () => { money(famCost(30), 'Forma sponsoru'); g.rep = cl(g.rep - 2, 0, 100); g.flags.kurucuGelir = (g.flags.kurucuGelir || 1) + .5; }, v: [0, -2, 0, 3] }] },
+  { id: 'pk_kurucu5', a: [36, 95], once: 1, w: 3, f: () => hasPack('kurucu') && (g.flags.kurucuLv || 0) >= 2, t: 'Kulübünün U13 takımında 12 yaşında bir çocuk herkesi geçiyor. Büyük kulüpler gözlemci yolladı.', c: [{ l: 'Onu kendi altyapında tut', f: () => { g.flags.kurucuYild = 1; g.hap = clr(g.hap + 6, 0, 100); L('Mahallenin yeteneği kulübünde kalıyor; adı yakında duyulacak.'); }, v: [0, 3, 1, -1] }, { l: 'Büyük kulübe sat, kulübe yatırım yap', f: () => { money(famCost(50), 'Genç oyuncu satışı'); g.flags.kurucuLv = Math.min(5, (g.flags.kurucuLv || 1) + (Math.random() < .5 ? 1 : 0)); }, v: [0, 0, 0, 3] }] },
+  { id: 'pk_kurucu6', a: [36, 95], once: 1, w: 3, f: () => hasPack('kurucu') && (g.flags.kurucuLv || 0) >= 3, t: 'Mahallenin gençleri kulübe bir taraftar grubu kurdu. Senin adınla bir marş yazdılar.', c: [{ l: 'Maçlarda onlarla tribüne çık', f: () => { g.hap = clr(g.hap + 10, 0, 100); g.rep = cl(g.rep + 3, 0, 100); }, v: [0, 2, 2, 0] }, { l: 'Gruba otobüs ve forma al', f: () => { money(-famCost(10), 'Taraftar grubu'); g.hap = clr(g.hap + 7, 0, 100); g.flags.hayirsever = (g.flags.hayirsever || 0) + 1; }, v: [0, 3, 1, -1] }] },
+  { id: 'pk_kurucu7', a: [36, 95], once: 1, w: 3, f: () => hasPack('kurucu') && (g.flags.kurucuLv || 0) >= 4, t: 'Kupada kura çekildi: mahalle kulübün ülkenin en büyük takımıyla eşleşti. Bütün ülke bu maçı konuşuyor.', c: [{ l: 'Kenarda sen otur', f: () => { const w = Math.random() < .28; g.hap = clr(g.hap + (w ? 20 : 6), 0, 100); g.rep = cl(g.rep + (w ? 10 : 3), 0, 100); L(w ? 'İNANILMAZ! Mahalle kulübün devi eledi!' : 'Onurlu bir yenilgi; ama bütün ülke kulübünü tanıdı.'); if (w) news(`${g.name}'${loc(g.name)} mahalle kulübü kupada devi devirdi!`); }, v: [1, 2, 2, 0] }, { l: 'Gelirle tesis yap, maçı izle', f: () => { money(famCost(25), 'Kupa geliri'); g.flags.kurucuLv = Math.min(5, (g.flags.kurucuLv || 1) + 1); }, v: [0, 0, 0, 2] }] },
+];
+PACK_EV2.forEach(e => { AD_EV.push(e); EVMAP[e.id] = e; });
+/* eski paket olayları da daha sık çıksın */
+['pk_gurbet1', 'pk_gurbet2', 'pk_gurbet3', 'pk_skandal1', 'pk_skandal2', 'pk_skandal3', 'pk_kurucu1', 'pk_kurucu2', 'pk_kurucu3'].forEach(id => { if (EVMAP[id] && !EVMAP[id].w) EVMAP[id].w = 3; });
+/* Skandal'da dürüst/kirli seçimleri say */
+[['pk_skandal1', [1, -1, 0]], ['pk_skandal2', [1, 0]], ['pk_skandal3', [1, -1]]].forEach(([id, d]) => { const e = EVMAP[id]; if (e) e.c.forEach((c, i) => { const f0 = c.f; c.f = x => { pkClean(d[i] || 0); return f0(x); }; }); });
+function pkSeen(k) { return PK2[k].ch.filter(([id]) => g.mem && g.mem[id] != null).length; }
+/* tamamlama */
+function pkCheck() {
+  if (!g || !g.mem) return; g.pkDone = g.pkDone || {};
+  Object.keys(PK2).forEach(k => {
+    if (!hasPack(k) || g.pkDone[k] || pkSeen(k) < PK2[k].need) return; g.pkDone[k] = 1; tokAdd(40, `${PACKS[k].n} hikâyesi tamamlandı`);
+    if (k === 'gurbet') { g.flags.dunya = 1; L('🌍 Gurbet hikâyesini tamamladın: artık bir Dünya Vatandaşısın.'); }
+    if (k === 'skandal') { if ((g.flags.temizP || 0) >= 0) { g.flags.temizSayfa = 1; g.rep = cl(g.rep + 8, 0, 100); L('⚖️ Skandal hikâyesi bitti: Temiz Sayfa. Adın artık güvenin simgesi.'); } else { g.flags.kotuCocuk = 1; g.rep = cl(g.rep + 5, 0, 100); L('😈 Skandal hikâyesi bitti: Kötü Çocuk. Herkes seni konuşuyor ve markalar bunu seviyor.'); } }
+    if (k === 'kurucu') { g.flags.kulupBaba = 1; L('🏟️ Kurucu hikâyesi tamamlandı: Kulüp Babası. Kulübün artık sana gelir getiriyor.'); }
+    pkShow(k, 1);
+  });
+}
+const _choosePk = choose;
+choose = function (i) { const id = g && g.ev && g.ev.id; const r = _choosePk(i); if (id && /^pk_/.test(id)) { try { pkCheck(); } catch (e) { } } return r; };
+const _autoPk = autoChoose;
+autoChoose = function () { const id = g && g.ev && g.ev.id; const r = _autoPk(); if (id && /^pk_/.test(id)) { try { pkCheck(); } catch (e) { } } return r; };
+/* kalıcı ödüllerin etkisi */
+const _ttPk = teamTraining;
+teamTraining = function () { const u0 = g.uyum; _ttPk(); if (g.flags && g.flags.dunya && abroad() && g.uyum > u0) g.uyum = clr(g.uyum + (g.uyum - u0) * .5, 0, 100); if (g.flags && g.flags.temizSayfa && g.rep < 25) g.rep = 25; };
+const _ytPk = yearTick;
+yearTick = function (out) {
+  const ab = abroad(); const r = _ytPk(out);
+  try {
+    if (ab && hasPack('gurbet')) g.flags.gurbetS = (g.flags.gurbetS || 0) + 1;
+    if (g.flags.kotuCocuk) { money(famCost(25), 'Cesur marka reklamları'); out && out.lines && out.lines.push('😈 Kötü çocuk imajın reklam getirdi.'); }
+    if (g.flags.temizSayfa && g.fin && g.fin.spons && g.fin.spons.length) { money(famCost(12), 'Temiz imaj sponsor primi'); }
+    if (g.flags.kulupBaba && g.flags.kurucuYild && g.sq && g.club && Math.random() < .5) L('Mahalle kulübünün altyapısından bir genç profesyonel oldu; herkes senin adını anıyor.');
+  } catch (e) { }
+  return r;
+};
+const _payPk = payWeek;
+payWeek = function () { _payPk(); try { if (g.flags && g.flags.kulupBaba) money(famCost(Math.round(2 * (g.flags.kurucuLv || 1) * (g.flags.kurucuGelir || 1))), 'Kulübünün geliri'); } catch (e) { } };
+
+/* ---------- ekranlar: paket açıldı + hikâye günlüğü ---------- */
+function pkShow(k, done) {
+  const P0 = PACKS[k], X = PK2[k]; if (!P0 || !X) return;
+  let el = document.getElementById('setp'); if (!el) { el = document.createElement('div'); el.id = 'setp'; el.className = 'tut'; document.body.appendChild(el); }
+  el.hidden = false;
+  el.innerHTML = `<div class="tutc card pkc"><div class="tute">${X.e}</div><div class="eyebrow gold">${done ? 'Hikâye tamamlandı' : 'Hikâye paketi açıldı'}</div><h2>${esc(P0.n)}</h2><p class="m">${esc(P0.d)}</p>
+  ${done ? `<div class="pkrw">🏆 ${esc(X.rw)}</div>` : `<div class="lbl">Ne zaman başlar?</div><p class="m">${esc(X.when)}</p><div class="lbl">Bölümler (${X.ch.length})</div><ol class="pkch">${X.ch.map(([id, n]) => `<li>${esc(n)}</li>`).join('')}</ol><div class="lbl">Tamamlayınca (${X.need} bölüm)</div><div class="pkrw">🏆 ${esc(X.rw)}</div>`}
+  <div class="actions"><button class="btn big" style="flex:1" onclick="document.getElementById('setp').hidden=true">${done ? 'Harika!' : 'Hikâyeye başla'}</button></div></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+const _buyPack2 = buyPack;
+buyPack = function (k) { const had = acct().packs[k]; _buyPack2(k); if (!had && acct().packs[k]) pkShow(k); };
+function pkJournal() {
+  if (!g) return ''; const own = Object.keys(PK2).filter(hasPack); if (!own.length) return '';
+  return `<div class="card"><div class="eyebrow">📖 Hikâye günlüğü</div>${own.map(k => { const X = PK2[k], n = pkSeen(k), dn = g.pkDone && g.pkDone[k];
+    return `<div class="pkj"><div class="row-b"><b>${X.e} ${esc(PACKS[k].n)}</b><span class="m">${n}/${X.ch.length}${dn ? ' · 🏆' : ''}</span></div>${bar(n, X.ch.length)}<div class="pkchips">${X.ch.map(([id, t]) => `<span class="${g.mem && g.mem[id] != null ? 'on' : ''}">${g.mem && g.mem[id] != null ? '✓ ' + esc(t) : '🔒 ???'}</span>`).join('')}</div>${dn ? `<div class="m pkrw2">🏆 ${esc(X.rw)}</div>` : `<div class="m">${esc(X.when)} Ödül: ${n}/${X.need}</div>`}</div>`; }).join('')}</div>`;
+}
+const _shopUIpk = shopUI;
+shopUI = function () {
+  let h = _shopUIpk(); if (SHV !== 'paket') return h;
+  h = h.replace(/<button class="act" onclick="buyPack\('(\w+)'\)">/g, (m, k) => `<button class="act" onclick="${acct().packs[k] ? `pkShow('${k}')` : `buyPack('${k}')`}">`);
+  return h + `<div class="card"><p class="m">Her paket ${Object.values(PK2).map(x => x.ch.length).join(' / ')} bölümlük bir hikâye ve tamamlayınca kalıcı bir ödül içerir. Pakete dokunarak içeriğini gör.</p></div>` + pkJournal();
+};
+if (typeof legUI === 'function') { const _legPk = legUI; legUI = function () { return _legPk() + pkJournal(); }; }
+
+/* ============================================================
+   MİRAS FC — v4.0 · Suç ve ceza
+   Yasa dışı seçimler (vergi kaçırma, şike, yasa dışı bahis, alkollü
+   araç…) bir DOSYA açar (g.sins). Hemen ya da yıllar sonra ortaya
+   çıkabilir (6 yılda zaman aşımı). Çıkınca DURUŞMA: avukat / itiraf /
+   inkâr. Sonuç: para cezası, ün kaybı, men ve HAPİS (g.jail hafta).
+   Hapiste: sözleşmen feshedilir, oynayamazsın, ailen uzaklaşır; sadece
+   aile ziyareti ve kurs çalışması yapılabilir. Çıkışta yeni bir sayfa.
+   ============================================================ */
+const CRIME = {
+  vergi: { n: 'Vergi kaçırma', jail: [36, 56], fine: 90, rep: 18, now: .25, yr: .18 },
+  sike: { n: 'Şike', jail: [14, 26], ban: 92, fine: 60, rep: 35, now: .4, yr: .25 },
+  bahis: { n: 'Yasa dışı bahis', jail: [8, 18], ban: 46, fine: 30, rep: 22, now: .3, yr: .2 },
+  trafik: { n: 'Alkollü araç kullanma ve kaza', jail: [10, 24], fine: 25, rep: 14, now: .7, yr: .3 },
+};
+function sin(k, amt) {
+  (g.sins = g.sins || []).push({ k, y: g.season, amt: amt || 0 }); L(`📁 ${CRIME[k].n} dosyan açıldı. Bir gün ortaya çıkabilir…`);
+  if (Math.random() < CRIME[k].now) expose(g.sins.length - 1);
+}
+function expose(i) {
+  const s = (g.sins || [])[i]; if (!s || g.trial) return; g.sins.splice(i, 1); g.trial = { k: s.k, amt: s.amt };
+  news(`${g.name} hakkında ${CRIME[s.k].n.toLocaleLowerCase('tr')} soruşturması açıldı.`); L(`⚖️ ${CRIME[s.k].n} ortaya çıktı! Savcılık dava açtı.`);
+  g.evq = g.evq || []; if (!g.evq.some(x => x.id === 'durusma')) g.evq.unshift(buildEv(EVMAP.durusma)); nextEv();
+}
+function jailTxt(w) { return w >= 40 ? `${Math.round(w / 46 * 10) / 10} yıl` : `${Math.round(w / 4)} ay`; }
+function imprison(w, ban) {
+  g.jail = Math.max(g.jail || 0, w); if (ban) g.ban = Math.max(g.ban || 0, ban);
+  g.hap = clr(g.hap - 20, 0, 100); if (g.fam.partner) relAdj(g.fam.partner, -15); g.fam.kids.forEach(k => relAdj(k, -10));
+  if (g.club && g.con && (g.phase === 'pro' || g.phase === 'free')) { const id = g.club.id, n = cname(id); L(`${n} sözleşmeni tek taraflı feshetti.`); try { closeHist(); } catch (e) { } g.con = null; g.club = null; g.captain = 0; g.phase = 'free'; g.wq = []; g.cal = (g.cal || []).filter(e => e.k === 'N'); try { dropSquad(id); } catch (e) { } }
+  if (g.coach) { try { coachLeave('Cezaevine girdin', 0); } catch (e) { g.coach = null; } }
+  L(`🔒 ${jailTxt(w)} hapis cezası aldın. Kapılar arkandan kapandı.`); news(`${g.name} ${jailTxt(w)} hapis cezasına çarptırıldı.`);
+}
+const TRIAL_EV = { id: 'durusma', a: [0, 120], t: () => { const c = CRIME[(g.trial || {}).k] || CRIME.vergi; return `⚖️ ${c.n} davası görülüyor. Savcı ${jailTxt(c.jail[1])} hapis ve ağır para cezası istiyor. Salon gazeteciyle dolu.`; },
+  c: [
+    { l: () => `En iyi avukatları tut (${fm(famCost(45))})`, f: () => trialEnd('avukat'), v: [1, 0, 0, -2] },
+    { l: 'Suçunu kabul et, iş birliği yap', f: () => trialEnd('itiraf'), v: [0, 3, 0, 0] },
+    { l: 'Masumum! Sonuna kadar savaş', f: () => trialEnd('inkar'), v: [3, -2, 0, 0] },
+  ] };
+function trialEnd(how) {
+  const t = g.trial; if (!t) return; const c = CRIME[t.k]; g.trial = null;
+  let jail = R(c.jail[0], c.jail[1]), fine = c.fine, rep = c.rep, ban = c.ban || 0, msg = '';
+  if (how === 'avukat') { money(-famCost(45), 'Avukatlar'); if (Math.random() < .4) { jail = 0; fine *= .7; rep *= .6; msg = 'Avukatların davayı çevirdi: hapis yok, sadece para cezası.'; } else { jail = Math.round(jail * .6); msg = 'Avukatlar cezayı indirebildi ama hapisten kurtaramadı.'; } }
+  if (how === 'itiraf') { jail = Math.round(jail * .4); rep *= .6; ban = Math.round(ban * .7); msg = 'İtirafın cezanı hafifletti; kamuoyu dürüstlüğünü takdir etti.'; }
+  if (how === 'inkar') { if (Math.random() < .25) { jail = 0; fine = 0; rep = -2; ban = 0; msg = 'Mahkeme seni BERAAT ettirdi! Kanıtlar yetersiz bulundu.'; } else { jail = Math.round(jail * 1.3); rep *= 1.3; msg = 'İnkârın mahkemeyi kızdırdı: ceza ağırlaştırıldı.'; } }
+  if (fine) money(-famCost(Math.round(fine)), `${c.n} para cezası`); g.rep = cl(g.rep - rep, 0, 100); L(`⚖️ Karar: ${msg}`);
+  if (jail > 0) imprison(jail, ban); else if (ban) { g.ban = Math.max(g.ban || 0, ban); L(`Futboldan ${jailTxt(ban)} men edildin.`); }
+}
+AD_EV.push(TRIAL_EV); EVMAP.durusma = TRIAL_EV; TRIAL_EV.f = () => false; /* sadece sıraya konunca gelir */
+const RELEASE_EV = { id: 'cikis', a: [0, 120], f: () => false, t: 'Cezaevinin kapısı açıldı. Dışarıda seni kimin beklediğine bakıyorsun…',
+  c: [{ l: 'Gençlere suçtan uzak durmayı anlatan bir vakıf kur', f: () => { money(-famCost(20), 'Vakıf'); g.rep = cl(g.rep + 10, 0, 100); g.hap = clr(g.hap + 8, 0, 100); g.flags.hayirsever = (g.flags.hayirsever || 0) + 1; }, v: [0, 4, 1, -1] },
+    { l: 'Hayatını anlatan bir kitap yaz', f: () => { money(famCost(30), 'Kitap'); g.rep = cl(g.rep + 4, 0, 100); }, v: [1, 1, 0, 2] },
+    { l: 'Doğruca ailene git', f: () => { if (g.fam.partner) relAdj(g.fam.partner, 12); g.fam.kids.forEach(k => relAdj(k, 10)); aliveParent().forEach(p => relAdj(p, 10)); g.hap = clr(g.hap + 12, 0, 100); }, v: [0, 1, 4, 0] }] };
+AD_EV.push(RELEASE_EV); EVMAP.cikis = RELEASE_EV;
+/* yeni günaha davet eden olaylar */
+const SIN_EV = [
+  { id: 'bahisgizli', a: [19, 36], once: 1, w: 2, f: () => g.club && g.rep >= 15, t: 'Bir arkadaşın, kendi maçlarına sahte hesaptan bahis oynayarak “kolay para” kazanmanı öneriyor.', c: [{ l: 'Asla', f: () => { }, v: [0, 3, 0, 0] }, { l: 'Bir kere oynarım, kimse bilmez', f: () => { money(famCost(20), 'Bahis kazancı'); sin('bahis', 20); }, v: [0, -5, 0, 4] }] },
+  { id: 'alkolarac', a: [18, 60], cd: 8, w: 1, f: () => g.fin && g.fin.car >= 1, t: 'Bir kutlama gecesinden çıktın; biraz fazla içtin. Arabanın anahtarı elinde.', c: [{ l: 'Taksi çağır', f: () => { }, v: [0, 2, 0, 0] }, { l: 'Kısa mesafe, ben sürerim', f: () => { if (Math.random() < .45) { g.inj = Math.max(g.inj, R(3, 10)); g.hp = (g.hp || 100) - 10; sin('trafik'); L('Bir park halindeki araca çarptın; polis alkol testi yaptı.'); } }, v: [2, -4, 0, 0] }] },
+];
+SIN_EV.forEach(e => { AD_EV.push(e); EVMAP[e.id] = e; });
+/* eski riskli seçimleri dosya sistemine bağla */
+(() => {
+  const set = (id, i, f) => { const e = EVMAP[id]; if (e && e.c[i]) e.c[i].f = f; };
+  set('vergiaffi', 1, () => { money(famCost(30), 'Vergi kaçırma kazancı'); sin('vergi', 30); });
+  set('sike', 2, () => { money(famCost(120), 'Şike parası'); sin('sike', 120); });
+  set('pk_skandal1', 1, () => { money(famCost(60), 'Rüşvet'); sin('sike', 60); pkClean(-1); });
+  set('doping', 1, () => { if (Math.random() < .3) { g.ban = Math.max(g.ban || 0, R(20, 30)); g.rep = cl(g.rep - 12, 0, 100); L('Test pozitif çıktı; uzun süreli men cezası aldın.'); news(`${g.name} doping nedeniyle men edildi.`); } });
+})();
+/* her hafta: hapis ve men sayacı */
+const _payJ = payWeek;
+payWeek = function () {
+  _payJ();
+  if (g.jail > 0) { g.jail--; g.hap = clr(g.hap - .8, 0, 100); if (g.fam.partner) relAdj(g.fam.partner, -.4); if (!g.jail) { L('🔓 Cezaevinden çıktın.'); g.evq = g.evq || []; g.evq.push(buildEv(RELEASE_EV)); nextEv(); } }
+  if (g.ban > 0) { g.ban--; if (!g.ban) L('Men cezan bitti; yeniden sahalara dönebilirsin.'); }
+};
+/* her yıl: dosyalar ortaya çıkabilir, eskiler zaman aşımına uğrar */
+const _ytJ = yearTick;
+yearTick = function (out) {
+  const r = _ytJ(out);
+  try {
+    if (g.jail > 0 && g.phase === 'retired') { g.jail = Math.max(0, g.jail - 46); if (!g.jail) { L('🔓 Cezaevinden çıktın.'); g.evq = g.evq || []; g.evq.push(buildEv(RELEASE_EV)); } }
+    (g.sins || []).slice().forEach((s, i) => { if (g.season - s.y >= 6) { g.sins.splice(g.sins.indexOf(s), 1); L(`${CRIME[s.k].n} dosyan zaman aşımına uğradı. Derin bir nefes aldın.`); } });
+    if (!g.trial) { const i = (g.sins || []).findIndex(s => Math.random() < CRIME[s.k].yr); if (i >= 0) expose(i); }
+  } catch (e) { }
+  return r;
+};
+/* hapiste ve men cezasında oynayamazsın */
+const _selJ = selection;
+selection = function (info) { if (g.jail > 0) return { out: 1, why: `Cezaevindesin (${g.jail} hafta)` }; if (g.ban > 0) return { out: 1, why: `Men cezalısın (${g.ban} hafta)` }; return _selJ(info); };
+const _canJ = canAct;
+canAct = function (a) { if (g.jail > 0 && !/^ev_|^is_kurs|^re_uyku/.test(a.id)) return 'Cezaevindesin'; return _canJ(a); };
+/* ana ekranda uyarı */
+const _homeJ = homeUI;
+homeUI = function () {
+  const h = _homeJ(); if (!g) return h;
+  const w = g.jail > 0 ? `<div class="card warn jailc"><div class="eyebrow">🔒 Cezaevindesin</div><p class="lead">${g.jail} hafta kaldı.</p><p class="m">Futbol oynayamazsın. Ailen seni ziyaret edebilir; kurs çalışabilirsin. Enerji işlerinin çoğu kapalı.</p></div>` : g.ban > 0 ? `<div class="card warn"><div class="eyebrow">⛔ Men cezası</div><p class="m">${g.ban} hafta boyunca resmi maçlarda oynayamazsın.</p></div>` : '';
+  const f = (g.sins || []).length && !g.jail ? `<div class="card"><p class="m">📁 Kapanmamış ${g.sins.length} dosyan var. Her yıl ortaya çıkabilir; zaman aşımı 6 yıl.</p></div>` : '';
+  return w + f + h;
+};
+/* cezaevinde ya da men cezasındayken kulüp teklifi gelmez */
+const _soJ = startOffers;
+startOffers = function (kind) { if (g && (g.jail > 0 || g.ban > 20) && (kind === 'free' || kind === 'win')) { toast(g.jail > 0 ? 'Cezaevindeyken kulüpler seninle görüşmüyor' : 'Men cezan bitmeden kulüpler teklif yapmıyor'); if (scr !== 'game') { scr = 'game'; draw(); } return; } return _soJ(kind); };
+
+/* ============================================================
+   MİRAS FC — v4.0 · Memleket ve altyapı çağrısı, şehir ve takım seçimi
+   - Transfer döneminde büyüdüğün şehrin takımı ya da altyapısından
+     çıktığın kulüp seni çağırır: maaş düşük, ama şehir seni bekliyor.
+     Kabul edersen düşük maaşlı teklif masaya gelir; imzalarsan taraftar
+     seni bağrına basar. Söz verirsen sözleşmen bitince geri dönersin.
+   - Karakter oluştururken şehir listeden seçilir (yazabilirsin de),
+     şehrinin takımı gösterilir ve tuttuğun takımı en başta sen seçersin.
+   ============================================================ */
+function homeCallTarget() {
+  if (g.phase !== 'pro' || !g.club || !windowOpen() || g.age < 21 || g.age > 35) return null;
+  const ids = [g.homeClub, g.acadClub && g.acadClub.id].filter((x, i, a) => x && a.indexOf(x) === i && x !== g.club.id && club(x));
+  return ids.length ? ids[Math.floor(Math.random() * ids.length)] : null;
+}
+const HOME_EV = {
+  id: 'memleketcagri', a: [21, 35], cd: 3, w: 3,
+  pre: () => { const id = homeCallTarget(); return { id, acad: id && g.acadClub && g.acadClub.id === id && id !== g.homeClub ? 1 : 0 }; },
+  f: () => !!homeCallTarget(),
+  t: x => { const c = club(x.id); if (!c) return 'Eski kulübün seni arıyor.'; const n = clubName(c.n); return x.acad ? `Altyapısından çıktığın ${n} zor günlerden geçiyor. Kulüp başkanı bizzat aradı: “Seni biz yetiştirdik. Maaşın düşük olacak ama bu forma seni bekliyor. Geri döner misin?”` : `Büyüdüğün şehrin takımı ${n}'${loc(n)} sana ihtiyacı var. Başkan bizzat aradı: “Sana fazla para veremeyiz ama bu şehir seni bekliyor. Gelir misin?”`; },
+  c: [
+    { l: 'Memleketime dönüyorum (düşük maaş)', f: x => homeCallAccept(x), v: [0, 3, 3, -4] },
+    { l: 'Teşekkür ederim ama kalıyorum', f: x => { g.hap = clr(g.hap - 2, 0, 100); L('Memleket taraftarı biraz kırıldı ama seni anlıyor.'); }, v: [2, 0, 0, 2] },
+    { l: 'Söz veriyorum: sözleşmem bitince döneceğim', f: x => { g.flags.memSoz = x.id; g.rep = cl(g.rep + 2, 0, 100); L('Verdiğin söz şehirde dilden dile dolaşıyor.'); }, v: [0, 2, 2, 0] },
+  ] };
+function homeCallAccept(x) {
+  const c = club(x.id); if (!c) return; const ct = clubCt(x.id), cur = g.con ? g.con.sal : salary(ovr(), c.t, ct, 2);
+  const o = mkOffer(c, ct, 'win', { home: 1, homeCall: 1 }); o.sal = Math.max(1, Math.round(Math.min(o.sal, cur) * (x.acad ? .5 : .45))); o.bonus = Math.round(o.sal * .1); o.msg = 'Memleket çağrısı: maaş düşük, sevgi büyük.';
+  g.of = [o]; g.ofKind = 'win'; L(`${clubName(c.n)} düşük maaşlı bir teklif gönderdi.`); setTimeout(() => { scr = 'offers'; sv(); draw(); }, 50);
+}
+AD_EV.push(HOME_EV); EVMAP.memleketcagri = HOME_EV;
+/* söz verdiysen: sözleşmen bitince memleket kulübü kapında */
+const _soS = startOffers;
+startOffers = function (kind) {
+  const r = _soS(kind);
+  try { if (g.flags.memSoz && (kind === 'free' || kind === 'renew') && g.of && club(g.flags.memSoz) && !g.of.some(o => o.id === g.flags.memSoz)) { const c = club(g.flags.memSoz), o = mkOffer(c, clubCt(c.id), kind === 'renew' ? 'win' : kind, { home: 1, homeCall: 1 }); o.sal = Math.round(o.sal * .6); o.msg = 'Verdiğin sözü hatırlatıyorlar: “Eve dön.”'; g.of.unshift(o); draw(); } } catch (e) { }
+  return r;
+};
+/* imzalayınca taraftar sevinci */
+const _signS = sign;
+sign = function (i) {
+  const o = g.of && g.of[i], hc = o && o.homeCall; const r = _signS(i);
+  if (hc && g.club && g.club.id === o.id) { g.hap = clr(g.hap + 15, 0, 100); g.mor = clr(g.mor + 10, 0, 100); g.rep = cl(g.rep + 3, 0, 100); g.uyum = clr((g.uyum || 50) + 15, 0, 100); g.flags.memleket = 1; if (g.flags.memSoz === o.id) g.flags.memSoz = 0; L('🏠 Eve döndün! Tribünler adını haykırıyor.'); news(`${g.name} memleketi ${clubName(o.n)}'${loc(clubName(o.n))} döndü.`); }
+  return r;
+};
+/* teklif kartında rozet */
+const _offTagS = typeof offersUI === 'function' ? offersUI : null;
+
+/* ---------- karakter oluşturma: şehir listesi ve tuttuğun takım ---------- */
+const _newScrS = newScr;
+newScr = function () {
+  _newScrS();
+  try {
+    const grow = ($('ng') && $('ng').value) || NC.grow || 'Türkiye', rows = (CLUBS1[grow] || []).concat((CLUBS2 && CLUBS2[grow] || []).filter(r => Array.isArray(r)));
+    const cities = rows.map(r => r[5]).filter((x, i, a) => x && a.indexOf(x) === i).sort((a, b) => a.localeCompare(b, 'tr'));
+    const ny = $('ny'); if (!ny) return;
+    if (cities.length && !$('cityl')) { const dl = document.createElement('datalist'); dl.id = 'cityl'; dl.innerHTML = cities.map(c => `<option value="${esc(c)}">`).join(''); ny.after(dl); ny.setAttribute('list', 'cityl'); ny.placeholder = T('Listeden seç ya da yaz'); }
+    const hint = document.createElement('div'); hint.className = 'm'; hint.id = 'cityh';
+    const upd = () => { const v = ny.value.trim().toLocaleLowerCase('tr'), r = rows.find(r => (r[5] || '').toLocaleLowerCase('tr') === v); hint.textContent = r ? `🏟️ ${T('Şehrinin takımı')}: ${clubName(r[0])}` : ''; };
+    ny.after(hint); ny.addEventListener('input', upd); upd();
+    /* tuttuğun takım seçimini şehrin hemen altına taşı */
+    const nf = $('nf'), lb = document.querySelector('label[for="nf"]'); if (nf && lb) { hint.after(lb); lb.after(nf); lb.textContent = T('Tuttuğun takım (sen seç)'); }
+  } catch (e) { }
+};
 
 menu();
 </script></body></html>
