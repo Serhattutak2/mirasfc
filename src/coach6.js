@@ -264,10 +264,10 @@ function lsArrive() {
   if (f.kind === 'shot') {
     const def = 1 - f.side, gk = S6.P.find(p => p.side === def && p.gk && !p.off);
     if (f.out === 'goal') { b.x = f.tx; b.y = f.ty; return lsGoal(f.side, f.by); }
-    if (f.out === 'save' && gk) { gk.y = b.y; b.own = gk; S6.poss = def; S6.dc = 1.3; if (f.side === 0) lsVoice('save', 2, 1.5); try { sfx('roar'); } catch (e) { } return; }
-    if (f.out === 'post') { lsVoice('post', 2, 1); const rb = { x: X6(f.side, rf(84, 90)), y: 30 + rf(-9, 9) }; b.fl = { fx: b.x, fy: b.y, tx: rb.x, ty: rb.y, dur: .45, k: 0, arc: 1, kind: 'loose' }; return; }
+    if (f.out === 'save' && gk) { gk.y = b.y; b.own = gk; S6.poss = def; S6.dc = 1.3; if (f.side === 0) lsVoice('save', 2, 1.5); try { sfx('ooh', f.side === 0 ? 1.2 : .8); } catch (e) { } return; }
+    if (f.out === 'post') { lsVoice('post', 2, 1); try { sfx('post'); sfx('ooh', 1.2); } catch (e) { } const rb = { x: X6(f.side, rf(84, 90)), y: 30 + rf(-9, 9) }; b.fl = { fx: b.x, fy: b.y, tx: rb.x, ty: rb.y, dur: .45, k: 0, arc: 1, kind: 'loose' }; return; }
     if (f.out === 'corner') { S6.st.kor[f.side]++; S6.dead = 1.5; S6.rk = { k: 'corner', side: f.side, y: f.ty < 30 ? .8 : 59.2 }; lsVoice('corner', 1); const tk = S6.P.filter(p => p.side === f.side && !p.off && !p.gk).sort((a, c) => d6(a, b) - d6(c, b))[0]; if (tk) { tk.run = { x: f.side ? .8 : 99.2, y: S6.rk.y }; S6.rk.tk = tk; } return; }
-    S6.dead = 1.3; S6.rk = { k: 'gk', side: def }; if (f.side === 0) lsVoice('wide', 1, 1.5); return;
+    S6.dead = 1.3; S6.rk = { k: 'gk', side: def }; if (f.side === 0) lsVoice('wide', 1, 1.5); try { sfx('ooh', f.side === 0 ? .8 : .5); } catch (e) { } return;
   }
   if (f.kind === 'cross') { const r = f.to; if (r.side !== f.side || Math.random() < .25) { const pt = { x: X6(f.side, rf(48, 62)), y: rf(8, 52) }; b.fl = { fx: b.x, fy: b.y, tx: pt.x, ty: pt.y, dur: .8, k: 0, arc: 4, kind: 'loose' }; return; } b.own = r; lsShoot(r, S6.scr && S6.scr.side === f.side ? S6.scr.out : (Math.random() < .5 ? 'save' : 'wide')); return; }
   if (f.kind === 'loose') { let best = null, bd = 99; S6.P.forEach(p => { if (p.off) return; const d = d6(p, b); if (d < bd) { bd = d; best = p; } }); if (best) { b.own = best; if (best.side !== S6.poss) S6.poss = best.side; S6.dc = .5; } return; }

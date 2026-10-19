@@ -59,7 +59,7 @@ Sonra gelen dosya öncekindeki aynı adlı fonksiyonu ezer; `coach3.js` ve `owne
 | `engine13.js` | **v4.1.1:** ok bir arkadaşın ayağına uzanmıyorsa 16 m'ye kadar topu önüne alıp SEN sürersin (`V13.longDrib`); pası atan oyuncu ileri koşar (ver-kaç). |
 | `engine12.js` | **v4.1:** boşluğa atılan pasa en yakın rakip koşar (`chaseTo`), ikinci adam kale tarafını kapatır, boştaki topa her takımdan ikişer oyuncu. |
 | `rules41.js` | **v4.1:** cezaevi/men/ağır sakatlıkta teklif yok (`offBlock`), ~1 yıllık sakatlıkta kulüp feshi; kiralıkken fesih olursa sezon sonu dönüş yok. |
-| `voice2.js` | **v4.1:** cihaz TTS'i tamamen kapalı; yalnızca `voxdata.js` erkek spiker klipleri, sadece maç ekranında (`inMatch`, `vxPlay`). Klip üretici v4.2: `tools/vox/gen2.py` (TR: Piper tr_TR-fahrettin; EN: Kokoro v0.19 bm_lewis İngiliz erkek yorumcu; ayrı replikler; FFT gürültü azaltma + kapı ile cızırtısız, heyecanlı anlarda formant korunarak perde yükselir). |
+| `voice2.js` | **v4.1:** cihaz TTS'i tamamen kapalı; yalnızca `voxdata.js` erkek spiker klipleri, sadece maç ekranında (`inMatch`, `vxPlay`). Türkçe oyunda spiker YOK (kullanıcı isteği), yalnızca tribün sesi pozisyonlara tepki verir; İngilizce spiker var. Klip üretici v4.2: `tools/vox/gen2.py` (voxdata.js'e yalnız `en` konur) (TR: Piper tr_TR-fahrettin; EN: Kokoro v0.19 bm_lewis İngiliz erkek yorumcu; ayrı replikler; FFT gürültü azaltma + kapı ile cızırtısız, heyecanlı anlarda formant korunarak perde yükselir). |
 | `legacy.js` | Miras puanı, defter, soy ağacı (kurucu + son 5 kuşak), devretme |
 | `shop.js` | **Jeton, günlük giriş, 30 başarım, Kariyer Bileti, ödüllü/ara reklam, mağaza, abonelik, geri alma, gözlemci raporu, temalar, hikâye paketleri** |
 | `ui.js` | bütün ekranlar |

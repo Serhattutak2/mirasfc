@@ -1,4 +1,4 @@
-"""Miras FC spiker v2 (v4.2): Türkçe ve İngilizce iki AYRI spiker, ayrı replikler.
+"""Miras FC spiker v2 (v4.2): İngilizce spiker (v4.2: Türkçe spiker kaldırıldı, Türkçede yalnızca tribün), ayrı replikler.
 TR: Piper tr_TR-fahrettin-medium (erkek). EN: Kokoro v0.19 bm_lewis (İngiliz erkek yorumcu, Apache-2.0).
 Cızırtı yok: FFT gürültü azaltma + kapı (gate); kompresör "makeup" kaldırıldı, 56 kbps mp3.
 Heyecan: önemli anlarda formant korunarak perde yükselir (rubberband), hız artar, hafif doygunluk.
