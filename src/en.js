@@ -4580,5 +4580,11 @@ const EN_DICT = {
 "Yönetilen maç": "Matches",
 "Kazanılan": "Wins",
 "Kupalar": "Trophies",
-"Kulüpler": "Clubs"
+"Kulüpler": "Clubs",
+"Kovulduğun için yalnızca eski kulübüne yakın güçte kulüpler (güç {0}–{1}) teklif yapar. Yeni bir işte başarılı ol, kapılar yeniden açılsın.": "Because you were sacked, only clubs close to your old club's level (strength {0}–{1}) will make offers. Succeed in a new job to open the doors again.",
+"Büyük kulüplere adım adım çıkılır: son işindeki başarın, bir sonraki kulübün ne kadar büyük olabileceğini belirler.": "You climb to big clubs step by step: success in your last job decides how big your next club can be.",
+"Bu kulüp için kariyerin henüz yeterli değil": "Your career isn't strong enough for this club yet",
+"🐢 Yavaş": "🐢 Slow",
+"▶ Normal": "▶ Normal",
+"⏩ Hızlı": "⏩ Fast"
 };

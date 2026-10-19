@@ -4987,7 +4987,13 @@ const EN_DICT = {
 "Yönetilen maç": "Matches",
 "Kazanılan": "Wins",
 "Kupalar": "Trophies",
-"Kulüpler": "Clubs"
+"Kulüpler": "Clubs",
+"Kovulduğun için yalnızca eski kulübüne yakın güçte kulüpler (güç {0}–{1}) teklif yapar. Yeni bir işte başarılı ol, kapılar yeniden açılsın.": "Because you were sacked, only clubs close to your old club's level (strength {0}–{1}) will make offers. Succeed in a new job to open the doors again.",
+"Büyük kulüplere adım adım çıkılır: son işindeki başarın, bir sonraki kulübün ne kadar büyük olabileceğini belirler.": "You climb to big clubs step by step: success in your last job decides how big your next club can be.",
+"Bu kulüp için kariyerin henüz yeterli değil": "Your career isn't strong enough for this club yet",
+"🐢 Yavaş": "🐢 Slow",
+"▶ Normal": "▶ Normal",
+"⏩ Hızlı": "⏩ Fast"
 };
 
 /* ============================================================
@@ -9660,6 +9666,42 @@ const _nextDraw12 = nextDraw;
 nextDraw = function () { if (S) S.P.forEach(p => p.chase = 0); return _nextDraw12(); };
 
 /* ============================================================
+   MİRAS FC — MAÇ MOTORU v13 · "Topla birlikte ilerle"
+   - Topu önüne, boşluğa sürersen (sen oraya arkadaşından önce
+     yetişiyorsan) top arkadaşına gitmez: SEN topla birlikte koşarsın
+     (en fazla ~16 m'lik uzun sürüş). Eskiden 6 m'den uzun her ok
+     arkadaşa pas sayılıyordu; oyuncu yerinde kalıyordu.
+   - Pas verdikten sonra pası atan oyuncu boş kalmaz: ileri, boşluğa
+     koşar (ver-kaç), takım topla birlikte ileri çıkar.
+   ============================================================ */
+const V13 = { longDrib: 16 };
+const _stickEval13 = stickEval;
+stickEval = function (px, py, st1) {
+  const e = _stickEval13(px, py, st1), s = S; if (!e || !s || e.k !== 'pass' || !e.tip || s.head || s.type === 'pen' || (s.type === 'fk' && s.dead)) return e;
+  const car = s.car, tip = e.tip, d = Math.hypot(tip.x - car.x, tip.y - car.y);
+  if (d > V13.longDrib || tip.y < car.y - 2) return e;
+  /* ok bir arkadaşın ayağına (3.5 m) uzanmıyorsa, kısa-orta ok = topu önüne alıp sen sürersin */
+  const mateD = e.to ? Math.hypot(e.to.x - tip.x, e.to.y - tip.y) : 99;
+  if (mateD > 3.5) {
+    const r = { k: 'drib', P: [{ x: car.x, y: car.y }, { x: tip.x, y: tip.y }], pw: 1, tip, long: 1 };
+    try { r.dang = pDanger(r.P, 'drib', 1); } catch (x) { }
+    return r;
+  }
+  return e;
+};
+/* ver-kaç: pası atan ileri koşar */
+const _launch13 = launchPath;
+launchPath = function (P, ev, q, oy, ox) {
+  const car = S && S.car; _launch13(P, ev, q, oy, ox);
+  const s = S, r = s && s.run; if (!r || s.mode !== 'atk' || r.k !== 'pass' || !car || car.side !== 'us' || car.gk || car === r.to) return;
+  const e = r.P[r.P.length - 1], T = Math.max(.5, r.T || .8), ln = typeof offLine === 'function' ? Math.min(offLine() - .8, 100) : 100;
+  const fy = Math.min(ln, car.y + rf(6, 11)), fx = cl(car.x + (e.x - car.x) * .25 + (34 - car.x) * .15, 4, 64);
+  const dx = fx - car.x, dy = fy - car.y, dd = Math.hypot(dx, dy), mx = V7.mateV * T * .95, f = dd > mx ? mx / dd : 1;
+  if (dd < .5) return;
+  S.anims = S.anims.filter(a => a.o !== car); anim(car, car.x + dx * f, car.y + dy * f, T * .95, { lin: 1 });
+};
+
+/* ============================================================
    MİRAS FC — MAÇ AKIŞI (v2)
    mkMatch: maçın akışı (takım golleri + senin pozisyonların)
    Pozisyonlar engine.js içinde NSS tarzı fizikle oynanır.
@@ -13394,7 +13436,7 @@ function repCard() {
   ${nx ? `<div class="rep6n"><span>Sıradaki unvan: <b>${nx[2]} ${esc(nx[1])}</b></span><em>${Math.max(1, Math.ceil(nx[0] - rep))} puan</em></div><div class="bar"><i style="width:${pc * 100}%;background:#e8c468"></i></div>` : '<div class="rep6n"><b class="gold">Zirvedesin: efsane hoca.</b></div>'}</div></div>
   <div class="rep6l">${ladder}</div>
   ${H.length > 1 ? `<div class="eyebrow">Sezon sezon itibar</div>${sparkRep(H)}` : ''}
-  <div class="eyebrow">Kapılar</div><div class="kv"><span>Seni düşünen kulüpler (yurt içi)</span><b>güç ≤ ${D.dom}</b></div><div class="kv"><span>Yurt dışı</span><b>güç ≤ ${D.abr}</b></div><div class="kv"><span>Menajer</span><b>${esc(CAG[g.cag || 0].n)}</b></div></div>`;
+  <div class="eyebrow">Kapılar</div><div class="kv"><span>Seni düşünen kulüpler (yurt içi)</span><b>güç ≤ ${D.dom}</b></div><div class="kv"><span>Yurt dışı</span><b>güç ≤ ${D.abr}</b></div><div class="kv"><span>Menajer</span><b>${esc(CAG[g.cag || 0].n)}</b></div>${D.why === 'fired' ? `<div class="warn">Kovulduğun için yalnızca eski kulübüne yakın güçte kulüpler (güç ${Math.max(0, D.min)}–${D.cap}) teklif yapar. Yeni bir işte başarılı ol, kapılar yeniden açılsın.</div>` : `<div class="m">Büyük kulüplere adım adım çıkılır: son işindeki başarın, bir sonraki kulübün ne kadar büyük olabileceğini belirler.</div>`}</div>`;
   /* dünya sıralaması: ilk 3 + komşular */
   const all = ensureCW().map(c => ({ n: c.nw ? c.n : alter(c.n), r: Math.round(c.r) })).concat([{ n: g.name, r: rep, me: 1 }]).sort((a, b) => b.r - a.r || (a.me ? -1 : 1));
   const mi = all.findIndex(x => x.me), keep = new Set([0, 1, 2, mi - 2, mi - 1, mi, mi + 1, mi + 2].filter(i => i >= 0 && i < all.length));
@@ -13522,7 +13564,7 @@ coachUI = function () {
 };
 
 /* =================== 3) CANLI MAÇ: OTOMATİK AKAN SÜRE + NOKTALAR =================== */
-const LSPD = [.55, 1, 2.4], LSPN = ['Yavaş', 'Normal', 'Hızlı'];
+const LSPD = [.6, 1, 2.3], LSPN = ['Yavaş', 'Normal', 'Hızlı'];
 let LS = null;
 const dir6 = p => p.side ? -1 : 1, U6 = (side, x) => side ? 100 - x : x, X6 = (side, u) => side ? 100 - u : u;
 const d6 = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
@@ -13679,7 +13721,7 @@ function lsTick(dt) {
   if (S6.cel > 0) { S6.cel -= dt; lsMove(dt); if (S6.cel <= 0) lsKick(S6.kickSide, 1.4); return; }
   if (S6.rs > 0) { S6.rs -= dt; lsMove(dt); if (S6.rs <= 0) lsKickGo(); return; }
   /* saat */
-  const rate = LSPD[m.spd == null ? 1 : m.spd]; let nc = m.clk + dt * rate; const ng = m.ev[m.gi];
+  const rate = 1; let nc = m.clk + dt * rate; const ng = m.ev[m.gi];
   if (ng && nc >= ng.m - .001) { nc = Math.max(m.clk, ng.m - .001); S6.hold += dt; } else S6.hold = 0;
   if (!m.ht && nc >= 45) { nc = 45; m.clk = 45; m.ht = 1; m.htP = 1; m.pz = 1; try { sfx('whistle', 1); crowdLvl(.05); } catch (e) { } lsVoice('half', 2, 0); draw(); return; }
   if (m.res && nc >= 90 + (m.xt || 2)) { m.clk = 90 + (m.xt || 2); m.fin = 1; try { sfx('whistle', 1); crowdLvl(0); } catch (e) { } lsVoice('final', 3); lsUI(1); draw(); return; }
@@ -13763,7 +13805,7 @@ function lsLoop(ts) {
   const S6 = LS; if (!S6) return; S6.raf = 0;
   if (!LM || !LM.auto || scr !== 'lmatch') return;
   const now = ts || performance.now(), dt = S6.last ? Math.min(.05, (now - S6.last) / 1000) : .016; S6.last = now;
-  try { lsTick(dt); lsRender(); lsUI(); } catch (e) { console.error(e); }
+  try { lsTick(dt * LSPD[LM.spd == null ? 1 : LM.spd]); lsRender(); lsUI(); } catch (e) { console.error(e); }
   S6.raf = requestAnimationFrame(lsLoop);
 }
 function lsEnsure() { if (LS && !LS.raf && LM && LM.auto && scr === 'lmatch' && typeof requestAnimationFrame === 'function' && document.getElementById('lm6cv')) { LS.last = 0; LS.raf = requestAnimationFrame(lsLoop); } }
@@ -13777,7 +13819,7 @@ lmStart = function () {
   draw();
 };
 function lmPause() { if (!LM || LM.fin) return; if (LM.htP) return lmHalfGo(); if (LM.injW && LM.injP) return toast('Önce sakatlanan oyuncunun yerine birini al'); LM.pz = LM.pz ? 0 : 1; LM.injW = 0; draw(); }
-function lmSpeed(i) { if (!LM) return; LM.spd = i; try { acct().lmSpd = i; acctSave(); } catch (e) { } draw(); }
+function lmSpeed(i) { if (!LM) return; LM.spd = i; try { acct().lmSpd = i; acctSave(); } catch (e) { } toast(['🐢 Yavaş', '▶ Normal', '⏩ Hızlı'][i]); draw(); }
 function lmHalfGo() { const m = LM; if (!m || !m.htP) return; m.htP = 0; m.pz = 0; if (LS) { lsKick(1, 1.6); } try { sfx('whistle', 1); crowdLvl(.12); } catch (e) { } lsVoice('kickoff', 2, 0); draw(); }
 function lmToEnd() {
   const m = LM; if (!m || m.fin) return; if (!m.ht) { m.ht = 1; m.htP = 0; }
@@ -13825,6 +13867,48 @@ lmatchUI = function () {
 const _draw6 = draw;
 draw = function () { _draw6(); if (scr === 'lmatch' && LM && LM.auto) { lsUI(1); lsRender(); lsEnsure(); } };
 document.addEventListener && document.addEventListener('visibilitychange', () => { if (document.hidden && LM && LM.auto && !LM.fin && !LM.pz) { LM.pz = 1; try { draw(); } catch (e) { } } });
+
+/* =================== 4) v4.1.1 · KARİYER TAVANI, ZOR UNVANLAR, HIZ =================== */
+/* Unvan basamakları zorlaştı */
+[[1, 20], [2, 42], [3, 66], [4, 88]].forEach(([i, v]) => { if (CRANK[i]) CRANK[i][0] = v; });
+/* Son görevin nasıl bittiği ve ne kadar başarılı olduğu kayıt altına alınır */
+const FIREW = ['Görevden alındı', 'Sözleşme feshedildi', 'Cezaevine girdin'];
+function stintPerf(C) {
+  const gp = C.gp || 0, wr = gp ? (C.wins || 0) / gp : .35, t = (C.t || 0) + (C.cup || 0) + (C.ec || 0);
+  if (t > 0 || wr >= .58) return 3; if (wr >= .45) return 2; if (wr >= .33) return 1; return 0;
+}
+const _coachLeave6 = coachLeave;
+coachLeave = function (why, paid) {
+  const C = g.coach; if (C && !C.own) {
+    const c = club(C.id), s = c ? c.s : 60, fired = FIREW.includes(why), pf = fired ? -1 : why === 'İstifa' ? Math.min(1, stintPerf(C)) : stintPerf(C);
+    g.cLast = { s, pf, y: g.season, n: C.n, why };
+    if (fired) g.cfire = { s, y: g.season, n: C.n };
+  }
+  return _coachLeave6(why, paid);
+};
+const _coachSign6 = coachSign;
+coachSign = function (i) { const r = _coachSign6(i); if (g.coach && g.cfire) g.cfire = null; return r; };
+/* Tavan: en fazla ne kadar güçlü bir kulüp seni ister? */
+function cCap() {
+  const rep = cRep(), C = g.coach;
+  if (g.cfire && g.season - g.cfire.y <= 1) return { max: g.cfire.s + 3, min: g.cfire.s - 12, why: 'fired' };
+  if (C && !C.own) { const c = club(C.id); return { max: (c ? c.s : 60) + [2, 3, 6, 10][stintPerf(C)], min: 0, why: 'cur' }; }
+  if (g.cLast) return { max: g.cLast.s + [2, 2, 3, 6, 10][g.cLast.pf + 1], min: 0, why: 'last' };
+  return { max: Math.round(62 + rep * .35), min: 0, why: 'new' };
+}
+function cAllowed(c) { if (!c) return false; const k = cCap(); return c.s <= k.max && c.s >= k.min; }
+const _coachOffers6 = coachOffers;
+coachOffers = function () { return _coachOffers6().filter(o => cAllowed(club(o.id))); };
+const _vacancies6 = vacancies;
+vacancies = function () { return _vacancies6().filter(c => cAllowed(c)); };
+const _applyJob6 = applyJob;
+applyJob = function (id) { if (!cAllowed(club(id))) return toast('Bu kulüp için kariyerin henüz yeterli değil'); return _applyJob6(id); };
+const _intTick6 = interestTick;
+interestTick = function () { _intTick6(); if (g.cint) for (const id in g.cint) if (!cAllowed(club(+id))) delete g.cint[id]; };
+const _intOffer6 = interestOffer;
+interestOffer = function (auto) { if (g.cint) for (const id in g.cint) if (!cAllowed(club(+id))) delete g.cint[id]; return _intOffer6(auto); };
+const _repDoors6 = repDoors;
+repDoors = function (rep) { const a = _repDoors6(rep), k = cCap(); return { dom: Math.min(a.dom, k.max), abr: Math.min(a.abr, k.max), min: k.min, why: k.why, cap: k.max }; };
 
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
