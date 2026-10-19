@@ -4586,5 +4586,6 @@ const EN_DICT = {
 "Bu kulüp için kariyerin henüz yeterli değil": "Your career isn't strong enough for this club yet",
 "🐢 Yavaş": "🐢 Slow",
 "▶ Normal": "▶ Normal",
-"⏩ Hızlı": "⏩ Fast"
+"⏩ Hızlı": "⏩ Fast",
+"Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında": "Tap: player card · yellow number strength · coloured dot morale · bottom line energy · orange edge out of position"
 };

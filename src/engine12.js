@@ -20,8 +20,8 @@ launchPath = function (P, ev, q, oy, ox) {
   const e = r.P[r.P.length - 1], T = Math.max(.45, r.T || .8), failD = r.fail && r.fail.d;
   const cands = s.P.filter(p => p.side === 'th' && !p.wallP && p !== failD && (!p.gk || (e.y > 97 && Math.abs(e.x - 34) < 14))).sort((a, b) => dist(a, e) - dist(b, e));
   if (r.k === 'pass') {
-    const c1 = cands[0]; if (c1) chaseTo(c1, e, T, failD ? 0 : .95, thV(c1) * (c1.gk ? 1.1 : 1));
-    const c2 = cands[1]; if (c2 && !c2.gk) { const ga = Math.atan2(34 - e.x, GY - e.y); chaseTo(c2, { x: e.x + Math.sin(ga) * 4, y: e.y + Math.cos(ga) * 4 }, T, .3, thV(c2)); }
+    /* v4.2: yalnızca topa gerçekten yetişebilecek en yakın rakip koşar; diğerleri adamını bırakmaz */
+    const c1 = cands[0]; if (c1 && (failD || dist(c1, e) <= thV(c1) * (c1.gk ? 1.1 : 1) * T + 4)) chaseTo(c1, e, T, failD ? 0 : .95, thV(c1) * (c1.gk ? 1.1 : 1));
   } else if (r.k === 'drib') {
     const c1 = cands[0]; if (c1 && !c1.gk) chaseTo(c1, { x: e.x + (e.x - c1.x) * .1, y: e.y + 1.2 }, T, .9, thV(c1));
     const c2 = cands.find(p => !p.gk && p !== c1 && p.y < r.car.y + 2); if (c2) chaseTo(c2, e, T, 1.6, thV(c2) * .9);

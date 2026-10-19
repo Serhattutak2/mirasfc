@@ -131,7 +131,7 @@ function miniForm(f) {
 function tacPitch() {
   const C = g.coach, p = plan6(); let h = pitchSVG(C.id, C.form);
   const hy = { derin: 113, orta: 101, yuksek: 89 }[p.hat] || 101, sx = { sol: 16, merkez: 50, sag: 84 }[p.side] || 50;
-  const ov = `<line x1="6" y1="${hy}" x2="94" y2="${hy}" stroke="#e8c468" stroke-width=".7" stroke-dasharray="2.2 1.6" opacity=".85"/><text x="94" y="${hy - 1.6}" text-anchor="end" font-size="3.3" fill="#e8c468">Savunma hattı</text>
+  const ov = `<line x1="6" y1="${hy}" x2="94" y2="${hy}" stroke="#e8c468" stroke-width=".7" stroke-dasharray="2.2 1.6" opacity=".85"/><text x="6" y="${hy + 4.2}" font-size="3" fill="#e8c468">Savunma hattı</text>
   <path d="M${sx} 52 L${sx} 22" stroke="rgba(255,255,255,.55)" stroke-width="1.6" stroke-dasharray="3 2" fill="none"/><path d="M${sx - 3.5} 25 L${sx} 18 L${sx + 3.5} 25 Z" fill="rgba(255,255,255,.7)"/>
   ${p.gen === 2 ? '<path d="M4 70 L12 70 M88 70 L96 70" stroke="rgba(255,255,255,.5)" stroke-width="1.2"/>' : ''}`;
   return h.replace('</svg>', ov + '</svg>');
@@ -291,7 +291,7 @@ function lsDecide(c) {
     const f = lsPick(c, 1); if (f && U6(side, f.x) > u + 8 && Math.random() < .5) { lsPass(c, f); return; }
     S6.dc = .25; return;
   }
-  if (!theirs && u > 63 && Math.abs(c.y - 30) < 20 && Math.random() < (u - 58) / 40) return lsShoot(c, 'auto');
+  if (!theirs && Math.abs(c.y - 30) < 20 && Math.random() < (u > 63 ? (u - 58) / 40 : u > 50 ? .08 : 0)) return lsShoot(c, 'auto');
   const t = lsPick(c); if (t) lsPass(c, t, theirs && Math.random() < .5); S6.dc = rf(.5, 1.2) * tf;
 }
 function lsSc() { const m = LM; return [0, 1].map(s => m.ev.filter(x => x.s === s && x.m < m.clk).length); }
@@ -531,3 +531,31 @@ const _intOffer6 = interestOffer;
 interestOffer = function (auto) { if (g.cint) for (const id in g.cint) if (!cAllowed(club(+id))) delete g.cint[id]; return _intOffer6(auto); };
 const _repDoors6 = repDoors;
 repDoors = function (rep) { const a = _repDoors6(rep), k = cCap(); return { dom: Math.min(a.dom, k.max), abr: Math.min(a.abr, k.max), min: k.min, why: k.why, cap: k.max }; };
+
+/* =================== 5) v4.2 · TAKTİK TAHTASINDA FORMA =================== */
+/* Kocaman yuvarlaklar yerine küçük formalar: sırtta numara, altında kısa ad;
+   altında ince enerji çizgisi, sağ üstte moral noktası, sol üstte güç. */
+const SHIRT = 'M-2.2-4.6L-5-3.1-4.1-0.9-3-1.3-3 4.6 3 4.6 3-1.3 4.1-0.9 5-3.1 2.2-4.6Q0-3.2-2.2-4.6Z';
+function shirtTok(p, q, x, y, c, dn) {
+  const fg = lum(c.c1) > 150 ? '#111' : '#fff', mor = q.mor == null ? 65 : q.mor, mc = mor >= 65 ? '#56c98d' : mor >= 40 ? '#e8c468' : '#ff6b5b', en = pen11(q);
+  const nm = esc(short(pname(p)).split(' ').slice(-1)[0]).slice(0, 10), num = q.num || dn || '';
+  return `<g class="tok" onclick="cPl(${p.id})"><g transform="translate(${x} ${y})"><path d="${SHIRT}" fill="${c.c1}" stroke="${p.oop ? '#ff8a1e' : c.c2}" stroke-width="${p.oop ? .9 : .6}" stroke-linejoin="round"/><path d="M-3 0.6H3" stroke="${c.c2}" stroke-width=".9" opacity=".55"/>
+  <text y="1.5" text-anchor="middle" font-size="3.9" font-weight="800" fill="${fg}" font-family="Barlow Condensed,Arial Narrow,sans-serif">${num}</text>
+  <circle cx="4.4" cy="-4.2" r="1.05" fill="${mc}" stroke="#0b1210" stroke-width=".35"/><text x="-4.6" y="-4.6" font-size="2.3" font-weight="700" fill="#e8c468" text-anchor="middle">${p.r}</text>
+  <text y="8.1" text-anchor="middle" font-size="2.9" font-weight="600" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width=".5" paint-order="stroke">${nm}</text>
+  <rect x="-3.5" y="9.3" width="7" height=".75" rx=".37" fill="rgba(0,0,0,.4)"/><rect x="-3.5" y="9.3" width="${(7 * en / 100).toFixed(2)}" height=".75" rx=".37" fill="${enCol(en)}"/></g></g>`;
+}
+pitchSVG = function (id, form) {
+  const xi = bestXI(id, form), c = club(id), sq = g.sq[id] || [];
+  const by = p => xi.filter(x => x.p === p), rows = [];
+  rows.push({ y: 126, L: by('GK') }); rows.push({ y: 104, L: by('DF') });
+  const mf = by('MF'); if (mf.length >= 5 && form !== '3-5-2') { rows.push({ y: 82, L: mf.slice(0, form === '4-1-4-1' ? 1 : 2) }); rows.push({ y: 61, L: mf.slice(form === '4-1-4-1' ? 1 : 2) }); } else rows.push({ y: 72, L: mf });
+  rows.push({ y: 36, L: by('FW') });
+  let tok = '', k = 0;
+  rows.forEach(r => { const n = r.L.length; r.L.forEach((p, i) => { const x = n === 1 ? 50 : 14 + 72 * i / (n - 1), q = sq.find(z => z.id === p.id) || p; tok += shirtTok(p, q, x, r.y, c, ++k); }); });
+  const ln = 'stroke="rgba(255,255,255,.55)" stroke-width=".6" fill="none"';
+  return `<div class="pitchb"><svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8f2a"/><stop offset="1" stop-color="#25771f"/></linearGradient></defs><rect width="100" height="140" fill="url(#pg)"/>${[0, 1, 2, 3, 4, 5, 6].map(i => `<rect y="${i * 20}" width="100" height="10" fill="rgba(255,255,255,.035)"/>`).join('')}
+  <rect x="4" y="4" width="92" height="132" ${ln}/><line x1="4" y1="70" x2="96" y2="70" ${ln}/><circle cx="50" cy="70" r="10" ${ln}/><rect x="24" y="4" width="52" height="18" ${ln}/><rect x="24" y="118" width="52" height="18" ${ln}/><rect x="38" y="4" width="24" height="6" ${ln}/><rect x="38" y="130" width="24" height="6" ${ln}/>${tok}</svg>
+  <div class="m">Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında</div></div>`;
+};
+xiPreview = function (id, form) { return pitchSVG(id, form); };
