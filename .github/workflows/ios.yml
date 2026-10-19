@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 40
     env:
       HAS_SIGN: ${{ secrets.IOS_P12_BASE64 != '' }}
-      HAS_ASC: ${{ secrets.ASC_KEY_P8 != '' && secrets.IOS_TEAM_ID != '' }}
+      HAS_ASC: ${{ secrets.ASC_KEY_P8 != '' && secrets.IOS_TEAM_ID != '' && contains(github.event.head_commit.message, '[testflight]') }}
       HAS_ADHOC: ${{ secrets.IOS_PROFILE_BASE64 != '' }}
     steps:
       - uses: actions/checkout@v4

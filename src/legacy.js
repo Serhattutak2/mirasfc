@@ -82,7 +82,7 @@ function inherit(ki) {
 /* Emeklilikte çocuğa devretme (karakterin hayatı burada biter) */
 const canHand = () => g.fam.kids.length && (g.phase === 'retired' || g.phase === 'coach' || g.age >= 35);
 function handOver(ki) {
-  const k = g.fam.kids[ki]; if (!k) return; if (!canHand()) return toast('Devretmek için futbolu bırakmış ya da 35 yaşını geçmiş olmalısın');
+  const k = g.fam.kids[ki]; if (!k) return; if (k.g !== 'E') return toast('Mirası sadece oğulların devralabilir'); if ((k.rel || 60) < 20) return toast(`${k.n} ile aranız çok kötü (bağ ${Math.round(k.rel)}). Önce ona zaman ayır.`); if (!canHand()) return toast('Devretmek için futbolu bırakmış ya da 35 yaşını geçmiş olmalısın');
   ask(`Her şeyi ${k.n}'${loc(k.n)} devret ve onunla devam et? ${g.name} hikâyeden çekilir; servet, şirketler${g.own ? ', kulüp' : ''} mirasçıya geçer (veraset vergisi ödenir).`, () => {
     L(`${g.name} her şeyi ${k.n}'${loc(k.n)} devretti ve sessiz bir hayata çekildi.`); g.ended = 1; g.handed = 1; inherit(ki);
   });

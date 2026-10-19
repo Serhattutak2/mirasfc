@@ -18,10 +18,12 @@ function ensureSquad(id) {
   g.sq[id] = list; recalcStr(id); return list;
 }
 function dropSquad(id) { if (g.sq && g.sq[id] && id !== (g.club && g.club.id) && id !== (g.coach && g.coach.id) && !ownById(id)) { delete g.sq[id]; if (g.youth) delete g.youth[id]; } }
+/* yorgun oyuncu (enerji < 100) seçimde geri düşer; enerji alanı yalnız teknik direktörün kadrosunda tutulur */
+const enPen = p => p.en == null ? 0 : (100 - p.en) * .09;
 function bestXI(id, form, excl) {
   const sq = (g.sq[id] || []).filter(p => !p.inj && !p.out && !(excl || []).includes(p.id)), F = FORMS[form || '4-4-2'] || FORMS['4-4-2'];
   const used = new Set(), xi = [];
-  const pick = (pos, n) => { n -= xi.filter(x => x.p === pos).length; if (n <= 0) return 0; const L = sq.filter(p => p.p === pos && !used.has(p.id)).sort((a, b) => b.r - a.r).slice(0, n); L.forEach(p => { used.add(p.id); xi.push(p); }); return L.length; };
+  const pick = (pos, n) => { n -= xi.filter(x => x.p === pos).length; if (n <= 0) return 0; const L = sq.filter(p => p.p === pos && !used.has(p.id)).sort((a, b) => (b.r - enPen(b)) - (a.r - enPen(a))).slice(0, n); L.forEach(p => { used.add(p.id); xi.push(p); }); return L.length; };
   sq.filter(p => p.force && p.p !== 'GK').sort((a, b) => b.r - a.r).slice(0, 2).forEach(p => { if (xi.filter(x => x.p === p.p).length < (F[p.p] || 0)) { used.add(p.id); xi.push(p); } });
   pick('GK', 1);
   for (const pos of ['DF', 'MF', 'FW']) { pick(pos, F[pos]); let k = xi.filter(x => x.p === pos).length; while (k < F[pos]) { const alt = sq.filter(p => !used.has(p.id) && p.p !== 'GK').sort((a, b) => b.r - a.r)[0]; if (!alt) break; used.add(alt.id); xi.push({ ...alt, r: alt.r - 6, oop: 1 }); k++; } }

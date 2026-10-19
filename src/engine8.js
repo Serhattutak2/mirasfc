@@ -39,12 +39,12 @@ shotResult = function (P, run) {
   const res = _shotResult7(P, run), s = S, k = s.gk, oy = run.oy || 0;
   if (!k || s.type === 'pen' || s.head) return res;
   const out = 105 - k.y, D = Math.hypot(GY - P[0].y, 34 - P[0].x);
-  if (oy > .4 && out > 2.2 && D < 26) {
+  if (oy > .4 && out > 2.6 && D < 24) {
     /* aşırtma: kalecinin üstünden; isabet tekniğe, yükseklik basışa bağlı */
     const sk = s.car === s.me ? (st('sut') + st('tek')) / 2 : s.car.r, overP = cl((oy - .4) * .5 + Math.max(0, (run.pw || 1) - 1.25) * .6 - (out - 2) * .05 + (70 - sk) / 200, .03, .6);
     res.chip = 1;
     if (Math.random() < overP) { Object.assign(res, { over: true, goal: false, save: false, wide: false, post: false }); }
-    else if (res.save && Math.random() < .75) { Object.assign(res, { save: false, held: false, goal: true }); }
+    else if (res.save && Math.random() < cl(.2 + (out - 2.6) * .1, .2, .6)) { Object.assign(res, { save: false, held: false, goal: true }); }
   }
   /* kaleci çelerse top bazen kale önünde kalır */
   if (res.save && !res.held) res.reb = 1;

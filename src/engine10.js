@@ -80,8 +80,8 @@ say = function (k, a, b) {
   _say9(k, a, b); const s = S; if (!s || !s.com) return;
   if (!setOf('text')) s.com.hide = 1;
   const pri = VPRI[k] == null ? 1 : VPRI[k]; if (pri === 0 && Math.random() < .55) return;
-  if (k === 'goal') { const L = VOICE_GOAL[LANG === 'en' ? 'en' : 'tr']; return speak(L[Math.floor(Math.random() * L.length)].replace('{0}', a || ''), 3); }
-  speak(T(s.com.txt), pri);
+  if (k === 'goal') { const L = VOICE_GOAL[LANG === 'en' ? 'en' : 'tr']; return voiceSay('goal', L[Math.floor(Math.random() * L.length)].replace('{0}', a || ''), 3); }
+  voiceSay(k, T(s.com.txt), pri);
 };
 function sayLine(txt, pri) { const s = S; if (s) s.com = { txt, t: s.t, hide: !setOf('text') }; speak(T(txt), pri == null ? 1 : pri); }
 
@@ -109,7 +109,7 @@ function setOpen() {
   if (typeof i18nApply === 'function') i18nApply(el);
 }
 function setClose() { const el = document.getElementById('setp'); if (el) el.hidden = true; if (typeof drawUIControls === 'function' && S) drawUIControls(); }
-function setTest() { audioUnlock(); setTimeout(() => { sfx('kick', 1); setTimeout(() => sfx('net'), 250); setTimeout(() => sfx('roar'), 300); speak(LANG === 'en' ? 'Testing the sound. And it\'s a goal!' : 'Ses denemesi. Ve gol!', 3); crowdLvl(.12); setTimeout(() => { if (!S) crowdLvl(0); }, 2500); }, 60); }
+function setTest() { audioUnlock(); setTimeout(() => { sfx('kick', 1); setTimeout(() => sfx('net'), 250); setTimeout(() => sfx('roar'), 300); voiceSay('goal', LANG === 'en' ? 'Testing the sound. And it\'s a goal!' : 'Ses denemesi. Ve gol!', 3); crowdLvl(.12); setTimeout(() => { if (!S) crowdLvl(0); }, 2500); }, 60); }
 /* menüye ⚙️ Ayarlar */
 const _menu10 = menu;
 menu = function () {
@@ -126,9 +126,9 @@ ctlHTML = function () {
 };
 /* maç başı ve sonu: düdük + spiker */
 const _playMatch10 = playMatch;
-playMatch = function () { audioUnlock(); _playMatch10(); if (M) { sfx('whistle', 1); speak(LANG === 'en' ? `Kick-off! ${M.T.us.n} against ${M.T.th.n}.` : `Maç başladı! ${M.T.us.n}, ${M.T.th.n} karşısında.`, 2); } };
+playMatch = function () { audioUnlock(); _playMatch10(); if (M) { sfx('whistle', 1); voiceSay('kickoff', LANG === 'en' ? `Kick-off! ${M.T.us.n} against ${M.T.th.n}.` : `Maç başladı! ${M.T.us.n}, ${M.T.th.n} karşısında.`, 2); } };
 const _finish10 = finishMatch;
-finishMatch = function (m) { const r = _finish10(m); try { sfx('final'); const w = m && m.sc ? m.sc : null; if (w) speak(LANG === 'en' ? `Full time! ${m.T.us.n} ${w[0]}, ${m.T.th.n} ${w[1]}.` : `Son düdük! ${m.T.us.n} ${w[0]}, ${m.T.th.n} ${w[1]}.`, 3); } catch (e) { } return r; };
+finishMatch = function (m) { const r = _finish10(m); try { sfx('final'); const w = m && m.sc ? m.sc : null; if (w) voiceSay('final', LANG === 'en' ? `Full time! ${m.T.us.n} ${w[0]}, ${m.T.th.n} ${w[1]}.` : `Son düdük! ${m.T.us.n} ${w[0]}, ${m.T.th.n} ${w[1]}.`, 3); } catch (e) { } return r; };
 
 /* ---------- 4) gol sevinci ---------- */
 const CEL_T = 3.8;
@@ -265,7 +265,8 @@ drawPl = function (x, p) {
   const sg = x.createLinearGradient(-w * .5, 0, w * .5, 0); sg.addColorStop(0, 'rgba(255,255,255,.12)'); sg.addColorStop(.55, 'rgba(255,255,255,0)'); sg.addColorStop(1, 'rgba(0,0,0,.28)'); x.fillStyle = sg; x.fillRect(-w * .52, -h * .86, w * 1.04, h * .38);
   x.restore();
   if (back && h > 13 && p.num) { x.fillStyle = lum(shirt) > 150 || (pat && lum(trim) > 150) ? '#111' : '#fff'; x.strokeStyle = 'rgba(0,0,0,.35)'; x.lineWidth = 1; x.font = `800 ${Math.round(h * .28)}px "Barlow Condensed",sans-serif`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.strokeText(p.num, 0, -h * .66); x.fillText(p.num, 0, -h * .66); }
-  else if (!back) { x.fillStyle = trim; x.beginPath(); x.moveTo(-w * .16, -h * .86); x.lineTo(0, -h * .78); x.lineTo(w * .16, -h * .86); x.closePath(); x.fill(); }
+  else if (!back) { x.fillStyle = trim; x.beginPath(); x.moveTo(-w * .16, -h * .86); x.lineTo(0, -h * .78); x.lineTo(w * .16, -h * .86); x.closePath(); x.fill();
+    if (h > 12 && p.num) { const fc = lum(shirt) > 150 || (pat && lum(trim) > 150) ? '#111' : '#fff'; x.font = `800 ${Math.round(h * .22)}px "Barlow Condensed",sans-serif`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.lineWidth = Math.max(1.2, h * .05); x.strokeStyle = fc === '#fff' ? 'rgba(0,0,0,.55)' : 'rgba(255,255,255,.6)'; x.strokeText(p.num, 0, -h * .64); x.fillStyle = fc; x.fillText(p.num, 0, -h * .64); } }
   /* baş ve saç */
   const hr = w * .34, hy = -h * .97, hc = HAIRC[(hs >> 3) % HAIRC.length], st = hs % 6;
   x.fillStyle = p.skin; x.fillRect(-w * .1, -h * .9, w * .2, h * .06);
@@ -327,3 +328,31 @@ drawScene = function () {
   const pul = (Math.sin(a * 8) + 1) / 2; x.strokeStyle = `rgba(255,227,77,${.25 + pul * .35})`; x.lineWidth = 6; x.strokeRect(3, 3, W - 6, H - 6);
   x.restore();
 };
+
+/* ---------- stüdyo spiker: önceden üretilmiş doğal ses replikleri (voxdata.js) ---------- */
+const VX = { buf: {}, cur: null, curPri: -1, last: {}, dec: {} };
+function vxKey(k, i) { return (LANG === 'en' ? 'en' : 'tr') + '|' + k + '|' + i; }
+function vxDecode(k, i) {
+  const key = vxKey(k, i); if (VX.buf[key]) return Promise.resolve(VX.buf[key]); if (VX.dec[key]) return VX.dec[key];
+  const L = typeof VOXDATA !== 'undefined' && VOXDATA[LANG === 'en' ? 'en' : 'tr'][k]; if (!L || !SND.ctx) return Promise.resolve(null);
+  const bin = atob(L[i]), u8 = new Uint8Array(bin.length); for (let j = 0; j < bin.length; j++) u8[j] = bin.charCodeAt(j);
+  VX.dec[key] = new Promise(res => { try { SND.ctx.decodeAudioData(u8.buffer, b => { VX.buf[key] = b; res(b); }, () => res(null)); } catch (e) { res(null); } });
+  return VX.dec[key];
+}
+function vxPreload() { if (typeof VOXDATA === 'undefined' || !SND.ctx || VX.pre === LANG) return; VX.pre = LANG; const D = VOXDATA[LANG === 'en' ? 'en' : 'tr']; Object.keys(D).forEach(k => D[k].forEach((_, i) => vxDecode(k, i))); }
+function voiceSay(k, txt, pri) {
+  if (!setOf('voice')) return; pri = pri == null ? 1 : pri;
+  const D = typeof VOXDATA !== 'undefined' ? VOXDATA[LANG === 'en' ? 'en' : 'tr'] : null, L = D && D[k];
+  if (!L || !SND.ctx || SND.ctx.state !== 'running') return speak(txt, pri);
+  if (VX.cur && pri < VX.curPri) return; if (VX.cur && pri <= VX.curPri && pri < 2) return;
+  let i = Math.floor(Math.random() * L.length); if (L.length > 1 && i === VX.last[k]) i = (i + 1) % L.length; VX.last[k] = i;
+  vxDecode(k, i).then(b => {
+    if (!b || !setOf('voice')) return;
+    try { if (VX.cur) { try { VX.cur.stop(); } catch (e) { } } const s = SND.ctx.createBufferSource(), gn = SND.ctx.createGain(); gn.gain.value = 1.35; s.buffer = b; s.connect(gn); gn.connect(SND.master); s.start(); VX.cur = s; VX.curPri = pri; s.onended = () => { if (VX.cur === s) { VX.cur = null; VX.curPri = -1; } }; } catch (e) { }
+  });
+}
+const _unlock10 = audioUnlock;
+audioUnlock = function () { _unlock10(); try { vxPreload(); } catch (e) { } };
+/* rakip gol attığında */
+const _endSceneV = endScene;
+endScene = function (b, good) { const live = S && S.phase !== 'done'; _endSceneV(b, good); if (live && b && /^GOL YED/.test(b.t || '')) voiceSay('concede', LANG === 'en' ? 'Goal for the opposition.' : 'Gol yedik.', 2); };

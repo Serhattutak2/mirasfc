@@ -212,8 +212,10 @@ function shotResult(P, run) {
   if (Math.abs(x - GOAL_L) < .16 || Math.abs(x - GOAL_R) < .16) { out.post = true; return out; }
   if (x < GOAL_L || x > GOAL_R) { out.wide = true; return out; }
   if (pen) { const r = Math.random(); gx = r < .4 ? GOAL_L + 1.6 : r < .8 ? GOAL_R - 1.6 : 34; out.gx = gx; }
-  const reach = (pen ? 1.25 : 2 + D * .032) + (kr - 70) / 40, dx = Math.abs(x - gx);
-  const p = dx < reach * 1.15 ? cl(.95 - Math.pow(dx / reach, 2) * .7 - curl * .5 - q * .14 - ((run.pw || 1) - 1) * .12 + (kr - 70) / 140 - (sk - 70) / 160 + (s.df - 1) * .6 + (s.head ? .1 : 0), .05, .95) : .04;
+  /* kaleci: erişim mesafeyle artar (tepki süresi), köşeler artık kurtarılabilir; sert ve falsolu şut zorlaştırır */
+  const KP = typeof KEEP !== 'undefined' ? KEEP : { base: 2, dist: .032, kr: 40, fall: .7, tip: .04, ang: 0 };
+  const reach = (pen ? KP.pen || 1.25 : KP.base + D * KP.dist) + (kr - 70) / KP.kr, dx = Math.abs(x - gx), angF = Math.abs(P[0].x - 34) > 12 && D < 18 ? KP.ang : 0;
+  const p = dx < reach * 1.25 ? cl(.93 - Math.pow(dx / reach, 2) * KP.fall - curl * .4 - q * .12 - ((run.pw || 1) - 1) * .2 + (kr - 70) / 140 - (sk - 70) / 160 + (s.df - 1) * .5 + (s.head ? .1 : 0) + angF, .06, .94) : KP.tip;
   if (Math.random() < p) { out.save = true; out.held = dx < reach * .45 && Math.random() < .6; } else { out.goal = true; out.gx = gx + (x - gx) * rf(.4, .8); }
   return out;
 }

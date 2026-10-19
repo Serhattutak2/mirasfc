@@ -144,7 +144,7 @@ function relYear() {
 function relWeek() {
   const F = g.fam, tw = g.tw || 0, since = k => tw - ((g.touch || {})[k] || 0);
   if (F.partner) { const pr = F.partner, fl = { romantik: 1.3, kiskanc: 1.2, sakin: .8, kariyerci: .6, maceraci: 1 }[pr.tr] || 1; relAdj(pr, since('p') > 4 ? -.45 * fl * (pr.far ? .6 : 1) : since('p') > 2 ? -.12 : .05); if (pr.st === 'evli' && pr.rel < 22 && !pr.kriz) pr.rel = 22; }
-  F.kids.forEach((k, i) => { if (k.age < 25) relAdj(k, since('k' + i) > 3 ? -.6 : 0); });
+  F.kids.forEach((k, i) => { const sk = since('k' + i); relAdj(k, k.age < 25 ? (sk > 3 ? -.6 : 0) : (sk > 6 ? -.3 : 0)); if (k.rel < 20 && !k.kus && k.age >= 12) { k.kus = 1; L(`${k.n} seninle konuşmuyor. Ona zaman ayırmazsan aranızdaki mesafe büyüyecek.`); } if (k.rel >= 35) k.kus = 0; });
   aliveParent().forEach((p, i) => relAdj(p, since('par') > 6 ? -.35 : 0));
   (g.friends || []).forEach((f, i) => { if (!f.dead) relAdj(f, since('f' + i) > 6 ? -.5 : 0); });
 }

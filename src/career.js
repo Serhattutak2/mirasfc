@@ -108,7 +108,19 @@ function afterOffers() { const a = g.after; g.after = null; if (a === 'newSeason
 
 /* ---------- ENERJİ ve EYLEMLER ---------- */
 const enMax = () => clr(100 + (g.age >= 18 && g.age <= 28 ? 10 : 0) - (g.age > 30 ? (g.age - 30) * 2 : 0) + (g.hp - 70) / 5 + (g.flags.diyet ? 5 : 0), 40, 120);
-const xpAdd = (k, v) => { const c = g.club ? club(g.club.id) : null, fac = c ? .85 + facOf(c) * .07 : .8, room = cl((g.pot + 4 - g.st[k]) / 14, 0, 1.2); g.xp[k] += v * ageF(g.age) * room * fac * (g.trainer ? 1.15 : 1) * (g.val.am > 65 ? 1.08 : 1) * (g.fit < 40 ? .6 : 1); levelUp(); };
+/* Gelişim parametreleri: hepsi buradan ayarlanır */
+const GROW = {
+  facBase: .7, facW: .11,      /* tesis çarpanı: 1 yıldız ×0.81 … 5 yıldız ×1.25 */
+  train: .04,                  /* haftalık takım antrenmanı xp */
+  playXP: .065,                /* 90 dakika oynamanın xp'si (tesis, yaş ve maç puanıyla çarpılır) */
+  benchStart: 3,               /* kaç hafta forma giymezsen gerileme başlar */
+  benchLoss: .03,              /* geriledikçe haftalık özellik kaybı olasılığı */
+  injLoss: .018,               /* uzun sakatlıkta haftalık fiziksel kayıp olasılığı */
+  rustWk: [2, 8],              /* sakatlık dönüşü maç ritmi eksikliği (hafta) */
+  inj: [[.78, 0], [.92, 5, 10], [.975, 13, 22], [1, 36, 48]], /* hafif / orta / 3-5 ay / ~1 yıl */
+  bloomP: .07, boomP: .1,      /* 29+ yaşta nadir geç çıkış, 17-22 yaşta nadir patlama sezonu */
+};
+const xpAdd = (k, v) => { const c = g.club ? club(g.club.id) : null, fac = c ? GROW.facBase + facOf(c) * GROW.facW : .8, room = cl((g.pot + 4 - g.st[k]) / 14, 0, 1.2); g.xp[k] += v * ageF(g.age) * room * fac * (g.trainer ? 1.15 : 1) * (g.val.am > 65 ? 1.08 : 1) * (g.fit < 40 ? .6 : 1); levelUp(); };
 function levelUp() { const wk = g.wk || (g.wk = { gain: {}, loss: {} }); K.forEach(k => { while (g.xp[k] >= 1) { g.xp[k] -= 1; if (g.st[k] < Math.min(99, g.cap[k])) { g.st[k]++; wk.gain[k] = (wk.gain[k] || 0) + 1; } } }); }
 const ageF = a => { const base = a <= 18 ? 1.45 : a <= 21 ? 1.25 : a <= 24 ? 1 : a <= 27 ? .7 : a <= 30 ? .42 : .15; const arc = g.arc === 'erken' ? (a <= 21 ? 1.2 : a >= 27 ? .8 : 1) : g.arc === 'gec' ? (a <= 20 ? .8 : a >= 23 && a <= 29 ? 1.3 : 1) : 1; return base * arc; };
 const ACTS = [
@@ -182,7 +194,7 @@ function routine() { autoPlan(g.routine || 'Dengeli', 1); restLeft(); }
 /* ---------- Haftalık döngü ---------- */
 function teamTraining() {
   const a = g.age;
-  K.forEach(k => xpAdd(k, .045));
+  K.forEach(k => xpAdd(k, GROW.train));
   if (a >= 30) K.forEach(k => { if ((k === 'hiz' || k === 'fiz') && Math.random() < .011 * (a - 29)) { g.st[k] = Math.max(1, g.st[k] - 1); g.wk.loss[k] = 1; } else if (a >= 33 && Math.random() < .005 * (a - 32)) { g.st[k] = Math.max(1, g.st[k] - 1); g.wk.loss[k] = 1; } });
   g.fit = clr(g.fit + 9, 15, 100);
   if (g.inj > 0) { g.inj--; if (!g.inj) L('Sakatlığın geçti, takımla çalışmaya döndün.'); }

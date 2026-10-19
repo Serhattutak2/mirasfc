@@ -149,7 +149,8 @@ function applyMatch(e, info, res) {
     g.fit = clr(g.fit - my.mins * .24 * heat * (1.1 - g.st.fiz / 500), 0, 100);
     g.mor = clr(g.mor + (my.rating - 6.4) * 3 + (won ? 2 : res.draw ? 0 : -2), 0, 100);
     g.rep = cl(g.rep + (my.rating - 6.5) * .25 + (my.g ? .3 : 0) * (info.eu || info.nt ? 2 : 1), 0, 100);
-    K.forEach(k => g.xp[k] += my.mins / 90 * .05 * W[g.pos][k] * 3 * ageF(g.age));
+    K.forEach(k => xpAdd(k, my.mins / 90 * GROW.playXP * W[g.pos][k] * 3 * cl(1 + (my.rating - 6.5) * .25, .6, 1.5)));
+    g.playedWk = 1;
     if (g.con && !info.nt) { money((g.con.app || 0) + (g.con.goal || 0) * (my.g + my.a), 'Maç ve gol primleri'); }
     if (Math.random() < .018 + (100 - g.fit) / 1400 + (g.age > 30 ? .01 : 0) + (info.wx === 'kar' || info.wx === 'yagmur' ? .006 : 0)) injure(R(1, 4), 'maçta');
   } else if (!info.nt) g.mor = clr(g.mor - (g.role >= 2 ? 3 : 1), 0, 100);
