@@ -9,8 +9,8 @@
      Info.plist'teki GADApplicationIdentifier'ı değiştir.
    ============================================================ */
 const ADCFG = {
-  test: true,
-  ios: { inter: 'ca-app-pub-3940256099942544/4411468910', reward: 'ca-app-pub-3940256099942544/1712485313' },
+  test: false,
+  ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
   everyWeeks: 10, minGap: 60000,
 };
 function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }

@@ -11602,7 +11602,7 @@ function shopUI() {
     h += `<div class="card"><div class="eyebrow">Ücretsiz kazan</div><button class="act" onclick="adTokens()"><div><b>📺 Reklam izle</b><span>Günde 3 kez · kalan ${adLeft}</span></div><div class="ac"><b>+2🪙</b></div></button>${dailyCard()}<div class="m">Başarımlar, sezon sonu ödülleri ve Kariyer Bileti de jeton verir.</div></div>`;
     h += `<div class="card"><div class="eyebrow">Jeton paketleri</div>${IAP_P.filter(x => x.tok).map(x => `<button class="act" onclick="buy('${x.id}')"><div><b>🪙 ${x.n}</b><span>${x.tag || ''}</span></div><div class="ac"><b>${price(x)}</b></div></button>`).join('')}</div>`;
     { const P0 = IAP_P.find(x => x.id === 'miras'); h += `<div class="card"><div class="eyebrow">Miras Paketi</div>${g && g.heirPass ? '<p class="lead">Bu kayıtta açık: bütün kuşaklarla devam edebilirsin. ✨</p>' : `<button class="act" onclick="${g ? 'heirBuy()' : `toast('Önce bir hayat başlat')`}"><div><b>👨‍👦 Kuşaklar boyu devam</b><span>${P0.d}</span></div><div class="ac"><b>${price(P0)}</b></div></button>`}<div class="m">Kurucudan oğluna ilk devir ücretsizdir. Paket yalnızca alındığı kayıt için geçerlidir.</div></div>`; }
-    h += `<div class="card"><div class="eyebrow">Miras Kulübü</div>${A.sub ? '<p class="lead">Abonesin. Teşekkürler! ✨</p>' : `<button class="act" onclick="buy('sub')"><div><b>Aylık abonelik</b><span>${IAP_P.find(x => x.id === 'sub').d}</span></div><div class="ac"><b>${price(IAP_P.find(x => x.id === 'sub'))}</b></div></button>`}</div>`;
+    /* Miras Kulübü aboneliği v1.0'da gizli (süre/yenileme/geri yükleme eklenince açılacak) */ if (A.sub) h += `<div class="card"><div class="eyebrow">Miras Kulübü</div><p class="lead">Abonesin. Teşekkürler! ✨</p></div>`;
   }
   if (v === 'bilet') {
     h += `<div class="card"><div class="eyebrow">Kariyer Bileti · ${p.id}</div><div class="prow"><span>Seviye ${lv}/${BP_LV}</span>${bar(p.xp % BP_XP, BP_XP)}<b>${p.xp % BP_XP}/${BP_XP}</b></div><div class="m">Maç oynamak, gol atmak, haftaları ve sezonları tamamlamak bilet puanı kazandırır. Her ay sıfırlanır.</div>${p.gold ? '<div class="m gold">Altın Bilet aktif</div>' : `<button class="btn" onclick="buy('gold')">Altın Bileti aç · ${price(IAP_P.find(x => x.id === 'gold'))}</button>`}</div>`;
@@ -14035,8 +14035,8 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
      Info.plist'teki GADApplicationIdentifier'ı değiştir.
    ============================================================ */
 const ADCFG = {
-  test: true,
-  ios: { inter: 'ca-app-pub-3940256099942544/4411468910', reward: 'ca-app-pub-3940256099942544/1712485313' },
+  test: false,
+  ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
   everyWeeks: 10, minGap: 60000,
 };
 function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
