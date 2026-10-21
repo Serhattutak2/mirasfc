@@ -14052,6 +14052,8 @@ function admobPlugin() { try { const C = window.Capacitor; if (!C || !(C.isNativ
 async function admobInit() {
   const P = admobPlugin(); if (!P || ADM.ok) return; ADM.ok = 1;
   try { await P.initialize({ initializeForTesting: ADCFG.test }); } catch (e) { }
+  /* AB/İngiltere kullanıcıları için Google GDPR onay formu (AdMob > Gizlilik ve mesajlaşma) */
+  try { const ci = await P.requestConsentInfo(); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) { }
   try { await P.requestTrackingAuthorization(); } catch (e) { }
   admobLoad();
 }
