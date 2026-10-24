@@ -100,7 +100,7 @@ function adOverlay(title, sec, cb, skip) {
   const paint0 = paint; paint = () => { paint0(); i18nApply(d); }; paint(); const tm = setInterval(() => { left--; paint(); if (left <= 0) clearInterval(tm); }, 1000);
 }
 function adRewarded(kind, cb) { AD.rewarded(kind, () => { bpXP(5); cb(); }); }
-function adInterMaybe() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < 180000) return; A.lastInter = now; acctSave(); AD.inter(); }
+function adInterMaybe() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); AD.inter(); }
 function adTokens() { const A = acct(), t = today(); if (A.adDay !== t) { A.adDay = t; A.adN = 0; } if (A.adN >= 3) return toast('Bugünkü reklam ödülü hakkın doldu (3/3)'); adRewarded('tok', () => { A.adN++; tokAdd(2, `Reklam ödülü (${A.adN}/3)`); draw(); }); }
 /* bağlama özel ödüllü reklamlar */
 function adEnergy() { if ((g.adEnW || '') === g.season + ':' + g.week) return toast('Bu hafta enerji reklamını kullandın'); adRewarded('energy', () => { g.adEnW = g.season + ':' + g.week; g.en = Math.min(enMax() + 25, g.en + 25); toast('⚡ +25 enerji'); sv(); draw(); }); }

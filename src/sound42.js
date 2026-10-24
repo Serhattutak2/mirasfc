@@ -58,14 +58,18 @@ setInterval(() => { try { if (typeof scr !== 'undefined' && scr === 'lmatch' && 
 /* ses denemesi ayarlardan: kısa süreliğine izin ver */
 if (typeof setTest === 'function') { const _st42 = setTest; setTest = function () { SND.force = 1; setTimeout(() => { SND.force = 0; }, 3500); try { sndInit(); } catch (e) { } return _st42(); }; }
 
-/* ---------- reklam: takvimde her 10 haftada bir ---------- */
-const adAbs = () => g ? g.season * 60 + (g.week || 0) : null; /* kayda özel: g.adAbs */
+/* ---------- reklam: doğal molalarda, en az 90 sn arayla (v4.4) ----------
+   Oyunda zaman ilerlediğinde (hafta/yıl bitip ana ekrana dönülünce) geçiş reklamı
+   gösterilir; iki reklam arasında en az ADCFG.minGap (90 sn) olur. Maç sırasında,
+   pazarlık/olay seçimi ortasında asla gösterilmez. Abonelere hiç gösterilmez. */
+const adAbs = () => g ? (g.season || 0) * 60 + (g.week || 0) + (g.age || 0) * 1000 : null;
 adWeekTick = function () { };
 function adCheck42() {
-  if (!g || typeof acct !== 'function' || g.phase === 'child' || (typeof scr !== 'undefined' && scr !== 'game')) return;
+  if (!g || typeof acct !== 'function' || (typeof scr !== 'undefined' && scr !== 'game')) return;
+  if (g.ev || g.nego) return;
   const a = adAbs(); if (a == null) return;
-  if (g.adAbs == null || a < g.adAbs || a - g.adAbs > 30) { g.adAbs = a; return; } /* çocukluk / emeklilik yılları: sezon reklamı zaten var */
-  if (a - g.adAbs >= ADCFG.everyWeeks) { g.adAbs = a; adInterNow(); }
+  if (g.adAbs == null) { g.adAbs = a; return; }
+  if (a !== g.adAbs) { g.adAbs = a; adInterNow(); }
 }
 const _draw42 = draw;
 draw = function () { _draw42(); try { if (typeof scr === 'undefined' || (scr !== 'match' && scr !== 'lmatch')) adCheck42(); } catch (e) { } };

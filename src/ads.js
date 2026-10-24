@@ -11,9 +11,10 @@
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 10, minGap: 60000,
+  everyWeeks: 1, minGap: 90000,
 };
-function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
+const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
+function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
@@ -27,7 +28,9 @@ async function admobInit() {
   const P = admobPlugin(); if (!P || ADM.ok) return; ADM.ok = 1;
   try { await P.initialize({ initializeForTesting: ADCFG.test }); } catch (e) { }
   /* AB/İngiltere kullanıcıları için Google GDPR onay formu (AdMob > Gizlilik ve mesajlaşma) */
-  try { const ci = await P.requestConsentInfo(); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) { }
+  /* onay bilgisi 6 sn içinde gelmezse beklemeden takip iznine geç (ATT penceresi her durumda sorulsun) */
+  const within = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
+  try { const ci = await within(P.requestConsentInfo(), 6000); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) { }
   try { await P.requestTrackingAuthorization(); } catch (e) { }
   admobLoad();
 }

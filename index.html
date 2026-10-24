@@ -11529,7 +11529,7 @@ function adOverlay(title, sec, cb, skip) {
   const paint0 = paint; paint = () => { paint0(); i18nApply(d); }; paint(); const tm = setInterval(() => { left--; paint(); if (left <= 0) clearInterval(tm); }, 1000);
 }
 function adRewarded(kind, cb) { AD.rewarded(kind, () => { bpXP(5); cb(); }); }
-function adInterMaybe() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < 180000) return; A.lastInter = now; acctSave(); AD.inter(); }
+function adInterMaybe() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); AD.inter(); }
 function adTokens() { const A = acct(), t = today(); if (A.adDay !== t) { A.adDay = t; A.adN = 0; } if (A.adN >= 3) return toast('Bugünkü reklam ödülü hakkın doldu (3/3)'); adRewarded('tok', () => { A.adN++; tokAdd(2, `Reklam ödülü (${A.adN}/3)`); draw(); }); }
 /* bağlama özel ödüllü reklamlar */
 function adEnergy() { if ((g.adEnW || '') === g.season + ':' + g.week) return toast('Bu hafta enerji reklamını kullandın'); adRewarded('energy', () => { g.adEnW = g.season + ':' + g.week; g.en = Math.min(enMax() + 25, g.en + 25); toast('⚡ +25 enerji'); sv(); draw(); }); }
@@ -14037,9 +14037,10 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 10, minGap: 60000,
+  everyWeeks: 1, minGap: 90000,
 };
-function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
+const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
+function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
@@ -14053,7 +14054,9 @@ async function admobInit() {
   const P = admobPlugin(); if (!P || ADM.ok) return; ADM.ok = 1;
   try { await P.initialize({ initializeForTesting: ADCFG.test }); } catch (e) { }
   /* AB/İngiltere kullanıcıları için Google GDPR onay formu (AdMob > Gizlilik ve mesajlaşma) */
-  try { const ci = await P.requestConsentInfo(); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) { }
+  /* onay bilgisi 6 sn içinde gelmezse beklemeden takip iznine geç (ATT penceresi her durumda sorulsun) */
+  const within = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
+  try { const ci = await within(P.requestConsentInfo(), 6000); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) { }
   try { await P.requestTrackingAuthorization(); } catch (e) { }
   admobLoad();
 }
@@ -14609,14 +14612,18 @@ setInterval(() => { try { if (typeof scr !== 'undefined' && scr === 'lmatch' && 
 /* ses denemesi ayarlardan: kısa süreliğine izin ver */
 if (typeof setTest === 'function') { const _st42 = setTest; setTest = function () { SND.force = 1; setTimeout(() => { SND.force = 0; }, 3500); try { sndInit(); } catch (e) { } return _st42(); }; }
 
-/* ---------- reklam: takvimde her 10 haftada bir ---------- */
-const adAbs = () => g ? g.season * 60 + (g.week || 0) : null; /* kayda özel: g.adAbs */
+/* ---------- reklam: doğal molalarda, en az 90 sn arayla (v4.4) ----------
+   Oyunda zaman ilerlediğinde (hafta/yıl bitip ana ekrana dönülünce) geçiş reklamı
+   gösterilir; iki reklam arasında en az ADCFG.minGap (90 sn) olur. Maç sırasında,
+   pazarlık/olay seçimi ortasında asla gösterilmez. Abonelere hiç gösterilmez. */
+const adAbs = () => g ? (g.season || 0) * 60 + (g.week || 0) + (g.age || 0) * 1000 : null;
 adWeekTick = function () { };
 function adCheck42() {
-  if (!g || typeof acct !== 'function' || g.phase === 'child' || (typeof scr !== 'undefined' && scr !== 'game')) return;
+  if (!g || typeof acct !== 'function' || (typeof scr !== 'undefined' && scr !== 'game')) return;
+  if (g.ev || g.nego) return;
   const a = adAbs(); if (a == null) return;
-  if (g.adAbs == null || a < g.adAbs || a - g.adAbs > 30) { g.adAbs = a; return; } /* çocukluk / emeklilik yılları: sezon reklamı zaten var */
-  if (a - g.adAbs >= ADCFG.everyWeeks) { g.adAbs = a; adInterNow(); }
+  if (g.adAbs == null) { g.adAbs = a; return; }
+  if (a !== g.adAbs) { g.adAbs = a; adInterNow(); }
 }
 const _draw42 = draw;
 draw = function () { _draw42(); try { if (typeof scr === 'undefined' || (scr !== 'match' && scr !== 'lmatch')) adCheck42(); } catch (e) { } };
