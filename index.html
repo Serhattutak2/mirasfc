@@ -8123,43 +8123,73 @@ function drawPitch(x, W, H) {
   const c1 = snow ? '#dfe6e2' : retro ? '#6f8a3c' : night ? '#1e6a1e' : '#35a32c', c2 = snow ? '#d3dbd7' : retro ? '#67813a' : night ? '#1c621c' : '#30992a';
   x.fillStyle = c1; x.fillRect(0, 0, W, H);
   for (let k = -2; k < 24; k++) { const a = P3(0, k * 5.25 + 5.25, 0).Y, b = P3(0, k * 5.25, 0).Y; if (b < 0 || a > H) continue; x.fillStyle = k % 2 ? c1 : c2; x.fillRect(0, a, W, b - a); }
-  /* saha dışı (kale arkası) */
-  const gl = P3(0, 105, 0).Y; if (gl > 0) { x.fillStyle = snow ? '#c9d2ce' : '#2b8a24'; x.fillRect(0, 0, W, gl); }
-  x.strokeStyle = snow ? 'rgba(40,60,90,.65)' : 'rgba(255,255,255,.9)'; x.lineWidth = 2;
+  /* saha dışı (kale arkası): reklam panosu + tribün + seyirci */
+  const gl = P3(0, 105, 0).Y;
+  if (gl > 0) {
+    const grass2 = snow ? '#c9d2ce' : '#238020'; x.fillStyle = grass2; x.fillRect(0, 0, W, gl);
+    const standH = Math.min(gl, Math.max(16, PR.sc * 7)), standTop = Math.max(0, gl - standH);
+    /* tribün zemini */
+    const sg = x.createLinearGradient(0, standTop, 0, gl); sg.addColorStop(0, night ? '#0c1016' : '#1d222b'); sg.addColorStop(1, night ? '#161c26' : '#2b323d'); x.fillStyle = sg; x.fillRect(0, standTop, W, gl - standTop);
+    /* seyirci benekleri (sabit desen, titremez) */
+    if (!snow && standH > 10) { const cols = ['#d8b24a', '#c75b4b', '#e9e4d6', '#5c86b8', '#6aa06a', '#b56fa0']; const rows = Math.max(2, Math.floor(standH / 6)); for (let r = 0; r < rows; r++) { const yy = standTop + 4 + r * (standH - 6) / rows; for (let cx = 0; cx < W; cx += 7) { const k = (r * 131 + cx * 7) % 97; if (k % 4 === 0) continue; x.fillStyle = cols[(r * 3 + cx) % cols.length]; x.globalAlpha = .5 + (k % 5) * .1; x.fillRect(cx + (r % 2) * 3, yy, 3.2, 3.2); } } x.globalAlpha = 1; }
+    /* reklam panosu */
+    x.fillStyle = night ? '#0e1a2a' : '#11325e'; x.fillRect(0, gl - 4, W, 4); x.fillStyle = 'rgba(255,255,255,.12)'; for (let cx = 0; cx < W; cx += 60) x.fillRect(cx, gl - 4, 42, 4);
+  }
+  x.strokeStyle = snow ? 'rgba(40,60,90,.65)' : 'rgba(255,255,255,.92)'; x.lineWidth = 2;
   const L = pts => { x.beginPath(); pts.forEach((p, i) => { const v = P3(p[0], p[1], 0); i ? x.lineTo(v.X, v.Y) : x.moveTo(v.X, v.Y); }); x.stroke(); };
   L([[0, 0], [0, 105], [68, 105], [68, 0]]); L([[0, 52.5], [68, 52.5]]);
   L(arcPts(34, 52.5, 9.15, 0, Math.PI * 2, 48)); L([[13.84, 105], [13.84, 88.5], [54.16, 88.5], [54.16, 105]]); L([[24.84, 105], [24.84, 99.5], [43.16, 99.5], [43.16, 105]]);
   L(arcPts(34, 94, 9.15, -Math.PI * .8, -Math.PI * .2, 16).map(p => [p[0], 2 * 94 - p[1]]).filter(p => p[1] < 88.5));
+  /* köşe yayları */
+  L(arcPts(0, 0, 1, 0, Math.PI / 2, 6)); L(arcPts(68, 0, 1, Math.PI / 2, Math.PI, 6)); L(arcPts(0, 105, 1, -Math.PI / 2, 0, 6)); L(arcPts(68, 105, 1, Math.PI, Math.PI * 1.5, 6));
   const ps = P3(34, 94, 0), cs = P3(34, 52.5, 0); x.fillStyle = '#fff'; [ps, cs].forEach(v => { x.beginPath(); x.arc(v.X, v.Y, 2.2, 0, 7); x.fill(); });
+  /* derinlik için hafif kenar karartması */
+  const vg = x.createRadialGradient(W / 2, H * .52, H * .22, W / 2, H * .52, H * .82); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, night ? 'rgba(0,0,10,.3)' : 'rgba(0,0,0,.16)'); x.fillStyle = vg; x.fillRect(0, 0, W, H);
 }
 function drawGoal(x, front) {
   if (!front) return; const a = P3(GOAL_L, GY, 0), b = P3(GOAL_R, GY + 2, 0), net = S.net != null && S.t - S.net < 1.4 ? (1 - (S.t - S.net) / 1.4) : 0;
-  x.fillStyle = 'rgba(255,255,255,.22)'; x.fillRect(a.X, b.Y - net * 6, b.X - a.X, a.Y - b.Y + net * 6);
-  x.strokeStyle = 'rgba(255,255,255,.45)'; x.lineWidth = 1; x.beginPath();
-  for (let i = 1; i < 12; i++) { const X = a.X + (b.X - a.X) * i / 12; x.moveTo(X, a.Y); x.lineTo(X, b.Y - net * 6); }
-  for (let j = 1; j < 3; j++) { const Y = a.Y + (b.Y - net * 6 - a.Y) * j / 3; x.moveTo(a.X, Y); x.lineTo(b.X, Y); } x.stroke();
-  x.strokeStyle = '#fff'; x.lineWidth = 3; x.strokeRect(a.X, b.Y - net * 6, b.X - a.X, a.Y - b.Y + net * 6);
+  const left = a.X, right = b.X, bot = a.Y, top = b.Y - net * 6;
+  x.fillStyle = 'rgba(255,255,255,.16)'; x.fillRect(left, top, right - left, bot - top);
+  /* ağ örgüsü: dikey + yatay + çapraz */
+  x.strokeStyle = 'rgba(255,255,255,.4)'; x.lineWidth = 1; x.beginPath();
+  for (let i = 1; i < 14; i++) { const X = left + (right - left) * i / 14; x.moveTo(X, top); x.lineTo(X, bot); }
+  for (let j = 1; j < 4; j++) { const Y = top + (bot - top) * j / 4; x.moveTo(left, Y); x.lineTo(right, Y); } x.stroke();
+  x.strokeStyle = 'rgba(255,255,255,.16)'; x.lineWidth = .7; x.beginPath();
+  for (let i = -13; i < 14; i++) { const X = left + (right - left) * i / 14; x.moveTo(X, top); x.lineTo(X + (bot - top) * .5, bot); } x.stroke();
+  /* direkler ve üst direk */
+  x.strokeStyle = '#fff'; x.lineWidth = Math.max(3, a.s * .13); x.lineCap = 'round'; x.beginPath(); x.moveTo(left, bot); x.lineTo(left, top); x.lineTo(right, top); x.lineTo(right, bot); x.stroke(); x.lineCap = 'butt';
 }
 /* küçük oyuncu: yukarıdan hafif eğik görünüm, gölge, forma, şort, baş */
 function drawPl(x, p) {
-  const v = P3(p.x, p.y, 0), s = PR.sc, h = Math.max(9, s * 1.25), w = h * .42; if (v.X < -20 || v.X > CV.W + 20 || v.Y < -30 || v.Y > CV.H + 30) return;
-  const X = v.X, Y = v.Y, run = (S.phase === 'fly' || S.phase === 'drun' || S.phase === 'icpt' || S.anims.length) ? Math.sin(S.t * 14 + p.ph) : 0;
-  x.fillStyle = 'rgba(0,0,0,.28)'; x.beginPath(); x.ellipse(X + 2, Y, w * .8, w * .32, 0, 0, 7); x.fill();
-  if (p.me) { x.strokeStyle = '#ffe34d'; x.lineWidth = 2; x.beginPath(); x.ellipse(X, Y, w * 1.25, w * .5, 0, 0, 7); x.stroke(); }
+  const v = P3(p.x, p.y, 0), s = PR.sc, h = Math.max(9, s * 1.3), w = h * .42; if (v.X < -20 || v.X > CV.W + 20 || v.Y < -30 || v.Y > CV.H + 30) return;
+  const X = v.X, Y = v.Y, moving = (S.phase === 'fly' || S.phase === 'drun' || S.phase === 'icpt' || S.anims.length) ? 1 : 0;
+  const run = Math.sin(S.t * (moving ? 14 : 3) + (p.ph || 0)) * (moving ? 1 : .22); /* hareket yoksa hafif nefes alışı */
+  x.fillStyle = 'rgba(0,0,0,.3)'; x.beginPath(); x.ellipse(X + 2, Y, w * .82, w * .33, 0, 0, 7); x.fill();
+  if (p.me) { x.strokeStyle = '#ffe34d'; x.lineWidth = 2; x.beginPath(); x.ellipse(X, Y, w * 1.28, w * .52, 0, 0, 7); x.stroke(); }
   x.save(); x.translate(X, Y); if (p.down > 0) x.rotate((p.x < 34 ? -1 : 1) * Math.PI / 2 * Math.min(1, p.down * 1.6));
-  const shirt = p.c[0], trim = p.c[1] || '#fff';
-  x.fillStyle = '#111'; x.fillRect(-w * .38 + run * w * .15, -h * .3, w * .3, h * .3); x.fillRect(w * .08 - run * w * .15, -h * .3, w * .3, h * .3);
-  x.fillStyle = lum(shirt) > 150 ? '#22262b' : trim; x.fillRect(-w * .45, -h * .5, w * .9, h * .22);
-  x.fillStyle = shirt; x.fillRect(-w * .5, -h * .82, w, h * .36); x.fillStyle = trim; x.fillRect(-w * .5, -h * .82, w * .18, h * .36); x.fillRect(w * .32, -h * .82, w * .18, h * .36);
-  x.fillStyle = p.skin; x.beginPath(); x.arc(0, -h * .92, w * .32, 0, 7); x.fill(); x.fillStyle = '#1b130c'; x.beginPath(); x.arc(0, -h * .96, w * .32, Math.PI * 1.05, Math.PI * 1.95); x.fill();
+  const gk = p.gk, shirt = gk ? '#16d184' : p.c[0], trim = gk ? '#0a7a4a' : (p.c[1] || '#fff');
+  /* bacaklar (koşu salınımı) */
+  x.fillStyle = '#17120b'; x.fillRect(-w * .34 + run * w * .16, -h * .3, w * .26, h * .3); x.fillRect(w * .08 - run * w * .16, -h * .3, w * .26, h * .3);
+  /* şort */
+  x.fillStyle = lum(shirt) > 150 ? '#262b31' : trim; x.fillRect(-w * .45, -h * .5, w * .9, h * .22);
+  /* forma + kol + hafif gölge + kontur */
+  x.fillStyle = shirt; x.fillRect(-w * .5, -h * .82, w, h * .36);
+  x.fillStyle = 'rgba(0,0,0,.14)'; x.fillRect(-w * .5, -h * .62, w, h * .16);
+  x.fillStyle = trim; x.fillRect(-w * .5, -h * .82, w * .18, h * .36); x.fillRect(w * .32, -h * .82, w * .18, h * .36);
+  x.strokeStyle = 'rgba(0,0,0,.4)'; x.lineWidth = 1; x.strokeRect(-w * .5, -h * .82, w, h * .36);
+  /* baş + saç + ışık */
+  x.fillStyle = p.skin; x.beginPath(); x.arc(0, -h * .92, w * .33, 0, 7); x.fill();
+  x.fillStyle = '#1b130c'; x.beginPath(); x.arc(0, -h * .96, w * .33, Math.PI * 1.05, Math.PI * 1.95); x.fill();
+  x.fillStyle = 'rgba(255,255,255,.3)'; x.beginPath(); x.arc(-w * .12, -h * .96, w * .1, 0, 7); x.fill();
   x.restore();
   if (p.me || (p.gk && S.mode === 'atk') || S.ball.owner === p) { const lbl = p.me ? T('SEN') : short(p.n); x.font = '600 10px "Barlow",sans-serif'; x.textAlign = 'center'; const tw = x.measureText(lbl).width + 6, ly = Y - h - 14; x.fillStyle = p.me ? 'rgba(255,227,77,.95)' : 'rgba(6,10,12,.6)'; rr(x, X - tw / 2, ly, tw, 12, 3); x.fill(); x.fillStyle = p.me ? '#111' : '#fff'; x.textBaseline = 'middle'; x.fillText(lbl, X, ly + 6); x.textAlign = 'left'; }
 }
 function drawBall(x) {
-  const B = S.ball, g0 = P3(B.x, B.y, 0), v = P3(B.x, B.y, (B.z || 0) + .1), r = Math.max(3, PR.sc * .3) * (1 + (B.z || 0) * .05);
-  x.fillStyle = 'rgba(0,0,0,.3)'; x.beginPath(); x.ellipse(g0.X + 1, g0.Y + 1, r, r * .55, 0, 0, 7); x.fill();
-  x.fillStyle = '#fff'; x.beginPath(); x.arc(v.X, v.Y, r, 0, 7); x.fill(); x.strokeStyle = '#222'; x.lineWidth = 1; x.stroke();
-  x.fillStyle = '#222'; x.beginPath(); x.arc(v.X + Math.cos(S.t * 9) * r * .35, v.Y + Math.sin(S.t * 9) * r * .35, r * .32, 0, 7); x.fill();
+  const B = S.ball, z = B.z || 0, g0 = P3(B.x, B.y, 0), v = P3(B.x, B.y, z + .1), r = Math.max(3.2, PR.sc * .33) * (1 + z * .04);
+  const sp = 1 + Math.min(1.2, z * .13); /* yükseldikçe gölge büyür ve soluklaşır */
+  x.save(); x.globalAlpha = .3 / sp; x.fillStyle = '#000'; x.beginPath(); x.ellipse(g0.X + 1.5, g0.Y + 2, r * sp, r * .5 * sp, 0, 0, 7); x.fill(); x.restore();
+  if (typeof drawFancyBall === 'function') drawFancyBall(x, v.X, v.Y, r, B.spin != null ? B.spin * .6 : S.t * 6);
+  else { x.fillStyle = '#fff'; x.beginPath(); x.arc(v.X, v.Y, r, 0, 7); x.fill(); x.strokeStyle = '#222'; x.lineWidth = 1; x.stroke(); x.fillStyle = '#222'; x.beginPath(); x.arc(v.X + Math.cos(S.t * 9) * r * .35, v.Y + Math.sin(S.t * 9) * r * .35, r * .32, 0, 7); x.fill(); }
 }
 /* olay yazısı: büyük, soluk, etrafında yıldız halkası (NSS gibi) */
 function flash(txt) { if (S) S.flash = { txt, t: S.t }; }
