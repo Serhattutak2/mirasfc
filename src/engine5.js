@@ -199,6 +199,18 @@ function launchPath(P, ev, q, oy, ox) {
   if (run.fail && run.fail.d) { const d = run.fail.d, pt = pAt(P, run.fail.u); anim(d, pt.x, pt.y - .3, cl(run.fail.u * L / run.v, .25, 1.6)); }
   if (ev.k === 'shot' && s.gk) { const r = run.res, kx = r.save ? r.x : r.gx; anim(s.gk, cl(kx, GOAL_L - .4, GOAL_R + .4), 104.3, cl(L / run.v * .9, .2, 1.2)); if (Math.abs(kx - s.gk.x) > 1.2) s.gk.down = .8; }
   if (ev.k === 'pass' && ev.to) { const to = ev.to, e = P[P.length - 1]; if (thru) anim(to, e.x, e.y, L / run.v * 1.2); else anim(to, to.x + rf(-.5, .5), to.y + rf(0, 1.2), L / run.v); }
+  /* boşluğa ara pas: rakip savunma da topun düştüğü noktaya koşar (yalnız bizim oyuncu değil) ve yarışı kazanabilir */
+  if (ev.k === 'pass' && thru && ev.to) {
+    const to = ev.to, e = P[P.length - 1];
+    const defs = s.P.filter(p => p.side === 'th' && !p.gk && !p.wallP && !(p.down > 0)).sort((a, b) => dist(a, e) - dist(b, e));
+    const defSpd = p => 7.5 * ((p.r || 70) / 72);
+    if (defs[0]) { const d0 = defs[0]; anim(d0, cl(e.x + rf(-.5, .5), 2, 66), Math.min(106, e.y - .3), cl(dist(d0, e) / defSpd(d0), .3, 1.8)); }
+    if (defs[1] && dist(defs[1], e) < 15) { const d1 = defs[1]; anim(d1, cl(e.x + rf(-1.4, 1.4), 2, 66), Math.min(106, e.y + rf(.4, 2.2)), cl(dist(d1, e) / defSpd(d1), .3, 1.8)); }
+    if (!run.fail && defs[0]) {
+      const tDef = dist(defs[0], e) / defSpd(defs[0]), tMate = dist(to, e) / (7.5 * ((to === s.me ? st('hiz') : to.r) / 72));
+      if (tDef < tMate - .12 && Math.random() < cl(.28 + (tMate - tDef) * .75 + (s.df - 1) * .4 - (q - .6) * .3, .08, .85)) run.fail = { d: defs[0], u: .97 };
+    }
+  }
   s.ball.owner = null; s.run = run; s.phase = 'run'; s.trail = []; s.lastKick = car; s.msg = ''; drawUIControls();
 }
 /* şutun sonucu (önceden belirlenir, sonra canlandırılır) */

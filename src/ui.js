@@ -253,7 +253,7 @@ function proHome() {
   if (!g.wstage) {
     wk += thisW.length ? thisW.map(({ i }) => `<div class="fx"><span class="ctag c-${i.short}">${i.short}</span><span class="fxn">${i.home ? '' : '@ '}${esc(i.on)}</span>${wxI(i.wx)}<span class="m">${esc(i.round)}</span></div>`).join('') : '<p class="m">Bu hafta maç yok. Antrenman ve hayatına odaklan.</p>';
     wk += enLine();
-    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="simWeeks(4)">4 hafta simüle et</button><button class="btn ghost" onclick="simWeeks(60)">Sezonu simüle et</button></div>`;
+    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">📺 4 hafta atla</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">📺 Sezonu atla</button></div>`;
   } else {
     const m = ev ? null : nextWeekMatch();
     if (m) {

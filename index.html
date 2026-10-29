@@ -8439,6 +8439,18 @@ function launchPath(P, ev, q, oy, ox) {
   if (run.fail && run.fail.d) { const d = run.fail.d, pt = pAt(P, run.fail.u); anim(d, pt.x, pt.y - .3, cl(run.fail.u * L / run.v, .25, 1.6)); }
   if (ev.k === 'shot' && s.gk) { const r = run.res, kx = r.save ? r.x : r.gx; anim(s.gk, cl(kx, GOAL_L - .4, GOAL_R + .4), 104.3, cl(L / run.v * .9, .2, 1.2)); if (Math.abs(kx - s.gk.x) > 1.2) s.gk.down = .8; }
   if (ev.k === 'pass' && ev.to) { const to = ev.to, e = P[P.length - 1]; if (thru) anim(to, e.x, e.y, L / run.v * 1.2); else anim(to, to.x + rf(-.5, .5), to.y + rf(0, 1.2), L / run.v); }
+  /* boşluğa ara pas: rakip savunma da topun düştüğü noktaya koşar (yalnız bizim oyuncu değil) ve yarışı kazanabilir */
+  if (ev.k === 'pass' && thru && ev.to) {
+    const to = ev.to, e = P[P.length - 1];
+    const defs = s.P.filter(p => p.side === 'th' && !p.gk && !p.wallP && !(p.down > 0)).sort((a, b) => dist(a, e) - dist(b, e));
+    const defSpd = p => 7.5 * ((p.r || 70) / 72);
+    if (defs[0]) { const d0 = defs[0]; anim(d0, cl(e.x + rf(-.5, .5), 2, 66), Math.min(106, e.y - .3), cl(dist(d0, e) / defSpd(d0), .3, 1.8)); }
+    if (defs[1] && dist(defs[1], e) < 15) { const d1 = defs[1]; anim(d1, cl(e.x + rf(-1.4, 1.4), 2, 66), Math.min(106, e.y + rf(.4, 2.2)), cl(dist(d1, e) / defSpd(d1), .3, 1.8)); }
+    if (!run.fail && defs[0]) {
+      const tDef = dist(defs[0], e) / defSpd(defs[0]), tMate = dist(to, e) / (7.5 * ((to === s.me ? st('hiz') : to.r) / 72));
+      if (tDef < tMate - .12 && Math.random() < cl(.28 + (tMate - tDef) * .75 + (s.df - 1) * .4 - (q - .6) * .3, .08, .85)) run.fail = { d: defs[0], u: .97 };
+    }
+  }
   s.ball.owner = null; s.run = run; s.phase = 'run'; s.trail = []; s.lastKick = car; s.msg = ''; drawUIControls();
 }
 /* şutun sonucu (önceden belirlenir, sonra canlandırılır) */
@@ -11882,7 +11894,7 @@ function proHome() {
   if (!g.wstage) {
     wk += thisW.length ? thisW.map(({ i }) => `<div class="fx"><span class="ctag c-${i.short}">${i.short}</span><span class="fxn">${i.home ? '' : '@ '}${esc(i.on)}</span>${wxI(i.wx)}<span class="m">${esc(i.round)}</span></div>`).join('') : '<p class="m">Bu hafta maç yok. Antrenman ve hayatına odaklan.</p>';
     wk += enLine();
-    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="simWeeks(4)">4 hafta simüle et</button><button class="btn ghost" onclick="simWeeks(60)">Sezonu simüle et</button></div>`;
+    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">📺 4 hafta atla</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">📺 Sezonu atla</button></div>`;
   } else {
     const m = ev ? null : nextWeekMatch();
     if (m) {
@@ -14040,8 +14052,9 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
-   - Geçiş reklamı: yalnızca her 4 oyun haftasında bir
-     (sezon sonu/emeklilik reklamı yok; abonelere hiç; iki reklam arası en az 90 sn).
+   - Geçiş reklamı: doğal molalarda ~90 sn'de bir ve her sezon sonunda
+     (abonelere hiç; oturumun ilk 90 sn'sinde yok).
+   - "Hafta/sezon atla" düğmeleri önce bir ödüllü reklam gösterir, sonra simüle eder.
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -14051,15 +14064,18 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 4, minGap: 90000,
+  everyWeeks: 1, minGap: 90000,
 };
 const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
-function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
+let AD_SIM = 0; /* hafta/sezon simülasyonunda geçiş reklamı bastırılır (önce tek ödüllü reklam gösterildi) */
+function adInterNow() { if (AD_SIM) return; const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
-// Yalnızca 4 oyun haftasında bir geçiş reklamı; sezon sonu ve emeklilik reklamı yok.
+/* geçiş reklamı ~90 sn'de bir (doğal molalarda) ve her sezon sonunda */
 const _weekEndAd = weekEnd;
-weekEnd = function () { _weekEndAd.apply(this, arguments); if (!g) return; adWeekTick(1); };
-if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { _cwe.apply(this, arguments); if (!g) return; adWeekTick(1); }; }
+weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
+if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
+/* "Hafta/sezon atla" düğmeleri: önce ödüllü reklam, sonra sessizce simüle et */
+function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; if (typeof adRewarded === 'function') adRewarded('skip', run); else run(); }
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };
