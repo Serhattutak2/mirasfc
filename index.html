@@ -7023,7 +7023,7 @@ function mkScene(mo) {
   const usSq = us.sq.filter(x => x.p !== 'GK'), thSq = th.sq.filter(x => x.p !== 'GK');
   const gkO = th.sq.find(x => x.p === 'GK') || { n: 'Kaleci', r: 75 }, gkU = us.sq.find(x => x.p === 'GK') || { n: 'Kaleci', r: 75 };
   /* rakip gücü: fark büyüdükçe her şey zorlaşır; rakip temelde bir tık güçlü */
-  const diff = (th.s || 70) - (us.s || 70), df = cl(1.12 + diff / 28, .82, 1.55);
+  const diff = (th.s || 70) - (us.s || 70), df = cl((1.12 + diff / 28) * (typeof gsDiff === 'function' ? gsDiff() : 1), .8, 1.6);
   const s = { df, type: t, min: mo.min, mo, P: [], ball: { x: 0, y: 0, z: 0, owner: null }, phase: 'decide', at: 0, anims: [], after: null, cam: { x: 34, y: 70 }, wx, W0: WXP[wx] || WXP.acik, n: 0, msg: '', opts: [], fx: [], t: 0 };
   S = s;
   s.air = false;
@@ -8282,8 +8282,9 @@ function pCurl(P) { const a = P[0], b = P[P.length - 1], L = Math.hypot(b.x - a.
 /* yolun türü: pas / şut / sür */
 function pKind(P) {
   const s = S, e = P[P.length - 1], car = s.car;
-  if (e.y > GY - 2.2 && e.x > GOAL_L - 3 && e.x < GOAL_R + 3) return { k: 'shot' };
-  let best = null, bd = 2.6; s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const d = Math.hypot(p.x - e.x, p.y - e.y); if (d < bd) { bd = d; best = p; } });
+  const AS = (typeof gsAssist === 'function' && gsAssist()) ? 1 : 0;
+  if (e.y > GY - 2.2 && e.x > GOAL_L - 3 - AS * 1.6 && e.x < GOAL_R + 3 + AS * 1.6) return { k: 'shot' };
+  let best = null, bd = 2.6 + AS * 1.1; s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const d = Math.hypot(p.x - e.x, p.y - e.y); if (d < bd) { bd = d; best = p; } });
   if (best) return { k: 'pass', to: best };
   return { k: s.head || s.type === 'pen' || (s.type === 'fk' && s.dead) ? 'none' : 'drib' };
 }
@@ -8309,14 +8310,15 @@ function pEval(P) { const k = pKind(P); return { ...k, len: plen(P), dang: k.k =
 function stickEval(px, py, st1) {
   const s = S, st0 = st1 || s.stick, car = s.car, sc = PR.sc, dx = (px - st0.p0[0]) / sc, dy = -(py - st0.p0[1]) / sc, Lpx = Math.hypot(px - st0.p0[0], py - st0.p0[1]);
   if (Lpx < 8) return null; const ux = dx / Math.hypot(dx, dy), uy = dy / Math.hypot(dx, dy), Lw = Math.min(46, Lpx / sc * 2.1);
+  const AS = (typeof gsAssist === 'function' && gsAssist()) ? 1 : 0;
   const tip = { x: cl(car.x + ux * Lw, .5, 67.5), y: cl(car.y + uy * Lw, 1, 107) };
   const head = s.head || s.type === 'pen' || (s.type === 'fk' && s.dead);
   /* kale: çubuğun doğrultusu kale ağzından geçiyor mu? */
   if (uy > .15) { const t = (GY - car.y) / uy, gx = car.x + ux * t, D = Math.hypot(GY - car.y, gx - car.x);
-    if (gx > GOAL_L - 3.5 && gx < GOAL_R + 3.5 && D < 40 && (Lw > D * .45 || head || D < 16)) return { k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gx, GOAL_L - 2.5, GOAL_R + 2.5), y: GY + .4 }], pw: cl(Lw / Math.max(8, D), .35, 1.9), tip, aim: gx }; }
+    if (gx > GOAL_L - 3.5 - AS * 1.8 && gx < GOAL_R + 3.5 + AS * 1.8 && D < 40 && (Lw > D * .45 || head || D < 16)) return { k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gx, GOAL_L - 2.5, GOAL_R + 2.5), y: GY + .4 }], pw: cl(Lw / Math.max(8, D), .35, 1.9), tip, aim: gx }; }
   /* arkadaş: çubuğun ucuna ya da doğrultusuna en yakın */
   let best = null, bs = 1e9;
-  s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const ax = p.x - car.x, ay = p.y - car.y, along = ax * ux + ay * uy, perp = Math.abs(ax * uy - ay * ux); if (along < 2) return; const tipD = Math.hypot(p.x - tip.x, p.y - tip.y), sc2 = perp * 1.6 + tipD * .6; const dd = Math.hypot(ax, ay); if ((perp < 4 || tipD < 5) && (Lw >= dd * .45 || tipD < 5) && sc2 < bs) { bs = sc2; best = p; } });
+  s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const ax = p.x - car.x, ay = p.y - car.y, along = ax * ux + ay * uy, perp = Math.abs(ax * uy - ay * ux); if (along < 2) return; const tipD = Math.hypot(p.x - tip.x, p.y - tip.y), sc2 = perp * 1.6 + tipD * .6; const dd = Math.hypot(ax, ay); if ((perp < 4 + AS * 2 || tipD < 5 + AS * 2) && (Lw >= dd * .45 || tipD < 5 + AS * 2) && sc2 < bs) { bs = sc2; best = p; } });
   if (best) { const d = Math.hypot(best.x - car.x, best.y - car.y); return { k: 'pass', to: best, P: [{ x: car.x, y: car.y }, { x: best.x, y: best.y }], pw: cl(Lw / Math.max(4, d), .3, 2), tip }; }
   if (head) return { k: 'none', tip, P: [{ x: car.x, y: car.y }, tip] };
   if (Lw <= 13) return { k: 'drib', P: [{ x: car.x, y: car.y }, tip], pw: 1, tip };
@@ -12428,7 +12430,7 @@ const VOXDATA = {"en":{"shot":["SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAA
       yaklaştıkça coşarlar), ritmik alkış.
    ============================================================ */
 /* ---------- 3) ayarlar ---------- */
-const SET_DEF = { sfx: 1, crowd: 1, voice: 1, text: 1, vol: 80, rp: 1, cel: 1 };
+const SET_DEF = { sfx: 1, crowd: 1, voice: 1, text: 1, vol: 80, rp: 1, cel: 1, spd: 1, diff: 1, assist: 1 };
 function setOf(k) { let A = null; try { A = acct(); } catch (e) { } const o = (A && A.set) || {}; return o[k] == null ? SET_DEF[k] : o[k]; }
 function setPut(k, v) { const A = acct(); A.set = Object.assign({}, A.set || {}, { [k]: v }); acctSave(); setApply(); }
 function setApply() {
@@ -12439,6 +12441,13 @@ function setApply() {
 }
 /* eski 🔊 ayarını taşı */
 try { const o = localStorage.getItem('mfc_snd'); if (o === '0') { const A = acct(); if (!A.set) { A.set = { sfx: 0, crowd: 0, voice: 0 }; acctSave(); } } } catch (e) { }
+
+/* ---------- Oynanış ayarları: oyun hızı, zorluk, kontrol yardımı ---------- */
+function gsSpeed() { const v = +setOf('spd'); return cl(v || 1, .6, 1.6); }
+function gsDiff() { const v = +setOf('diff'); return cl(v || 1, .6, 1.6); }
+function gsAssist() { return setOf('assist') ? 1 : 0; }
+/* oyun hızı: bütün maç temposunu ölçekler (en geç yüklenen step'i sarar) */
+if (typeof step === 'function') { const _stepGS = step; step = function (dt) { return _stepGS(dt * gsSpeed()); }; }
 
 /* ---------- 1) iOS ses kilidi ---------- */
 const AU = { unlocked: 0, warm: 0 };
@@ -12499,6 +12508,7 @@ function setOpen() {
   audioUnlock();
   let el = document.getElementById('setp'); if (!el) { el = document.createElement('div'); el.id = 'setp'; el.className = 'tut'; document.body.appendChild(el); }
   const row = (k, ic, n, d) => `<label class="setr"><span class="seti">${ic}</span><span class="setn"><b>${n}</b><small>${d}</small></span><input type="checkbox" class="sw" ${setOf(k) ? 'checked' : ''} onchange="setPut('${k}',this.checked?1:0);setOpen()"></label>`;
+  const pick3 = (k, ic, n, d, opts) => `<label class="setr"><span class="seti">${ic}</span><span class="setn"><b>${n}</b><small>${d}</small></span><span class="langs">${opts.map(o => `<button class="chip ${Math.abs(setOf(k) - o.v) < .001 ? 'on' : ''}" onclick="setPut('${k}',${o.v});setOpen()">${o.l}</button>`).join('')}</span></label>`;
   el.hidden = false;
   el.innerHTML = `<div class="tutc card setc"><div class="tutt"><span class="eyebrow">⚙️ Ayarlar</span><button class="lnk" onclick="setClose()">Kapat ✕</button></div>
   <div class="setg">Ses</div>
@@ -12507,6 +12517,10 @@ function setOpen() {
   ${row('voice', '🎙️', 'Spiker sesi', 'Maçı sesli anlatır (oyunun dilinde)')}
   <label class="setr"><span class="seti">🔉</span><span class="setn"><b>Ses düzeyi</b><small>${setOf('vol')}</small></span><input type="range" class="setv" min="0" max="100" step="5" value="${setOf('vol')}" oninput="this.previousElementSibling.querySelector('small').textContent=this.value" onchange="setPut('vol',+this.value)"></label>
   <button class="btn ghost" onclick="setTest()">🔈 Sesi dene</button>
+  <div class="setg">Oynanış</div>
+  ${pick3('spd', '⚡', 'Oyun hızı', 'Maçın genel temposu', [{ v: .85, l: 'Yavaş' }, { v: 1, l: 'Normal' }, { v: 1.18, l: 'Hızlı' }])}
+  ${pick3('diff', '🎯', 'Zorluk', 'Rakip, kaleci ve savunmanın sertliği', [{ v: .88, l: 'Kolay' }, { v: 1, l: 'Normal' }, { v: 1.14, l: 'Zor' }])}
+  ${row('assist', '🎮', 'Kontrol yardımı', 'Nişan ve pas hedefleri daha affedici olur')}
   <div class="setg">Maç ayarları</div>
   ${row('text', '💬', 'Spiker yazısı', 'Sahanın altında yorum satırı')}
   ${row('cel', '🎉', 'Gol sevinci', 'Kamera golcüye yakınlaşır, takım kutlar')}
@@ -14026,8 +14040,8 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
-   - Geçiş reklamı: her 10 oyun haftasında bir ve her sezon sonunda
-     (abonelere hiç; iki reklam arası en az 60 sn).
+   - Geçiş reklamı: yalnızca her 4 oyun haftasında bir
+     (sezon sonu/emeklilik reklamı yok; abonelere hiç; iki reklam arası en az 90 sn).
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -14037,15 +14051,15 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 1, minGap: 90000,
+  everyWeeks: 4, minGap: 90000,
 };
 const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
 function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
+// Yalnızca 4 oyun haftasında bir geçiş reklamı; sezon sonu ve emeklilik reklamı yok.
 const _weekEndAd = weekEnd;
-weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
-if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-if (typeof retiredYear === 'function') { const _ry = retiredYear; retiredYear = function () { _ry.apply(this, arguments); adInterNow(); }; }
+weekEnd = function () { _weekEndAd.apply(this, arguments); if (!g) return; adWeekTick(1); };
+if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { _cwe.apply(this, arguments); if (!g) return; adWeekTick(1); }; }
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };

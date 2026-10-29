@@ -1,7 +1,7 @@
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
-   - Geçiş reklamı: her 10 oyun haftasında bir ve her sezon sonunda
-     (abonelere hiç; iki reklam arası en az 60 sn).
+   - Geçiş reklamı: yalnızca her 4 oyun haftasında bir
+     (sezon sonu/emeklilik reklamı yok; abonelere hiç; iki reklam arası en az 90 sn).
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -11,15 +11,15 @@
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 1, minGap: 90000,
+  everyWeeks: 4, minGap: 90000,
 };
 const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
 function adInterNow() { const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
+// Yalnızca 4 oyun haftasında bir geçiş reklamı; sezon sonu ve emeklilik reklamı yok.
 const _weekEndAd = weekEnd;
-weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
-if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-if (typeof retiredYear === 'function') { const _ry = retiredYear; retiredYear = function () { _ry.apply(this, arguments); adInterNow(); }; }
+weekEnd = function () { _weekEndAd.apply(this, arguments); if (!g) return; adWeekTick(1); };
+if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { _cwe.apply(this, arguments); if (!g) return; adWeekTick(1); }; }
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };

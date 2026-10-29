@@ -42,8 +42,9 @@ function pCurl(P) { const a = P[0], b = P[P.length - 1], L = Math.hypot(b.x - a.
 /* yolun türü: pas / şut / sür */
 function pKind(P) {
   const s = S, e = P[P.length - 1], car = s.car;
-  if (e.y > GY - 2.2 && e.x > GOAL_L - 3 && e.x < GOAL_R + 3) return { k: 'shot' };
-  let best = null, bd = 2.6; s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const d = Math.hypot(p.x - e.x, p.y - e.y); if (d < bd) { bd = d; best = p; } });
+  const AS = (typeof gsAssist === 'function' && gsAssist()) ? 1 : 0;
+  if (e.y > GY - 2.2 && e.x > GOAL_L - 3 - AS * 1.6 && e.x < GOAL_R + 3 + AS * 1.6) return { k: 'shot' };
+  let best = null, bd = 2.6 + AS * 1.1; s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const d = Math.hypot(p.x - e.x, p.y - e.y); if (d < bd) { bd = d; best = p; } });
   if (best) return { k: 'pass', to: best };
   return { k: s.head || s.type === 'pen' || (s.type === 'fk' && s.dead) ? 'none' : 'drib' };
 }
@@ -69,14 +70,15 @@ function pEval(P) { const k = pKind(P); return { ...k, len: plen(P), dang: k.k =
 function stickEval(px, py, st1) {
   const s = S, st0 = st1 || s.stick, car = s.car, sc = PR.sc, dx = (px - st0.p0[0]) / sc, dy = -(py - st0.p0[1]) / sc, Lpx = Math.hypot(px - st0.p0[0], py - st0.p0[1]);
   if (Lpx < 8) return null; const ux = dx / Math.hypot(dx, dy), uy = dy / Math.hypot(dx, dy), Lw = Math.min(46, Lpx / sc * 2.1);
+  const AS = (typeof gsAssist === 'function' && gsAssist()) ? 1 : 0;
   const tip = { x: cl(car.x + ux * Lw, .5, 67.5), y: cl(car.y + uy * Lw, 1, 107) };
   const head = s.head || s.type === 'pen' || (s.type === 'fk' && s.dead);
   /* kale: çubuğun doğrultusu kale ağzından geçiyor mu? */
   if (uy > .15) { const t = (GY - car.y) / uy, gx = car.x + ux * t, D = Math.hypot(GY - car.y, gx - car.x);
-    if (gx > GOAL_L - 3.5 && gx < GOAL_R + 3.5 && D < 40 && (Lw > D * .45 || head || D < 16)) return { k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gx, GOAL_L - 2.5, GOAL_R + 2.5), y: GY + .4 }], pw: cl(Lw / Math.max(8, D), .35, 1.9), tip, aim: gx }; }
+    if (gx > GOAL_L - 3.5 - AS * 1.8 && gx < GOAL_R + 3.5 + AS * 1.8 && D < 40 && (Lw > D * .45 || head || D < 16)) return { k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gx, GOAL_L - 2.5, GOAL_R + 2.5), y: GY + .4 }], pw: cl(Lw / Math.max(8, D), .35, 1.9), tip, aim: gx }; }
   /* arkadaş: çubuğun ucuna ya da doğrultusuna en yakın */
   let best = null, bs = 1e9;
-  s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const ax = p.x - car.x, ay = p.y - car.y, along = ax * ux + ay * uy, perp = Math.abs(ax * uy - ay * ux); if (along < 2) return; const tipD = Math.hypot(p.x - tip.x, p.y - tip.y), sc2 = perp * 1.6 + tipD * .6; const dd = Math.hypot(ax, ay); if ((perp < 4 || tipD < 5) && (Lw >= dd * .45 || tipD < 5) && sc2 < bs) { bs = sc2; best = p; } });
+  s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const ax = p.x - car.x, ay = p.y - car.y, along = ax * ux + ay * uy, perp = Math.abs(ax * uy - ay * ux); if (along < 2) return; const tipD = Math.hypot(p.x - tip.x, p.y - tip.y), sc2 = perp * 1.6 + tipD * .6; const dd = Math.hypot(ax, ay); if ((perp < 4 + AS * 2 || tipD < 5 + AS * 2) && (Lw >= dd * .45 || tipD < 5 + AS * 2) && sc2 < bs) { bs = sc2; best = p; } });
   if (best) { const d = Math.hypot(best.x - car.x, best.y - car.y); return { k: 'pass', to: best, P: [{ x: car.x, y: car.y }, { x: best.x, y: best.y }], pw: cl(Lw / Math.max(4, d), .3, 2), tip }; }
   if (head) return { k: 'none', tip, P: [{ x: car.x, y: car.y }, tip] };
   if (Lw <= 13) return { k: 'drib', P: [{ x: car.x, y: car.y }, tip], pw: 1, tip };

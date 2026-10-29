@@ -19,7 +19,7 @@
       yaklaştıkça coşarlar), ritmik alkış.
    ============================================================ */
 /* ---------- 3) ayarlar ---------- */
-const SET_DEF = { sfx: 1, crowd: 1, voice: 1, text: 1, vol: 80, rp: 1, cel: 1 };
+const SET_DEF = { sfx: 1, crowd: 1, voice: 1, text: 1, vol: 80, rp: 1, cel: 1, spd: 1, diff: 1, assist: 1 };
 function setOf(k) { let A = null; try { A = acct(); } catch (e) { } const o = (A && A.set) || {}; return o[k] == null ? SET_DEF[k] : o[k]; }
 function setPut(k, v) { const A = acct(); A.set = Object.assign({}, A.set || {}, { [k]: v }); acctSave(); setApply(); }
 function setApply() {
@@ -30,6 +30,13 @@ function setApply() {
 }
 /* eski 🔊 ayarını taşı */
 try { const o = localStorage.getItem('mfc_snd'); if (o === '0') { const A = acct(); if (!A.set) { A.set = { sfx: 0, crowd: 0, voice: 0 }; acctSave(); } } } catch (e) { }
+
+/* ---------- Oynanış ayarları: oyun hızı, zorluk, kontrol yardımı ---------- */
+function gsSpeed() { const v = +setOf('spd'); return cl(v || 1, .6, 1.6); }
+function gsDiff() { const v = +setOf('diff'); return cl(v || 1, .6, 1.6); }
+function gsAssist() { return setOf('assist') ? 1 : 0; }
+/* oyun hızı: bütün maç temposunu ölçekler (en geç yüklenen step'i sarar) */
+if (typeof step === 'function') { const _stepGS = step; step = function (dt) { return _stepGS(dt * gsSpeed()); }; }
 
 /* ---------- 1) iOS ses kilidi ---------- */
 const AU = { unlocked: 0, warm: 0 };
@@ -90,6 +97,7 @@ function setOpen() {
   audioUnlock();
   let el = document.getElementById('setp'); if (!el) { el = document.createElement('div'); el.id = 'setp'; el.className = 'tut'; document.body.appendChild(el); }
   const row = (k, ic, n, d) => `<label class="setr"><span class="seti">${ic}</span><span class="setn"><b>${n}</b><small>${d}</small></span><input type="checkbox" class="sw" ${setOf(k) ? 'checked' : ''} onchange="setPut('${k}',this.checked?1:0);setOpen()"></label>`;
+  const pick3 = (k, ic, n, d, opts) => `<label class="setr"><span class="seti">${ic}</span><span class="setn"><b>${n}</b><small>${d}</small></span><span class="langs">${opts.map(o => `<button class="chip ${Math.abs(setOf(k) - o.v) < .001 ? 'on' : ''}" onclick="setPut('${k}',${o.v});setOpen()">${o.l}</button>`).join('')}</span></label>`;
   el.hidden = false;
   el.innerHTML = `<div class="tutc card setc"><div class="tutt"><span class="eyebrow">⚙️ Ayarlar</span><button class="lnk" onclick="setClose()">Kapat ✕</button></div>
   <div class="setg">Ses</div>
@@ -98,6 +106,10 @@ function setOpen() {
   ${row('voice', '🎙️', 'Spiker sesi', 'Maçı sesli anlatır (oyunun dilinde)')}
   <label class="setr"><span class="seti">🔉</span><span class="setn"><b>Ses düzeyi</b><small>${setOf('vol')}</small></span><input type="range" class="setv" min="0" max="100" step="5" value="${setOf('vol')}" oninput="this.previousElementSibling.querySelector('small').textContent=this.value" onchange="setPut('vol',+this.value)"></label>
   <button class="btn ghost" onclick="setTest()">🔈 Sesi dene</button>
+  <div class="setg">Oynanış</div>
+  ${pick3('spd', '⚡', 'Oyun hızı', 'Maçın genel temposu', [{ v: .85, l: 'Yavaş' }, { v: 1, l: 'Normal' }, { v: 1.18, l: 'Hızlı' }])}
+  ${pick3('diff', '🎯', 'Zorluk', 'Rakip, kaleci ve savunmanın sertliği', [{ v: .88, l: 'Kolay' }, { v: 1, l: 'Normal' }, { v: 1.14, l: 'Zor' }])}
+  ${row('assist', '🎮', 'Kontrol yardımı', 'Nişan ve pas hedefleri daha affedici olur')}
   <div class="setg">Maç ayarları</div>
   ${row('text', '💬', 'Spiker yazısı', 'Sahanın altında yorum satırı')}
   ${row('cel', '🎉', 'Gol sevinci', 'Kamera golcüye yakınlaşır, takım kutlar')}

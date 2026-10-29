@@ -28,7 +28,7 @@ v2.4: ücretsiz jeton bilerek az. Jeton isteyen oyuncu mağazaya yönelir (ana g
 ## Ödüllü reklam noktaları 📺
 Enerji (+25, haftada 1) · pozisyonu tekrar oyna (maç başına 1) · sakatlığı yarıya indir · pazarlıkta menajerin son araması · sezon ödülünü 2'ye katla · günlük ödülü 2'ye katla · mağazada jeton.
 
-**Ara reklam:** yalnızca doğal molalarda, en az 3 dakika arayla; abonelere hiç.
+**Geçiş reklamı:** yalnızca her 4 oyun haftasında bir (sezon sonu ve emeklilik reklamı kaldırıldı); iki reklam arası en az 90 sn; abonelere ve oturumun ilk 90 sn'sinde hiç. (`ADCFG.everyWeeks = 4`)
 
 ## Kariyer Bileti 🎟️
 Her gerçek ay yenilenen 30 basamak. Maç oynamak, gol, hafta ve sezon tamamlamak, reklam izlemek bilet puanı verir. Ücretsiz yol her 5 basamakta birkaç jeton verir; **Altın Bilet** (ayda bir satın alınır) her basamakta jeton ve 10., 20., 30. basamakta renk teması verir.

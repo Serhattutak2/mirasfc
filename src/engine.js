@@ -42,7 +42,7 @@ function mkScene(mo) {
   const usSq = us.sq.filter(x => x.p !== 'GK'), thSq = th.sq.filter(x => x.p !== 'GK');
   const gkO = th.sq.find(x => x.p === 'GK') || { n: 'Kaleci', r: 75 }, gkU = us.sq.find(x => x.p === 'GK') || { n: 'Kaleci', r: 75 };
   /* rakip gücü: fark büyüdükçe her şey zorlaşır; rakip temelde bir tık güçlü */
-  const diff = (th.s || 70) - (us.s || 70), df = cl(1.12 + diff / 28, .82, 1.55);
+  const diff = (th.s || 70) - (us.s || 70), df = cl((1.12 + diff / 28) * (typeof gsDiff === 'function' ? gsDiff() : 1), .8, 1.6);
   const s = { df, type: t, min: mo.min, mo, P: [], ball: { x: 0, y: 0, z: 0, owner: null }, phase: 'decide', at: 0, anims: [], after: null, cam: { x: 34, y: 70 }, wx, W0: WXP[wx] || WXP.acik, n: 0, msg: '', opts: [], fx: [], t: 0 };
   S = s;
   s.air = false;
