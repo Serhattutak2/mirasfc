@@ -82,3 +82,45 @@ pathDone = function (r) {
   } catch (e) { }
   return out;
 };
+
+/* ============================================================
+   KALECİ v4.3 · "Gerçek kaleci gibi yaşar"
+   - Her karede topun açısına göre kale çizgisi boyunca kayar (açı kapatır),
+     top yaklaştıkça ölçülü çıkar, bire birde daha çok çıkar.
+   - Hareket ANİ değil: sınırlı hızla yumuşakça süzülür (ışınlanma yok).
+   - Şut/dalış sırasında bu takip durur; dalışı mevcut kurtarış animasyonu yapar.
+   ============================================================ */
+function gkIdeal() {
+  const s = S, k = s && s.gk; if (!k || s.mode !== 'atk') return null;
+  const bx = s.ball.x, by = s.ball.y, D = Math.hypot(34 - bx, 105 - by);
+  const cover = s.P.some(d => d.side === 'th' && !d.gk && d.y > by + .5 && Math.abs(d.x - bx) < 6);
+  /* YANAL: top hangi taraftaysa kaleci o yakın direğe doğru belirgin kayar (açı kapatma) */
+  const latF = cl(.34 + (30 - D) * .009, .24, .6);
+  const tx = cl(34 + (bx - 34) * latF, 24, 44);
+  /* DERİNLİK: top yaklaştıkça çıkar, bire birde daha cesur */
+  let out = cl((42 - D) * .12 + 1.4, 1.4, 5.5);
+  if (D < 15 && by > 84 && !cover) out = cl((15 - D) * .55 + 3, 3, 9);
+  out = Math.min(out, Math.max(1, D - 2));
+  return { x: tx, y: cl(104.6 - out, 95, 104.6) };
+}
+/* ilk yerleşim anında ideal noktaya; sonrası her karede süzülerek (snap yok) */
+const _gkPlace14b = gkPlace;
+gkPlace = function () {
+  const s = S, k = s && s.gk; if (!k || s.mode !== 'atk') return _gkPlace14b();
+  const id = gkIdeal(); if (!id) return _gkPlace14b();
+  if (!s._gkReady) { s._gkReady = 1; k.x = id.x; k.y = id.y; k.down = 0; } /* sahne başı: anında yerleş */
+  /* sonrası: step() içindeki sürekli takip kaleciyi yumuşakça taşır */
+};
+const _step14b = step;
+step = function (dt) {
+  _step14b(dt); const s = S; if (!s || s.mode !== 'atk' || !s.gk) return;
+  const k = s.gk;
+  if (k.dive || s.type === 'pen' || s.dead) return;                 /* penaltı/dalış: dokunma */
+  if (s.phase === 'run' && s.run && s.run.k === 'shot') return;      /* şut uçuşu: kurtarış animasyonu yönetir */
+  if (s.anims.some(a => a.o === k)) return;                          /* kurtarış animasyonu sürüyorsa karışma */
+  const id = gkIdeal(); if (!id) return;
+  const vmax = (6.4 + (k.r - 70) / 16) * Math.max(0, dt);           /* kaleci hızı (reytingle artar) */
+  const dx = id.x - k.x, dy = id.y - k.y, d = Math.hypot(dx, dy);
+  if (d > .03) { const m = Math.min(d, vmax); k.x += dx / d * m; k.y += dy / d * m; } /* trackDirs hız/yönü konumdan hesaplar */
+  k.down = 0;
+};

@@ -87,12 +87,13 @@ function planMoves(r) {
   const ga = Math.atan2(34 - e.x, GY - e.y);
   /* savunma: en yakın basar, ikinci kapatır, diğerleri hat kurar */
   const ops = s.P.filter(p => p.side === 'th' && !p.gk && !p.wallP && !busy.has(p)).sort((a, b) => Math.hypot(a.x - e.x, a.y - e.y) - Math.hypot(b.x - e.x, b.y - e.y));
-  const line = cl(Math.max(e.y + 13, 77), 77, 99), maxD = V6.defV * 1.05 * T;
+  const line = cl(Math.max(e.y + 11, 75), 75, 99), maxD = V6.defV * 1.12 * T;
   ops.forEach((p, i) => {
-    let tx, ty;
-    if (i === 0) { tx = e.x + Math.sin(ga) * 3; ty = e.y + Math.cos(ga) * 3; }
-    else if (i === 1) { const sd = p.x < e.x ? -1 : 1; tx = e.x + sd * 6; ty = e.y + 5.5; }
-    else { tx = p.x + (e.x - p.x) * .25; ty = Math.max(line - 1 + rf(-1, 1.5), Math.min(p.y, line + 3)); }
+    let tx, ty; const beaten = p.y > e.y + 6; /* top savunmacının gerisine (ileri) kaçtı */
+    if (i === 0) { tx = e.x + Math.sin(ga) * 2.2; ty = e.y + Math.cos(ga) * 2.2; }         /* en yakın: topa/taşıyana sprint baskı */
+    else if (i === 1) { const sd = p.x < e.x ? -1 : 1; tx = e.x + sd * 5; ty = e.y + 4.5; } /* ikinci: kale tarafını kapat */
+    else if (beaten) { tx = p.x + (e.x - p.x) * .6; ty = e.y + rf(1, 4); }                  /* geçilen savunmacı topun peşinden GERİ koşar */
+    else { tx = p.x + (e.x - p.x) * .45; ty = Math.max(line - 1 + rf(-1, 1.5), Math.min(p.y, line + 3)); ty += (e.y - ty) * .12; } /* blok top tarafına belirgin kayar */
     const dx = tx - p.x, dy = ty - p.y, dd = Math.hypot(dx, dy), f = dd > maxD ? maxD / dd : 1;
     S.anims = S.anims.filter(a => a.o !== p); anim(p, cl(p.x + dx * f, 2, 66), cl(p.y + dy * f, 2, 103), T * .95, { lin: 1 });
   });
