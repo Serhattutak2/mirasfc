@@ -108,7 +108,7 @@ function setOpen() {
   <button class="btn ghost" onclick="setTest()">🔈 Sesi dene</button>
   <div class="setg">Oynanış</div>
   ${pick3('spd', '⚡', 'Oyun hızı', 'Maçın genel temposu', [{ v: .85, l: 'Yavaş' }, { v: 1, l: 'Normal' }, { v: 1.18, l: 'Hızlı' }])}
-  ${pick3('diff', '🎯', 'Zorluk', 'Rakip, kaleci ve savunmanın sertliği', [{ v: .88, l: 'Kolay' }, { v: 1, l: 'Normal' }, { v: 1.14, l: 'Zor' }])}
+  <div class="setr" style="opacity:.78"><span class="seti">🎯</span><span class="setn"><b>Zorluk</b><small>Rakip takım ne kadar güçlüyse maç o kadar zor — elle ayar yok</small></span></div>
   ${row('assist', '🎮', 'Kontrol yardımı', 'Nişan ve pas hedefleri daha affedici olur')}
   <div class="setg">Maç ayarları</div>
   ${row('text', '💬', 'Spiker yazısı', 'Sahanın altında yorum satırı')}
