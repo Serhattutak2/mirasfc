@@ -46,8 +46,12 @@ jobs:
       - name: Sürümü oluştur, notları yaz ve incelemeye gönder
         env:
           GH_TOKEN: ${{ github.token }}
+          FASTLANE_SKIP_UPDATE_CHECK: "1"
+          FASTLANE_HIDE_CHANGELOG: "1"
+          FASTLANE_OPT_OUT_USAGE: "1"
+          FASTLANE_DISABLE_COLORS: "1"
         run: |
-          exec > >(tee "$RUNNER_TEMP/deliver.log") 2>&1
+          exec > "$RUNNER_TEMP/deliver.log" 2>&1
           set -o pipefail
           KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
           ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
