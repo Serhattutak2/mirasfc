@@ -1,4 +1,4 @@
-/* Build: 2026-10-30 — reklam modeli + maç motoru + grafik güncellemesi (TestFlight) */
+/* Build: 2026-10-30 v4.3 — kontroller (çek=pas/şut, dokun=sür), akıcı top sürme, gerçekçi kaleci ve rakip savunma takibi (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı: doğal molalarda ~90 sn'de bir ve her sezon sonunda
