@@ -1,0 +1,83 @@
+# App Store'a herkese açık güncelleme gönderimi (Apple incelemesine).
+# - TestFlight'a zaten yüklenmiş build'i kullanır (yeniden derlemez).
+# - Yalnızca elle tetiklenir (workflow_dispatch). Push'ta ÇALIŞMAZ.
+# - ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 gizli anahtarlarını kullanır.
+name: App Store Submit
+on:
+  workflow_dispatch:
+    inputs:
+      app_version:
+        description: "Sürüm (MARKETING_VERSION)"
+        required: true
+        default: "4.3"
+permissions:
+  contents: read
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      KID: ${{ secrets.ASC_KEY_ID }}
+      ISS: ${{ secrets.ASC_ISSUER_ID }}
+      P8: ${{ secrets.ASC_KEY_P8 }}
+      APP_ID: com.serhattutak.mirasfc
+      VER: ${{ github.event.inputs.app_version }}
+      TR_NOTES: |
+        Yenilikler (4.3):
+        • Yeni kontroller: oku çekmek = pas/şut, ekrana dokunmak = top sürme
+        • Daha akıcı ve gerçekçi top sürme
+        • Gerçekçi kaleci: açıyı kapatır, yeri geldiğinde öne çıkar, daha iyi kurtarır
+        • Rakip savunma artık topun peşinden koşuyor ve geri kurtarıyor
+        • Çeşitli iyileştirmeler ve hata düzeltmeleri
+      EN_NOTES: |
+        What's New (4.3):
+        • New controls: pull to pass/shoot, tap to dribble
+        • Smoother, more realistic dribbling
+        • Realistic goalkeeper: cuts the angle, comes off the line, better saves
+        • Opponent defenders now chase the ball and track back
+        • Various improvements and bug fixes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: fastlane kur
+        run: gem install fastlane -N -v 2.226.0
+      - name: Sürümü oluştur, notları yaz ve incelemeye gönder
+        run: |
+          set -o pipefail
+          KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
+          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
+          P8=$(printf '%s\n' "$P8" | tr -d '\r' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | grep -v '^$')
+          echo "Kontrol: KEY_ID=${#KID} krk, ISSUER=${#ISS} krk, P8 satır=$(printf '%s\n' "$P8" | wc -l)"
+          jq -n --arg kid "$KID" --arg iss "$ISS" --arg key "$(printf '%s\n' "$P8")" \
+            '{key_id:$kid, issuer_id:$iss, key:$key, in_house:false}' > asc.json
+          mkdir -p fastlane
+          # Mevcut metadata'yı indir: yerelleri öğren, diğer alanları olduğu gibi koru
+          fastlane deliver download_metadata --api_key_path asc.json --app_identifier "$APP_ID" || true
+          locales=$(ls -d fastlane/metadata/*/ 2>/dev/null | xargs -n1 basename 2>/dev/null | tr '\n' ' ')
+          if [ -z "$locales" ]; then mkdir -p fastlane/metadata/tr fastlane/metadata/en-US; locales="tr en-US"; fi
+          echo "Yereller: $locales"
+          for loc in $locales; do
+            d="fastlane/metadata/$loc"; mkdir -p "$d"
+            case "$loc" in
+              tr*|TR*) printf '%s' "$TR_NOTES" > "$d/release_notes.txt" ;;
+              en*|EN*) printf '%s' "$EN_NOTES" > "$d/release_notes.txt" ;;
+              *)       printf '%s' "$TR_NOTES" > "$d/release_notes.txt" ;;
+            esac
+            echo "--- $loc release_notes ---"; cat "$d/release_notes.txt"
+          done
+          # Sürümü oluştur/güncelle, yüklü build'i seç, incelemeye gönder, onaylanınca otomatik yayınla
+          fastlane deliver \
+            --api_key_path asc.json \
+            --app_identifier "$APP_ID" \
+            --app_version "$VER" \
+            --metadata_path ./fastlane/metadata \
+            --skip_screenshots true \
+            --skip_binary_upload true \
+            --submit_for_review true \
+            --automatic_release true \
+            --force true \
+            --run_precheck_before_submit false \
+            --precheck_include_in_app_purchases false \
+            --submission_information '{"export_compliance_uses_encryption": false}'
