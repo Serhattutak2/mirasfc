@@ -11,7 +11,7 @@ on:
         required: true
         default: "4.3"
 permissions:
-  contents: read
+  contents: write
 jobs:
   submit:
     runs-on: ubuntu-latest
@@ -44,7 +44,10 @@ jobs:
       - name: fastlane kur
         run: gem install fastlane -N -v 2.226.0
       - name: Sürümü oluştur, notları yaz ve incelemeye gönder
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          exec > >(tee "$RUNNER_TEMP/deliver.log") 2>&1
           set -o pipefail
           KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
           ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
@@ -68,6 +71,7 @@ jobs:
             echo "--- $loc release_notes ---"; cat "$d/release_notes.txt"
           done
           # Sürümü oluştur/güncelle, yüklü build'i seç, incelemeye gönder, onaylanınca otomatik yayınla
+          set +e
           fastlane deliver \
             --api_key_path asc.json \
             --app_identifier "$APP_ID" \
@@ -80,4 +84,21 @@ jobs:
             --force true \
             --run_precheck_before_submit false \
             --precheck_include_in_app_purchases false \
-            --submission_information '{"export_compliance_uses_encryption": false}'
+            --submission_information '{"export_compliance_uses_encryption": false}' \
+            --verbose
+          RC=$?
+          echo "DELIVER_EXIT=$RC"
+          exit $RC
+      - name: Günlüğü yayınla (gizli bilgiler silinmiş)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f="$RUNNER_TEMP/deliver.log"; [ -f "$f" ] || { echo "günlük yok"; exit 0; }
+          KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
+          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
+          sed -i -e "s/$KID/[KEYID]/g" -e "s/$ISS/[ISSUER]/g" -e '/PRIVATE KEY/d' "$f" || true
+          cp "$f" appstore-log.txt
+          gh release view ci-logs >/dev/null 2>&1 || gh release create ci-logs --prerelease --title "CI günlükleri" --notes "Günlükler"
+          gh release upload ci-logs appstore-log.txt --clobber
+          echo "Günlük yüklendi: ci-logs/appstore-log.txt"
