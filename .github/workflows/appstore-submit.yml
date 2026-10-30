@@ -15,13 +15,14 @@ permissions:
 jobs:
   submit:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     env:
       KID: ${{ secrets.ASC_KEY_ID }}
       ISS: ${{ secrets.ASC_ISSUER_ID }}
       P8: ${{ secrets.ASC_KEY_P8 }}
       APP_ID: com.serhattutak.mirasfc
       VER: ${{ github.event.inputs.app_version }}
+      AUTO_RELEASE: "1"
       TR_NOTES: |
         Yenilikler (4.3):
         • Yeni kontroller: oku çekmek = pas/şut, ekrana dokunmak = top sürme
@@ -38,71 +39,25 @@ jobs:
         • Various improvements and bug fixes
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-python@v5
         with:
-          ruby-version: '3.3'
-      - name: fastlane kur
-        run: gem install fastlane -N -v 2.226.0
-      - name: Sürümü oluştur, notları yaz ve incelemeye gönder
-        env:
-          GH_TOKEN: ${{ github.token }}
-          FASTLANE_SKIP_UPDATE_CHECK: "1"
-          FASTLANE_HIDE_CHANGELOG: "1"
-          FASTLANE_OPT_OUT_USAGE: "1"
-          FASTLANE_DISABLE_COLORS: "1"
+          python-version: '3.12'
+      - name: Bağımlılıklar
+        run: pip install --quiet pyjwt cryptography
+      - name: App Store'a gönder
         run: |
-          exec > "$RUNNER_TEMP/deliver.log" 2>&1
           set -o pipefail
-          KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
-          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
-          P8=$(printf '%s\n' "$P8" | tr -d '\r' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | grep -v '^$')
-          echo "Kontrol: KEY_ID=${#KID} krk, ISSUER=${#ISS} krk, P8 satır=$(printf '%s\n' "$P8" | wc -l)"
-          jq -n --arg kid "$KID" --arg iss "$ISS" --arg key "$(printf '%s\n' "$P8")" \
-            '{key_id:$kid, issuer_id:$iss, key:$key, in_house:false}' > asc.json
-          mkdir -p fastlane
-          # Mevcut metadata'yı indir: yerelleri öğren, diğer alanları olduğu gibi koru
-          fastlane deliver download_metadata --api_key_path asc.json --app_identifier "$APP_ID" || true
-          locales=$(ls -d fastlane/metadata/*/ 2>/dev/null | xargs -n1 basename 2>/dev/null | tr '\n' ' ')
-          if [ -z "$locales" ]; then mkdir -p fastlane/metadata/tr fastlane/metadata/en-US; locales="tr en-US"; fi
-          echo "Yereller: $locales"
-          for loc in $locales; do
-            d="fastlane/metadata/$loc"; mkdir -p "$d"
-            case "$loc" in
-              tr*|TR*) printf '%s' "$TR_NOTES" > "$d/release_notes.txt" ;;
-              en*|EN*) printf '%s' "$EN_NOTES" > "$d/release_notes.txt" ;;
-              *)       printf '%s' "$TR_NOTES" > "$d/release_notes.txt" ;;
-            esac
-            echo "--- $loc release_notes ---"; cat "$d/release_notes.txt"
-          done
-          # Sürümü oluştur/güncelle, yüklü build'i seç, incelemeye gönder, onaylanınca otomatik yayınla
-          set +e
-          fastlane deliver \
-            --api_key_path asc.json \
-            --app_identifier "$APP_ID" \
-            --app_version "$VER" \
-            --metadata_path ./fastlane/metadata \
-            --skip_screenshots true \
-            --skip_binary_upload true \
-            --submit_for_review true \
-            --automatic_release true \
-            --force true \
-            --run_precheck_before_submit false \
-            --precheck_include_in_app_purchases false \
-            --submission_information '{"export_compliance_uses_encryption": false}' \
-            --verbose
-          RC=$?
-          echo "DELIVER_EXIT=$RC"
-          exit $RC
+          python3 tools/asc_submit.py 2>&1 | tee "$RUNNER_TEMP/asc.log"
       - name: Günlüğü yayınla (gizli bilgiler silinmiş)
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          f="$RUNNER_TEMP/deliver.log"; [ -f "$f" ] || { echo "günlük yok"; exit 0; }
-          KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
-          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
-          sed -i -e "s/$KID/[KEYID]/g" -e "s/$ISS/[ISSUER]/g" -e '/PRIVATE KEY/d' "$f" || true
+          f="$RUNNER_TEMP/asc.log"; [ -f "$f" ] || { echo "günlük yok"; exit 0; }
+          KID2=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
+          ISS2=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
+          sed -i -e "s/$KID2/[KEYID]/g" -e "s/$ISS2/[ISSUER]/g" -e '/PRIVATE KEY/d' "$f" || true
           cp "$f" appstore-log.txt
           gh release view ci-logs >/dev/null 2>&1 || gh release create ci-logs --prerelease --title "CI günlükleri" --notes "Günlükler"
           gh release upload ci-logs appstore-log.txt --clobber
-          echo "Günlük yüklendi: ci-logs/appstore-log.txt"
+          echo "Günlük: ci-logs/appstore-log.txt"
