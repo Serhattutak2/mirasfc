@@ -190,13 +190,18 @@ shotResult = function (P, run) {
 /* ---------- 4) bire birde kaleci çıkar ---------- */
 const _gkPlace8 = gkPlace;
 gkPlace = function () {
-  _gkPlace8(); const s = S, k = s && s.gk, car = s && s.car; if (!k || s.mode !== 'atk' || !car || s.type === 'pen' || s.dead) return;
-  const D = toGoal(car); if (D > 21 || car.y < 78) return;
-  const cover = s.P.some(d => d.side === 'th' && !d.gk && d.y > car.y + .5 && Math.abs(d.x - car.x) < 5.5);
-  if (cover) return;
-  const out = Math.min(D - 3, cl((21 - D) * .45 + 3, 3, 8)), ang = Math.atan2(car.x - 34, 105 - car.y);
-  k.x = cl(34 + Math.sin(ang) * out, 22, 46); k.y = 104.4 - Math.cos(ang) * out; k.down = 0;
-  if (!s.gkOut) { s.gkOut = 1; say('gkout'); sfx('ooh', .5); }
+  const s = S, k = s && s.gk, car = s && s.car; if (!k || s.mode !== 'atk' || !car || s.type === 'pen' || s.dead) { _gkPlace8(); return; }
+  /* kalecinin ani ışınlanmasını engelle: ÖNCE eski konumu sakla, taban hedefini hesapla,
+     sonra eski konumdan hedefe yumuşakça (bir adımda) kaydır — hiçbir hamlede sıçrama olmaz */
+  const px = k.x, py = k.y; _gkPlace8(); let tx = k.x, ty = k.y;
+  const D = toGoal(car), cover = s.P.some(d => d.side === 'th' && !d.gk && d.y > car.y + .5 && Math.abs(d.x - car.x) < 5.5);
+  if (D <= 15 && car.y >= 86 && !cover) { /* yalnız gerçekten yakında, bire bir: hafif öne çık (eskisi gibi fırlamaz) */
+    const out = Math.min(D - 3, cl((15 - D) * .25 + 1.5, 1.5, 4)), ang = Math.atan2(car.x - 34, 105 - car.y);
+    tx = cl(34 + Math.sin(ang) * out, 24, 44); ty = 104.4 - Math.cos(ang) * out;
+    if (!s.gkOut && D < 11) { s.gkOut = 1; say('gkout'); sfx('ooh', .5); }
+  }
+  const step = cl(Math.hypot(tx - px, ty - py), 0, 3.2); const a = Math.atan2(tx - px, ty - py);
+  k.x = Math.abs(tx - px) < .05 && Math.abs(ty - py) < .05 ? tx : px + Math.sin(a) * step; k.y = Math.abs(ty - py) < .05 ? ty : py + Math.cos(a) * step; k.down = 0;
 };
 /* ---------- 7) ıslak zeminde ilk dokunuş daha zor ---------- */
 const _pathDone8 = pathDone;

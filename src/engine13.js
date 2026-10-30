@@ -8,20 +8,8 @@
      koşar (ver-kaç), takım topla birlikte ileri çıkar.
    ============================================================ */
 const V13 = { longDrib: 16 };
-const _stickEval13 = stickEval;
-stickEval = function (px, py, st1) {
-  const e = _stickEval13(px, py, st1), s = S; if (!e || !s || e.k !== 'pass' || !e.tip || s.head || s.type === 'pen' || (s.type === 'fk' && s.dead)) return e;
-  const car = s.car, tip = e.tip, d = Math.hypot(tip.x - car.x, tip.y - car.y);
-  if (d > V13.longDrib || tip.y < car.y - 2) return e;
-  /* ok bir arkadaşın ayağına (3.5 m) uzanmıyorsa, kısa-orta ok = topu önüne alıp sen sürersin */
-  const mateD = e.to ? Math.hypot(e.to.x - tip.x, e.to.y - tip.y) : 99;
-  if (mateD > Math.max(3.5, d * .55)) {
-    const r = { k: 'drib', P: [{ x: car.x, y: car.y }, { x: tip.x, y: tip.y }], pw: 1, tip, long: 1 };
-    try { r.dang = pDanger(r.P, 'drib', 1); } catch (x) { }
-    return r;
-  }
-  return e;
-};
+/* NOT: Çubuk artık top sürmez (oyuncu isteği). Ok çekmek yalnız pas/şut;
+   top sürme ekrana dokunarak yapılır. Eski "uzun sürüş" dönüşümü kaldırıldı. */
 /* ver-kaç: pası atan ileri koşar */
 const _launch13 = launchPath;
 launchPath = function (P, ev, q, oy, ox) {

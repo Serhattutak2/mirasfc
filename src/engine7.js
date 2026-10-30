@@ -33,7 +33,7 @@ stickEval = function (px, py, st1) {
       return { k: 'shot', P: [P0, { x: cl(gx, GOAL_L - 2.5, GOAL_R + 2.5), y: GY + .4 }], pw: cl(Lw / Math.max(6, D), .35, 1.9), tip: { x: cl(gx, GOAL_L - 2, GOAL_R + 2), y: GY }, aim: gx };
   }
   if (head) return { k: 'none', tip, P: [P0, tip] };
-  if (Lw <= V7.drib && !dead) return { k: 'drib', P: [P0, tip], pw: 1, tip };
+  /* çubuk YALNIZ pas/şut içindir; top sürme ekrana DOKUNARAK yapılır (kısa ok artık sürme değil) */
   /* pas: okun ucuna. Oraya en çabuk yetişen arkadaş topla buluşur */
   const r = bestRec(tip); if (!r) return { k: 'none', tip, P: [P0, tip] };
   const e = { k: 'pass', to: r.p, lead: Math.hypot(r.p.x - tip.x, r.p.y - tip.y) > 1.5, P: [P0, tip], pw: 1, tip, rt: r.t };
@@ -61,11 +61,11 @@ v5Up = function () {
     const w = unprojG(sk.p0[0], sk.p0[1]), gp = unprojY(sk.p0[0], sk.p0[1], GY);
     if (gp && Math.abs(gp.x - 34) < 6 && w.y > 100) return doStick({ k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gp.x, GOAL_L - 1, GOAL_R + 1), y: GY + .4 }], pw: 1 });
     const m = mateAt(sk.p0[0], sk.p0[1]); if (m) return doStick({ k: 'pass', to: m, P: [{ x: car.x, y: car.y }, { x: m.x, y: m.y }], pw: 1 });
-    if (!s.head && s.type !== 'pen' && Math.hypot(w.x - car.x, w.y - car.y) > 1.5) { const d = Math.min(V7.drib + 2, Math.hypot(w.x - car.x, w.y - car.y)), a = Math.atan2(w.x - car.x, w.y - car.y); return doStick({ k: 'drib', P: [{ x: car.x, y: car.y }, { x: car.x + Math.sin(a) * d, y: car.y + Math.cos(a) * d }], pw: 1 }); }
+    if (!s.head && s.type !== 'pen' && Math.hypot(w.x - car.x, w.y - car.y) > .8) { const d = cl(Math.hypot(w.x - car.x, w.y - car.y), 4, 16), a = Math.atan2(w.x - car.x, w.y - car.y); return doStick({ k: 'drib', P: [{ x: car.x, y: car.y }, { x: cl(car.x + Math.sin(a) * d, .5, 67.5), y: cl(car.y + Math.cos(a) * d, 1, 107) }], pw: 1 }); }
     return;
   }
   const e = stickEval(sk.cur[0], sk.cur[1], sk); if (!e) return;
-  if (e.k === 'none') { s.msg = s.head || s.type === 'pen' ? '🎯 Oku kaleye doğru çek.' : '👟 Oku kaleye ya da boşluğa çek; ucuna en yakın arkadaşın koşar.'; return drawUIControls(); }
+  if (e.k === 'none') { s.msg = s.head || s.type === 'pen' ? '🎯 Oku kaleye doğru çek.' : '👟 Oku bir arkadaşının ucuna çek (pas) ya da kaleye çek (şut). Top sürmek için gitmek istediğin yere DOKUN.'; return drawUIControls(); }
   doStick(e);
 };
 /* pas her zaman okun ucuna gider (arkadaşın üstüne yapıştırılmaz) */
@@ -159,10 +159,10 @@ drawHint = function () {
   const s = S; if (s.type === 'pen') return '🎯 Penaltı! Oku kaleye doğru çek (uzunluk = sertlik), sonra topa bas. Yanına basarsan falso.';
   if (s.type === 'fk' && s.n === 0) return '🎯 Serbest vuruş: oku kaleye çek, sonra topun alt-yanına bas: havalanıp falsoyla barajı aşar. Ya da bir arkadaşının önüne çek.';
   const c = runCmds();
-  return `🏹 Parmağını koy ve ÇEK: okun ucu topun gideceği yer. Az çek = yumuşak, çok çek = sert. Arkadaşının önüne atabilirsin. Topun altına basarsan havadan, ortasına basarsan yerden gider.${c ? ` 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster (${c}).` : ''}`;
+  return `🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN.${c ? ` 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster (${c}).` : ''}`;
 };
 /* panel açıklaması */
 const _ctlHTML6 = ctlHTML;
 ctlHTML = function () {
-  const h = _ctlHTML6(); return h.replace(/<div class="v5leg">[\s\S]*?<\/div>/, `<div class="v5leg"><span>🏹 okun ucu = hedef</span><span>📏 uzun = sert</span><span>⬆️ alttan bas = havadan</span><span>💨 kısa = sür</span>${runCmds() ? '<span>🏃 arkadaşı sürükle = koşu</span>' : ''}</div>`);
+  const h = _ctlHTML6(); return h.replace(/<div class="v5leg">[\s\S]*?<\/div>/, `<div class="v5leg"><span>🏹 çek = pas/şut</span><span>📏 uzun = sert</span><span>⬆️ alttan bas = havadan</span><span>👟 dokun = top sür</span>${runCmds() ? '<span>🏃 arkadaşı sürükle = koşu</span>' : ''}</div>`);
 };

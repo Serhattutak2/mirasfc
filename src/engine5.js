@@ -30,7 +30,7 @@ mkScene = function (mo) {
 function drawHint() {
   const s = S; if (s.type === 'pen') return '🎯 Penaltı! Çubuğu kaleye doğru çek, sonra topa bas. Topun yanına basarsan falso verirsin.';
   if (s.type === 'fk' && s.n === 0) return '🎯 Serbest vuruş: çubuğu kaleye çek, sonra topun yanına bas: falsoyla barajın etrafından dolanır. Ya da arkadaşına çek.';
-  return '🏒 ÇEK = vurma: arkadaşa uzanırsa PAS, kaleye uzanırsa ŞUT (uzun çubuk = sert). 👟 Top sürmek için gitmek istediğin yere DOKUN. ⚠️ = rakip keser.';
+  return '🏒 Parmağını koy ve hedefe doğru ÇEK: çubuk uzar. Arkadaşa uzanırsa pas, kaleye uzanırsa şut, kısa çekersen topla sürersin. Uzun çubuk = sert vuruş. ⚠️ = rakip keser.';
 }
 
 /* ---------- yol analizi ---------- */
@@ -81,8 +81,7 @@ function stickEval(px, py, st1) {
   s.P.forEach(p => { if (p.side !== 'us' || p === car || p.gk) return; const ax = p.x - car.x, ay = p.y - car.y, along = ax * ux + ay * uy, perp = Math.abs(ax * uy - ay * ux); if (along < 2) return; const tipD = Math.hypot(p.x - tip.x, p.y - tip.y), sc2 = perp * 1.6 + tipD * .6; const dd = Math.hypot(ax, ay); if ((perp < 4 + AS * 2 || tipD < 5 + AS * 2) && (Lw >= dd * .45 || tipD < 5 + AS * 2) && sc2 < bs) { bs = sc2; best = p; } });
   if (best) { const d = Math.hypot(best.x - car.x, best.y - car.y); return { k: 'pass', to: best, P: [{ x: car.x, y: car.y }, { x: best.x, y: best.y }], pw: cl(Lw / Math.max(4, d), .3, 2), tip }; }
   if (head) return { k: 'none', tip, P: [{ x: car.x, y: car.y }, tip] };
-  /* çubuk yalnız vurma (pas/şut) içindir; top sürme dokunuşla yapılır. kısa çekiş = geçersiz */
-  if (Lw <= 13) return { k: 'none', tip, drib: 1, P: [{ x: car.x, y: car.y }, tip] };
+  if (Lw <= 13) return { k: 'drib', P: [{ x: car.x, y: car.y }, tip], pw: 1, tip };
   /* boşluğa ara pas: uca en yakın arkadaş koşar */
   const run = s.P.filter(p => p.side === 'us' && p !== car && !p.gk).sort((a, b) => Math.hypot(a.x - tip.x, a.y - tip.y) - Math.hypot(b.x - tip.x, b.y - tip.y))[0];
   if (run && Math.hypot(run.x - tip.x, run.y - tip.y) < 10) return { k: 'pass', to: run, thru: tip, P: [{ x: car.x, y: car.y }, { x: tip.x, y: tip.y }], pw: 1, tip };
@@ -98,11 +97,11 @@ function v5Up() {
     if (gp && Math.abs(gp.x - 34) < 6 && w.y > 100) return doStick({ k: 'shot', P: [{ x: car.x, y: car.y }, { x: cl(gp.x, GOAL_L - 1, GOAL_R + 1), y: GY + .4 }], pw: 1 });
     const mate = s.P.filter(p => p.side === 'us' && p !== car && !p.gk).sort((a, b) => Math.hypot(a.x - w.x, a.y - w.y) - Math.hypot(b.x - w.x, b.y - w.y))[0];
     if (mate && Math.hypot(mate.x - w.x, mate.y - w.y) < 4) return doStick({ k: 'pass', to: mate, P: [{ x: car.x, y: car.y }, { x: mate.x, y: mate.y }], pw: 1 });
-    if (!s.head && s.type !== 'pen' && Math.hypot(w.x - car.x, w.y - car.y) > .8) { const d = cl(Math.hypot(w.x - car.x, w.y - car.y), 4, 13), a = Math.atan2(w.x - car.x, w.y - car.y); return doStick({ k: 'drib', P: [{ x: car.x, y: car.y }, { x: cl(car.x + Math.sin(a) * d, .5, 67.5), y: cl(car.y + Math.cos(a) * d, 1, 107) }], pw: 1 }); }
+    if (!s.head && s.type !== 'pen' && Math.hypot(w.x - car.x, w.y - car.y) > 1.5) { const d = Math.min(12, Math.hypot(w.x - car.x, w.y - car.y)), a = Math.atan2(w.x - car.x, w.y - car.y); return doStick({ k: 'drib', P: [{ x: car.x, y: car.y }, { x: car.x + Math.sin(a) * d, y: car.y + Math.cos(a) * d }], pw: 1 }); }
     return;
   }
   const e = stickEval(sk.cur[0], sk.cur[1], sk); if (!e) return;
-  if (e.k === 'none') { s.msg = s.head || s.type === 'pen' ? '🎯 Çubuğu kaleye doğru çek.' : (e.drib ? '👟 Top sürmek için gitmek istediğin yere DOKUN. Çubuğu pas/şut için çek.' : '👟 Çubuğu bir arkadaşına ya da kaleye doğru çek. Top sürmek için boşluğa dokun.'); return drawUIControls(); }
+  if (e.k === 'none') { s.msg = s.head || s.type === 'pen' ? '🎯 Çubuğu kaleye doğru çek.' : '👟 Çubuğu bir arkadaşına ya da kaleye doğru çek; kısa çekersen topla sürersin.'; return drawUIControls(); }
   doStick(e);
 }
 function doStick(e) { S.stickPw = e.pw || 1; S.thru = e.thru || null; doPath(e.P, { k: e.k, to: e.to, len: plen(e.P), dang: e.k === 'none' ? [] : pDanger(e.P, e.k) }); }
@@ -200,21 +199,6 @@ function launchPath(P, ev, q, oy, ox) {
   if (run.fail && run.fail.d) { const d = run.fail.d, pt = pAt(P, run.fail.u); anim(d, pt.x, pt.y - .3, cl(run.fail.u * L / run.v, .25, 1.6)); }
   if (ev.k === 'shot' && s.gk) { const r = run.res, kx = r.save ? r.x : r.gx; anim(s.gk, cl(kx, GOAL_L - .4, GOAL_R + .4), 104.3, cl(L / run.v * .9, .2, 1.2)); if (Math.abs(kx - s.gk.x) > 1.2) s.gk.down = .8; }
   if (ev.k === 'pass' && ev.to) { const to = ev.to, e = P[P.length - 1]; if (thru) anim(to, e.x, e.y, L / run.v * 1.2); else anim(to, to.x + rf(-.5, .5), to.y + rf(0, 1.2), L / run.v); }
-  /* rakip savunma topu KOVALAR: hem boşluğa ara pasta hem topla sürerken en yakın rakipler topun gittiği yere koşar (görünür baskı) ve ara pasta yarışı kazanabilir */
-  if ((ev.k === 'pass' && thru) || ev.k === 'drib') {
-    const e = P[P.length - 1];
-    const defSpd = p => 7.6 * ((p.r || 70) / 72);
-    const defs = s.P.filter(p => p.side === 'th' && !p.gk && !p.wallP && !(p.down > 0)).sort((a, b) => dist(a, e) - dist(b, e));
-    const nchase = ev.k === 'drib' ? 2 : 3;
-    for (let i = 0; i < Math.min(nchase, defs.length); i++) {
-      const d = defs[i]; if (dist(d, e) > 22) break;
-      anim(d, cl(e.x + rf(-1.1, 1.1) * (i ? 1 : .35), 2, 66), cl(e.y + (i ? rf(.4, 2.2) : -.3), 2, 106), cl(dist(d, e) / defSpd(d), .28, 1.9));
-    }
-    if (ev.k === 'pass' && thru && ev.to && !run.fail && defs[0]) {
-      const to = ev.to, tDef = dist(defs[0], e) / defSpd(defs[0]), tMate = dist(to, e) / (7.6 * ((to === s.me ? st('hiz') : to.r) / 72));
-      if (tDef < tMate - .1 && Math.random() < cl(.3 + (tMate - tDef) * .8 + (s.df - 1) * .45 - (q - .6) * .3, .1, .88)) run.fail = { d: defs[0], u: .97 };
-    }
-  }
   s.ball.owner = null; s.run = run; s.phase = 'run'; s.trail = []; s.lastKick = car; s.msg = ''; drawUIControls();
 }
 /* şutun sonucu (önceden belirlenir, sonra canlandırılır) */
@@ -241,8 +225,8 @@ function shotResult(P, run) {
 function runTick(dt) {
   const s = S, r = s.run, B = s.ball; r.t += dt;
   /* gerçekçi hız: yerden paslar yavaşlayarak gider, şut neredeyse sabit hızda */
-  const T = r.L / r.v * (r.k === 'pass' && !r.loft ? 1.35 : r.k === 'shot' ? 1.05 : 1), tt = Math.min(1, r.t / T);
-  const u = r.k === 'pass' && !r.loft ? 1 - Math.pow(1 - tt, 1.6) : r.k === 'shot' ? 1 - Math.pow(1 - tt, 1.15) : tt;
+  const T = r.L / r.v * (r.k === 'pass' && !r.loft ? 1.35 : r.k === 'shot' ? 1.05 : r.k === 'drib' ? 1.28 : 1), tt = Math.min(1, r.t / T);
+  const u = r.k === 'pass' && !r.loft ? 1 - Math.pow(1 - tt, 1.6) : r.k === 'shot' ? 1 - Math.pow(1 - tt, 1.15) : r.k === 'drib' ? 1 - Math.pow(1 - tt, 1.7) : tt;
   if (s.anims.length) runAnims(dt);
   if (r.fail && u >= r.fail.u) return pathFail(r);
   const p = pAt(r.P, u);
@@ -308,8 +292,8 @@ function nextDraw() {
   const ops = s.P.filter(p => p.side === 'th' && !p.gk && !p.wallP).sort((a, b) => dist(a, car) - dist(b, car));
   const ga = Math.atan2(34 - car.x, GY - car.y), side = Math.random() < .5 ? -1 : 1;
   ops.forEach((p, i) => { p.down = 0; let tx, ty;
-    if (i === 0) { const pr = cl(2.1 - (s.df - 1) * 1.3, 1.1, 2.5); tx = car.x + Math.sin(ga) * pr; ty = car.y + Math.cos(ga) * pr; }
-    else if (i === 1) { const pr = cl(5.5 - (s.df - 1) * 2.2, 3.3, 6.2); tx = car.x + Math.sin(ga + side * .5) * pr; ty = car.y + Math.cos(ga + side * .5) * pr; }
+    if (i === 0) { tx = car.x + Math.sin(ga) * 2.1; ty = car.y + Math.cos(ga) * 2.1; }
+    else if (i === 1) { tx = car.x + Math.sin(ga + side * .5) * 5.5; ty = car.y + Math.cos(ga + side * .5) * 5.5; }
     else { tx = p.x + (car.x - p.x) * .35; ty = Math.max(p.y, car.y + 6) - rf(0, 1.5); }
     anim(p, cl(tx + rf(-.6, .6), 3, 65), Math.min(103, ty), .45); });
   s.P.forEach(p => { if (p.side === 'us' && p !== car && !p.gk) { const fx = cl(p.x + (p.x < car.x ? -1 : 1) * rf(0, 3), 5, 63), fy = Math.min(98, p.y + rf(4, 10)); anim(p, fx, fy, .45); } });
