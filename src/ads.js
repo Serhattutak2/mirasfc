@@ -1,3 +1,4 @@
+/* Build: 2026-10-30 — reklam modeli + maç motoru + grafik güncellemesi (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı: doğal molalarda ~90 sn'de bir ve her sezon sonunda
