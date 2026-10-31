@@ -58,6 +58,16 @@ ver_id, state = None, None
 for v in r.get("data", []):
     ver_id, state = v["id"], v["attributes"]["appStoreState"]; break
 if not ver_id:
+    # Elle açılmış düzenlenebilir bir sürüm varsa (ör. 1.0.1) onu VER'e yeniden adlandır
+    st, r = api("GET", f"/v1/apps/{app_id}/appStoreVersions?filter[platform]=IOS&filter[appStoreState]=PREPARE_FOR_SUBMISSION,DEVELOPER_REJECTED,REJECTED,METADATA_REJECTED&limit=5")
+    for v in r.get("data", []):
+        old_v = v["attributes"]["versionString"]
+        st2, r2 = api("PATCH", f"/v1/appStoreVersions/{v['id']}",
+                      {"data": {"type": "appStoreVersions", "id": v["id"], "attributes": {"versionString": VER}}})
+        if st2 != 200: die(f"Mevcut sürüm {old_v} -> {VER} yapılamadı", r2)
+        ver_id, state = v["id"], v["attributes"]["appStoreState"]
+        print("Mevcut sürüm yeniden adlandırıldı:", old_v, "->", VER, ver_id, state); break
+if not ver_id:
     st, r = api("POST", "/v1/appStoreVersions", {"data": {"type": "appStoreVersions",
         "attributes": {"platform": "IOS", "versionString": VER},
         "relationships": {"app": {"data": {"type": "apps", "id": app_id}}}}})

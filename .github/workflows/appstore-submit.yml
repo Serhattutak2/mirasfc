@@ -9,7 +9,7 @@ on:
       app_version:
         description: "Sürüm (MARKETING_VERSION)"
         required: true
-        default: "4.3"
+        default: "4.3.1"
 permissions:
   contents: write
 jobs:
@@ -24,19 +24,9 @@ jobs:
       VER: ${{ github.event.inputs.app_version }}
       AUTO_RELEASE: "1"
       TR_NOTES: |
-        Yenilikler (4.3):
-        • Yeni kontroller: oku çekmek = pas/şut, ekrana dokunmak = top sürme
-        • Daha akıcı ve gerçekçi top sürme
-        • Gerçekçi kaleci: açıyı kapatır, yeri geldiğinde öne çıkar, daha iyi kurtarır
-        • Rakip savunma artık topun peşinden koşuyor ve geri kurtarıyor
-        • Çeşitli iyileştirmeler ve hata düzeltmeleri
+        Hata düzeltmeleri ve iyileştirmeler.
       EN_NOTES: |
-        What's New (4.3):
-        • New controls: pull to pass/shoot, tap to dribble
-        • Smoother, more realistic dribbling
-        • Realistic goalkeeper: cuts the angle, comes off the line, better saves
-        • Opponent defenders now chase the ball and track back
-        • Various improvements and bug fixes
+        Bug fixes and improvements.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
