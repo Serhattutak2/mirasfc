@@ -12,6 +12,8 @@ VER = os.environ["VER"].strip()
 TR  = os.environ.get("TR_NOTES", "")
 EN  = os.environ.get("EN_NOTES", TR)
 AUTO = os.environ.get("AUTO_RELEASE", "1") == "1"
+MKT = os.environ.get("MARKETING_URL", "https://serhattutak2.github.io").strip()
+SUP = os.environ.get("SUPPORT_URL", "https://serhattutak2.github.io/destek.html").strip()
 BASE = "https://api.appstoreconnect.apple.com"
 
 def token():
@@ -87,9 +89,12 @@ print("Yereller:", [l["attributes"]["locale"] for l in locs])
 for l in locs:
     loc, lid = l["attributes"]["locale"], l["id"]
     note = TR if loc.lower().startswith("tr") else (EN if loc.lower().startswith("en") else TR)
+    attrs = {"whatsNew": note}
+    if MKT: attrs["marketingUrl"] = MKT      # app-ads.txt doğrulaması için geliştirici sitesi
+    if SUP: attrs["supportUrl"] = SUP
     st2, r2 = api("PATCH", f"/v1/appStoreVersionLocalizations/{lid}",
-                  {"data": {"type": "appStoreVersionLocalizations", "id": lid, "attributes": {"whatsNew": note}}})
-    print("  whatsNew", loc, "->", st2 if st2 == 200 else errtxt(r2))
+                  {"data": {"type": "appStoreVersionLocalizations", "id": lid, "attributes": attrs}})
+    print("  not+URL", loc, "->", st2 if st2 == 200 else errtxt(r2))
 
 # 5) 4.3 build'ini bul ve sürüme bağla
 st, r = api("GET", f"/v1/builds?filter[app]={app_id}&filter[preReleaseVersion.version]={VER}&sort=-uploadedDate&limit=10")
