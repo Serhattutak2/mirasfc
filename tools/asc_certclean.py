@@ -11,6 +11,7 @@ except ImportError:
 
 kid, iss, p8 = os.environ['KID'].strip(), os.environ['ISS'].strip(), os.environ['P8']
 key = open(p8).read() if os.path.isfile(p8) else p8
+key = '\n'.join(l.strip() for l in key.replace('\r', '').split('\n') if l.strip()) + '\n'
 tok = jwt.encode({'iss': iss, 'iat': int(time.time()), 'exp': int(time.time()) + 600, 'aud': 'appstoreconnect-v1'}, key, algorithm='ES256', headers={'kid': kid, 'typ': 'JWT'})
 H = {'Authorization': 'Bearer ' + tok}
 

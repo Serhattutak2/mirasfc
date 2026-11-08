@@ -93,7 +93,9 @@ jobs:
           KID: ${{ secrets.ASC_KEY_ID }}
           ISS: ${{ secrets.ASC_ISSUER_ID }}
           P8: ${{ secrets.ASC_KEY_P8 }}
-        run: python3 tools/asc_certclean.py
+        run: |
+          python3 -m venv $RUNNER_TEMP/v && $RUNNER_TEMP/v/bin/pip install --quiet pyjwt cryptography
+          KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9') ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-') $RUNNER_TEMP/v/bin/python tools/asc_certclean.py
       - name: TestFlight'a yükle (App Store Connect API anahtarıyla otomatik imza)
         if: env.HAS_ASC == 'true'
         working-directory: mobile/ios/App
