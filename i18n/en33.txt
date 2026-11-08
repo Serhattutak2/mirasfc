@@ -4,3 +4,121 @@
 👟 dokun = top sür ⇒ 👟 tap = dribble
 4 hafta simüle et ⇒ Simulate 4 weeks
 Sezonu simüle et ⇒ Simulate the season
+📺 4 hafta simüle et ⇒ 📺 Simulate 4 weeks
+📺 Sezonu simüle et ⇒ 📺 Simulate the season
+💡 Kiralık nedir? ⇒ 💡 What is a loan?
+Kulübünde şu an forma şansı bulamıyorsun. ⇒ You're not getting games at your club right now.
+gidersen bir sezon başka bir kulüpte düzenli oynarsın, maç tecrübesi ve form kazanırsın; maaşını yine ana kulübün öder. Sezon bitince kulübüne daha güçlü dönersin. ⇒ for one season at another club means regular football, match experience and form, while your parent club keeps paying your wages. You return stronger when the season ends.
+Kiralık ⇒ Loan
+İstemezsen “Kulübümde kalıyorum” de, yerin için savaşmaya devam et. ⇒ If you'd rather not, tap “I'm staying at my club” and keep fighting for your place.
+Kulüp, forma bulman için seni bir sezonluğuna kiralık göndermeyi önerdi. ⇒ The club suggested sending you out on a one-season loan so you can play.
+⚡ Günün Pozisyonu ⇒ ⚡ Moment of the Day
+Son dakika penaltısı ⇒ Last-minute penalty
+Skor 1-1, dakika 90+4. Topun başına sen geçtin. ⇒ It's 1-1 in the 94th minute. You're on the ball.
+Ceza sahası önünde serbest vuruş ⇒ Free kick on the edge of the box
+89. dakika, 0-1 gerideyiz. Baraj kuruldu, bütün stat ayakta. ⇒ 89th minute, we're 0-1 down. The wall is set and the whole stadium is on its feet.
+Kaleciyle karşı karşıya ⇒ One-on-one with the keeper
+90+3, skor 2-2. Savunmanın arkasına sarktın, önünde sadece kaleci var. ⇒ 93rd minute, 2-2. You've slipped in behind the defence; only the keeper to beat.
+Son korner ⇒ Final corner
+90. dakika, 0-0. Orta geliyor, kafayı vur. ⇒ 90th minute, 0-0. The cross is coming in, get your head on it.
+Son atak ⇒ Last attack
+88. dakika, 1-2 gerideyiz. Bu atakta gol şart. ⇒ 88th minute, we're 1-2 down. We need a goal from this attack.
+Son saniye kontrası ⇒ Last-second counter
+90+1, 1-1. Top kapıldı, önümüz boş! ⇒ 91st minute, 1-1. We've won it back and there's space ahead!
+Galibiyeti koru ⇒ Protect the win
+90+2, 1-0 öndeyiz. Rakip son kez geliyor, araya gir. ⇒ 92nd minute, 1-0 up. They're coming one last time: cut it out.
+Pozisyonu oyna ⇒ Play the moment
+Yarın yeni pozisyon gelecek. ⇒ A new moment arrives tomorrow.
+❌ Bugünkü pozisyonu kaçırdın. ⇒ ❌ You missed today's moment.
+Bugünkü pozisyonu oynadın; yarın yenisi gelecek ⇒ You've played today's moment; a new one comes tomorrow
+Önce haftadaki işini bitir ⇒ Finish this week's business first
+Pozisyon açılamadı ⇒ Couldn't open the moment
+Rakip bulunamadı ⇒ No opponent found
+Günün Pozisyonu ⇒ Moment of the Day
+🔥 {0} gün ⇒ 🔥 {0} days
+✅ Bugünkü pozisyonu başardın, +{0} 🪙 aldın. ⇒ ✅ You nailed today's moment and earned +{0} 🪙.
+Günde tek hak · Başarırsan +{0} 🪙 · 7 gün üst üste oynarsan +{1} 🪙 ⇒ One try a day · Succeed for +{0} 🪙 · Play 7 days in a row for +{1} 🪙
+⚡ Başardın! +{0} 🪙 · Seri {1} gün ⇒ ⚡ You did it! +{0} 🪙 · {1}-day streak
+Bu sefer olmadı · Seri {0} gün ⇒ Not this time · {0}-day streak
+Bu sefer olmadı · Seri ödülü +{0} 🪙 · Seri {1} gün ⇒ Not this time · Streak reward +{0} 🪙 · {1}-day streak
+⚡ Günün Pozisyonu: {0} ⇒ ⚡ Moment of the Day: {0}
+🎬 Hayatının Filmi ⇒ 🎬 Your Life in Film
+HAYATININ FİLMİ ⇒ YOUR LIFE IN FILM
+BÖLÜM 1 ⇒ CHAPTER 1
+BÖLÜM 2 ⇒ CHAPTER 2
+BÖLÜM 3 ⇒ CHAPTER 3
+BÖLÜM 4 ⇒ CHAPTER 4
+BÖLÜM 5 ⇒ CHAPTER 5
+SON ⇒ THE END
+Bir futbol hayatı başlıyor. ⇒ A football life begins.
+İlk imza ⇒ First contract
+kiralık ⇒ on loan
+Hayalin kâğıda döküldüğü gün. ⇒ The day the dream was signed on paper.
+Zirve ⇒ The peak
+Kariyer ⇒ Career
+Kupa dolabı boş kaldı; ama her maç bir hikâyeydi. ⇒ The trophy cabinet stayed empty, but every match was a story.
+Saha dışı ⇒ Off the pitch
+Eşi ⇒ Spouse
+Hayatındaki kişi ⇒ Partner
+Çocukları ⇒ Children
+çocuk ⇒ children
+kupa ⇒ trophies
+Kendi yolunu çizdi. ⇒ Walked their own path.
+MİRAS FC · App Store ⇒ MIRAS FC · App Store
+🎬 Filmi izle ⇒ 🎬 Watch the film
+🎬 Film ⇒ 🎬 Film
+📤 Filmi paylaş ⇒ 📤 Share the film
+Hayatımın filmi ⇒ My life in film
+Bu cihazda film çizilemedi ⇒ This device couldn't draw the film
+Paylaşım açılmadı; kareye uzun basıp kaydedebilirsin ⇒ Sharing didn't open; long-press a frame to save it
+Kareye dokunarak ilerle. Paylaş düğmesi çalışmazsa kareye uzun basıp kaydet. ⇒ Tap the frame to move on. If Share doesn't work, long-press a frame to save it.
+Bu hayatı 6 karede anlat: doğum, ilk imza, zirve, kupalar, aile ve miras. Hikâyende paylaş. ⇒ Tell this life in 6 frames: birth, first contract, peak, trophies, family and legacy. Share it to your story.
+maç ⇒ apps
+gol ⇒ goals
+asist ⇒ assists
+🎭 Senaryo Modu ⇒ 🎭 Scenario Mode
+Hazır bir hayatın ortasından başla, hedefe ulaş. Erken başarırsan daha çok yıldız. ⇒ Jump into the middle of a life and hit the goal. The sooner you do it, the more stars you earn.
+{0} yaş · {1} sezon ⇒ Age {0} · {1} seasons
+Altyapı Harikası ⇒ Academy Wonderkid
+Çapraz Bağ ⇒ Torn Ligament
+Son Dans ⇒ The Last Dance
+Memlekete Dönüş ⇒ Homecoming
+17 yaşında ülkenin en büyük kulübüne imza attın ama teknik direktör sana şans vermiyor. ⇒ At 17 you signed for the biggest club in the country, but the manager won't give you a chance.
+21 yaşına girmeden 5 kez A milli takımda forma giy. ⇒ Win 5 senior national team caps before you turn 21.
+Büyük bir kulübün yıldızıyken çapraz bağların koptu. Doktorlar 30 hafta yoksun diyor. ⇒ You were the star of a big club when you tore your cruciate ligament. The doctors say 30 weeks out.
+Gelecek sezon en az 20 maça çık ve yerini geri al. ⇒ Play at least 20 matches next season and win your place back.
+33 yaşındasın, alt ligde oynuyorsun ve kötü yatırımlar yüzünden 1,2 M€ borcun var. ⇒ You're 33, playing in the second tier, and bad investments have left you €1.2M in debt.
+İki sezon içinde 15 gol at ve borcunu kapat. ⇒ Score 15 goals and clear your debt within two seasons.
+Avrupa’da yıldız oldun. Çocukluk kulübün ise ligin dibinde ve senden yardım bekliyor. ⇒ You became a star in Europe. Your boyhood club is at the bottom of the league and needs you.
+Çocukluk kulübüne dön ve 3 sezon içinde ligi ilk 6’da bitir. ⇒ Go back to your boyhood club and finish in the top 6 within 3 seasons.
+🎯 Hedef ⇒ 🎯 Goal
+⭐⭐⭐ ilk sezonda · ⭐⭐ ikinci · ⭐ sonrasında ⇒ ⭐⭐⭐ in the first season · ⭐⭐ second · ⭐ after that
+⭐⭐⭐ ikinci sezonda · ⭐⭐ üçüncü ⇒ ⭐⭐⭐ in the second season · ⭐⭐ third
+ · En iyin: {0} ⇒  · Your best: {0}
+Senaryo için boş bir kayıt yuvası gerekiyor. Ana menüden bir kaydı sil ya da mağazadan yuva aç. ⇒ You need an empty save slot for a scenario. Delete a save from the main menu or unlock a slot in the shop.
+Senaryoyu başlat ⇒ Start scenario
+Vazgeç ⇒ Cancel
+A milli maç: {0} / 5 · {1} yılın kaldı ⇒ Senior caps: {0} / 5 · {1} years left
+Sakatlık: {0} hafta kaldı ⇒ Injury: {0} weeks left
+Bu sezon: {0} / 20 maç ⇒ This season: {0} / 20 matches
+Gol: {0} / 15 · Servet: {1} · {2} sezon kaldı ⇒ Goals: {0} / 15 · Wealth: {1} · {2} seasons left
+Çocukluk kulübündesin · {0} sezon kaldı ⇒ You're at your boyhood club · {0} seasons left
+Henüz çocukluk kulübünde değilsin · {0} sezon kaldı ⇒ You're not at your boyhood club yet · {0} seasons left
+✅ Başardın! {0} ⇒ ✅ You did it! {0}
+❌ Hedefe süre içinde ulaşamadın. Hayat devam ediyor. ⇒ ❌ You didn't reach the goal in time. Life goes on.
+{0} Senaryo · {1} ⇒ {0} Scenario · {1}
+Gizle ⇒ Hide
+🎭 SENARYO TAMAM: {0} {1} ⇒ 🎭 SCENARIO COMPLETE: {0} {1}
+🎭 Senaryo süresi doldu: {0}. Hayat devam ediyor. ⇒ 🎭 Scenario time is up: {0}. Life goes on.
+🎭 Senaryo başladı: {0}. Hedef: {1} ⇒ 🎭 Scenario started: {0}. Goal: {1}
+Senaryo ödülü ⇒ Scenario reward
+Çapraz bağların koptu. Uzun bir dönüş yolu seni bekliyor. ⇒ Your cruciate ligament is torn. A long road back lies ahead.
+Kötü yatırımlar yüzünden 1,2 M€ borca girdin. ⇒ Bad investments have left you €1.2M in debt.
+Çocukluk kulübün seni geri istiyor. Taraftar havaalanında bekleyecek. ⇒ Your boyhood club wants you back. The fans will be waiting at the airport.
+Aynı kalır ⇒ Unchanged
+👆 Top sürmek için boş alana DOKUN (çek = sadece pas/şut). ⇒ 👆 TAP an open space to dribble (pull = pass/shot only).
+ulusal kupa ⇒ domestic cups
+lig şampiyonluğu ⇒ league titles
+Şampiyonlar Kupası ⇒ Champions Cup
+Altın Top ⇒ Ballon d'Or
+Kupa dolabı boş kaldı; ama her maç bir hikâyeydi. ⇒ The trophy cabinet stayed empty, but every match was a story.

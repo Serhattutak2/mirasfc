@@ -401,6 +401,34 @@ html, body { overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
 .tan { display: grid; grid-template-columns: 1fr 1.2fr 28px; gap: 8px; align-items: center; margin: 6px 0; font-size: 13px; } .tan span { color: var(--mut); } .tan b { text-align: right; } .tanb { height: 8px; border-radius: 4px; background: rgba(255,255,255,.07); overflow: hidden; } .tanb i { display: block; height: 100%; border-radius: 4px; transition: width .4s; } .tan em { grid-column: 1 / -1; font-size: 11px; color: var(--mut); font-style: normal; }
 .lm6 canvas { width: 100%; display: block; border-radius: 10px; background: #2b8a27; } .lm6c { display: flex; gap: 6px; align-items: center; justify-content: space-between; margin: 8px 0; flex-wrap: wrap; } .lm6c { flex-wrap: nowrap; } .lm6c .btn { margin: 0; width: auto; flex: 0 0 auto; padding: 7px 10px; font-size: 13px; white-space: nowrap; } .lm6st { margin-top: 6px; } .lm6clk { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold); font-size: 14px; }
 @media (max-width: 380px) { .tform { grid-template-columns: repeat(3, 1fr); } .rep6l b { font-size: 9px; } }
+/* v4.4 Günün Pozisyonu */
+.dpcard { border: 1px solid rgba(232,196,104,.45); background: linear-gradient(135deg, rgba(232,196,104,.10), transparent 60%), var(--card, #14211a); }
+.dpcard h3 { margin: 6px 0 4px; font: 700 22px var(--disp); }
+.dpdots { display: flex; gap: 6px; margin: 8px 0 4px; }
+.dpd { width: 22px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.12); }
+.dpd.on { background: var(--gold); }
+/* v4.4 Hayatının Filmi */
+.filmc { max-width: 420px; }
+.filmv { border-radius: 14px; overflow: hidden; cursor: pointer; background: #08160e; }
+.filmv img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.filmdots { display: flex; gap: 5px; justify-content: center; margin: 8px 0; }
+.filmdots i { width: 18px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.2); }
+.filmdots i.on { background: var(--gold); }
+.filmcta { border: 1px solid rgba(232,196,104,.45); }
+/* v4.4 Senaryo Modu */
+.scmenu { border: 1px solid rgba(232,196,104,.35); }
+.sclist { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.scb { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); color: inherit; font: inherit; cursor: pointer; }
+.scb:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.sce { font-size: 26px; }
+.scn { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.scn b { font: 700 18px var(--disp); }
+.scn i { font-style: normal; font-size: 13px; color: var(--mut); }
+.scs { white-space: nowrap; font-size: 14px; }
+.scs em { font-style: normal; color: var(--mut); opacity: .6; }
+.scgoal { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: rgba(232,196,104,.1); border: 1px solid rgba(232,196,104,.35); margin: 8px 0; }
+.sccard { border: 1px solid rgba(232,196,104,.35); }
+.warn { color: #f0a35e; }
 </style></head><body>
 <div id="app"></div><div id="nav"></div>
 <div id="dlg" class="dlg" hidden role="dialog" aria-modal="true"><div class="card"><p class="dlg-t lead"></p><input class="dlg-in" hidden maxlength="18" aria-label="Metin"><div class="actions"><button class="btn dlg-ok" onclick="dlgEnd(1)">Evet</button><button class="btn ghost" onclick="dlgEnd(0)">Vazgeç</button></div></div></div>
@@ -1407,7 +1435,7 @@ const EN_DICT = {
 "Kiralık talebin vardı ama ilgilenen kulüp çıkmadı.": "You asked for a loan, but no club was interested.",
 "Taraftarlar ayrılışını kolay affetmedi.": "The fans didn't easily forgive your departure.",
 "İmza parası": "Signing bonus",
-"kiralık": "loan",
+"kiralık": "on loan",
 "altyapıdan A takıma": "academy to first team",
 "ilk sözleşme": "first contract",
 "seninle {0}'{1} yeni bir hayata başladı": "started a new life with you in {0}",
@@ -2212,7 +2240,7 @@ const EN_DICT = {
 "Her gün gir, seri büyüsün. 7. gün büyük ödül!": "Log in daily to grow your streak. Big prize on day 7!",
 "🪙 {2} al": "🪙 Claim {2}",
 "📺 İzle, 2 katı al": "📺 Watch, get double",
-"İlk imza": "First signature",
+"İlk imza": "First contract",
 "İlk profesyonel sözleşmeni imzala": "Sign your first pro contract",
 "İlk gol": "First goal",
 "Profesyonel ilk golünü at": "Score your first pro goal",
@@ -4998,7 +5026,117 @@ const EN_DICT = {
 "🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN.": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble.",
 "🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN. 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster ({0}).": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble. 🏃 Touch and drag a teammate to show where to run ({0}).",
 "🏹 çek = pas/şut": "🏹 pull = pass/shot",
-"👟 dokun = top sür": "👟 tap = dribble"
+"👟 dokun = top sür": "👟 tap = dribble",
+"📺 4 hafta simüle et": "📺 Simulate 4 weeks",
+"📺 Sezonu simüle et": "📺 Simulate the season",
+"💡 Kiralık nedir?": "💡 What is a loan?",
+"Kulübünde şu an forma şansı bulamıyorsun.": "You're not getting games at your club right now.",
+"gidersen bir sezon başka bir kulüpte düzenli oynarsın, maç tecrübesi ve form kazanırsın; maaşını yine ana kulübün öder. Sezon bitince kulübüne daha güçlü dönersin.": "for one season at another club means regular football, match experience and form, while your parent club keeps paying your wages. You return stronger when the season ends.",
+"İstemezsen “Kulübümde kalıyorum” de, yerin için savaşmaya devam et.": "If you'd rather not, tap “I'm staying at my club” and keep fighting for your place.",
+"Kulüp, forma bulman için seni bir sezonluğuna kiralık göndermeyi önerdi.": "The club suggested sending you out on a one-season loan so you can play.",
+"⚡ Günün Pozisyonu": "⚡ Moment of the Day",
+"Son dakika penaltısı": "Last-minute penalty",
+"Skor 1-1, dakika 90+4. Topun başına sen geçtin.": "It's 1-1 in the 94th minute. You're on the ball.",
+"Ceza sahası önünde serbest vuruş": "Free kick on the edge of the box",
+"89. dakika, 0-1 gerideyiz. Baraj kuruldu, bütün stat ayakta.": "89th minute, we're 0-1 down. The wall is set and the whole stadium is on its feet.",
+"Kaleciyle karşı karşıya": "One-on-one with the keeper",
+"90+3, skor 2-2. Savunmanın arkasına sarktın, önünde sadece kaleci var.": "93rd minute, 2-2. You've slipped in behind the defence; only the keeper to beat.",
+"Son korner": "Final corner",
+"90. dakika, 0-0. Orta geliyor, kafayı vur.": "90th minute, 0-0. The cross is coming in, get your head on it.",
+"Son atak": "Last attack",
+"88. dakika, 1-2 gerideyiz. Bu atakta gol şart.": "88th minute, we're 1-2 down. We need a goal from this attack.",
+"Son saniye kontrası": "Last-second counter",
+"90+1, 1-1. Top kapıldı, önümüz boş!": "91st minute, 1-1. We've won it back and there's space ahead!",
+"Galibiyeti koru": "Protect the win",
+"90+2, 1-0 öndeyiz. Rakip son kez geliyor, araya gir.": "92nd minute, 1-0 up. They're coming one last time: cut it out.",
+"Pozisyonu oyna": "Play the moment",
+"Yarın yeni pozisyon gelecek.": "A new moment arrives tomorrow.",
+"❌ Bugünkü pozisyonu kaçırdın.": "❌ You missed today's moment.",
+"Bugünkü pozisyonu oynadın; yarın yenisi gelecek": "You've played today's moment; a new one comes tomorrow",
+"Önce haftadaki işini bitir": "Finish this week's business first",
+"Pozisyon açılamadı": "Couldn't open the moment",
+"Rakip bulunamadı": "No opponent found",
+"Günün Pozisyonu": "Moment of the Day",
+"🔥 {0} gün": "🔥 {0} days",
+"✅ Bugünkü pozisyonu başardın, +{0} 🪙 aldın.": "✅ You nailed today's moment and earned +{0} 🪙.",
+"Günde tek hak · Başarırsan +{0} 🪙 · 7 gün üst üste oynarsan +{1} 🪙": "One try a day · Succeed for +{0} 🪙 · Play 7 days in a row for +{1} 🪙",
+"⚡ Başardın! +{0} 🪙 · Seri {1} gün": "⚡ You did it! +{0} 🪙 · {1}-day streak",
+"Bu sefer olmadı · Seri {0} gün": "Not this time · {0}-day streak",
+"Bu sefer olmadı · Seri ödülü +{0} 🪙 · Seri {1} gün": "Not this time · Streak reward +{0} 🪙 · {1}-day streak",
+"⚡ Günün Pozisyonu: {0}": "⚡ Moment of the Day: {0}",
+"🎬 Hayatının Filmi": "🎬 Your Life in Film",
+"HAYATININ FİLMİ": "YOUR LIFE IN FILM",
+"BÖLÜM 1": "CHAPTER 1",
+"BÖLÜM 2": "CHAPTER 2",
+"BÖLÜM 3": "CHAPTER 3",
+"BÖLÜM 4": "CHAPTER 4",
+"BÖLÜM 5": "CHAPTER 5",
+"SON": "THE END",
+"Bir futbol hayatı başlıyor.": "A football life begins.",
+"Hayalin kâğıda döküldüğü gün.": "The day the dream was signed on paper.",
+"Zirve": "The peak",
+"Kupa dolabı boş kaldı; ama her maç bir hikâyeydi.": "The trophy cabinet stayed empty, but every match was a story.",
+"Saha dışı": "Off the pitch",
+"Eşi": "Spouse",
+"Hayatındaki kişi": "Partner",
+"Çocukları": "Children",
+"çocuk": "children",
+"kupa": "trophies",
+"Kendi yolunu çizdi.": "Walked their own path.",
+"MİRAS FC · App Store": "MIRAS FC · App Store",
+"🎬 Filmi izle": "🎬 Watch the film",
+"🎬 Film": "🎬 Film",
+"📤 Filmi paylaş": "📤 Share the film",
+"Hayatımın filmi": "My life in film",
+"Bu cihazda film çizilemedi": "This device couldn't draw the film",
+"Paylaşım açılmadı; kareye uzun basıp kaydedebilirsin": "Sharing didn't open; long-press a frame to save it",
+"Kareye dokunarak ilerle. Paylaş düğmesi çalışmazsa kareye uzun basıp kaydet.": "Tap the frame to move on. If Share doesn't work, long-press a frame to save it.",
+"Bu hayatı 6 karede anlat: doğum, ilk imza, zirve, kupalar, aile ve miras. Hikâyende paylaş.": "Tell this life in 6 frames: birth, first contract, peak, trophies, family and legacy. Share it to your story.",
+"gol": "goals",
+"asist": "assists",
+"🎭 Senaryo Modu": "🎭 Scenario Mode",
+"Hazır bir hayatın ortasından başla, hedefe ulaş. Erken başarırsan daha çok yıldız.": "Jump into the middle of a life and hit the goal. The sooner you do it, the more stars you earn.",
+"{0} yaş · {1} sezon": "Age {0} · {1} seasons",
+"Altyapı Harikası": "Academy Wonderkid",
+"Çapraz Bağ": "Torn Ligament",
+"Son Dans": "The Last Dance",
+"Memlekete Dönüş": "Homecoming",
+"17 yaşında ülkenin en büyük kulübüne imza attın ama teknik direktör sana şans vermiyor.": "At 17 you signed for the biggest club in the country, but the manager won't give you a chance.",
+"21 yaşına girmeden 5 kez A milli takımda forma giy.": "Win 5 senior national team caps before you turn 21.",
+"Büyük bir kulübün yıldızıyken çapraz bağların koptu. Doktorlar 30 hafta yoksun diyor.": "You were the star of a big club when you tore your cruciate ligament. The doctors say 30 weeks out.",
+"Gelecek sezon en az 20 maça çık ve yerini geri al.": "Play at least 20 matches next season and win your place back.",
+"33 yaşındasın, alt ligde oynuyorsun ve kötü yatırımlar yüzünden 1,2 M€ borcun var.": "You're 33, playing in the second tier, and bad investments have left you €1.2M in debt.",
+"İki sezon içinde 15 gol at ve borcunu kapat.": "Score 15 goals and clear your debt within two seasons.",
+"Avrupa’da yıldız oldun. Çocukluk kulübün ise ligin dibinde ve senden yardım bekliyor.": "You became a star in Europe. Your boyhood club is at the bottom of the league and needs you.",
+"Çocukluk kulübüne dön ve 3 sezon içinde ligi ilk 6’da bitir.": "Go back to your boyhood club and finish in the top 6 within 3 seasons.",
+"🎯 Hedef": "🎯 Goal",
+"⭐⭐⭐ ilk sezonda · ⭐⭐ ikinci · ⭐ sonrasında": "⭐⭐⭐ in the first season · ⭐⭐ second · ⭐ after that",
+"⭐⭐⭐ ikinci sezonda · ⭐⭐ üçüncü": "⭐⭐⭐ in the second season · ⭐⭐ third",
+"· En iyin: {0}": "· Your best: {0}",
+"Senaryo için boş bir kayıt yuvası gerekiyor. Ana menüden bir kaydı sil ya da mağazadan yuva aç.": "You need an empty save slot for a scenario. Delete a save from the main menu or unlock a slot in the shop.",
+"Senaryoyu başlat": "Start scenario",
+"A milli maç: {0} / 5 · {1} yılın kaldı": "Senior caps: {0} / 5 · {1} years left",
+"Sakatlık: {0} hafta kaldı": "Injury: {0} weeks left",
+"Bu sezon: {0} / 20 maç": "This season: {0} / 20 matches",
+"Gol: {0} / 15 · Servet: {1} · {2} sezon kaldı": "Goals: {0} / 15 · Wealth: {1} · {2} seasons left",
+"Çocukluk kulübündesin · {0} sezon kaldı": "You're at your boyhood club · {0} seasons left",
+"Henüz çocukluk kulübünde değilsin · {0} sezon kaldı": "You're not at your boyhood club yet · {0} seasons left",
+"✅ Başardın! {0}": "✅ You did it! {0}",
+"❌ Hedefe süre içinde ulaşamadın. Hayat devam ediyor.": "❌ You didn't reach the goal in time. Life goes on.",
+"{0} Senaryo · {1}": "{0} Scenario · {1}",
+"Gizle": "Hide",
+"🎭 SENARYO TAMAM: {0} {1}": "🎭 SCENARIO COMPLETE: {0} {1}",
+"🎭 Senaryo süresi doldu: {0}. Hayat devam ediyor.": "🎭 Scenario time is up: {0}. Life goes on.",
+"🎭 Senaryo başladı: {0}. Hedef: {1}": "🎭 Scenario started: {0}. Goal: {1}",
+"Senaryo ödülü": "Scenario reward",
+"Çapraz bağların koptu. Uzun bir dönüş yolu seni bekliyor.": "Your cruciate ligament is torn. A long road back lies ahead.",
+"Kötü yatırımlar yüzünden 1,2 M€ borca girdin.": "Bad investments have left you €1.2M in debt.",
+"Çocukluk kulübün seni geri istiyor. Taraftar havaalanında bekleyecek.": "Your boyhood club wants you back. The fans will be waiting at the airport.",
+"Aynı kalır": "Unchanged",
+"👆 Top sürmek için boş alana DOKUN (çek = sadece pas/şut).": "👆 TAP an open space to dribble (pull = pass/shot only).",
+"ulusal kupa": "domestic cups",
+"lig şampiyonluğu": "league titles",
+"Şampiyonlar Kupası": "Champions Cup"
 };
 
 /* ============================================================
@@ -8399,7 +8537,7 @@ function tapBall(px, py) {
   s.tp.hit = { x: px, y: py, q, oy, ox, t: s.t }; M.my.tq = (M.my.tq || 0) + q;
   const fx = [d > 1.35 ? '😅 ISKALADIN' : d < .3 ? '✨ TAM ORTASI' : d < .65 ? '👍 İYİ VURUŞ' : '🙂 KENARINDAN'];
   if (d <= 1.35) { if (Math.abs(ox) > .3) fx.push(ox > 0 ? '↩️ FALSO' : '↪️ FALSO'); if (oy > .3) fx.push('⬆️ HAVALI'); else if (oy < -.3) fx.push('⬇️ ALÇAK'); }
-  flash(fx.join(' '));
+  flash(fx.map(f => T(f)).join(' '));
 }
 function tpR() { return Math.min(CV.W * .2, CV.H * .16); }
 function tpBall(t) { const s = S, u = cl((t - s.tp.t0) / s.tp.dur, 0, 1.1), W = CV.W, H = CV.H, gy = H * .82, R = tpR(); return { x: W * .16 + W * .68 * u, y: gy - R - Math.sin(Math.min(1, u) * Math.PI) * (gy - R * 2.7), u, rot: u * 5 }; }
@@ -11961,7 +12099,7 @@ function proHome() {
   if (!g.wstage) {
     wk += thisW.length ? thisW.map(({ i }) => `<div class="fx"><span class="ctag c-${i.short}">${i.short}</span><span class="fxn">${i.home ? '' : '@ '}${esc(i.on)}</span>${wxI(i.wx)}<span class="m">${esc(i.round)}</span></div>`).join('') : '<p class="m">Bu hafta maç yok. Antrenman ve hayatına odaklan.</p>';
     wk += enLine();
-    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">4 hafta simüle et</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">Sezonu simüle et</button></div>`;
+    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">📺 4 hafta simüle et</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">📺 Sezonu simüle et</button></div>`;
   } else {
     const m = ev ? null : nextWeekMatch();
     if (m) {
@@ -12302,7 +12440,7 @@ function offersUI() {
   return `<div class="card"><div class="eyebrow gold">${K2}</div><h2>${g.of.filter(o => !o.gone).length} teklif masada</h2><p class="m">Genel ${ovr()} · ${g.age} yaş · ${AGENTS[g.agent].n}. Rol, kulübün gücü ile senin seviyen arasındaki farka göre belirlenir. Pazarlık masasında her kalemi tek tek konuşabilirsin.</p></div>
   ${C && cc ? `<div class="card clubc cur" style="--c1:${cc.c1};--c2:${cc.c2}"><div class="eyebrow">Şu anki sözleşmen · ${esc(clubName(cc.n))}</div>${conRows(C)}<div class="kv"><span>Uyum</span><b>${Math.round(g.uyum)}</b></div><div class="m">Kulüp değiştirirsen uyumun sıfıra yakın başlar.</div></div>` : ''}
   ${g.of.map((o, i) => { const c = club(o.id); return `<div class="card offer ${o.gone ? 'gone' : ''}" style="--c1:${c.c1};--c2:${c.c2}"><div class="row-b"><div>${clubKit(o.id)}<b class="on">${esc(clubName(o.n))}</b><div class="m">${esc(tierName(o.ct, o.t))} · ${esc(o.ct)} · güç ${o.s}${g.prev && g.prev[o.id] ? ` · geçen sezon ${g.prev[o.id]}.` : ''}</div><div class="tags">${tags(o)}</div></div>${roleTag(o.role)}</div>
-  <div class="kvs"><div class="kv"><span>Maaş</span><b>${o.loan ? 'Aynı kalır (' + fm(o.sal) + ')' : fm(o.sal) + '/yıl ' + (C ? diff(o.sal, C.sal) : '')}</b></div>${o.loan ? `<div class="kv"><span>Kiralayan kulübün katkısı</span><b>${o.loanTop ? '+' + fm(o.loanTop) + '/yıl' : 'yok'}</b></div>` : ''}<div class="kv"><span>Süre</span><b>${o.yrs} yıl</b></div><div class="kv"><span>İmza parası</span><b>${fm(o.bonus || 0)}</b></div><div class="kv"><span>Oynama şansı</span><b>~%${playP(o.role)}</b></div><div class="kv"><span>Maç primi</span><b>${fm(o.app || 0)}</b></div><div class="kv"><span>Gol/asist primi</span><b>${fm(o.goal || 0)}</b></div><div class="kv"><span>Ev / araç</span><b>${o.house ? 'Ev' : '—'} / ${o.car ? 'Araç' : '—'}</b></div><div class="kv"><span>Tesis</span><b>${stars(o.fac)}</b></div></div>
+  <div class="kvs"><div class="kv"><span>Maaş</span><b>${o.loan ? '<span>Aynı kalır</span> (' + fm(o.sal) + ')' : fm(o.sal) + '/yıl ' + (C ? diff(o.sal, C.sal) : '')}</b></div>${o.loan ? `<div class="kv"><span>Kiralayan kulübün katkısı</span><b>${o.loanTop ? '+' + fm(o.loanTop) + '/yıl' : 'yok'}</b></div>` : ''}<div class="kv"><span>Süre</span><b>${o.yrs} yıl</b></div><div class="kv"><span>İmza parası</span><b>${fm(o.bonus || 0)}</b></div><div class="kv"><span>Oynama şansı</span><b>~%${playP(o.role)}</b></div><div class="kv"><span>Maç primi</span><b>${fm(o.app || 0)}</b></div><div class="kv"><span>Gol/asist primi</span><b>${fm(o.goal || 0)}</b></div><div class="kv"><span>Ev / araç</span><b>${o.house ? 'Ev' : '—'} / ${o.car ? 'Araç' : '—'}</b></div><div class="kv"><span>Tesis</span><b>${stars(o.fac)}</b></div></div>
   ${o.msg ? `<div class="m note">${esc(o.msg)}</div>` : ''}${o.gone ? `<div class="actions"><button class="btn ghost" onclick="offerRevive(${i})">🪙 ${NEGO_TOK} · Jetonla masaya geri dön</button></div>` : `<div class="actions"><button class="btn" onclick="sign(${i})">İmzala</button>${o.loan ? '' : `<button class="btn ghost" onclick="negoOpen(${i})">Pazarlık masası</button>`}</div>`}</div>`; }).join('') || '<div class="card"><p class="m">Şu an sana resmi bir teklif yok.</p></div>'}
   <div class="card"><button class="btn ghost" onclick="declineOffers()">${g.ofKind === 'win' || g.ofKind === 'loan' ? 'Kulübümde kalıyorum' : g.ofKind === 'renew' ? 'Yenileme teklifini reddet' : 'Şimdilik hiçbirini kabul etme'}</button></div>`;
 }
@@ -14117,12 +14255,12 @@ pitchSVG = function (id, form) {
 };
 xiPreview = function (id, form) { return pitchSVG(id, form); };
 
-/* Build: 2026-11-08 v4.4 — reklam azaltıldı (en az 4 dk arayla, ilk 3 dk reklamsız, hafta/sezon simülasyonu reklamsız), maç ipuçları İngilizce (TestFlight) */
+/* Build: 2026-11-08 v4.4 — Günün Pozisyonu, Hayatının Filmi, Senaryo Modu, ilk kiralık teklifi, maç akışı, reklam 4 dk arayla (simülasyon ödüllü reklamla) (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
      (abonelere hiç; oturumun ilk 3 dk'sında yok; maç/olay/pazarlık ortasında asla).
-   - Hafta/sezon simülasyonu reklam istemez.
+   - "4 hafta / Sezonu simüle et" önce bir ödüllü reklam gösterir, sonra simüle eder.
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -14142,8 +14280,8 @@ function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
 if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-/* hafta/sezon simülasyonu: reklamsız, simülasyon sırasında geçiş reklamı bastırılır */
-function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; run(); } /* v4.4: hafta/sezon atlamak artık reklam istemez */
+/* hafta/sezon simülasyonu: önce ödüllü reklam, simülasyon sırasında geçiş reklamı bastırılır */
+function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; if (typeof adRewarded === 'function') adRewarded('skip', run); else run(); } /* hafta/sezon simülasyonu ödüllü reklamla açılır */
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };
@@ -14725,6 +14863,451 @@ function adCheck42() {
 }
 const _draw42 = draw;
 draw = function () { _draw42(); try { if (typeof scr === 'undefined' || (scr !== 'match' && scr !== 'lmatch')) adCheck42(); } catch (e) { } };
+
+/* ============================================================
+   v4.4 güncellemesi — İlk kiralık teklifi
+   Profesyonel kariyerin başında forma bulamayan genç oyuncuya
+   (ilk sezonun 3.–20. haftası, 21 yaş ve altı, rolü yedek/kadro dışı)
+   kulüp bir kez mutlaka kiralık teklifleri getirir. Böylece yeni oyuncu
+   "oynamıyorum, ne yapacağım?" noktasında oyunun mantığını öğrenir:
+   kiralık = 1 sezon başka kulüpte forma, sonra kulübüne dönüş.
+   ============================================================ */
+function loanSureCheck() {
+  if (!g || g.phase !== 'pro' || !g.club || g.loan || g.loanSureDone || g.coach) return false;
+  if ((g.role || 0) > 1 || g.age > 21 || g.week < 3 || g.week > 20) return false;
+  if (scr !== 'game' || g.ev || g.q || g.nego) return false;
+  g.loanSureDone = 1;
+  L('Kulüp, forma bulman için seni bir sezonluğuna kiralık göndermeyi önerdi.');
+  startOffers('loan');
+  if (scr !== 'offers' || !g.of || !g.of.length) {
+    /* uygun kulüp çıkmadıysa: aynı ülkede seni oynatacak en uygun kulüpler */
+    const o = ovr(), cur = club(g.club.id);
+    let pool = g.w[g.club.ct].flat().filter(c => c.id !== g.club.id && roleFor(o, c.s, g.age) >= 2);
+    if (!pool.length) pool = g.w[g.club.ct][g.w[g.club.ct].length - 1].filter(c => c.id !== g.club.id);
+    pool = pool.sort((a, b) => Math.abs(a.s - (cur ? cur.s - 8 : a.s)) - Math.abs(b.s - (cur ? cur.s - 8 : b.s))).slice(0, 3);
+    g.of = pool.map(c => mkOffer(c, clubCt(c.id), 'loan', { loan: 1, sal: g.con ? g.con.sal : 0, bonus: 0, yrs: 1, loanTop: g.con ? Math.round(g.con.sal * R(0, 25) / 100) : 0 }));
+    if (!g.of.length) { scr = 'game'; return false; }
+    g.ofKind = 'loan'; scr = 'offers';
+    try { clearTimeout(toastT); $('toast').hidden = true; } catch (e) { } /* "kiralık isteyen çıkmadı" uyarısı yanlış olur */
+  }
+  g.loanIntro = 1; sv(); draw();
+  return true;
+}
+{
+  const _we44 = weekEnd;
+  weekEnd = function () { const r = _we44.apply(this, arguments); try { loanSureCheck(); } catch (e) { } return r; };
+  const _ou44 = offersUI;
+  offersUI = function () {
+    const h = _ou44.apply(this, arguments);
+    if (g.ofKind !== 'loan' || !g.loanIntro) return h;
+    return `<div class="card gold-edge"><div class="eyebrow gold">💡 Kiralık nedir?</div><p>Kulübünde şu an forma şansı bulamıyorsun. <b>Kiralık</b> gidersen bir sezon başka bir kulüpte düzenli oynarsın, maç tecrübesi ve form kazanırsın; maaşını yine ana kulübün öder. Sezon bitince kulübüne daha güçlü dönersin.</p><p class="m">İstemezsen “Kulübümde kalıyorum” de, yerin için savaşmaya devam et.</p></div>` + h;
+  };
+  const _sg44 = sign; sign = function () { g.loanIntro = 0; return _sg44.apply(this, arguments); };
+  const _do44 = declineOffers; declineOffers = function () { g.loanIntro = 0; return _do44.apply(this, arguments); };
+}
+
+/* ============================================================
+   v4.4 — Maç kamerası ve akış
+   - Oyuncular ve top daha büyük görünsün diye kamera biraz yakınlaştı.
+   - Penaltıda kamera kalecinin karşısına yakın plan geçer, serbest vuruşta
+     top ile kale aynı karede ve daha yakın.
+   - "Topa bas" vuruş oyunu artık yalnızca şutta ve 32 m'den uzun paslarda açılır;
+     kısa, orta ve ara paslar beklemeden gider (isabet pas yeteneğinle belirlenir),
+     böylece atak akıp gider.
+   ============================================================ */
+const CAM44 = { play: 1.16, one: 1.24, head: 1.22, fk: 1.32, pen: 1.62, longTap: 32 };
+function zoom44() {
+  const s = S; if (!s) return 1; if (s.cel || s.rp) return 1;
+  if (s.type === 'pen') return CAM44.pen;
+  if (s.type === 'fk' && s.dead) return CAM44.fk;
+  if (s.type === 'one') return CAM44.one;
+  if (s.head || s.type === 'head') return CAM44.head;
+  return CAM44.play;
+}
+{
+  const _cw44 = camWant;
+  camWant = function () {
+    const r = _cw44.apply(this, arguments), s = S; if (!s || s.cel || s.rp) return r;
+    const z = zoom44(), halfH = CV.H / 2 / ((CV.W / NSS_W) * z);
+    if (s.type === 'pen') { r.x = 34; r.ty = GY - halfH * .62; }
+    else if (s.type === 'fk' && s.dead) { const B = s.ball; r.x = cl(B.x * .55 + 34 * .45, 14, 54); r.ty = cl((B.y + GY) / 2 - halfH * .08, halfH - 6, 109 - halfH); }
+    else if (z > 1) { /* yakınlaşınca kale görünür kalsın: topa kale arası yarıya yaklaşırken merkez kaleye doğru kayar */
+      const ref = s.phase === 'run' ? s.ball : (s.car || s.me || s.ball); if (ref && GY - ref.y < 30) r.ty = Math.max(r.ty, Math.min(GY + 3 - halfH * .9, ref.y + halfH * .55)); }
+    return r;
+  };
+  const _cb44 = camBasis;
+  camBasis = function () {
+    _cb44.apply(this, arguments); const s = S; if (!s) return;
+    const zt = zoom44(); s.z44 = s.z44 == null ? zt : s.z44 + (zt - s.z44) * .12; PR.sc *= s.z44;
+  };
+  const _dp44 = doPath;
+  doPath = function (P, ev0) {
+    const s = S, ev = ev0 || pEval(P);
+    if (s && s.maxN > 8) s.maxN = 8; /* pozisyon en fazla 8 dokunuş: atak uzayıp sıkmasın */
+    if (ev.k === 'pass' && s.car === s.me && !s.head) {
+      const L = plen(P);
+      if (L < CAM44.longTap) { /* kısa/orta pas ve ara pas: vuruş oyunu yok, isabet pas yeteneğinden (akış kesilmez) */
+        if (ev.k === 'pass' && !s.thru) { P[P.length - 1] = { x: ev.to.x, y: ev.to.y }; P = ptrim(P, V5.maxPass); }
+        const q = cl(.62 + (st('pas') - 60) / 90 + rf(-.08, .08), .4, .95);
+        s.path = null; return launchPath(P, ev, q, 0, 0);
+      }
+    }
+    return _dp44.apply(this, arguments);
+  };
+}
+
+/* ============================================================
+   v4.4 — Maç motoru ayarı (oyun testi sonuçlarına göre)
+   Test: 70 genel oyuncu, insan gibi oynayan bot, 45 an.
+   - Açık oyunda (hücum, oyun kurma, kontra) pasların ~%65'i kesiliyordu;
+     iyi seçilmiş paslar artık daha sık arkadaşına ulaşır. Kontra atakta
+     savunma dağınık olduğu için kesilme daha da az.
+   - Penaltı golü %40'tayken gerçekçi seviyeye (~%70–75) çekildi.
+   - Kafa düellosunda topa iyi basmak (zamanlama) düelloyu kazanma
+     şansını artırır; taban şans biraz yükseldi.
+   ============================================================ */
+const ENG44 = { keep: { kontra: .58, build: .66, atk: .7, drib: .7, one: .75 }, shortKeep: .55, penSave: .66, duelBonus: .28, duelMin: .35 };
+{
+  const _lp44 = launchPath;
+  launchPath = function (P, ev, q, oy, ox) {
+    const s = S; if (s && s.head && !s.headDone) s._hq = q;
+    const r = _lp44.apply(this, arguments);
+    try {
+      const run = S && S.run;
+      if (run && run.k === 'pass' && run.fail && run.fail.d && !run.fail.d.wallP && !run.fail.miss) {
+        let keep = ENG44.keep[S.type] != null ? ENG44.keep[S.type] : .6;
+        if ((run.L || plen(run.P || P)) < 12) keep = Math.min(keep, ENG44.shortKeep);
+        keep += ((S.df || 1) - 1) * .5; /* güçlü rakip yine daha çok keser */
+        if (Math.random() > keep) run.fail = null;
+      }
+    } catch (e) { }
+    return r;
+  };
+  const _duel44 = duelP;
+  duelP = function (mk) {
+    const base = _duel44.apply(this, arguments), q = S && S._hq != null ? S._hq : .6;
+    return cl(Math.max(ENG44.duelMin, base) + (q - .6) * ENG44.duelBonus * 2, .2, .95);
+  };
+  const _sr44 = shotResult;
+  shotResult = function (P, run) {
+    const o = _sr44.apply(this, arguments);
+    try { if (S && S.type === 'pen' && o.save && Math.random() > ENG44.penSave) { o.save = false; o.held = false; o.goal = true; o.gx = (o.gx || 34) + ((o.x || 34) - (o.gx || 34)) * .6; } } catch (e) { }
+    return o;
+  };
+}
+
+/* ============================================================
+   v4.4 — ⚡ GÜNÜN POZİSYONU
+   Her gün herkese aynı son dakika anı gelir (tarihten seçilir):
+   penaltı, serbest vuruş, birebir, kafa, son atak, kontra ya da
+   son dakika savunması. Günde tek hak. Başarırsan jeton kazanırsın,
+   her gün oynadıkça seri büyür (7. günde büyük ödül).
+   Kariyere etkisi yoktur: maç, istatistik ve form değişmez.
+   ============================================================ */
+const DP = [
+  { type: 'pen', min: 94, sc: [1, 1], t: 'Son dakika penaltısı', d: 'Skor 1-1, dakika 90+4. Topun başına sen geçtin.' },
+  { type: 'fk', min: 89, sc: [0, 1], t: 'Ceza sahası önünde serbest vuruş', d: '89. dakika, 0-1 gerideyiz. Baraj kuruldu, bütün stat ayakta.' },
+  { type: 'one', min: 93, sc: [2, 2], t: 'Kaleciyle karşı karşıya', d: '90+3, skor 2-2. Savunmanın arkasına sarktın, önünde sadece kaleci var.' },
+  { type: 'head', min: 90, sc: [0, 0], t: 'Son korner', d: '90. dakika, 0-0. Orta geliyor, kafayı vur.' },
+  { type: 'atk', min: 88, sc: [1, 2], t: 'Son atak', d: '88. dakika, 1-2 gerideyiz. Bu atakta gol şart.' },
+  { type: 'kontra', min: 91, sc: [1, 1], t: 'Son saniye kontrası', d: '90+1, 1-1. Top kapıldı, önümüz boş!' },
+  { type: 'def', min: 92, sc: [1, 0], t: 'Galibiyeti koru', d: '90+2, 1-0 öndeyiz. Rakip son kez geliyor, araya gir.' },
+];
+const DP_REWARD = 15, DP_STREAK7 = 40;
+function dpDay() { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
+function dpDayNum() { const d = new Date(); return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5); }
+function dpToday() { return DP[dpDayNum() % DP.length]; }
+function dpAcct() { const A = acct(); A.dp = A.dp || { last: 0, lastN: 0, streak: 0, best: 0, wins: 0, res: null }; return A.dp; }
+function dpPlayed() { return dpAcct().last === dpDay(); }
+function dpAvail() { return g && g.phase === 'pro' && g.club && scr === 'game' && !M && !S; }
+
+function dpCardHTML() {
+  if (!g || g.phase !== 'pro' || !g.club) return '';
+  const D = dpAcct(), x = dpToday(), done = dpPlayed();
+  const dots = Array.from({ length: 7 }, (_, i) => `<i class="dpd ${i < (D.streak % 7 || (D.streak && done ? 7 : 0)) ? 'on' : ''}"></i>`).join('');
+  return `<div class="card dpcard"><div class="row-b"><div class="eyebrow gold">⚡ Günün Pozisyonu</div><span class="tag gold">🔥 ${D.streak} gün</span></div>
+  <h3>${x.t}</h3><p class="m">${x.d}</p><div class="dpdots">${dots}</div>
+  ${done ? `<div class="m"><span>${D.res === 'ok' ? `✅ Bugünkü pozisyonu başardın, +${DP_REWARD} 🪙 aldın.` : '❌ Bugünkü pozisyonu kaçırdın.'}</span> <span>Yarın yeni pozisyon gelecek.</span></div>`
+    : `<div class="actions"><button class="btn" onclick="dpStart()">Pozisyonu oyna</button></div><div class="m">Günde tek hak · Başarırsan +${DP_REWARD} 🪙 · 7 gün üst üste oynarsan +${DP_STREAK7} 🪙</div>`}</div>`;
+}
+
+function dpStart() {
+  if (dpPlayed()) return toast('Bugünkü pozisyonu oynadın; yarın yenisi gelecek');
+  if (!dpAvail()) return toast('Önce haftadaki işini bitir');
+  const x = dpToday(), myId = myClubId();
+  const pool = (g.w[g.club.ct] || []).flat().filter(c => c.id !== myId);
+  const opp = pool.length ? pool[dpDayNum() % pool.length] : null; if (!opp) return toast('Rakip bulunamadı');
+  const info = { oid: opp.id, home: 1, comp: '⚡ Günün Pozisyonu', round: new Date().toLocaleDateString(typeof LANG !== 'undefined' && LANG === 'en' ? 'en-GB' : 'tr-TR', { day: 'numeric', month: 'long' }) };
+  try {
+    M = mkMatch(null, info, { start: 1, off: 90 });
+  } catch (e) { M = null; return toast('Pozisyon açılamadı'); }
+  M.src = 'daily'; M.dp = 1; M.adRetry = 1; M.mom = [{ min: x.min, type: x.type }]; M.mi = 0; M.ev = []; M.ei = 0;
+  M.sc = x.sc.slice(); M.t = x.min; M.feed = [{ m: x.min, t: `⚡ Günün Pozisyonu: ${x.t}`, k: 'gold' }];
+  M.stage = 'live'; scr = 'match'; dpAcct().pending = dpDay(); acctSave();
+  nextMoment();
+}
+function dpFinish(ok) {
+  const D = dpAcct(), A = acct(), day = dpDay(), n = dpDayNum();
+  D.streak = D.lastN === n - 1 ? D.streak + 1 : 1; D.last = day; D.lastN = n; D.res = ok ? 'ok' : 'no'; D.pending = 0;
+  D.best = Math.max(D.best || 0, D.streak);
+  let gain = 0; if (ok) { gain += DP_REWARD; D.wins = (D.wins || 0) + 1; }
+  if (D.streak % 7 === 0) gain += DP_STREAK7;
+  if (gain) A.tok = (A.tok || 0) + gain;
+  acctSave();
+  try { cancelAnimationFrame(RAF); } catch (e) { }
+  S = null; M = null; scr = 'game'; sv(); draw();
+  toast(ok ? `⚡ Başardın! +${gain} 🪙 · Seri ${D.streak} gün` : `Bu sefer olmadı${gain ? ` · Seri ödülü +${gain} 🪙` : ''} · Seri ${D.streak} gün`);
+}
+{
+  const _sc44 = sceneContinue;
+  sceneContinue = function () {
+    if (typeof M !== 'undefined' && M && M.src === 'daily') { const ok = !!(S && S.good); return dpFinish(ok); }
+    return _sc44.apply(this, arguments);
+  };
+  const _ph44 = proHome;
+  proHome = function () { const h = _ph44.apply(this, arguments); try { return dpCardHTML() + h; } catch (e) { return h; } };
+  /* yarım kalan günün pozisyonu (uygulama kapandıysa) kaçırılmış sayılır */
+  try { const D = acct().dp; if (D && D.pending && D.pending !== D.last) { D.pending = 0; acctSave(); } } catch (e) { }
+}
+
+/* ============================================================
+   v4.4 — 🎬 HAYATININ FİLMİ
+   Hayat bittiğinde (ya da Miras Salonu'ndan) 6 karelik, hikâye boyutunda
+   (1080×1920) bir özet çıkar: doğum, ilk imza, zirve, kupalar, aile, miras.
+   Kareler kaydırılarak izlenir; tek tuşla hepsi paylaşılır.
+   hallEntry'ye `fm` alanı eklenir: hayatın anahtar anları (kulüp yılları,
+   partner, çocuklar). Eski salon kayıtlarında fm yoksa var olan alanlarla
+   daha kısa bir film çıkar.
+   ============================================================ */
+{
+  const _he44 = hallEntry;
+  hallEntry = function (h) {
+    const e = _he44.apply(this, arguments); h = h || g;
+    try {
+      const H = h.hist || [], F = h.fam || {};
+      const first = H[0], best = H.slice().sort((a, b) => ((b.g || 0) * 2 + (b.ap || 0)) - ((a.g || 0) * 2 + (a.ap || 0)))[0]; /* zirve: en çok iz bıraktığı kulüp */
+      const topG = H.slice().sort((a, b) => (b.g || 0) - (a.g || 0))[0];
+      e.fm = {
+        f: first ? { n: first.n, y: first.y0, how: first.how || '' } : null,
+        b: best ? { n: best.n, y0: best.y0, y1: best.y1 || h.season, ap: best.ap || 0, g: best.g || 0, id: best.id } : null,
+        tg: topG && topG.g ? { n: topG.n, g: topG.g } : null,
+        p: F.partner ? { n: F.partner.n, st: F.partner.st || '' } : null,
+        k: (F.kids || []).slice(0, 4).map(k => k.n),
+        coach: h.co && h.co.s ? { s: h.co.s, t: h.co.t || 0 } : null,
+      };
+    } catch (err) { }
+    return e;
+  };
+}
+const FILM = { W: 1080, H: 1920 };
+function filmFrames(e) {
+  const fm = e.fm || {}, U = s => s.toLocaleUpperCase(LANG === 'en' ? 'en' : 'tr'), F = [];
+  const yrs = n => T(`${n} yaş`);
+  F.push({ k: 'BÖLÜM 1', t: U(e.n), s: [`${e.y0} · ${e.city ? T(e.city) + ', ' : ''}${T(e.ct)}`, T('Bir futbol hayatı başlıyor.')], big: String(e.y0) });
+  if (fm.f) F.push({ k: 'BÖLÜM 2', t: U(T('İlk imza')), s: [clubName(fm.f.n), `${fm.f.y}${fm.f.how === 'kiralık' ? ' · ' + T('kiralık') : ''}`, T('Hayalin kâğıda döküldüğü gün.')], big: String(fm.f.y) });
+  if (fm.b) F.push({ k: 'BÖLÜM 3', t: U(T('Zirve')), s: [clubName(fm.b.n), `${fm.b.y0}–${fm.b.y1}`, `${fm.b.ap} ${T('maç')} · ${fm.b.g} ${T('gol')}`], big: String(fm.b.g || fm.b.ap), bigS: fm.b.g ? T('gol') : T('maç'), id: fm.b.id });
+  const tr = [[e.lg, 'lig şampiyonluğu'], [e.cup, 'ulusal kupa'], [e.ec, 'Şampiyonlar Kupası'], [e.el, 'Avrupa Ligi'], [e.wc, 'Dünya Kupası'], [e.bal, 'Altın Top']].filter(x => x[0]);
+  F.push({ k: 'BÖLÜM 4', t: U(T('Kariyer')), s: [`${e.ap} ${T('maç')} · ${e.g} ${T('gol')} · ${e.a} ${T('asist')}`, tr.length ? tr.map(x => `${x[0]} ${T(x[1])}`).join(' · ') : T('Kupa dolabı boş kaldı; ama her maç bir hikâyeydi.'), e.caps ? `${e.caps} ${T('A milli maç')}` : ''], big: String(trophies(e)), bigS: T('kupa') });
+  const fam = [];
+  if (fm.p) fam.push(fm.p.st === 'evli' ? T('Eşi') + ': ' + fm.p.n : T('Hayatındaki kişi') + ': ' + fm.p.n);
+  if (e.kids) fam.push(fm.k && fm.k.length ? T('Çocukları') + ': ' + fm.k.join(', ') : `${e.kids} ${T('çocuk')}`);
+  fam.push(T('Servet') + ': ' + T(fm1(e.w)));
+  F.push({ k: 'BÖLÜM 5', t: U(T('Saha dışı')), s: fam, big: e.kids ? String(e.kids) : e.w > 0 ? T(fm1(e.w)) : String(e.age), bigS: e.kids ? T('çocuk') : e.w > 0 ? T('Servet') : T('yaş') });
+  F.push({ k: 'SON', t: U(T(e.tier)), s: [hallEpitaph(e).slice(0, 2).map(x => T(x)).join(' · ') || T('Kendi yolunu çizdi.'), `${e.y0}–${e.y1} · ${yrs(e.age)}`, T('Geriye ne bırakacaksın?')], big: String(e.mp), bigS: T('Miras Puanı'), end: 1 });
+  return F;
+}
+function fm1(w) { try { return fm(w); } catch (e) { return String(w); } }
+function filmCanvas(e, fr, i, n) {
+  const { W, H } = FILM, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const x = cv.getContext && cv.getContext('2d'); if (!x) return null;
+  const D = '"Barlow Condensed", "Arial Narrow", sans-serif', B = '"Barlow", system-ui, sans-serif', gold = '#e8c468', mut = '#9fb3a8', tx = '#eef3ef';
+  const c1 = e.c1 || gold, c2 = e.c2 || '#121b17';
+  const bg = x.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#0f2a1c'); bg.addColorStop(.55, '#08160e'); bg.addColorStop(1, '#040a06'); x.fillStyle = bg; x.fillRect(0, 0, W, H);
+  x.globalAlpha = .045; x.fillStyle = '#fff'; for (let y = 0; y < H; y += 150) x.fillRect(0, y, W, 75); x.globalAlpha = 1;
+  /* saha çizgileri */
+  x.strokeStyle = 'rgba(232,196,104,.10)'; x.lineWidth = 5; x.beginPath(); x.arc(W / 2, H * .82, 300, 0, Math.PI * 2); x.stroke(); x.beginPath(); x.moveTo(0, H * .82); x.lineTo(W, H * .82); x.stroke();
+  /* kulüp renk şeridi */
+  x.save(); x.translate(W, 0); x.rotate(Math.PI / 4); x.fillStyle = c1; x.fillRect(-360, 70, 1200, 110); x.fillStyle = c2; x.fillRect(-360, 180, 1200, 40); x.restore();
+  const glow = x.createRadialGradient(W / 2, H * .45, 60, W / 2, H * .45, 900); glow.addColorStop(0, 'rgba(232,196,104,.18)'); glow.addColorStop(1, 'rgba(232,196,104,0)'); x.fillStyle = glow; x.fillRect(0, 0, W, H);
+  /* üst bilgi */
+  x.textBaseline = 'alphabetic'; x.fillStyle = gold; x.font = `700 40px ${D}`; x.fillText('MIRAS FC · ' + T('HAYATININ FİLMİ'), 80, 150);
+  x.fillStyle = mut; x.font = `500 34px ${B}`; x.fillText(e.n, 80, 200);
+  /* ilerleme çubukları */
+  for (let k = 0; k < n; k++) { x.fillStyle = k <= i ? gold : 'rgba(255,255,255,.18)'; const w = (W - 160 - (n - 1) * 12) / n; x.fillRect(80 + k * (w + 12), 60, w, 8); }
+  /* büyük sayı */
+  x.fillStyle = 'rgba(232,196,104,.95)'; x.font = `800 360px ${D}`; cardFit(x, fr.big, W - 160, 360, 800, D); x.fillText(fr.big, 72, 1060);
+  if (fr.bigS) { x.fillStyle = tx; x.font = `700 64px ${D}`; x.fillText(U44(fr.bigS), 80, 1145); }
+  /* bölüm ve başlık */
+  x.fillStyle = gold; x.font = `700 44px ${D}`; x.fillText('— ' + T(fr.k), 80, 1290);
+  x.fillStyle = tx; cardFit(x, fr.t, W - 160, 150, 800, D); x.fillText(fr.t, 76, 1440);
+  /* alt satırlar */
+  let y = 1530; x.font = `500 46px ${B}`;
+  fr.s.filter(Boolean).forEach((s, j) => { x.fillStyle = j === 0 ? tx : mut; const lines = wrap44(x, s, W - 160, `${j === 0 ? 600 : 500} 46px ${B}`); lines.forEach(l => { x.fillText(l, 80, y); y += 62; }); y += 14; });
+  /* alt şerit */
+  x.fillStyle = 'rgba(255,255,255,.12)'; x.fillRect(80, H - 150, W - 160, 2);
+  x.fillStyle = fr.end ? gold : mut; x.font = `700 40px ${D}`; x.fillText(fr.end ? T('MİRAS FC · App Store') : `${i + 1} / ${n}`, 80, H - 90);
+  x.textAlign = 'right'; x.fillStyle = mut; x.font = `500 32px ${B}`; x.fillText(T('Geriye ne bırakacaksın?'), W - 80, H - 90); x.textAlign = 'left';
+  return cv;
+}
+function U44(s) { return String(s).toLocaleUpperCase(LANG === 'en' ? 'en' : 'tr'); }
+function wrap44(x, s, maxW, font) { x.font = font; const w = String(s).split(' '), out = []; let cur = ''; for (const t of w) { const n2 = cur ? cur + ' ' + t : t; if (x.measureText(n2).width > maxW && cur) { out.push(cur); cur = t; } else cur = n2; } if (cur) out.push(cur); return out.slice(0, 3); }
+
+let FILMURLS = [], FILMI = 0, FILME = null;
+async function filmOpen(e) {
+  FILME = e; await cardFonts();
+  const fr = filmFrames(e); FILMURLS = fr.map((f, i) => { const c = filmCanvas(e, f, i, fr.length); return c ? c.toDataURL('image/png') : ''; }).filter(Boolean);
+  if (!FILMURLS.length) return toast('Bu cihazda film çizilemedi');
+  FILMI = 0; let el = document.getElementById('mfilm');
+  if (!el) { el = document.createElement('div'); el.id = 'mfilm'; el.className = 'tut'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); document.body.appendChild(el); }
+  el.hidden = false; filmDraw();
+}
+function filmDraw() {
+  const el = document.getElementById('mfilm'); if (!el) return;
+  el.innerHTML = `<div class="tutc card filmc"><div class="tutt"><span class="eyebrow gold">🎬 Hayatının Filmi</span><button class="lnk" onclick="filmClose()">Kapat ✕</button></div>
+  <div class="filmv" onclick="filmNav(event)"><img src="${FILMURLS[FILMI]}" alt="${esc(FILME.n)} · ${FILMI + 1}/${FILMURLS.length}"></div>
+  <div class="filmdots">${FILMURLS.map((_, i) => `<i class="${i === FILMI ? 'on' : ''}"></i>`).join('')}</div>
+  <div class="actions"><button class="btn ghost" onclick="filmStep(-1)" ${FILMI ? '' : 'disabled'}>‹</button><button class="btn big" style="flex:1" onclick="filmShare()">📤 Filmi paylaş</button><button class="btn ghost" onclick="filmStep(1)" ${FILMI < FILMURLS.length - 1 ? '' : 'disabled'}>›</button></div>
+  <p class="m">Kareye dokunarak ilerle. Paylaş düğmesi çalışmazsa kareye uzun basıp kaydet.</p></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+function filmStep(d) { FILMI = cl(FILMI + d, 0, FILMURLS.length - 1); filmDraw(); }
+function filmNav(ev) { const r = ev.currentTarget.getBoundingClientRect(); filmStep(ev.clientX - r.left < r.width / 3 ? -1 : 1); }
+function filmClose() { const el = document.getElementById('mfilm'); if (el) { el.hidden = true; el.innerHTML = ''; } }
+async function filmShare() {
+  try {
+    const slug = (FILME && FILME.n || 'miras').toLowerCase().replace(/[^a-z0-9ğüşıöç]+/gi, '-');
+    const files = await Promise.all(FILMURLS.map((u, i) => fetch(u).then(r => r.blob()).then(b => new File([b], `miras-fc-${slug}-${i + 1}.png`, { type: 'image/png' }))));
+    if (navigator.canShare && navigator.canShare({ files })) { await navigator.share({ files, title: 'Miras FC', text: T('Hayatımın filmi') + ' · Miras FC' }); return; }
+    const one = [files[FILMI]]; if (navigator.canShare && navigator.canShare({ files: one })) { await navigator.share({ files: one, title: 'Miras FC' }); return; }
+  } catch (err) { if (err && err.name === 'AbortError') return; }
+  toast('Paylaşım açılmadı; kareye uzun basıp kaydedebilirsin');
+}
+function filmOpenKey(i) { const k = HALLK[i]; const e = (acct().hall || []).find(x => x.key === k); if (e) filmOpen(e); }
+function filmOpenCurrent() { if (!g) return; filmOpen(hallEntry(g)); }
+{
+  /* hayat sonu ve miras ekranına film kartı */
+  const MS_FILM = `<div class="card filmcta"><div class="eyebrow gold">🎬 Hayatının Filmi</div><p class="m">Bu hayatı 6 karede anlat: doğum, ilk imza, zirve, kupalar, aile ve miras. Hikâyende paylaş.</p><div class="actions"><button class="btn" onclick="filmOpenCurrent()">🎬 Filmi izle</button></div></div>`;
+  const _end44 = endUI; endUI = function () { return MS_FILM + _end44.apply(this, arguments); };
+  const _leg44 = legUI; legUI = function () { return _leg44.apply(this, arguments) + MS_FILM; };
+  /* Miras Salonu'ndaki her hayata film düğmesi */
+  const _hu44 = hallScr;
+  hallScr = function () { return _hu44.apply(this, arguments).replace(/<button class="btn" onclick="cardOpenKey\((\d+)\)">🖼 Miras Kartı<\/button>/g, '<button class="btn" onclick="cardOpenKey($1)">🖼 Miras Kartı</button><button class="btn" onclick="filmOpenKey($1)">🎬 Film</button>'); };
+}
+
+/* ============================================================
+   v4.4 — 🎭 SENARYO MODU
+   Hazır bir hayatın ortasından başlarsın; her senaryonun bir hedefi ve
+   süresi var. Hedefe ne kadar erken ulaşırsan o kadar çok yıldız (⭐1–3).
+   Senaryo bitse de hayat devam eder (normal kariyer gibi).
+   Yıldızlar hesaba yazılır (acct().scen), ana menüde görünür.
+   ============================================================ */
+const SCEN = [
+  { id: 'harika', e: '🌱', n: 'Altyapı Harikası', who: 'Efe Yıldız', age: 17, pos: 'FW', st: 64, yrs: 4,
+    d: '17 yaşında ülkenin en büyük kulübüne imza attın ama teknik direktör sana şans vermiyor.',
+    goal: '21 yaşına girmeden 5 kez A milli takımda forma giy.' },
+  { id: 'bag', e: '🩹', n: 'Çapraz Bağ', who: 'Mert Kalkan', age: 24, pos: 'MF', st: 77, yrs: 3,
+    d: 'Büyük bir kulübün yıldızıyken çapraz bağların koptu. Doktorlar 30 hafta yoksun diyor.',
+    goal: 'Gelecek sezon en az 20 maça çık ve yerini geri al.' },
+  { id: 'dans', e: '🕯️', n: 'Son Dans', who: 'Volkan Arslan', age: 33, pos: 'FW', st: 70, yrs: 2,
+    d: '33 yaşındasın, alt ligde oynuyorsun ve kötü yatırımlar yüzünden 1,2 M€ borcun var.',
+    goal: 'İki sezon içinde 15 gol at ve borcunu kapat.' },
+  { id: 'donus', e: '🏠', n: 'Memlekete Dönüş', who: 'Kaan Demirel', age: 31, pos: 'MF', st: 80, yrs: 3,
+    d: 'Avrupa’da yıldız oldun. Çocukluk kulübün ise ligin dibinde ve senden yardım bekliyor.',
+    goal: 'Çocukluk kulübüne dön ve 3 sezon içinde ligi ilk 6’da bitir.' },
+];
+function scAcct() { const A = acct(); A.scen = A.scen || {}; return A.scen; }
+function scStars() { return Object.values(scAcct()).reduce((s, v) => s + (v || 0), 0); }
+function scFreeSlot() { for (let i = 1; i <= acct().slots; i++) if (!ld(i)) return i; return 0; }
+function scMenuHTML() {
+  const A = scAcct();
+  return `<div class="card scmenu"><div class="row-b"><div class="eyebrow gold">🎭 Senaryo Modu</div><span class="tag gold">⭐ ${scStars()} / ${SCEN.length * 3}</span></div>
+  <p class="m">Hazır bir hayatın ortasından başla, hedefe ulaş. Erken başarırsan daha çok yıldız.</p>
+  <div class="sclist">${SCEN.map(s => `<button class="scb" onclick="scOpen('${s.id}')"><span class="sce">${s.e}</span><span class="scn"><b>${s.n}</b><i>${s.age} yaş · ${s.yrs} sezon</i></span><span class="scs">${'⭐'.repeat(A[s.id] || 0)}${'<em>☆</em>'.repeat(3 - (A[s.id] || 0))}</span></button>`).join('')}</div></div>`;
+}
+function scOpen(id) {
+  const s = SCEN.find(x => x.id === id); if (!s) return;
+  let el = document.getElementById('scdlg'); if (!el) { el = document.createElement('div'); el.id = 'scdlg'; el.className = 'tut'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); document.body.appendChild(el); }
+  const free = scFreeSlot(), best = scAcct()[id] || 0;
+  el.hidden = false;
+  el.innerHTML = `<div class="tutc card"><div class="tute">${s.e}</div><h2>${s.n}</h2><p class="m">${s.who} · ${s.age} yaş</p><p>${s.d}</p>
+  <div class="scgoal"><b>🎯 Hedef</b><span>${s.goal}</span></div><p class="m">${s.id === 'bag' ? '⭐⭐⭐ ikinci sezonda · ⭐⭐ üçüncü' : '⭐⭐⭐ ilk sezonda · ⭐⭐ ikinci · ⭐ sonrasında'}${best ? ` · En iyin: ${'⭐'.repeat(best)}` : ''}</p>
+  ${free ? '' : '<p class="m warn">Senaryo için boş bir kayıt yuvası gerekiyor. Ana menüden bir kaydı sil ya da mağazadan yuva aç.</p>'}
+  <div class="actions"><button class="btn big" style="flex:1" ${free ? '' : 'disabled'} onclick="scStart('${s.id}')">Senaryoyu başlat</button><button class="btn ghost" onclick="document.getElementById('scdlg').hidden=true">Vazgeç</button></div></div>`;
+  if (typeof i18nApply === 'function') i18nApply(el);
+}
+function scSetStats(v) { for (const k of K) g.st[k] = cl(v + R(-3, 3), 30, 95); g.pot = Math.max(g.pot || 0, v + 12); }
+function scSign(c, ct, role) {
+  g.of = [mkOffer(c, ct, 'win', { role })]; g.ofKind = 'win'; sign(0);
+  if (scr === 'num') pickNum(freeNum(g.sq[g.club.id], g.pos));
+  g.role = role; if (g.con) g.con.role = role; scr = 'game';
+}
+function scStart(id) {
+  const s = SCEN.find(x => x.id === id), slotN = scFreeSlot(); if (!s || !slotN) return;
+  const d = document.getElementById('scdlg'); if (d) d.hidden = true;
+  nw(slotN); NC.pos = s.pos; NC.st = Object.keys(STYLES[s.pos])[0]; newScr();
+  $('nn').value = s.who; if ($('nc')) $('nc').value = 'Türkiye'; if ($('ng')) $('ng').value = 'Türkiye'; if ($('ny')) $('ny').value = 'İstanbul';
+  mk(); if (!g) return;
+  /* çocukluğu hızlıca geç */
+  let k = 0; while (g.phase === 'child' && k++ < 40) { if (g.q) answerQ(0); while (g.ev) choose(0); if (g.q) answerQ(0); childYear(); }
+  if (scr === 'offers') { if (g.of && g.of.length) sign(0); else declineOffers(); }
+  if (scr === 'num') pickNum(freeNum(g.sq[g.club.id], g.pos));
+  g.ev = null; g.q = null; g.evq = [];
+  const dAge = s.age - g.age; g.age = s.age; g.season += dAge; scSetStats(s.st); g.loanSureDone = 1; g.tutDone = 1;
+  const ct = 'Türkiye', tiers = g.w[ct], top = tiers[0].slice().sort((a, b) => b.s - a.s);
+  if (id === 'harika') { scSign(top[0], ct, 0); g.rep = 10; }
+  if (id === 'bag') { scSign(top[1] || top[0], ct, 3); g.rep = 45; g.inj = 30; g.injLong = 3; L('Çapraz bağların koptu. Uzun bir dönüş yolu seni bekliyor.'); }
+  if (id === 'dans') { const t2 = (tiers[1] || tiers[0]).slice().sort((a, b) => b.s - a.s); scSign(t2[Math.floor(t2.length / 2)], ct, 3); g.money = -1200; g.rep = 30; L('Kötü yatırımlar yüzünden 1,2 M€ borca girdin.'); }
+  if (id === 'donus') {
+    const abroad = COUNTRIES.find(c => c.n === 'İspanya') || COUNTRIES.find(c => c.n !== ct), at = g.w[abroad.n][0].slice().sort((a, b) => b.s - a.s);
+    const home = top[Math.floor(top.length * .65)]; g.homeClub = home.id;
+    scSign(at[2] || at[0], abroad.n, 3); g.rep = 70; g.money = 6000;
+    g.of = [mkOffer(home, ct, 'win', { home: 1, role: 4, msg: 'Çocukluk kulübün seni geri istiyor. Taraftar havaalanında bekleyecek.' })]; g.ofKind = 'win'; scr = 'offers';
+  }
+  g.scn = { id, y0: g.season, g0: g.car.g, c0: g.nat.caps, yrs: s.yrs, done: 0, fail: 0 };
+  L(`🎭 Senaryo başladı: ${s.n}. Hedef: ${s.goal}`);
+  try { UNDO = null; } catch (e) { }
+  sv(); draw(); window.scrollTo(0, 0);
+}
+function scProgress() {
+  const c = g.scn, s = c && SCEN.find(x => x.id === c.id); if (!s) return '';
+  const used = g.season - c.y0, left = Math.max(0, s.yrs - used);
+  if (c.id === 'harika') return `A milli maç: ${g.nat.caps - (c.c0 || 0)} / 5 · ${Math.max(0, 21 - g.age)} yılın kaldı`;
+  if (c.id === 'bag') return used === 0 ? `Sakatlık: ${g.inj} hafta kaldı` : `Bu sezon: ${g.ss.ap} / 20 maç`;
+  if (c.id === 'dans') return `Gol: ${g.car.g - c.g0} / 15 · Servet: ${fm(wealth())} · ${left} sezon kaldı`;
+  if (c.id === 'donus') return `${g.club && g.club.id === g.homeClub ? 'Çocukluk kulübündesin' : 'Henüz çocukluk kulübünde değilsin'} · ${left} sezon kaldı`;
+  return '';
+}
+function scCardHTML() {
+  const c = g && g.scn, s = c && SCEN.find(x => x.id === c.id); if (!s || c.seen) return '';
+  const st = c.done ? `<div class="m">✅ Başardın! ${'⭐'.repeat(c.done)}</div>` : c.fail ? '<div class="m">❌ Hedefe süre içinde ulaşamadın. Hayat devam ediyor.</div>' : `<div class="m">${scProgress()}</div>`;
+  return `<div class="card sccard"><div class="row-b"><div class="eyebrow gold">${s.e} Senaryo · ${s.n}</div>${c.done || c.fail ? `<button class="lnk" onclick="g.scn.seen=1;sv();draw()">Gizle</button>` : ''}</div><p><b>🎯 ${s.goal}</b></p>${st}</div>`;
+}
+function scFail(out) { const c = g.scn, s = SCEN.find(x => x.id === c.id); c.fail = 1; const t = `🎭 Senaryo süresi doldu: ${s.n}. Hayat devam ediyor.`; L(t); if (out && out.lines) out.lines.unshift(t); }
+function scCheckSeason(pos) {
+  const c = g.scn; if (!c || c.done || c.fail) return;
+  const used = g.season - c.y0 + 1, s = SCEN.find(x => x.id === c.id), out = g.lastSeason;
+  let ok = false;
+  if (c.id === 'harika') ok = g.nat.caps - (c.c0 || 0) >= 5;
+  if (c.id === 'bag') ok = used >= 2 && (g.seasons[0] && g.seasons[0].ap >= 20);
+  if (c.id === 'dans') ok = g.car.g - c.g0 >= 15 && wealth() >= 0;
+  if (c.id === 'donus') ok = g.club && g.club.id === g.homeClub && pos && pos <= 6;
+  if (ok) { c.season = used; return scWin2(used, out); }
+  if (c.id === 'harika' ? g.age >= 21 : used >= s.yrs) scFail(out);
+}
+function scWin2(used, out) { const c = g.scn, s = SCEN.find(x => x.id === c.id), e = c.id === 'bag' ? 2 : 1, stars = used <= e ? 3 : used <= e + 1 ? 2 : 1; c.done = stars; const A = scAcct(); A[c.id] = Math.max(A[c.id] || 0, stars); acctSave(); try { tokAdd(stars * 10, 'Senaryo ödülü'); } catch (e) { } const t = `🎭 SENARYO TAMAM: ${s.n} ${'⭐'.repeat(stars)}`; L(t); if (out && out.lines) out.lines.unshift(t); try { toast(t); } catch (e) { } }
+{
+  const _se44 = seasonEnd;
+  seasonEnd = function () {
+    const r = _se44.apply(this, arguments);
+    try { if (g && g.scn) { g.season--; const pos = g.lastSeason && g.lastSeason.pos; scCheckSeason(pos); g.season++; } } catch (e) { console.error(e); }
+    return r;
+  };
+  /* milli maç sezon ortasında gelirse harika senaryosu hemen tamamlanır */
+  const _we44s = weekEnd;
+  weekEnd = function () { const r = _we44s.apply(this, arguments); try { const c = g && g.scn; if (c && c.id === 'harika' && !c.done && !c.fail && g.nat && g.nat.caps - (c.c0 || 0) >= 5) scWin2(g.season - c.y0 + 1, null); } catch (e) { } return r; };
+  const _ph44s = proHome; proHome = function () { const h = _ph44s.apply(this, arguments); try { return scCardHTML() + h; } catch (e) { return h; } };
+  const _menu44 = menu;
+  menu = function () { const r = _menu44.apply(this, arguments); try { const app = $('app'), w = app.querySelector('.wrap'), slot = w && w.querySelector('.card.slot'); if (slot) { slot.insertAdjacentHTML('beforebegin', scMenuHTML()); i18nApply(w); } } catch (e) { } return r; };
+}
 
 menu();
 </script></body></html>

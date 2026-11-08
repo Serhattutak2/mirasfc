@@ -397,3 +397,31 @@ html, body { overscroll-behavior-y: none; -webkit-overflow-scrolling: touch; }
 .tan { display: grid; grid-template-columns: 1fr 1.2fr 28px; gap: 8px; align-items: center; margin: 6px 0; font-size: 13px; } .tan span { color: var(--mut); } .tan b { text-align: right; } .tanb { height: 8px; border-radius: 4px; background: rgba(255,255,255,.07); overflow: hidden; } .tanb i { display: block; height: 100%; border-radius: 4px; transition: width .4s; } .tan em { grid-column: 1 / -1; font-size: 11px; color: var(--mut); font-style: normal; }
 .lm6 canvas { width: 100%; display: block; border-radius: 10px; background: #2b8a27; } .lm6c { display: flex; gap: 6px; align-items: center; justify-content: space-between; margin: 8px 0; flex-wrap: wrap; } .lm6c { flex-wrap: nowrap; } .lm6c .btn { margin: 0; width: auto; flex: 0 0 auto; padding: 7px 10px; font-size: 13px; white-space: nowrap; } .lm6st { margin-top: 6px; } .lm6clk { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold); font-size: 14px; }
 @media (max-width: 380px) { .tform { grid-template-columns: repeat(3, 1fr); } .rep6l b { font-size: 9px; } }
+/* v4.4 Günün Pozisyonu */
+.dpcard { border: 1px solid rgba(232,196,104,.45); background: linear-gradient(135deg, rgba(232,196,104,.10), transparent 60%), var(--card, #14211a); }
+.dpcard h3 { margin: 6px 0 4px; font: 700 22px var(--disp); }
+.dpdots { display: flex; gap: 6px; margin: 8px 0 4px; }
+.dpd { width: 22px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.12); }
+.dpd.on { background: var(--gold); }
+/* v4.4 Hayatının Filmi */
+.filmc { max-width: 420px; }
+.filmv { border-radius: 14px; overflow: hidden; cursor: pointer; background: #08160e; }
+.filmv img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.filmdots { display: flex; gap: 5px; justify-content: center; margin: 8px 0; }
+.filmdots i { width: 18px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.2); }
+.filmdots i.on { background: var(--gold); }
+.filmcta { border: 1px solid rgba(232,196,104,.45); }
+/* v4.4 Senaryo Modu */
+.scmenu { border: 1px solid rgba(232,196,104,.35); }
+.sclist { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.scb { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); color: inherit; font: inherit; cursor: pointer; }
+.scb:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.sce { font-size: 26px; }
+.scn { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.scn b { font: 700 18px var(--disp); }
+.scn i { font-style: normal; font-size: 13px; color: var(--mut); }
+.scs { white-space: nowrap; font-size: 14px; }
+.scs em { font-style: normal; color: var(--mut); opacity: .6; }
+.scgoal { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: rgba(232,196,104,.1); border: 1px solid rgba(232,196,104,.35); margin: 8px 0; }
+.sccard { border: 1px solid rgba(232,196,104,.35); }
+.warn { color: #f0a35e; }

@@ -1,9 +1,9 @@
-/* Build: 2026-11-08 v4.4 — reklam azaltıldı (en az 4 dk arayla, ilk 3 dk reklamsız, hafta/sezon simülasyonu reklamsız), maç ipuçları İngilizce (TestFlight) */
+/* Build: 2026-11-08 v4.4 — Günün Pozisyonu, Hayatının Filmi, Senaryo Modu, ilk kiralık teklifi, maç akışı, reklam 4 dk arayla (simülasyon ödüllü reklamla) (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
      (abonelere hiç; oturumun ilk 3 dk'sında yok; maç/olay/pazarlık ortasında asla).
-   - Hafta/sezon simülasyonu reklam istemez.
+   - "4 hafta / Sezonu simüle et" önce bir ödüllü reklam gösterir, sonra simüle eder.
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -23,8 +23,8 @@ function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
 if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-/* hafta/sezon simülasyonu: reklamsız, simülasyon sırasında geçiş reklamı bastırılır */
-function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; run(); } /* v4.4: hafta/sezon atlamak artık reklam istemez */
+/* hafta/sezon simülasyonu: önce ödüllü reklam, simülasyon sırasında geçiş reklamı bastırılır */
+function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; if (typeof adRewarded === 'function') adRewarded('skip', run); else run(); } /* hafta/sezon simülasyonu ödüllü reklamla açılır */
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };

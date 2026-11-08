@@ -27,10 +27,10 @@ def page(p):
     return b, pg
 
 
-def snap(pg, name, full=False):
+def snap(pg, name, full=False, keep_scroll=False):
     pg.evaluate("()=>{const t=document.getElementById('toast'); if(t){t.hidden=true;} const u=document.getElementById('tut'); if(u) u.hidden=true;}")
     pg.wait_for_timeout(500)
-    pg.evaluate("window.scrollTo(0,0)")
+    if not keep_scroll: pg.evaluate("window.scrollTo(0,0)")
     pg.screenshot(path=os.path.join(out, name + '.png'), full_page=False)
     print('shot', name)
 
@@ -45,7 +45,9 @@ STEPS = [
     ('06_match', "()=>{ const m=nextWeekMatch(); g.cur={ci:g.wq[0], sel:{start:1, off:90}}; playMatch(); }", 800),
     ('07_scene', "()=>{ const i=M.mom.findIndex((m,k)=>k>=M.mi&&(m.type==='atk'||m.type==='build')); if(i>M.mi){ const t=M.mom.splice(i,1)[0]; M.mom.splice(M.mi,0,t); } nextMoment(); }", 2200),
     ('07a_aim', 'AIM', 0),
-    ('08_life', "()=>{ try{ cancelAnimationFrame(RAF); }catch(e){} try{ simRest(); matchDone(); }catch(e){} scr='game'; while(g.ev)choose(0); setTab('life'); }"),
+    ('07c_daily', "()=>{ try{ cancelAnimationFrame(RAF); }catch(e){} try{ simRest(); matchDone(); }catch(e){} scr='game'; while(g.ev)choose(0); M=null; S=null; setTab('hafta'); window.scrollTo(0,0); const D=dpAcct(); D.streak=4; D.lastN=dpDayNum()-1; acctSave(); draw(); }"),
+    ('07d_dplay', "()=>{ dpStart(); }", 1400),
+    ('08_life', "()=>{ try{ cancelAnimationFrame(RAF); }catch(e){} try{ M=null; S=null; }catch(e){} scr='game'; while(g.ev)choose(0); setTab('life'); }"),
     ('09_awards', "()=>{ try{ AD_SIM=1; simWeeks(60); }catch(e){} AD_SIM=0; let k=0; while(scr!=='game'&&k++<30){ try{ if(scr==='season'){ if(g.ev)choose(0); else if(g.q)answerQ(0); else seasonCont(); } else if(scr==='offers') declineOffers(); else if(scr==='match'){simRest();matchDone();} else if(scr==='tour'){quickTour();} else if(scr==='tourinv'){tourAccept(0);} else break; }catch(e){break;} } if(g.lastSeason&&g.lastSeason.aw) awOpen(); }", 2500),
     ('10_coach', "()=>{ try{ document.getElementById('aw') && (document.getElementById('aw').hidden=true); }catch(e){} scr='game'; g.money+=200000; retire(1); g.lic=4; coachLook(); if(g.cof&&g.cof.length) coachSign(0); scr='game'; while(g.ev)choose(0); sv(); setTab('coach'); }"),
 ]
@@ -70,6 +72,18 @@ if __name__ == '__main__':
                 print('  scr=', pg.evaluate("typeof scr!=='undefined'?scr:''"))
             except Exception as e:
                 print('FAIL', name, str(e)[:200])
+        # Hayatının Filmi (mevcut hayattan) ve Senaryo menüsü
+        try:
+            pg.evaluate("()=>{ window.scrollTo(0,0); filmOpenCurrent(); }"); pg.wait_for_timeout(1500)
+            pg.evaluate("()=>{ filmStep(2); }"); pg.wait_for_timeout(300)
+            snap(pg, '13_film')
+            import base64 as _b
+            fu = pg.evaluate("()=>FILMURLS")
+            for i, u in enumerate(fu): open(os.path.join(out, f'film_{i+1}.png'), 'wb').write(_b.b64decode(u.split(',')[1]))
+            pg.evaluate("()=>{ filmClose(); }")
+        except Exception as e: print('FAIL film', e)
+        pg.evaluate("()=>{ try{ sv(); }catch(e){} menu(); window.scrollTo(0,0); const A=acct(); A.scen={harika:3,bag:2,dans:1}; acctSave(); menu(); const el=document.querySelector('.scmenu'); if(el) window.scrollTo(0, el.getBoundingClientRect().top+window.scrollY-110); }")
+        snap(pg, '14_scen', keep_scroll=True)
         # Miras Salonu: test botunun oynadığı gerçek hayatlar (isimler çeşitlendirildi)
         hall_file = os.environ.get('HALL_JSON')
         if hall_file:
@@ -77,12 +91,18 @@ if __name__ == '__main__':
             hall = json.load(open(hall_file)).get('hall', [])
             names = ['Kerem Aksoy', 'Emre Yalın', 'Deniz Kara', 'Arda Tunç', 'Mert Ilgaz', 'Can Ertan', 'Ozan Demir', 'Burak Sel', 'Efe Kılıç', 'Tolga Aydın', 'Umut Er']
             if lang == 'en': names = ['Kerem Aksoy', 'Leo Carter', 'Marco Silva', 'Jonas Berg', 'Luca Romano', 'Ethan Hale', 'Diego Ruiz', 'Noah Price', 'Sam Cole', 'Theo Grant', 'Max Weber']
-            for i, e in enumerate(hall): e['n'] = names[i % len(names)]; e['key'] = e['n'] + '|' + str(i)
+            kidn = ['Ela', 'Kaan', 'Zeynep', 'Aras'] if lang == 'tr' else ['Mia', 'Leo', 'Ava', 'Sam']
+            for i, e in enumerate(hall):
+                e['n'] = names[i % len(names)]; e['key'] = e['n'] + '|' + str(i)
+                if e.get('fm') and e['fm'].get('k'): e['fm']['k'] = kidn[:len(e['fm']['k'])]
             pg.evaluate("(h)=>{ const A=acct(); A.hall=h; acctSave(); try{ if(typeof M!=='undefined'&&M){cancelAnimationFrame(RAF);} }catch(e){} hallOpen(); }", hall)
             snap(pg, '11_hall')
             best = max(hall, key=lambda e: e.get('mp', 0))
             data = pg.evaluate("(e)=>{ const c=cardCanvas(e); return c? c.toDataURL('image/png'):'' }", best)
             if data:
                 open(os.path.join(out, '12_card.png'), 'wb').write(base64.b64decode(data.split(',')[1])); print('shot 12_card')
+            fu = pg.evaluate("async (e)=>{ await filmOpen(e); const u=FILMURLS.slice(); filmClose(); return u; }", best)
+            for i, u in enumerate(fu): open(os.path.join(out, f'hfilm_{i+1}.png'), 'wb').write(base64.b64decode(u.split(',')[1]))
+            print('hall film frames', len(fu))
         b.close()
     print('errors:', errs[:5])

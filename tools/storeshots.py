@@ -12,8 +12,10 @@ SLIDES = {
         ('02_child', 'BİR FUTBOL HAYAT SİMÜLASYONU', 'Doğumdan|son düdüğe', 'İlk topundan son maçına kadar bir hayatın tamamı senin elinde.'),
         ('07a_aim', 'SAHADA', 'Oku çek,|golü sen at', 'Pas, şut, çalım: her pozisyonu parmağınla oynarsın.'),
         ('07a_aim_after', 'VURUŞ ANI', 'Topa bas,|falsoyu ver', 'Ortasına bas sert ve isabetli, kenarına bas kavisli.'),
+        ('FILM', 'YENİ · HAYATININ FİLMİ', 'Bütün hayatın|altı karede', 'İlk imza, zirve, kupalar, aile. Biten her hayat paylaşılacak bir filme dönüşür.'),
+        ('07d_dplay', 'YENİ · GÜNÜN POZİSYONU', 'Her gün yeni|bir son dakika', 'Herkese aynı pozisyon, tek hak. Başar, jetonu al, seriyi büyüt.'),
+        ('14_scen', 'YENİ · SENARYO MODU', 'Hazır bir hayat,|tek bir hedef', 'Çapraz bağdan dönüş, borç batağında son dans, memlekete dönüş. Yıldızları topla.'),
         ('03_childyears', 'KARARLAR', 'Her seçimin|bir bedeli var', 'Doğru cevap yok. Aile, para, hırs ve sadakat arasında sen seçersin.'),
-        ('08_life', 'SAHA DIŞI', 'Aile, aşk|ve servet', 'Saha dışındaki hayatın da kariyerin kadar gerçek.'),
         ('10_coach', 'TEKNİK DİREKTÖR', 'Kramponları as,|takımı yönet', 'Taktik, kadro, basın toplantısı ve yönetim kurulu baskısı.'),
         ('LEGACY', 'MİRAS', 'Geriye ne|bırakacaksın?', 'Her hayat Miras Salonu’na yazılır. Kartını paylaş.'),
     ],
@@ -21,8 +23,10 @@ SLIDES = {
         ('02_child', 'A FOOTBALL LIFE SIM', 'From birth to|the final whistle', 'One whole life, from your first ball to your last match.'),
         ('07a_aim', 'ON THE PITCH', 'Pull the arrow,|score the goal', 'Pass, shoot and dribble: you play every chance with your finger.'),
         ('07a_aim_after', 'THE STRIKE', 'Tap the ball,|bend it in', 'Hit the middle for power, the edge for curl.'),
+        ('FILM', 'NEW · YOUR LIFE IN FILM', 'Your whole life|in six frames', 'First contract, the peak, trophies, family. Every finished life becomes a film to share.'),
+        ('07d_dplay', 'NEW · MOMENT OF THE DAY', 'A new last minute|every day', 'Same moment for everyone, one try. Nail it, earn coins, grow your streak.'),
+        ('14_scen', 'NEW · SCENARIO MODE', 'A ready-made life,|one goal', 'Come back from a torn ligament, a last dance in debt, a homecoming. Collect stars.'),
         ('03_childyears', 'CHOICES', 'Every choice|has a price', 'No right answers. Family, money, ambition or loyalty: you decide.'),
-        ('08_life', 'OFF THE PITCH', 'Family, love|and fortune', 'Your life off the pitch is as real as your career.'),
         ('10_coach', 'MANAGER', 'Hang up your boots,|run the club', 'Tactics, squad, press conferences and a restless board.'),
         ('LEGACY', 'LEGACY', 'What will you|leave behind?', 'Every life enters the Hall of Legacy. Share your card.'),
     ],
@@ -62,6 +66,10 @@ p { margin-top:30px; font:500 44px/1.32 'Barlow', sans-serif; color:var(--mut); 
 .ph.small img { width:780px; border-radius:92px; }
 .card { position:absolute; left:70px; top:1180px; width:860px; z-index:4; transform:rotate(-5deg);
   border-radius:26px; box-shadow:0 60px 140px rgba(0,0,0,.7), 0 0 0 3px rgba(232,196,104,.55); }
+.fl { position:absolute; width:660px; border-radius:30px; box-shadow:0 50px 120px rgba(0,0,0,.7), 0 0 0 3px rgba(232,196,104,.45); }
+.f1 { left:-60px; top:1180px; transform:rotate(-8deg); z-index:2; }
+.f3 { right:-60px; top:1180px; transform:rotate(8deg); z-index:2; }
+.f2 { left:250px; top:1060px; z-index:3; width:790px; }
 .spark { position:absolute; z-index:5; color:var(--gold); font:800 64px 'Barlow Condensed'; }
 """
 
@@ -73,7 +81,9 @@ PITCH = """<svg class="pitch" viewBox="0 0 1290 2796" preserveAspectRatio="none"
 def slide(key, eb, head, sub):
     a, b = head.split('|')
     h = f'<div class="cap"><div class="eb">{html.escape(eb)}</div><h1><span>{html.escape(a)}</span><span class="g">{html.escape(b)}</span></h1><p>{html.escape(sub)}</p></div>'
-    if key == 'LEGACY':
+    if key == 'FILM':
+        body = (f'<img class="fl f1" src="file://{raw}/hfilm_3.png"><img class="fl f2" src="file://{raw}/hfilm_4.png"><img class="fl f3" src="file://{raw}/hfilm_6.png">')
+    elif key == 'LEGACY':
         body = (f'<div class="ph small"><img src="file://{raw}/11_hall.png"></div>'
                 f'<img class="card" src="file://{raw}/12_card.png">'
                 '<div class="spark" style="left:60px;top:1060px">✦</div><div class="spark" style="left:110px;top:2480px;font-size:44px">✦</div>')
@@ -91,7 +101,7 @@ with sync_playwright() as p:
         pg.goto('file://' + f); pg.wait_for_timeout(900)
         pg.evaluate("document.fonts.ready")
         pg.evaluate("()=>{ const h=document.querySelector('h1'); let f=124; while(f>80 && [...h.children].some(x=>x.scrollWidth>h.clientWidth)){ f-=4; h.style.fontSize=f+'px'; } }")
-        pg.evaluate("()=>{ const c=document.querySelector('.cap'), ph=document.getElementById('ph'); if(c&&ph){ ph.style.top=(c.getBoundingClientRect().bottom+80)+'px'; } }")
+        pg.evaluate("()=>{ const c=document.querySelector('.cap'), ph=document.getElementById('ph'); if(c&&ph){ ph.style.top=(c.getBoundingClientRect().bottom+80)+'px'; } const b=c.getBoundingClientRect().bottom; document.querySelectorAll('.fl').forEach(f=>{ const t=parseFloat(getComputedStyle(f).top); if(t<b+90) f.style.top=(b+(f.classList.contains('f2')?60:180))+'px'; }); }")
         name = os.path.join(out, f'MirasFC_{lang.upper()}_{i}.png')
         pg.screenshot(path=name); os.remove(f); print(name)
     b.close()

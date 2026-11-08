@@ -125,7 +125,7 @@ function tapBall(px, py) {
   s.tp.hit = { x: px, y: py, q, oy, ox, t: s.t }; M.my.tq = (M.my.tq || 0) + q;
   const fx = [d > 1.35 ? '😅 ISKALADIN' : d < .3 ? '✨ TAM ORTASI' : d < .65 ? '👍 İYİ VURUŞ' : '🙂 KENARINDAN'];
   if (d <= 1.35) { if (Math.abs(ox) > .3) fx.push(ox > 0 ? '↩️ FALSO' : '↪️ FALSO'); if (oy > .3) fx.push('⬆️ HAVALI'); else if (oy < -.3) fx.push('⬇️ ALÇAK'); }
-  flash(fx.join(' '));
+  flash(fx.map(f => T(f)).join(' '));
 }
 function tpR() { return Math.min(CV.W * .2, CV.H * .16); }
 function tpBall(t) { const s = S, u = cl((t - s.tp.t0) / s.tp.dur, 0, 1.1), W = CV.W, H = CV.H, gy = H * .82, R = tpR(); return { x: W * .16 + W * .68 * u, y: gy - R - Math.sin(Math.min(1, u) * Math.PI) * (gy - R * 2.7), u, rot: u * 5 }; }
