@@ -4587,5 +4587,9 @@ const EN_DICT = {
 "🐢 Yavaş": "🐢 Slow",
 "▶ Normal": "▶ Normal",
 "⏩ Hızlı": "⏩ Fast",
-"Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında": "Tap: player card · yellow number strength · coloured dot morale · bottom line energy · orange edge out of position"
+"Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında": "Tap: player card · yellow number strength · coloured dot morale · bottom line energy · orange edge out of position",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN.": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble.",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN. 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster ({0}).": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble. 🏃 Touch and drag a teammate to show where to run ({0}).",
+"🏹 çek = pas/şut": "🏹 pull = pass/shot",
+"👟 dokun = top sür": "👟 tap = dribble"
 };

@@ -4994,7 +4994,11 @@ const EN_DICT = {
 "🐢 Yavaş": "🐢 Slow",
 "▶ Normal": "▶ Normal",
 "⏩ Hızlı": "⏩ Fast",
-"Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında": "Tap: player card · yellow number strength · coloured dot morale · bottom line energy · orange edge out of position"
+"Dokun: oyuncu kartı · sarı sayı güç · renkli nokta moral · alttaki çizgi enerji · turuncu kenar mevkisi dışında": "Tap: player card · yellow number strength · coloured dot morale · bottom line energy · orange edge out of position",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN.": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble.",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer (az çek = yumuşak, çok çek = sert). Arkadaşının önüne atabilirsin; kaleye çekersen şut. Topun altına basarsan havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN. 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster ({0}).": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes (short pull = soft, long pull = hard). Play it into a teammate's path; pull toward goal to shoot. Tap under the ball to loft it. 👟 TAP where you want to go to dribble. 🏃 Touch and drag a teammate to show where to run ({0}).",
+"🏹 çek = pas/şut": "🏹 pull = pass/shot",
+"👟 dokun = top sür": "👟 tap = dribble"
 };
 
 /* ============================================================
@@ -11957,7 +11961,7 @@ function proHome() {
   if (!g.wstage) {
     wk += thisW.length ? thisW.map(({ i }) => `<div class="fx"><span class="ctag c-${i.short}">${i.short}</span><span class="fxn">${i.home ? '' : '@ '}${esc(i.on)}</span>${wxI(i.wx)}<span class="m">${esc(i.round)}</span></div>`).join('') : '<p class="m">Bu hafta maç yok. Antrenman ve hayatına odaklan.</p>';
     wk += enLine();
-    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">📺 4 hafta atla</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">📺 Sezonu atla</button></div>`;
+    wk += ev ? '' : `<div class="actions"><button class="btn big" onclick="weekGo()">Haftayı başlat</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(4)">4 hafta simüle et</button><button class="btn ghost" onclick="(typeof adSkipWeeks==='function'?adSkipWeeks:simWeeks)(60)">Sezonu simüle et</button></div>`;
   } else {
     const m = ev ? null : nextWeekMatch();
     if (m) {
@@ -14113,12 +14117,12 @@ pitchSVG = function (id, form) {
 };
 xiPreview = function (id, form) { return pitchSVG(id, form); };
 
-/* Build: 2026-10-30 v4.3 — kontroller (çek=pas/şut, dokun=sür), akıcı top sürme, gerçekçi kaleci ve rakip savunma takibi (TestFlight) */
+/* Build: 2026-11-08 v4.4 — reklam azaltıldı (en az 4 dk arayla, ilk 3 dk reklamsız, hafta/sezon simülasyonu reklamsız), maç ipuçları İngilizce (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
-   - Geçiş reklamı: doğal molalarda ~90 sn'de bir ve her sezon sonunda
-     (abonelere hiç; oturumun ilk 90 sn'sinde yok).
-   - "Hafta/sezon atla" düğmeleri önce bir ödüllü reklam gösterir, sonra simüle eder.
+   - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
+     (abonelere hiç; oturumun ilk 3 dk'sında yok; maç/olay/pazarlık ortasında asla).
+   - Hafta/sezon simülasyonu reklam istemez.
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -14128,18 +14132,18 @@ xiPreview = function (id, form) { return pitchSVG(id, form); };
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 1, minGap: 90000,
+  everyWeeks: 1, minGap: 240000, grace: 180000, /* v4.4: reklam azaltıldı — en az 4 dk arayla, oturumun ilk 3 dk'sı reklamsız */
 };
-const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
+const AD_T0 = Date.now(); /* oturumun ilk ADCFG.grace (3 dk) süresinde geçiş reklamı yok */
 let AD_SIM = 0; /* hafta/sezon simülasyonunda geçiş reklamı bastırılır (önce tek ödüllü reklam gösterildi) */
-function adInterNow() { if (AD_SIM) return; const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
+function adInterNow() { if (AD_SIM) return; const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.grace) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
-/* geçiş reklamı ~90 sn'de bir (doğal molalarda) ve her sezon sonunda */
+/* geçiş reklamı doğal molalarda, en az 4 dk arayla (sezon sonu da aynı kurala tabi) */
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
 if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-/* "Hafta/sezon atla" düğmeleri: önce ödüllü reklam, sonra sessizce simüle et */
-function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; if (typeof adRewarded === 'function') adRewarded('skip', run); else run(); }
+/* hafta/sezon simülasyonu: reklamsız, simülasyon sırasında geçiş reklamı bastırılır */
+function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; run(); } /* v4.4: hafta/sezon atlamak artık reklam istemez */
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };

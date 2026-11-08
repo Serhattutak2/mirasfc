@@ -1,9 +1,9 @@
-/* Build: 2026-10-30 v4.3 — kontroller (çek=pas/şut, dokun=sür), akıcı top sürme, gerçekçi kaleci ve rakip savunma takibi (TestFlight) */
+/* Build: 2026-11-08 v4.4 — reklam azaltıldı (en az 4 dk arayla, ilk 3 dk reklamsız, hafta/sezon simülasyonu reklamsız), maç ipuçları İngilizce (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
-   - Geçiş reklamı: doğal molalarda ~90 sn'de bir ve her sezon sonunda
-     (abonelere hiç; oturumun ilk 90 sn'sinde yok).
-   - "Hafta/sezon atla" düğmeleri önce bir ödüllü reklam gösterir, sonra simüle eder.
+   - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
+     (abonelere hiç; oturumun ilk 3 dk'sında yok; maç/olay/pazarlık ortasında asla).
+   - Hafta/sezon simülasyonu reklam istemez.
    - AdMob: uygulama iOS'ta çalışırken @capacitor-community/admob
      eklentisiyle gerçek reklam; tarayıcıda deneme ekranı.
    - ADCFG.test = true iken Google'ın resmi TEST reklamları gösterilir.
@@ -13,18 +13,18 @@
 const ADCFG = {
   test: false,
   ios: { inter: 'ca-app-pub-4873666267587702/4724847012', reward: 'ca-app-pub-4873666267587702/4066371465' },
-  everyWeeks: 1, minGap: 90000,
+  everyWeeks: 1, minGap: 240000, grace: 180000, /* v4.4: reklam azaltıldı — en az 4 dk arayla, oturumun ilk 3 dk'sı reklamsız */
 };
-const AD_T0 = Date.now(); /* oturumun ilk 90 sn'sinde geçiş reklamı yok */
+const AD_T0 = Date.now(); /* oturumun ilk ADCFG.grace (3 dk) süresinde geçiş reklamı yok */
 let AD_SIM = 0; /* hafta/sezon simülasyonunda geçiş reklamı bastırılır (önce tek ödüllü reklam gösterildi) */
-function adInterNow() { if (AD_SIM) return; const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.minGap) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
+function adInterNow() { if (AD_SIM) return; const A = acct(); if (A.sub) return; const now = Date.now(); if (now - AD_T0 < ADCFG.grace) return; if (now - (A.lastInter || 0) < ADCFG.minGap) return; A.lastInter = now; acctSave(); setTimeout(() => AD.inter(), 350); }
 function adWeekTick(n) { const A = acct(); A.adWk = (A.adWk || 0) + (n || 1); if (A.adWk >= ADCFG.everyWeeks) { A.adWk = 0; acctSave(); adInterNow(); } else acctSave(); }
-/* geçiş reklamı ~90 sn'de bir (doğal molalarda) ve her sezon sonunda */
+/* geçiş reklamı doğal molalarda, en az 4 dk arayla (sezon sonu da aynı kurala tabi) */
 const _weekEndAd = weekEnd;
 weekEnd = function () { const s0 = g && g.season; _weekEndAd.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); };
 if (typeof coachWeekEnd === 'function') { const _cwe = coachWeekEnd; coachWeekEnd = function () { const s0 = g && g.season; _cwe.apply(this, arguments); if (!g) return; if (g.season !== s0) adInterNow(); else adWeekTick(1); }; }
-/* "Hafta/sezon atla" düğmeleri: önce ödüllü reklam, sonra sessizce simüle et */
-function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; if (typeof adRewarded === 'function') adRewarded('skip', run); else run(); }
+/* hafta/sezon simülasyonu: reklamsız, simülasyon sırasında geçiş reklamı bastırılır */
+function adSkipWeeks(n) { if (typeof simWeeks !== 'function') return; const run = () => { AD_SIM = 1; try { simWeeks(n); } finally { AD_SIM = 0; } }; run(); } /* v4.4: hafta/sezon atlamak artık reklam istemez */
 
 /* ---------- AdMob köprüsü ---------- */
 const ADM = { ok: 0, inter: 0, reward: 0, cb: null };
