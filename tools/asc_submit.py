@@ -12,6 +12,10 @@ VER = os.environ["VER"].strip()
 TR  = os.environ.get("TR_NOTES", "")
 EN  = os.environ.get("EN_NOTES", TR)
 AUTO = os.environ.get("AUTO_RELEASE", "1") == "1"
+NO_SUBMIT = os.environ.get("NO_SUBMIT", "0") == "1"
+_md = os.environ.get("MEDIA_DIR")
+if _md and os.path.exists(os.path.join(_md, "meta.json")):
+    _m = json.load(open(os.path.join(_md, "meta.json"))); TR = _m.get("tr", {}).get("whatsNew", TR); EN = _m.get("en-US", {}).get("whatsNew", EN)
 MKT = os.environ.get("MARKETING_URL", "https://serhattutak2.github.io").strip()
 SUP = os.environ.get("SUPPORT_URL", "https://serhattutak2.github.io/destek.html").strip()
 BASE = "https://api.appstoreconnect.apple.com"
@@ -107,14 +111,21 @@ for l in locs:
     print("  not+URL", loc, "->", st2 if st2 == 200 else errtxt(r2))
 
 # 5) 4.3 build'ini bul ve sürüme bağla
-st, r = api("GET", f"/v1/builds?filter[app]={app_id}&filter[preReleaseVersion.version]={VER}&sort=-uploadedDate&limit=10")
-builds = [b for b in r.get("data", []) if b["attributes"].get("processingState") == "VALID"] or r.get("data", [])
+for _k in range(50):
+    st, r = api("GET", f"/v1/builds?filter[app]={app_id}&filter[preReleaseVersion.version]={VER}&sort=-uploadedDate&limit=10")
+    builds = [b for b in r.get("data", []) if b["attributes"].get("processingState") == "VALID"]
+    if builds: break
+    print("build henüz hazır değil, bekleniyor...", [b["attributes"].get("processingState") for b in r.get("data", [])]); time.sleep(30)
+builds = builds or r.get("data", [])
 if not builds: die("4.3 build bulunamadı (hâlâ işleniyor olabilir)", r)
 build_id = builds[0]["id"]
 print("Build:", builds[0]["attributes"].get("version"), builds[0]["attributes"].get("processingState"), build_id)
 st, r = api("PATCH", f"/v1/appStoreVersions/{ver_id}/relationships/build", {"data": {"type": "builds", "id": build_id}})
 if st not in (200, 204): die("Build sürüme bağlanamadı", r)
 print("Build bağlandı.")
+
+if NO_SUBMIT:
+    print("NO_SUBMIT=1: gönderim adımı atlandı"); sys.exit(0)
 
 # 6) İncelemeye gönder (reviewSubmissions akışı)
 st, r = api("GET", f"/v1/reviewSubmissions?filter[app]={app_id}&limit=20")

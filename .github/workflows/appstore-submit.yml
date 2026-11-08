@@ -9,13 +9,17 @@ on:
       app_version:
         description: "Sürüm (MARKETING_VERSION)"
         required: true
-        default: "4.3.1"
+        default: "4.4"
+      media_dir:
+        description: "Mağaza görselleri/metinleri klasörü (boşsa yalnızca gönderim)"
+        required: false
+        default: "store/v44"
 permissions:
   contents: write
 jobs:
   submit:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     env:
       KID: ${{ secrets.ASC_KEY_ID }}
       ISS: ${{ secrets.ASC_ISSUER_ID }}
@@ -23,6 +27,7 @@ jobs:
       APP_ID: com.serhattutak.mirasfc
       VER: ${{ github.event.inputs.app_version }}
       AUTO_RELEASE: "1"
+      MEDIA_DIR: ${{ github.event.inputs.media_dir }}
       TR_NOTES: |
         Hata düzeltmeleri ve iyileştirmeler.
       EN_NOTES: |
@@ -37,7 +42,12 @@ jobs:
       - name: App Store'a gönder
         run: |
           set -o pipefail
-          python3 tools/asc_submit.py 2>&1 | tee "$RUNNER_TEMP/asc.log"
+          : > "$RUNNER_TEMP/asc.log"
+          if [ -n "$MEDIA_DIR" ] && [ -f "$MEDIA_DIR/meta.json" ]; then
+            NO_SUBMIT=1 python3 tools/asc_submit.py 2>&1 | tee -a "$RUNNER_TEMP/asc.log"
+            python3 tools/asc_media.py 2>&1 | tee -a "$RUNNER_TEMP/asc.log"
+          fi
+          python3 tools/asc_submit.py 2>&1 | tee -a "$RUNNER_TEMP/asc.log"
       - name: Günlüğü yayınla (gizli bilgiler silinmiş)
         if: always()
         env:
