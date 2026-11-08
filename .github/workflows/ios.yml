@@ -86,6 +86,14 @@ jobs:
           PL
           xcodebuild -exportArchive -archivePath build/App.xcarchive -exportOptionsPlist eo.plist -exportPath signed
           cp signed/*.ipa MirasFC-adhoc.ipa
+      - name: Eski geliştirme sertifikalarını temizle (sertifika sınırı dolmasın)
+        if: env.HAS_ASC == 'true'
+        continue-on-error: true
+        env:
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+          P8: ${{ secrets.ASC_KEY_P8 }}
+        run: python3 tools/asc_certclean.py
       - name: TestFlight'a yükle (App Store Connect API anahtarıyla otomatik imza)
         if: env.HAS_ASC == 'true'
         working-directory: mobile/ios/App
