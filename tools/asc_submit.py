@@ -147,7 +147,8 @@ if not has:
     st, r = api("POST", "/v1/reviewSubmissionItems", {"data": {"type": "reviewSubmissionItems",
         "relationships": {"reviewSubmission": {"data": {"type": "reviewSubmissions", "id": sub_id}},
                           "appStoreVersion": {"data": {"type": "appStoreVersions", "id": ver_id}}}}})
-    if st not in (200, 201): die("Sürüm gönderime eklenemedi", r)
+    if st not in (200, 201):
+        print("AYRINTI:", json.dumps(r, ensure_ascii=False)[:6000]); die("Sürüm gönderime eklenemedi", r)
     print("Sürüm gönderime eklendi.")
 else:
     print("Sürüm zaten gönderimde.")
