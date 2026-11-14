@@ -7,7 +7,7 @@ on:
       adim:
         description: "Adım"
         type: choice
-        options: [hazirlik, testflight, bilgiler, gonder, durum]
+        options: [hazirlik, testflight, tfgrup, bilgiler, gonder, durum]
         default: durum
 permissions:
   contents: read
