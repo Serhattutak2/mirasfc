@@ -1,0 +1,133 @@
+# Fener: Son Bekçi oyununu bu deponun App Store anahtarlarıyla yönetir.
+# Kod: github.com/Serhattutak2/fener — Miras FC'ye dokunmaz.
+# Çalıştırma: Actions > Fener > Run workflow  YA DA  fener-tetik.txt dosyasına adımı yazıp push.
+#   hazirlik   : paket kimliğini kaydeder, uygulama var mı bakar
+#   testflight : Serhattutak2/fener deposunu derler, TestFlight'a yükler
+#   tfgrup     : iç test grubunu kurar
+#   durum      : uygulama ve build durumu
+# Günlükler: Releases > ci-logs > fener-<adim>.txt
+name: Fener
+on:
+  workflow_dispatch:
+    inputs:
+      adim:
+        description: "Adım"
+        type: choice
+        options: [hazirlik, testflight, tfgrup, durum]
+        default: durum
+  push:
+    branches: [main]
+    paths: ['fener-tetik.txt', '.github/workflows/fener.yml']
+permissions:
+  contents: write
+jobs:
+  sec:
+    runs-on: ubuntu-latest
+    outputs:
+      adim: ${{ steps.a.outputs.adim }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: a
+        run: |
+          A="${{ github.event.inputs.adim }}"
+          [ -n "$A" ] || A=$(head -1 fener-tetik.txt 2>/dev/null | tr -cd 'a-z')
+          [ -n "$A" ] || A=hazirlik
+          echo "Adım: $A"; echo "adim=$A" >> "$GITHUB_OUTPUT"
+
+  asc:
+    needs: sec
+    if: needs.sec.outputs.adim != 'testflight'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KID: ${{ secrets.ASC_KEY_ID }}
+      ISS: ${{ secrets.ASC_ISSUER_ID }}
+      P8: ${{ secrets.ASC_KEY_P8 }}
+      ADIM: ${{ needs.sec.outputs.adim }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install --quiet pyjwt cryptography
+      - name: Çalıştır
+        run: |
+          set -o pipefail
+          python3 tools/fener_asc.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"
+      - name: Günlüğü yayınla
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f "$RUNNER_TEMP/log.txt" ] || exit 0
+          cp "$RUNNER_TEMP/log.txt" "fener-$ADIM.txt"
+          gh release upload ci-logs "fener-$ADIM.txt" --clobber
+
+  testflight:
+    needs: sec
+    if: needs.sec.outputs.adim == 'testflight'
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: { repository: Serhattutak2/fener }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Xcode seç
+        run: |
+          X=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1); [ -n "$X" ] || X=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)
+          sudo xcode-select -s "$X"; xcodebuild -version
+      - name: Hazırla
+        run: |
+          exec > >(tee -a $RUNNER_TEMP/tf.log) 2>&1
+          rm -rf mobile/www && mkdir -p mobile/www && cp -R app/. mobile/www/
+          cd mobile && npm install --no-audit --no-fund && npx cap add ios 2>/dev/null || true
+          npx cap sync ios
+          node ../tools/ios_ayar.js
+      - name: Swift paketleri
+        working-directory: mobile/ios/App
+        run: |
+          for i in 1 2 3 4 5 6; do
+            xcodebuild -resolvePackageDependencies -project App.xcodeproj -scheme App -derivedDataPath build > $RUNNER_TEMP/spm.log 2>&1 && exit 0
+            echo "Deneme $i başarısız"; grep -E 'error|failed' $RUNNER_TEMP/spm.log | head -3; sleep $((i*20))
+          done; exit 1
+      - name: Derle ve TestFlight'a yükle
+        working-directory: mobile/ios/App
+        env:
+          TEAM: ${{ secrets.IOS_TEAM_ID }}
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+          P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          set -o pipefail
+          exec > >(tee -a $RUNNER_TEMP/tf.log) 2>&1
+          TEAM=$(printf '%s' "$TEAM" | LC_ALL=C tr -cd 'A-Za-z0-9'); KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9'); ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-')
+          P8=$(printf '%s\n' "$P8" | tr -d '\r' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | grep -v '^$')
+          mkdir -p ~/.appstoreconnect/private_keys; KP=~/.appstoreconnect/private_keys/AuthKey_$KID.p8; printf '%s\n' "$P8" > $KP
+          AUTH="-allowProvisioningUpdates -authenticationKeyPath $KP -authenticationKeyID $KID -authenticationKeyIssuerID $ISS"
+          BN=$((GITHUB_RUN_NUMBER+1000))
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath build -archivePath build/AS.xcarchive archive $AUTH DEVELOPMENT_TEAM=$TEAM CODE_SIGN_STYLE=Automatic \
+            CURRENT_PROJECT_VERSION=$BN > $RUNNER_TEMP/arch.log 2>&1 || { grep -E 'error|Error' $RUNNER_TEMP/arch.log | tail -40; tail -60 $RUNNER_TEMP/arch.log; exit 1; }
+          tail -10 $RUNNER_TEMP/arch.log
+          cat > as.plist <<PL
+          <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict><key>method</key><string>app-store-connect</string><key>teamID</key><string>$TEAM</string>
+          <key>signingStyle</key><string>automatic</string><key>uploadSymbols</key><true/></dict></plist>
+          PL
+          xcodebuild -exportArchive -archivePath build/AS.xcarchive -exportOptionsPlist as.plist -exportPath asout $AUTH | tail -20
+          xcrun altool --upload-app -f asout/*.ipa -t ios --apiKey "$KID" --apiIssuer "$ISS"
+          echo "Build $BN TestFlight'a yüklendi"
+      - name: Günlüğü yayınla (gizli bilgiler silinmiş)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          f=$RUNNER_TEMP/tf.log; [ -f "$f" ] || exit 0
+          ISS=$(printf '%s' "$ISS" | LC_ALL=C tr -cd 'A-Za-z0-9-'); KID=$(printf '%s' "$KID" | LC_ALL=C tr -cd 'A-Za-z0-9')
+          [ -n "$ISS" ] && sed -i '' -e "s/$ISS/[ISSUER]/g" "$f" || true
+          [ -n "$KID" ] && sed -i '' -e "s/$KID/[KEYID]/g" "$f" || true
+          sed -i '' -e '/PRIVATE KEY/d' "$f" || true
+          cp "$f" fener-testflight.txt
+          gh release upload ci-logs fener-testflight.txt --repo Serhattutak2/mirasfc --clobber
