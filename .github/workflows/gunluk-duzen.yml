@@ -43,7 +43,9 @@ jobs:
       - name: Hazırla
         run: |
           rm -rf mobile/www && mkdir -p mobile/www && cp -R app/. mobile/www/
-          cd mobile && npm ci && npx cap sync ios
+          cd mobile && npm ci && npx cap sync ios && cd ..
+          gem list -i xcodeproj >/dev/null 2>&1 || sudo gem install xcodeproj --no-document
+          ruby tools/ios_widget.rb
       - name: Swift paketleri
         working-directory: mobile/ios/App
         run: |
