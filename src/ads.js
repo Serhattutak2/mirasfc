@@ -1,4 +1,4 @@
-/* Build: 2026-11-08 v4.4 — Günün Pozisyonu, Hayatının Filmi, Senaryo Modu, ilk kiralık teklifi, maç akışı, reklam 4 dk arayla (simülasyon ödüllü reklamla) (TestFlight) */
+/* Build: 2026-11-17 v4.5 — gerçek şut fiziği: kaleci tepki/plonjon, uzaktan şut nadir gol, direk yalnız gerçek temasta, şut yayı, gerçekçi kaleci yerleşimi (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
