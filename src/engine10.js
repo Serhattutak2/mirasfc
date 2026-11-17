@@ -238,7 +238,7 @@ drawPitch = function (x, W, H) { _drawPitch10(x, W, H); try { drawStadium(x, W, 
 const HAIRC = ['#1b130c', '#2a1b10', '#3d2716', '#5a3a1e', '#7a4e2a', '#c9a25a', '#e3c98a', '#8a3b1c'];
 const BOOTC = ['#111', '#111', '#f4f4f4', '#ff3b6b', '#2bd9ff', '#c6ff3d', '#ff8a1e', '#1e56c4'];
 drawPl = function (x, p) {
-  const s = S, v = P3(p.x, p.y, 0), sc = PR.sc, h = Math.max(12, sc * 1.6), w = h * .42;
+  const s = S, v = P3(p.x, p.y, 0), sc = PR.sc, h = Math.max(16, sc * 2.15), w = h * .42; /* v4.6: oyuncular daha büyük, telefonda okunur */
   if (v.X < -30 || v.X > CV.W + 30 || v.Y < -40 || v.Y > CV.H + 40) return;
   const X = v.X, Y = v.Y, spd = p.spd || 0, mv = cl(spd / 5.5, 0, 1), cyc = p.cyc || 0, run = Math.sin(cyc) * mv, bob = Math.abs(Math.cos(cyc)) * mv * h * .05;
   const hs = hsh(p), back = p.dy != null && p.dy > .35 && !p.gk, dvp = p.dive ? (p.dvp || 0) : 0, slp = p.slide ? (p.slp || 0) : 0, cheer = p.cheer && s.cel, sad = p.sad && s.cel;

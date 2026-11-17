@@ -49,7 +49,7 @@ function loanSureCheck() {
      kısa, orta ve ara paslar beklemeden gider (isabet pas yeteneğinle belirlenir),
      böylece atak akıp gider.
    ============================================================ */
-const CAM44 = { play: 1.16, one: 1.24, head: 1.22, fk: 1.32, pen: 1.62, longTap: 32 };
+const CAM44 = { play: 1.3, one: 1.38, head: 1.36, fk: 1.4, pen: 1.62, longTap: 32 }; /* v4.6: kamera yakın */
 function zoom44() {
   const s = S; if (!s) return 1; if (s.cel || s.rp) return 1;
   if (s.type === 'pen') return CAM44.pen;

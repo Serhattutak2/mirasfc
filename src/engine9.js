@@ -362,7 +362,7 @@ drawPl = function (x, p) {
 };
 /* top: yuvarlanarak döner, yükseldikçe gölgesi küçülür */
 drawBall = function (x) {
-  const B = S.ball, z = B.z || 0, g0 = P3(B.x, B.y, 0), v = P3(B.x, B.y, z + .1), r = Math.max(3, PR.sc * .3) * (1 + z * .05), rot = B.rot || 0;
+  const B = S.ball, z = B.z || 0, g0 = P3(B.x, B.y, 0), v = P3(B.x, B.y, z + .1), r = Math.max(4.5, PR.sc * .42) * (1 + z * .05), rot = B.rot || 0;
   const sa = cl(.32 - z * .03, .1, .32), sr = r * cl(1 - z * .04, .55, 1);
   x.fillStyle = `rgba(0,0,0,${sa})`; x.beginPath(); x.ellipse(g0.X + 1 + z * .6, g0.Y + 1, sr, sr * .55, 0, 0, 7); x.fill();
   if ((B.vs || 0) > 14 && z < 4) { const a = Math.atan2(v.Y - (B.py || v.Y), v.X - (B.px || v.X)); x.strokeStyle = 'rgba(255,255,255,.35)'; x.lineWidth = r * 1.4; x.lineCap = 'round'; x.beginPath(); x.moveTo(v.X, v.Y); x.lineTo(v.X - Math.cos(a) * r * 3, v.Y - Math.sin(a) * r * 3); x.stroke(); x.lineCap = 'butt'; }

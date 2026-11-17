@@ -4701,5 +4701,9 @@ const EN_DICT = {
 "👆 Top sürmek için boş alana DOKUN (çek = sadece pas/şut).": "👆 TAP an open space to dribble (pull = pass/shot only).",
 "ulusal kupa": "domestic cups",
 "lig şampiyonluğu": "league titles",
-"Şampiyonlar Kupası": "Champions Cup"
+"Şampiyonlar Kupası": "Champions Cup",
+"🏹 Oku çek: pas ya da şut (sarı ok = iyi vuruş, kırmızı = fazla sert) · 👟 Dokun: top sür": "🏹 Pull the arrow: pass or shoot (yellow arrow = clean strike, red = too hard) · 👟 Tap: dribble",
+"🏹 Oku çek: pas ya da şut (sarı ok = iyi vuruş, kırmızı = fazla sert) · 👟 Dokun: top sür · 🏃 Arkadaşı sürükle: koşu ({0})": "🏹 Pull the arrow: pass or shoot (yellow arrow = clean strike, red = too hard) · 👟 Tap: dribble · 🏃 Drag a teammate: run ({0})",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer. Şutta ok sarıysa iyi vurursun, kırmızıysa fazla serttir. Araya rakip giriyorsa uzun pas kendiliğinden havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN.": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes. A yellow shot arrow means a clean strike, red means too hard. If an opponent is in the way, a long pass is lofted automatically. 👟 TAP where you want to go to dribble.",
+"🏹 ÇEK = PAS/ŞUT: okun ucu topun gideceği yer. Şutta ok sarıysa iyi vurursun, kırmızıysa fazla serttir. Araya rakip giriyorsa uzun pas kendiliğinden havadan gider. 👟 Top sürmek için gitmek istediğin yere DOKUN. 🏃 Arkadaşına dokunup sürükle: koşacağı yeri göster ({0}).": "🏹 PULL = PASS/SHOT: the arrow tip is where the ball goes. A yellow shot arrow means a clean strike, red means too hard. If an opponent is in the way, a long pass is lofted automatically. 👟 TAP where you want to go to dribble. 🏃 Touch and drag a teammate to show where to run ({0})."
 };
