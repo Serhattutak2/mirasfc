@@ -42,7 +42,7 @@ DRIVE = """(rnd)=>{ const s=S; if(!s) return {ph:'none'};
    if(!s.stick) v5Down(p0[0],p0[1]); v5Move(p1[0],p1[1]); const e=s.stick&&s.stick.e; r.eval=e?e.k:null; v5Up(); r.after=S&&S.phase;
  }
  else if(s.phase==='tap' && s.tp && !s.tp.hit){ const b=tpBall(s.t); if(b.u>0.35+rnd*0.3){ const R=tpR(); tapBall(b.x+(rnd-.5)*R*0.9, b.y+(rnd-.5)*R*0.9); r.act='tap'; } }
- else if(s.phase==='icpt' && s.ic){ const ic=s.ic; const tx=ic.to?ic.to.x:s.ball.x, ty=ic.to?ic.to.y:s.ball.y; const fx=ic.from?ic.from.x:s.ball.x, fy=ic.from?ic.from.y:s.ball.y; const mx=fx+(tx-fx)*(0.45+rnd*.3), my=fy+(ty-fy)*(0.45+rnd*.3); const P=P3(mx,my,0); const rect=cv.getBoundingClientRect(); icptAim(P[0]*rect.width/cv.width, P[1]*rect.height/cv.height); r.act='icpt'; }
+ else if(s.phase==='icpt' && s.ic){ const ic=s.ic; const tx=ic.to?ic.to.x:s.ball.x, ty=ic.to?ic.to.y:s.ball.y; const fx=ic.from?ic.from.x:s.ball.x, fy=ic.from?ic.from.y:s.ball.y; const mx=fx+(tx-fx)*(0.45+rnd*.3), my=fy+(ty-fy)*(0.45+rnd*.3); const P=P3(mx,my,0); icptAim(P.X, P.Y); r.act='icpt'; }
  else if(s.phase==='meter' && s.at - s.meter.t0 > 0.6+rnd*1.2){ fireTackle(); r.act='tackle'; }
  else if(s.phase==='aim' || s.phase==='decide'){ try{ botMove(); r.act='bot'; }catch(e){ r.err=e.message; } }
  r.done = s.phase==='done'; r.banner = s.banner && s.banner.t; r.good=s.good;

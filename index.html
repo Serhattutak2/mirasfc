@@ -14259,7 +14259,7 @@ pitchSVG = function (id, form) {
 };
 xiPreview = function (id, form) { return pitchSVG(id, form); };
 
-/* Build: 2026-11-17 v4.6 — maç motoru: şut/uzun pasta ayrı TOPA BAS ekranı yok (akış kesilmez), daha yakın kamera, büyük oyuncu ve top, küçük olay etiketleri, kısa kontrol açıklaması, kamera topu süreni ortalar (TestFlight) */
+/* Build: 2026-11-17 v4.6 — maç motoru: şut/uzun pasta ayrı TOPA BAS ekranı yok (akış kesilmez), daha yakın kamera, büyük oyuncu ve top, küçük olay etiketleri, kısa kontrol açıklaması, kamera topu süreni ortalar + test düzeltmeleri: oyuncular saha dışına çıkmaz, pas alan topla aynı anda varır (donma yok), kaleciden dönen top tek sefer, kamera aksiyonu takip eder (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
@@ -15525,14 +15525,86 @@ const BIGFLASH16 = /GOL|KURTAR|ÇELDİ|YAKALADI|DİREK|AUT|KESİLDİ|BARAJ|OFSAY
   const _mk16 = mkScene;
   mkScene = function () { const r = _mk16.apply(this, arguments); try { const A = acct(); A.hint16 = (A.hint16 || 0) + 1; acctSave(); } catch (e) { } return r; };
 }
-/* ---------- 5) kamera: topu süren oyuncu ekranın altına sıkışmasın ---------- */
+/* ---------- 5) kamera: aksiyonu (topu / topu süreni) takip eder ----------
+   Eski kamera hep "sen"i takip ediyordu ve zum hesaba katılmadığı için pas
+   sonrası top ekranın altında kayboluyordu. Şimdi odak: koşuda top, çizimde
+   topu süren; kale yakınsa kale de görünür kalır. */
 {
   const _cw16 = camWant;
   camWant = function () {
-    const r = _cw16.apply(this, arguments), s = S; if (!s || s.cel || s.rp || s.type === 'pen' || (s.type === 'fk' && s.dead) || !r) return r;
-    const z = zoom44(), halfH = CV.H / 2 / ((CV.W / NSS_W) * z), ref = s.phase === 'run' ? s.ball : (s.car || s.me || s.ball);
-    if (ref && r.ty != null) r.ty = Math.min(r.ty, ref.y + halfH * .5);
+    const r = _cw16.apply(this, arguments), s = S;
+    if (!s || !r || s.cel || s.rp || s.mode !== 'atk' || s.type === 'pen' || (s.type === 'fk' && s.dead) || s.phase === 'crossIn') return r;
+    const z = zoom44(), sc = (CV.W / NSS_W) * z, halfH = CV.H / 2 / sc, halfW = CV.W / 2 / sc;
+    const B = s.ball, car = s.car || s.me, f = s.phase === 'run' || s.phase === 'icpt' || !car ? B : car;
+    const fy = s.phase === 'run' && B.vy != null ? f.y : f.y;
+    let ty = fy + halfH * .32;
+    if (GY - fy < halfH * 1.7) ty = Math.max(ty, Math.min(GY + 4 - halfH, fy + halfH * .5));
+    r.ty = cl(ty, halfH - 6, 112 - halfH);
+    r.x = cl(f.x * .8 + 34 * .2, halfW - 5, 73 - halfW);
     return r;
+  };
+}
+/* ---------- 6) oyuncular saha dışına çıkmaz ----------
+   Testte arkadaşlar koşu planında taç çizgisinin (x=0.5) ve kale çizgisinin
+   arkasına (y=107) koşup orada pas alıyordu; top oyundan çıkmış olmasına
+   rağmen hücum sürüyordu. Oyuncu hedefleri saha içine sınırlanır. */
+{
+  const _an16 = anim;
+  anim = function (o, x, y, d, ex) {
+    const s = S;
+    if (s && o && o.side && !s.cel && !s.rp && (s.mode === 'atk' || s.mode === 'def')) { x = cl(x, 1.2, 66.8); y = cl(y, 1, o.gk ? 106 : 103.8); }
+    return _an16(o, x, y, d, ex);
+  };
+  /* ---------- 7) her pastan sonra bekleme kısalır ----------
+     Pas alındıktan sonra herkes yerini alana kadar 1–1.5 sn donuyordu.
+     Artık en fazla ~0.4 sn: koşular hızlanarak tamamlanır, sıra hemen sende. */
+  const _nd16 = nextDraw;
+  nextDraw = function () {
+    const r = _nd16.apply(this, arguments), s = S;
+    if (s && s.phase === 'anim' && s.mode === 'atk') {
+      const MAXR = .4;
+      s.anims.forEach(a => { if (a.o === s.ball) return; const left = a.d - (s.at - a.t0); if (left > MAXR) { a.x0 = a.o.x; a.y0 = a.o.y; a.t0 = s.at; a.d = MAXR; a.ease = 0; } });
+    }
+    return r;
+  };
+}
+/* ---------- 8) kaleciden dönen top en fazla bir kez ----------
+   Testte kaleci aynı pozisyonda 5-6 kez üst üste topu çelip hücumcunun
+   önüne bırakıyordu (bitmeyen pinball). İkinci kurtarışta kaleci topu tutar. */
+{
+  const _sr16 = shotResult;
+  shotResult = function (P, run) {
+    const res = _sr16.apply(this, arguments), s = S;
+    if (s && res && res.reb) { if ((s.reb16 || 0) >= 1) { res.reb = 0; res.held = true; } else s.reb16 = 1; }
+    return res;
+  };
+}
+/* ---------- 9) pas alan oyuncu topla aynı anda varır ----------
+   Testte top hedefe varıp yerde duruyor, alıcı 0.5–1.4 sn sonra gelip
+   alıyordu (her pasta donma). Alıcı artık topun varış süresine göre
+   hızlanır; top durup beklerse yalnız alıcı beklenir, diğer koşular değil. */
+{
+  const left = a => a.d - (S.at - a.t0);
+  const rebase = (a, d) => { a.x0 = a.o.x; a.y0 = a.o.y; a.t0 = S.at; a.d = Math.max(.08, d); a.ease = 0; };
+  const _lp16 = launchPath;
+  launchPath = function (P, ev, q, oy, ox) {
+    const r0 = _lp16.apply(this, arguments), s = S, r = s && s.run;
+    if (r && r.k === 'pass' && r.to && s.mode === 'atk') {
+      const T = r.T || (r.L && r.v ? r.L / r.v : 0);
+      s.anims.forEach(a => { if (a.o !== r.to) return; const L = left(a), dist = Math.hypot(a.x1 - a.o.x, a.y1 - a.o.y);
+        if (T > 0 && L > T) rebase(a, Math.max(T, dist / 9.5)); });
+    }
+    return r0;
+  };
+  const _pd16 = pathDone;
+  pathDone = function (r) {
+    const out = _pd16.apply(this, arguments), s = S;
+    if (s && r && r.waited && s.phase === 'anim' && s.mode === 'atk') {
+      const ra = s.anims.find(a => a.o === r.to), rl = ra ? Math.max(0, left(ra)) : 0;
+      if (ra && rl > .35) rebase(ra, .35);
+      s.anims.forEach(a => { if (a.o === s.ball || a.o === r.to) return; if (left(a) > Math.min(rl, .35) + .02) rebase(a, Math.min(rl, .35)); });
+    }
+    return out;
   };
 }
 

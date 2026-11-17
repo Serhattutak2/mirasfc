@@ -1,4 +1,4 @@
-/* Build: 2026-11-17 v4.6 — maç motoru: şut/uzun pasta ayrı TOPA BAS ekranı yok (akış kesilmez), daha yakın kamera, büyük oyuncu ve top, küçük olay etiketleri, kısa kontrol açıklaması, kamera topu süreni ortalar (TestFlight) */
+/* Build: 2026-11-17 v4.6 — maç motoru: şut/uzun pasta ayrı TOPA BAS ekranı yok (akış kesilmez), daha yakın kamera, büyük oyuncu ve top, küçük olay etiketleri, kısa kontrol açıklaması, kamera topu süreni ortalar + test düzeltmeleri: oyuncular saha dışına çıkmaz, pas alan topla aynı anda varır (donma yok), kaleciden dönen top tek sefer, kamera aksiyonu takip eder (TestFlight) */
 /* ============================================================
    MİRAS FC — Reklam: sıklık + Google AdMob (mobil uygulamada)
    - Geçiş reklamı (v4.4): doğal molalarda, en az 4 dk arayla
