@@ -9,11 +9,11 @@ on:
       app_version:
         description: "Sürüm (MARKETING_VERSION)"
         required: true
-        default: "4.4"
+        default: "4.6"
       media_dir:
         description: "Mağaza görselleri/metinleri klasörü (boşsa yalnızca gönderim)"
         required: false
-        default: "store/v44"
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -29,9 +29,21 @@ jobs:
       AUTO_RELEASE: "1"
       MEDIA_DIR: ${{ github.event.inputs.media_dir }}
       TR_NOTES: |
-        Hata düzeltmeleri ve iyileştirmeler.
+        Maç motoru yenilendi:
+        - Gerçekçi şut fiziği: yakından vuruşlar daha isabetli, uzaktan şutlar daha zor; direkten dönen ve direkten içeri giren toplar
+        - Kaleciler daha gerçekçi uzanıyor ve yerini daha iyi alıyor
+        - Daha yakın kamera, daha büyük oyuncular ve top; kamera aksiyonu takip ediyor
+        - Ekranın ortasındaki büyük yazılar küçüldü, oyun daha az bölünüyor
+        - Oyuncuların saha dışına çıkması ve kalecinin topu üst üste önüne bırakması düzeltildi
+        - Diğer hata düzeltmeleri ve iyileştirmeler
       EN_NOTES: |
-        Bug fixes and improvements.
+        Match engine overhaul:
+        - Realistic shot physics: close-range finishes are more accurate, long shots are harder; shots can hit the post and go in
+        - Goalkeepers dive and position themselves more realistically
+        - Closer camera, bigger players and ball; the camera follows the action
+        - Smaller on-screen labels so play is interrupted less
+        - Fixed players running off the pitch and keepers repeatedly parrying the ball back to attackers
+        - Other bug fixes and improvements
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
