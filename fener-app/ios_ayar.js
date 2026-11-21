@@ -1,0 +1,24 @@
+// cap add ios sonrası: Info.plist, sürüm, simge ve açılış ekranı ayarları
+const fs = require('fs'), path = require('path');
+const SURUM = require('./package.json').version;
+const app = path.join(__dirname, 'ios', 'App', 'App');
+const pl = path.join(app, 'Info.plist');
+let s = fs.readFileSync(pl, 'utf8');
+const ekle = (k, v) => { if (s.includes(`<key>${k}</key>`)) s = s.replace(new RegExp(`<key>${k}</key>\\s*<[^>]+>[^<]*(</[^>]+>)?`), `<key>${k}</key>${v}`); else s = s.replace(/<\/dict>\s*<\/plist>\s*$/, `\t<key>${k}</key>${v}\n</dict>\n</plist>\n`); };
+ekle('CFBundleDisplayName', '<string>Fener</string>');
+ekle('ITSAppUsesNonExemptEncryption', '<false/>');
+ekle('UIRequiresFullScreen', '<true/>');
+ekle('UIStatusBarHidden', '<false/>');
+s = s.replace(/<key>UISupportedInterfaceOrientations<\/key>\s*<array>[\s\S]*?<\/array>/, '<key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>');
+s = s.replace(/<key>UISupportedInterfaceOrientations~ipad<\/key>\s*<array>[\s\S]*?<\/array>/, '<key>UISupportedInterfaceOrientations~ipad</key><array><string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationPortraitUpsideDown</string><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>');
+fs.writeFileSync(pl, s);
+const pbx = path.join(__dirname, 'ios', 'App', 'App.xcodeproj', 'project.pbxproj');
+let p = fs.readFileSync(pbx, 'utf8');
+p = p.replace(/MARKETING_VERSION = [^;]+;/g, `MARKETING_VERSION = ${SURUM};`);
+p = p.replace(/TARGETED_DEVICE_FAMILY = "1,2";/g, 'TARGETED_DEVICE_FAMILY = 1;');
+fs.writeFileSync(pbx, p);
+const icon = path.join(app, 'Assets.xcassets', 'AppIcon.appiconset');
+for (const f of fs.readdirSync(icon)) if (f.endsWith('.png')) fs.copyFileSync(path.join(__dirname, 'res', 'icon-1024.png'), path.join(icon, f));
+const spl = path.join(app, 'Assets.xcassets', 'Splash.imageset');
+if (fs.existsSync(spl)) for (const f of fs.readdirSync(spl)) if (f.endsWith('.png')) fs.copyFileSync(path.join(__dirname, 'res', 'splash.png'), path.join(spl, f));
+console.log('iOS ayarları tamam — sürüm', SURUM);

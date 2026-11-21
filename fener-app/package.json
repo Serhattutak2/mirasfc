@@ -1,0 +1,11 @@
+{
+  "name": "fener-son-bekci-mobile",
+  "version": "1.1.1",
+  "private": true,
+  "description": "Fener: Son Bekçi iOS sarmalayıcı (Capacitor)",
+  "dependencies": {
+    "@capacitor/cli": "8.5.3",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/ios": "8.5.3"
+  }
+}

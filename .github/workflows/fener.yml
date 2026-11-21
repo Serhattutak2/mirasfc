@@ -1,5 +1,5 @@
 # Fener: Son Bekçi oyununu bu deponun App Store anahtarlarıyla yönetir.
-# Kod: github.com/Serhattutak2/fener — Miras FC'ye dokunmaz.
+# Kod: bu depodaki fener-app/ klasörü (www/index.html = derlenmiş oyun) — Miras FC'ye dokunmaz.
 # Çalıştırma: Actions > Fener > Run workflow  YA DA  fener-tetik.txt dosyasına adımı yazıp push.
 #   hazirlik   : paket kimliğini kaydeder, uygulama var mı bakar
 #   testflight : Serhattutak2/fener deposunu derler, TestFlight'a yükler
@@ -17,7 +17,7 @@ on:
         default: durum
   push:
     branches: [main]
-    paths: ['fener-tetik.txt', '.github/workflows/fener.yml']
+    paths: ['fener-tetik.txt']
 permissions:
   contents: write
 jobs:
@@ -69,7 +69,6 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-        with: { repository: Serhattutak2/fener }
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: Xcode seç
@@ -79,19 +78,19 @@ jobs:
       - name: Hazırla
         run: |
           exec > >(tee -a $RUNNER_TEMP/tf.log) 2>&1
-          rm -rf mobile/www && mkdir -p mobile/www && cp -R app/. mobile/www/
-          cd mobile && npm install --no-audit --no-fund && npx cap add ios 2>/dev/null || true
+          cd fener-app && npm install --no-audit --no-fund
+          npx cap add ios
           npx cap sync ios
-          node ../tools/ios_ayar.js
+          node ios_ayar.js
       - name: Swift paketleri
-        working-directory: mobile/ios/App
+        working-directory: fener-app/ios/App
         run: |
           for i in 1 2 3 4 5 6; do
             xcodebuild -resolvePackageDependencies -project App.xcodeproj -scheme App -derivedDataPath build > $RUNNER_TEMP/spm.log 2>&1 && exit 0
             echo "Deneme $i başarısız"; grep -E 'error|failed' $RUNNER_TEMP/spm.log | head -3; sleep $((i*20))
           done; exit 1
       - name: Derle ve TestFlight'a yükle
-        working-directory: mobile/ios/App
+        working-directory: fener-app/ios/App
         env:
           TEAM: ${{ secrets.IOS_TEAM_ID }}
           KID: ${{ secrets.ASC_KEY_ID }}
