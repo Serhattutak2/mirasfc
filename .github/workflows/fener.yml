@@ -5,6 +5,8 @@
 #   testflight : Serhattutak2/fener deposunu derler, TestFlight'a yükler
 #   tfgrup     : iç test grubunu kurar
 #   durum      : uygulama ve build durumu
+#   magaza     : App Store sayfası (metin, görsel, fiyat, yaş, build) — göndermez
+#   gonder     : magaza + incelemeye gönderir
 # Günlükler: Releases > ci-logs > fener-<adim>.txt
 name: Fener
 on:
@@ -13,7 +15,7 @@ on:
       adim:
         description: "Adım"
         type: choice
-        options: [hazirlik, testflight, tfgrup, durum]
+        options: [hazirlik, testflight, tfgrup, durum, magaza, gonder]
         default: durum
   push:
     branches: [main]
@@ -52,7 +54,7 @@ jobs:
       - name: Çalıştır
         run: |
           set -o pipefail
-          python3 tools/fener_asc.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"
+          if [ "$ADIM" = magaza ] || [ "$ADIM" = gonder ]; then python3 tools/fener_magaza.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; else python3 tools/fener_asc.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; fi
       - name: Günlüğü yayınla
         if: always()
         env:

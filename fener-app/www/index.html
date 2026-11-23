@@ -11,7 +11,7 @@
     --baslik:'Cormorant Garamond', Georgia, serif; --metin:'Lora', Georgia, serif; --ui:system-ui, -apple-system, sans-serif; --fs:1; }
   * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
   html,body { height:100%; }
-  body { font-family:var(--metin); color:var(--krem); background:var(--gece); overflow:hidden; -webkit-user-select:none; user-select:none; }
+  body { font-family:var(--metin); color:var(--krem); background:var(--gece); overflow:hidden; -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; overscroll-behavior:none; }
   body.buyuk { --fs:1.15; }
   #oyun { position:fixed; inset:0; display:flex; flex-direction:column; background:linear-gradient(var(--gok1, #14233a), var(--gok2, #0b1526) 55%, #070d18); padding-bottom:env(safe-area-inset-bottom); }
 
@@ -314,7 +314,7 @@
     <button id="bDevam" class="gizli" data-t="devam"></button>
     <button id="bGirisAyar" data-t="ayarlar"></button>
     <div class="girisSonlar" id="girisSonlar"></div>
-    <div style="font-size:12px;opacity:.5;margin-top:14px;font-family:system-ui">1.1 · Serhat Tutak</div>
+    <div style="font-size:12px;opacity:.5;margin-top:14px;font-family:system-ui">1.2 · Serhat Tutak</div>
   </div>
   <div id="zorlukSec" class="gizli" style="width:100%;display:flex;flex-direction:column;align-items:center">
     <h2 style="font-family:var(--baslik);font-size:32px;letter-spacing:2px;margin-bottom:4px" data-t="zorluk"></h2>
@@ -6738,7 +6738,7 @@ function morsBaslat(hedef, cb) {
     <button class="eylem" onclick="morsSil()"><span>${L('Baştan başla','Start over', 'Empezar de nuevo')}</span></button>
     <button class="kapat" onclick="morsBitir(false)">${L('Vazgeç','Give up', 'Rendirse')}</button>`);
   const el = $('morsLamba');
-  const bas = (ev) => { ev.preventDefault(); MORS_DURUM.bas = performance.now(); el.classList.add('yanik'); if (SES.ctx && AYAR.efekt) { MORS_DURUM.ton = SES.ctx.createOscillator(); const g = SES.ctx.createGain(); g.gain.value = .05; MORS_DURUM.ton.frequency.value = 700; MORS_DURUM.ton.connect(g); g.connect(SES.ana); MORS_DURUM.ton.start(); } };
+  const bas = (ev) => { ev.preventDefault(); if (!MORS_DURUM) return; MORS_DURUM.bas = performance.now(); el.classList.add('yanik'); if (SES.ctx && AYAR.efekt) { MORS_DURUM.ton = SES.ctx.createOscillator(); const g = SES.ctx.createGain(); g.gain.value = .05; MORS_DURUM.ton.frequency.value = 700; MORS_DURUM.ton.connect(g); g.connect(SES.ana); MORS_DURUM.ton.start(); } };
   const birak = (ev) => { ev.preventDefault(); if (!MORS_DURUM || !MORS_DURUM.bas) return; const sure = performance.now() - MORS_DURUM.bas; MORS_DURUM.bas = 0; el.classList.remove('yanik'); try { MORS_DURUM.ton && MORS_DURUM.ton.stop(); } catch (e) {} morsEkle(sure < 280 ? '.' : '-'); };
   el.addEventListener('pointerdown', bas); el.addEventListener('pointerup', birak); el.addEventListener('pointerleave', birak);
 }
@@ -8479,7 +8479,15 @@ function ucDongu(now) {
   if (!UC.hazir) return;
   requestAnimationFrame(ucDongu);
   if (document.hidden) return;
-  const dt = Math.min(.05, (now - (UC.son || now)) / 1000); UC.son = now;
+  const ham = (now - (UC.son || now)) / 1000;
+  const dt = Math.min(.05, ham); UC.son = now;
+  // 1.2: yavaş cihazda kendini hafifletir (gölge, ışıma, çözünürlük)
+  if (UC.tam && ham > 0 && ham < 1) {
+    UC.olc = UC.olc || { n:0, top:0 }; UC.olc.n++; UC.olc.top += ham;
+    if (UC.olc.n >= 90) { const ort = UC.olc.top / UC.olc.n; UC.olc = { n:0, top:0 };
+      if (ort > .045) { UC.tam = false; UC.kp = null; UC.r.shadowMap.enabled = false; UC.r.setPixelRatio(1);
+        UC.sahne.traverse(o => { if (o.material) { const m = Array.isArray(o.material) ? o.material : [o.material]; m.forEach(x => x.needsUpdate = true); } });
+        ucBoyut(); } } }
   const t = now / 1000;
   const oyunda = S && !S.bitti && $('giris').classList.contains('gizli');
   if (UC.oyundaOnce !== oyunda) { UC.oyundaOnce = oyunda; document.body.classList.toggle('giriste', !oyunda); ucBoyut(); }
@@ -8836,12 +8844,19 @@ function durumKart(id) { const d = DURUMLAR[id]; sayfaAc(`<h3><span>${d.ik}</spa
 
 // ---------------------------------------------------------------- HARİTA
 const HARITA = { fener:[300,62], burun:[362,128], koy:[210,140], gemi:[118,182], zeytin:[120,82], koyk:[42,48], resif:[238,200], magara:[318,196], adacik:[262,244] };
+// 1.2: uzun yer adlarını iki satıra böl (harita etiketleri üst üste binmesin)
+function haritaEtiket(ad, x) {
+  if (ad.length <= 11 || !ad.includes(' ')) return ad;
+  const o = ad.length / 2; let i = -1, en = 1e9;
+  for (let k = 0; k < ad.length; k++) if (ad[k] === ' ' && Math.abs(k - o) < en) { en = Math.abs(k - o); i = k; }
+  return `<tspan x="${x}" dy="0">${ad.slice(0, i)}</tspan><tspan x="${x}" dy="11">${ad.slice(i + 1)}</tspan>`;
+}
 function haritaAc() {
   const gg = gelgitBilgi(), kom = komsular(S.yer);
   const yollar = Object.keys(YOL).filter(k => { const [a,b] = k.split('-'); return (a !== 'adacik' && b !== 'adacik') || S.harita; }).map(k => { const [a,b] = k.split('-'), A = HARITA[a], B = HARITA[b], aktif = a === S.yer || b === S.yer; return `<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="${aktif ? '#8B6A42' : '#b9a882'}" stroke-width="${aktif ? 2.5 : 1.5}" stroke-dasharray="${YERLER[a].gelgit || YERLER[b].gelgit ? '4 4' : ''}"/>`; }).join('');
   const dugum = Object.entries(HARITA).filter(([y]) => y !== 'adacik' || S.harita).map(([y,[x,yy]]) => {
     const burada = y === S.yer, komsu = kom.find(k => k[0] === y), kapali = YERLER[y].gelgit && !gg.cekik;
-    return `<g ${komsu ? `onclick="git('${y}')" style="cursor:pointer"` : ''} opacity="${kapali && !burada ? .55 : 1}"><circle cx="${x}" cy="${yy}" r="${burada ? 17 : 14}" fill="${burada ? '#2B241B' : komsu ? '#fff' : '#efe6d2'}" stroke="${komsu ? '#8B6A42' : '#c8b898'}" stroke-width="${komsu ? 2.5 : 1}"/><text x="${x}" y="${yy + 5}" text-anchor="middle" font-size="15">${YERLER[y].ik}</text><text x="${x}" y="${yy + 30}" text-anchor="middle" font-size="10" fill="#4A3F31" font-family="system-ui">${N(YERLER[y].ad)}</text>${komsu ? `<text x="${x}" y="${yy - 20}" text-anchor="middle" font-size="9" fill="#8B6A42" font-family="system-ui">${komsu[1]} ${L('dk','min')}</text>` : ''}</g>`;
+    return `<g ${komsu ? `onclick="git('${y}')" style="cursor:pointer"` : ''} opacity="${kapali && !burada ? .55 : 1}"><circle cx="${x}" cy="${yy}" r="${burada ? 17 : 14}" fill="${burada ? '#2B241B' : komsu ? '#fff' : '#efe6d2'}" stroke="${komsu ? '#8B6A42' : '#c8b898'}" stroke-width="${komsu ? 2.5 : 1}"/><text x="${x}" y="${yy + 5}" text-anchor="middle" font-size="15">${YERLER[y].ik}</text><text x="${x < 60 ? Math.max(4, x - 16) : x > 340 ? Math.min(396, x + 16) : x}" y="${yy + 30}" text-anchor="${x < 60 ? 'start' : x > 340 ? 'end' : 'middle'}" font-size="10" fill="#4A3F31" font-family="system-ui">${haritaEtiket(N(YERLER[y].ad), x < 60 ? Math.max(4, x - 16) : x > 340 ? Math.min(396, x + 16) : x)}</text>${komsu ? `<text x="${x}" y="${yy - 20}" text-anchor="middle" font-size="9" fill="#8B6A42" font-family="system-ui">${komsu[1]} ${L('dk','min')}</text>` : ''}</g>`;
   }).join('');
   const svg = `<svg viewBox="0 0 400 270" class="harita"><path d="M30 30 q60 -20 140 10 q80 -30 150 -6 q60 22 60 90 q10 60 -40 90 q-50 30 -120 20 q-80 8 -150 -10 q-60 -20 -60 -80 q-10 -70 20 -114z" fill="#d9c9a0" stroke="#b9a882"/><path d="M190 180 q40 30 90 20 q30 -6 30 20 q-10 40 -60 40 q-50 -4 -70 -30z" fill="#a9c9cf" opacity=".6"/>${yollar}${dugum}</svg>`;
   const liste = kom.map(([y, dk]) => {
@@ -8920,7 +8935,7 @@ function ayarAc() {
     <div class="ipucu">${L('Sesler ilk dokunuşta başlar. Hepsi kodla üretilir, internet gerekmez.','Sound starts on your first tap. Everything is generated in code; no internet needed.', 'El sonido empieza con tu primer toque. Todo se genera con código; no hace falta internet.')}</div>
     ${S && !S.bitti && S.sonsuz ? `<button class="eylem" onclick="sonsuzBitir()"><span>🏮 ${L('Bekçiliği bırak ve hikâyeyi bitir','Retire and end the story', 'Jubilarse y terminar la historia')}</span></button>` : ''}
     ${S && !S.bitti ? `<button class="kapat tehlike" onclick="if(window.__sor){kayitSil();location.reload();}else{window.__sor=1;this.textContent='${L('Emin misin? Tekrar dokun','Sure? Tap again', '¿Seguro? Toca otra vez')}';}">${L('Oyunu sıfırla','Reset game', 'Reiniciar partida')}</button>` : ''}
-    <div class="hakkinda">Fener: Son Bekçi · ${L('Prototip','Prototype', 'Prototipo')} 1.1<br>${L('Yapımcı','Created by', 'Creado por')}: Serhat Tutak</div>
+    <div class="hakkinda">Fener: Son Bekçi · ${L('Sürüm','Version','Versión')} 1.2<br>${L('Yapımcı','Created by', 'Creado por')}: Serhat Tutak</div>
     ${kapatBtn()}`);
 }
 function ayarDegis(k, v, sessiz) {
@@ -9445,6 +9460,13 @@ ekCiz = function () { _ekCiz3(); if (!UC.hazir && !UC.hata) ucKur(); ucGuncelle(
 function grafikSec(v) { AYAR.grafik = v; ayarKaydet(); try { kaydet(); } catch (e) {} location.reload(); }
 if (AYAR.grafik === undefined) AYAR.grafik = '3d';
 ucKur();
+
+// 1.2: uygulama arka plana geçince kaydet ve sesi durdur; geri gelince sesi sürdür
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { kaydet(); try { if (SES.ctx && SES.ctx.state === 'running') SES.ctx.suspend(); } catch(e) {} }
+  else { try { if (SES.ctx && SES.ctx.state === 'suspended') SES.ctx.resume(); } catch(e) {} }
+});
+window.addEventListener('pagehide', () => kaydet());
 
 </script>
 </body>

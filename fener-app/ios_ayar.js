@@ -1,6 +1,6 @@
 // cap add ios sonrası: Info.plist, sürüm, simge ve açılış ekranı ayarları
 const fs = require('fs'), path = require('path');
-const SURUM = require('./package.json').version;
+const SURUM = require('./package.json').surum || require('./package.json').version;
 const app = path.join(__dirname, 'ios', 'App', 'App');
 const pl = path.join(app, 'Info.plist');
 let s = fs.readFileSync(pl, 'utf8');
