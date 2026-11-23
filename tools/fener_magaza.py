@@ -258,8 +258,7 @@ for k in range(30):
 if build:
     st, r = api("PATCH", f"/v1/appStoreVersions/{ver_id}/relationships/build", {"data": {"type": "builds", "id": build["id"]}})
     ok(st, r, f"build {build['attributes'].get('version')} sürüme bağlandı")
-    st, r = api("PATCH", f"/v1/builds/{build['id']}", {"data": {"type": "builds", "id": build["id"], "attributes": {"usesNonExemptEncryption": False}}})
-    ok(st, r, "şifreleme beyanı: yok")
+    print("  şifreleme beyanı: Info.plist'te (ITSAppUsesNonExemptEncryption = NO)")
 else:
     print("  ✗", VER, "build'i bulunamadı"); SORUN.append("build yok")
 
@@ -296,7 +295,10 @@ if not any((it.get("relationships", {}).get("appStoreVersion", {}).get("data") o
     st, r = api("POST", "/v1/reviewSubmissionItems", {"data": {"type": "reviewSubmissionItems", "relationships": {
         "reviewSubmission": {"data": {"type": "reviewSubmissions", "id": sid}}, "appStoreVersion": {"data": {"type": "appStoreVersions", "id": ver_id}}}}})
     if not ok(st, r, "sürümü gönderime ekle"):
-        print(json.dumps(r, ensure_ascii=False)[:4000]); die("sürüm gönderime eklenemedi")
+        for e in r.get("errors", []):
+            for k, v in (e.get("meta", {}).get("associatedErrors") or {}).items():
+                for x in v: print("   eksik:", x.get("code"), "—", x.get("detail"))
+        die("sürüm gönderime eklenemedi (yukarıdaki eksikler App Store Connect'te elle tamamlanmalı)")
 st, r = api("PATCH", f"/v1/reviewSubmissions/{sid}", {"data": {"type": "reviewSubmissions", "id": sid, "attributes": {"submitted": True}}})
 if not ok(st, r, "incelemeye gönder"):
     print(json.dumps(r, ensure_ascii=False)[:4000]); die("gönderilemedi")
