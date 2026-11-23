@@ -105,14 +105,17 @@ if st == 200 and r.get("data"):
         "gunsOrOtherWeapons": "INFREQUENT_OR_MILD",
         "gambling": False, "unrestrictedWebAccess": False, "lootBox": False, "messagingAndChat": False, "userGeneratedContent": False,
         "advertising": False, "parentalControls": False, "ageAssurance": False, "healthOrWellnessTopics": False,
+        "socialMedia": False, "datingAndRelationships": False, "sharedLocation": False, "socialMediaAgeRestricted": False,
     }
     hedef = {k: v for k, v in tum.items() if k in cur}
     st, r = api("PATCH", f"/v1/ageRatingDeclarations/{ad['id']}", {"data": {"type": "ageRatingDeclarations", "id": ad["id"], "attributes": hedef}})
     if not ok(st, r, "yaş derecelendirmesi"):
-        # tek tek dene: hangi alan sorunlu görülsün
-        for k, v in hedef.items():
-            st2, r2 = api("PATCH", f"/v1/ageRatingDeclarations/{ad['id']}", {"data": {"type": "ageRatingDeclarations", "id": ad["id"], "attributes": {k: v}}})
-            if st2 != 200: print("    alan", k, "->", err(r2))
+        # eksik denilen alanları false/NONE ile tamamlayıp bir kez daha dene
+        for e in r.get("errors", []):
+            k = (e.get("source") or {}).get("pointer", "").rsplit("/", 1)[-1]
+            if k and k not in hedef: hedef[k] = False
+        st, r = api("PATCH", f"/v1/ageRatingDeclarations/{ad['id']}", {"data": {"type": "ageRatingDeclarations", "id": ad["id"], "attributes": hedef}})
+        if ok(st, r, "yaş derecelendirmesi (2. deneme)"): SORUN[:] = [x for x in SORUN if not x.startswith("yaş")]
     st, r = api("GET", f"/v1/appInfos/{info['id']}/ageRatingDeclaration")
     eksik = [k for k, v in r.get("data", {}).get("attributes", {}).items() if v is None]
     print("  boş kalan yaş alanları:", eksik or "yok")
@@ -121,8 +124,12 @@ else:
 
 # 5) fiyat: ücretsiz
 st, r = api("GET", f"/v1/apps/{app_id}/appPriceSchedule")
+fiyat_var = False
 if st == 200 and r.get("data"):
-    print("  fiyat planı zaten var")
+    st2, r2 = api("GET", f"/v1/appPriceSchedules/{r['data']['id']}/manualPrices?limit=5")
+    fiyat_var = bool(r2.get("data")); print("  fiyat planı:", "var" if fiyat_var else "boş")
+if fiyat_var:
+    pass
 else:
     st, r = api("GET", f"/v1/apps/{app_id}/appPricePoints?filter[territory]=USA&limit=200")
     pp = next((p for p in r.get("data", []) if float(p["attributes"].get("customerPrice") or 1) == 0.0), None)
@@ -242,12 +249,12 @@ ok(st, r, "inceleme iletişim bilgisi" + (" (telefon Miras FC'den)" if iletisim 
 
 # 11) build
 build = None
-for k in range(40):
+for k in range(30):
     st, r = api("GET", f"/v1/builds?filter[app]={app_id}&filter[preReleaseVersion.version]={VER}&sort=-uploadedDate&limit=10")
     bl = r.get("data", [])
     build = next((b for b in bl if b["attributes"].get("processingState") == "VALID"), None)
-    if build or not bl: break
-    print("  build işleniyor…", [b["attributes"].get("processingState") for b in bl]); time.sleep(30)
+    if build: break
+    print("  build bekleniyor…", [b["attributes"].get("processingState") for b in bl] or "henüz görünmüyor"); time.sleep(30)
 if build:
     st, r = api("PATCH", f"/v1/appStoreVersions/{ver_id}/relationships/build", {"data": {"type": "builds", "id": build["id"]}})
     ok(st, r, f"build {build['attributes'].get('version')} sürüme bağlandı")
