@@ -52,6 +52,10 @@ def die(m, r=None):
 
 
 meta = json.load(open(os.path.join(MD, "meta.json")))
+if GONDER and not json.load(open("fener-app/reklam.json")).get("uygulama"):
+    die("reklam.json'da gerçek AdMob uygulama kimliği yok — test reklamlarıyla App Store'a gönderilmez")
+if GONDER and "REKLAM_KIMLIK = { gecis: ''" in open("fener-app/www/index.html", encoding="utf-8").read():
+    die("oyunda gerçek reklam birimi kimlikleri yok — test reklamlarıyla App Store'a gönderilmez")
 
 # 1) uygulama
 st, r = api("GET", f"/v1/apps?filter[bundleId]={BUNDLE}&limit=1")
@@ -104,7 +108,7 @@ if st == 200 and r.get("data"):
         "violenceCartoonOrFantasy": "NONE", "violenceRealistic": "INFREQUENT_OR_MILD", "violenceRealisticProlongedGraphicOrSadistic": "NONE",
         "gunsOrOtherWeapons": "INFREQUENT_OR_MILD",
         "gambling": False, "unrestrictedWebAccess": False, "lootBox": False, "messagingAndChat": False, "userGeneratedContent": False,
-        "advertising": False, "parentalControls": False, "ageAssurance": False, "healthOrWellnessTopics": False,
+        "advertising": True, "parentalControls": False, "ageAssurance": False, "healthOrWellnessTopics": False,
         "socialMedia": False, "datingAndRelationships": False, "sharedLocation": False, "socialMediaAgeRestricted": False,
     }
     hedef = {k: v for k, v in tum.items() if k in cur}

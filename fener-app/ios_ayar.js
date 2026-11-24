@@ -9,6 +9,14 @@ ekle('CFBundleDisplayName', '<string>Fener</string>');
 ekle('ITSAppUsesNonExemptEncryption', '<false/>');
 ekle('UIRequiresFullScreen', '<true/>');
 ekle('UIStatusBarHidden', '<false/>');
+// Reklam (AdMob): uygulama kimliği, SKAdNetwork, takip izni metni
+const RK = require('./reklam.json');
+const GAD = RK.uygulama || 'ca-app-pub-3940256099942544~1458002511';
+ekle('GADApplicationIdentifier', `<string>${GAD}</string>`);
+ekle('NSUserTrackingUsageDescription', '<string>Bu izin yalnızca sana daha ilgili reklamlar göstermek için kullanılır. İzin vermesen de oyun ücretsiz çalışır.</string>');
+const SKAN = ['cstr6suwn9', '4fzdc2evr5', '2fnua5tdw4', 'ydx93a7ass', 'p78axxw29g', 'v72qych5uu', 'ludvb6z3bs', 'cp8zw746q7', '3sh42y64q3', 'c6k4g5qg8m', 's39g8k73mm', 'wg4vff78zm', '3qy4746246', 'f38h382jlk', 'hs6bdukanm', 'mlmmfzh3r3', 'v4nxqhlyqp', 'wzmmz9fp6w', 'su67r6k2v3', 'yclnxrl5pm', 't38b2kh725', '7ug5zh24hu', 'gta9lk7p23', 'vutu7akeur', 'y5ghdn5j9k', 'v9wttpbfk9', 'n38lu8286q', '47vhws6wlr', 'kbd757ywx3', '9t245vhmpl', 'a2p9lx4jpn', '22mmun2rn5', '44jx6755aq', 'k674qkevps', '4468km3ulz', '2u9pt9hc89', '8s468mfl3y', 'klf5c3l5u5', 'ppxm28t8ap', 'kbmxgpxpgc', 'uw77j35x4d', '578prtvx9j', '4dzt52r2t5', 'tl55sbb4fm', 'e5fvkxwrpn', '8c4e2ghe7u', '3rd42ekr43', '97r2b46745', '3qcr597p9d'];
+if (!s.includes('<key>SKAdNetworkItems</key>')) ekle('SKAdNetworkItems', '<array>' + SKAN.map(x => `<dict><key>SKAdNetworkIdentifier</key><string>${x}.skadnetwork</string></dict>`).join('') + '</array>');
+if (!RK.uygulama) console.log('UYARI: reklam.json boş — Google örnek AdMob kimliği kullanıldı (App Store\'a gönderilmemeli)');
 s = s.replace(/<key>UISupportedInterfaceOrientations<\/key>\s*<array>[\s\S]*?<\/array>/, '<key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>');
 s = s.replace(/<key>UISupportedInterfaceOrientations~ipad<\/key>\s*<array>[\s\S]*?<\/array>/, '<key>UISupportedInterfaceOrientations~ipad</key><array><string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationPortraitUpsideDown</string><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>');
 fs.writeFileSync(pl, s);

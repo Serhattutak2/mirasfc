@@ -257,6 +257,10 @@
   .alt button .aik { font-size:18px; line-height:1; }
   .alt button .aet { font-size:calc(11.5px * var(--fs)); line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
   @media (max-height:700px) { body.uc-aktif #sahne { height:calc(205px + env(safe-area-inset-top)); } }
+  #reklamDeneme { position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.88); display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; }
+  #reklamDeneme div { display:flex; flex-direction:column; gap:12px; align-items:center; padding:24px; }
+  #reklamDeneme span { font-size:48px; font-weight:700; }
+  #reklamDeneme small { opacity:.7; max-width:260px; }
   body.uc-aktif.giriste #oyun { visibility:hidden; }
   body.uc-aktif .kart { box-shadow:0 6px 16px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7); }
   body.uc-aktif #giris { background:radial-gradient(ellipse at 50% 30%, rgba(6,10,20,0), rgba(6,10,20,.3) 50%, rgba(6,10,20,.82)); }
@@ -9467,6 +9471,142 @@ document.addEventListener('visibilitychange', () => {
   else { try { if (SES.ctx && SES.ctx.state === 'suspended') SES.ctx.resume(); } catch(e) {} }
 });
 window.addEventListener('pagehide', () => kaydet());
+
+// ============================================================
+// 1.3 — Reklamlar (Google AdMob, @capacitor-community/admob)
+// - Ödüllü reklam (isteğe bağlı, oyuncu seçer):
+//     • İkinci şans: ölünce bir kez, reklam izleyip ağır yaralı uyan (oyun başına 1)
+//     • Erzak sandığı: Görevler panelinden günde 1 küçük erzak
+// - Geçiş reklamı: yalnızca sabah geçişlerinde, en az 5 dk arayla, oturumun ilk 4 dk'sında yok,
+//   açık pencere ya da olay varken asla.
+// - Telefonda gerçek AdMob; tarayıcıda (test sayfası) 3 sn'lik deneme reklamı.
+// - Kimlikler REKLAM_KIMLIK'te. Boşsa Google'ın resmi TEST reklamları gösterilir.
+// ============================================================
+const REKLAM_KIMLIK = { gecis: '', odullu: '' };
+const RK = {
+  test: !REKLAM_KIMLIK.gecis || !REKLAM_KIMLIK.odullu,
+  gecis: REKLAM_KIMLIK.gecis || 'ca-app-pub-3940256099942544/4411468910',
+  odullu: REKLAM_KIMLIK.odullu || 'ca-app-pub-3940256099942544/1712485313',
+  aralik: 300000, ilk: 240000, t0: Date.now(), son: 0,
+  hazir: { gecis: 0, odullu: 0 }, kuruldu: 0,
+};
+
+function admob() {
+  try {
+    const C = window.Capacitor; if (!C || !(C.isNativePlatform && C.isNativePlatform())) return null;
+    return (C.Plugins && C.Plugins.AdMob) || (C.registerPlugin ? C.registerPlugin('AdMob') : null);
+  } catch (e) { return null; }
+}
+async function reklamKur() {
+  const P = admob(); if (!P || RK.kuruldu) return; RK.kuruldu = 1;
+  try { await P.initialize({ initializeForTesting: RK.test }); } catch (e) {}
+  // AB/İngiltere için Google onay formu; 6 sn'de cevap gelmezse geç
+  const sure = (p, ms) => Promise.race([p, new Promise((_, h) => setTimeout(() => h(new Error('zaman')), ms))]);
+  try { const ci = await sure(P.requestConsentInfo(), 6000); if (ci && ci.isConsentFormAvailable && ci.status === 'REQUIRED') await P.showConsentForm(); } catch (e) {}
+  try { await P.requestTrackingAuthorization(); } catch (e) {}
+  reklamYukle();
+}
+function reklamYukle() {
+  const P = admob(); if (!P) return;
+  if (!RK.hazir.gecis) P.prepareInterstitial({ adId: RK.gecis, isTesting: RK.test }).then(() => { RK.hazir.gecis = 1; }).catch(() => { RK.hazir.gecis = 0; });
+  if (!RK.hazir.odullu) P.prepareRewardVideoAd({ adId: RK.odullu, isTesting: RK.test }).then(() => { RK.hazir.odullu = 1; }).catch(() => { RK.hazir.odullu = 0; });
+}
+if (admob()) ['touchend', 'click'].forEach(o => document.addEventListener(o, () => reklamKur(), { once: true, capture: true }));
+
+// Sesi reklam süresince kıs
+function reklamSes(kapat) { try { if (SES.ctx) kapat ? SES.ctx.suspend() : SES.ctx.resume(); } catch (e) {} }
+
+// Ödüllü reklam: cb(true) = ödül kazanıldı
+function odulluReklam(cb) {
+  const P = admob();
+  if (P) {
+    if (!RK.hazir.odullu) { RK.izleniyor = 0; RK.olumSayfa = !!(S && S.olumBekle); reklamYukle(); toast(L('Reklam hazırlanıyor, birazdan tekrar dene.', 'The ad is loading, try again in a moment.', 'El anuncio se está cargando, inténtalo de nuevo en un momento.')); return; }
+    RK.hazir.odullu = 0; reklamSes(true);
+    P.showRewardVideoAd().then(r => cb(true)).catch(() => cb(false)).finally(() => { reklamSes(false); RK.son = Date.now(); setTimeout(reklamYukle, 1000); });
+    return;
+  }
+  // tarayıcı: deneme reklamı
+  const d = document.createElement('div'); d.id = 'reklamDeneme';
+  d.innerHTML = `<div><b>📺 ${L('Deneme reklamı', 'Test ad', 'Anuncio de prueba')}</b><span>3</span><small>${L('Telefondaki oyunda burada gerçek bir reklam oynar.', 'In the phone app a real ad plays here.', 'En la app del teléfono aquí se reproduce un anuncio real.')}</small></div>`;
+  document.body.appendChild(d); let n = 3;
+  const z = setInterval(() => { n--; const s = d.querySelector('span'); if (s) s.textContent = n; if (n <= 0) { clearInterval(z); d.remove(); cb(true); } }, 1000);
+}
+
+function gecisReklam() {
+  const P = admob(); if (!P) return;
+  const t = Date.now();
+  if (t - RK.t0 < RK.ilk || t - RK.son < RK.aralik) return;
+  if (!RK.hazir.gecis) { reklamYukle(); return; }
+  if (S && (S.bitti || S.olay || AKTIF_OLAY)) return;
+  if (sayfaAcikMi()) return;
+  RK.hazir.gecis = 0; RK.son = t; reklamSes(true);
+  P.showInterstitial().catch(() => {}).finally(() => { reklamSes(false); setTimeout(reklamYukle, 1000); });
+}
+
+// ---------- Geçiş reklamı: sabah geçişlerinde ----------
+const _sabahRK = sabah;
+sabah = function () { const r = _sabahRK.apply(this, arguments); if (S && S.gun > 1) setTimeout(gecisReklam, 1200); return r; };
+
+// ---------- Ödüllü: İkinci şans ----------
+const _olumRK = olum;
+olum = function () {
+  if (!Z().olum) return _olumRK.apply(this, arguments);
+  if (S.olumBekle) { S.zorla = true; return; }
+  if (S.reklamCan) return _olumRK.apply(this, arguments);
+  S.olumBekle = true; S.g.sag = 1; S.zorla = true;
+  setTimeout(() => {
+    KUYRUK.length = 0; RK.olumSayfa = true;
+    sayfaAc(`<h3><span>🕯️</span>${L('Her şey kararıyor…', 'Everything is going dark…', 'Todo se oscurece…')}</h3>
+      <div class="aciklama">${L('Bedenin pes etmek üzere. Ama ışık hâlâ seni bekliyor.', 'Your body is about to give up. But the light is still waiting for you.', 'Tu cuerpo está a punto de rendirse. Pero la luz todavía te espera.')}</div>
+      <button class="eylem" onclick="ikinciSans(true)"><span>📺 ${L('Reklam izle: ikinci şans', 'Watch an ad: second chance', 'Ver un anuncio: segunda oportunidad')}</span><small>${L('oyun başına 1 kez', 'once per game', 'una vez por partida')}</small></button>
+      <button class="eylem" onclick="ikinciSans(false)"><span>${L('Kabul et', 'Accept it', 'Aceptarlo')}</span></button>`);
+  }, 60);
+};
+// pencere seçim yapılmadan kapatılırsa ölüm gerçekleşir
+const _kapatRK = kapat;
+kapat = function () { const acik = RK.olumSayfa && sayfaAcikMi(); _kapatRK.apply(this, arguments); if (acik && S && S.olumBekle && !S.bitti && !RK.izleniyor) { RK.olumSayfa = false; S.olumBekle = false; S.g.sag = 0; _olumRK(); kaydet(); } };
+function ikinciSans(izle) {
+  RK.olumSayfa = false;
+  const bitirGercek = () => { S.olumBekle = false; S.g.sag = 0; kapat(); _olumRK(); kaydet(); };
+  if (!izle) return bitirGercek();
+  RK.izleniyor = 1;
+  odulluReklam(ok => {
+    RK.izleniyor = 0;
+    if (!ok) return bitirGercek();
+    const g = S.g; S.olumBekle = false; S.reklamCan = 1;
+    g.sag = 35; g.tok = Math.max(g.tok, 30); g.su = Math.max(g.su, 30); g.isi = Math.max(g.isi, 40); g.en = Math.max(g.en, 25); g.mor = kis(g.mor - 10);
+    S.durum = {}; S.dk += 240;
+    gunlukYaz('Ölümün kıyısından döndüm. Bu ikinci şansı boşa harcamayacağım.', 'I came back from the edge of death. I won\'t waste this second chance.', 'Volví del borde de la muerte. No desperdiciaré esta segunda oportunidad.');
+    sonYaz('Saatler sonra gözlerini açtın. Yaşıyorsun. Ama dikkatli ol: ikinci bir şans daha yok.', 'Hours later you open your eyes. You\'re alive. But be careful: there won\'t be another chance.', 'Horas después abres los ojos. Estás vivo. Pero ten cuidado: no habrá otra oportunidad.');
+    kapat(); kaydet(); ciz();
+  });
+}
+
+// ---------- Ödüllü: Günlük erzak sandığı (Görevler panelinde) ----------
+const ERZAK_SANDIK = [{ gaz:1, konserve:1 }, { tsu:2, kibrit:2 }, { konserve:1, tsu:1, bez:1 }, { gaz:1, kibrit:2 }, { ilac:1, tsu:1 }];
+function erzakSandigi() {
+  if (S.sandikGun === S.gun) return;
+  odulluReklam(ok => {
+    if (!ok) return;
+    S.sandikGun = S.gun;
+    const p = Object.entries(ERZAK_SANDIK[Math.floor(Math.random() * ERZAK_SANDIK.length)]).filter(([id]) => K[id]);
+    p.forEach(([id, n]) => ekle(id, n));
+    sonYaz('Sandığı açtın: ' + p.map(([id, n]) => `${K[id].ik} ${n} ${K[id].ad[0].toLowerCase()}`).join(', ') + '.',
+           'You open the crate: ' + p.map(([id, n]) => `${K[id].ik} ${n} ${K[id].ad[1].toLowerCase()}`).join(', ') + '.',
+           'Abres la caja: ' + p.map(([id, n]) => `${K[id].ik} ${n} ${N(K[id].ad).toLowerCase()}`).join(', ') + '.');
+    kapat(); kaydet(); ciz();
+  });
+}
+const _ggAcRK = ggAc;
+ggAc = function () {
+  _ggAcRK.apply(this, arguments);
+  const ic = document.querySelector('#sayfa .ipucu.ust-cizgi'); if (!ic) return;
+  const b = document.createElement('div');
+  b.innerHTML = S.sandikGun === S.gun
+    ? `<div class="ipucu">📦 ${L('Bugünün erzak sandığını aldın. Yarın yine gel.', 'You\'ve opened today\'s supply crate. Come back tomorrow.', 'Ya abriste la caja de provisiones de hoy. Vuelve mañana.')}</div>`
+    : `<button class="eylem" onclick="erzakSandigi()"><span>📺 ${L('Reklam izle: erzak sandığı', 'Watch an ad: supply crate', 'Ver un anuncio: caja de provisiones')}</span><small>${L('günde 1', 'once a day', '1 al día')}</small></button>`;
+  ic.after(b);
+};
 
 </script>
 </body>

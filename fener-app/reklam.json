@@ -1,0 +1,4 @@
+{
+  "_not": "AdMob uygulama kimliği. Boşsa Google'ın örnek kimliği kullanılır (yalnız TestFlight için).",
+  "uygulama": ""
+}
