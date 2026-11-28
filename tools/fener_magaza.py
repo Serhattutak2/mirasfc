@@ -155,7 +155,7 @@ if st == 200 and r.get("data"):
 else:
     ter, url = [], "/v1/territories?limit=200"
     while url:
-        st, r = api("GET", url); ter += [t["id"] for t in r.get("data", [])]; url = r.get("links", {}).get("next")
+        st, r = api("GET", url); ter += [t["id"] for t in r.get("data", []) if t["id"] != "CHN"]; url = r.get("links", {}).get("next")
     inc = [{"type": "territoryAvailabilities", "id": f"${{t{i}}}", "attributes": {"available": True},
             "relationships": {"territory": {"data": {"type": "territories", "id": t}}}} for i, t in enumerate(ter)]
     st, r = api("POST", "/v2/appAvailabilities", {"data": {"type": "appAvailabilities", "attributes": {"availableInNewTerritories": True},

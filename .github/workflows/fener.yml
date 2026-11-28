@@ -7,6 +7,7 @@
 #   durum      : uygulama ve build durumu
 #   magaza     : App Store sayfası (metin, görsel, fiyat, yaş, build) — göndermez
 #   gonder     : magaza + incelemeye gönderir
+#   cin        : Çin anakarasını satıştan çıkarır (yükleme yapmaz)
 # Günlükler: Releases > ci-logs > fener-<adim>.txt
 name: Fener
 on:
@@ -15,7 +16,7 @@ on:
       adim:
         description: "Adım"
         type: choice
-        options: [hazirlik, testflight, tfgrup, durum, magaza, gonder]
+        options: [hazirlik, testflight, tfgrup, durum, magaza, gonder, cin]
         default: durum
   push:
     branches: [main]
@@ -54,7 +55,7 @@ jobs:
       - name: Çalıştır
         run: |
           set -o pipefail
-          if [ "$ADIM" = magaza ] || [ "$ADIM" = gonder ]; then python3 tools/fener_magaza.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; else python3 tools/fener_asc.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; fi
+          if [ "$ADIM" = cin ]; then python3 tools/fener_cin.py 2>&1 | tee "$RUNNER_TEMP/log.txt"; elif [ "$ADIM" = magaza ] || [ "$ADIM" = gonder ]; then python3 tools/fener_magaza.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; else python3 tools/fener_asc.py "$ADIM" 2>&1 | tee "$RUNNER_TEMP/log.txt"; fi
       - name: Günlüğü yayınla
         if: always()
         env:
